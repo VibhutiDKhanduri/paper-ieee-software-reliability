@@ -184,13 +184,6 @@ cloud Platform--as--a--Service (PaaS) and Software--as--a--Service (SaaS) levels
 helping developers, e--Infrastructures and scientific communities to exploit
 Cloud computing benefits.
 
-\begin{figure*}
-\centering
-\includegraphics[width=\textwidth]{images/unittest.png}
-\caption{Unit testing coverage for the two major INDIGO--DataCloud releases.}
-\label{fig:fig_unittest}
-\end{figure*}
-
 \section{New Trends in Software Reliability}
 
 The INDIGO--Datacloud project reflects the progress made in software
@@ -204,6 +197,7 @@ major outcomes that has been progressively adopted in the INDIGO--DataCloud
 project.
 
 \subsection{DevOps practices}
+\label{sec:devops}
 
 The DevOps methods emphasize on exercising Quality Assurance techniques to
 avoid infrastructure disruption whenever new developments are deployed into
@@ -249,7 +243,8 @@ code is publicly available in GitHub repositories under an organization called
 {\sl indigo-dc} \cite{indigo-github} to increase the visibility of the product
 catalogue, promoting the external contributions and software adoption. Furthermore,
 the source code is compliant with community de--facto style standards,
-selected from the variety of programming languages being used.
+selected from the variety of programming languages being used as seen in
+Fig. \ref{fig:fig_codestyle}.
 
 \begin{figure}[!t]
 \centering
@@ -258,16 +253,43 @@ selected from the variety of programming languages being used.
 \label{fig:fig_codestyle}
 \end{figure}
 
-Tests are triggered in each build to measure the unit and functional testing
-coverage, with a recommended value of 70\% of coverage in the former case. The
-documentation of the products is treated as source code, using a markup
-language, automatically rendered and uploaded in online repositories
+Unit testing coverage has increased between the first ({\sl INDIGO-1}) and the
+second ({\sl INDIGO-2}) INDIGO--DataCloud releases, reaching an average value of
+66.69\% on the {\sl INDIGO-2} release, very close to the recommended 70\% threshold
+defined by the project’s SQA base criteria \cite{indigo-d31}. A comparison graph
+between the code coverage for the products involved both in {\sl INDIGO-1} and
+{\sl INDIGO-2} releases is shown in Fig. \ref{fig:fig_unittest}. As it can be seen,
+a very small set of products with low coverage values highly impacted the overall
+result, although a significant part of these products are upstream contributions
+or products with codebases not fully under the control of the project. Nevertheless,
+60\% of the products were over this threshold while 80\% of them have values above
+the 50\% coverage.
+
+The documentation of the products is treated as source code, using a markup
+language, automatically rendered and uploaded to online repositories
 \cite{indigo-gitbook}. Changes in both documentation and source code are
 human--reviewed as the last step before merging them into the production
-repository. Last but not least, as already seen in the DevOps section, in order
+repository.
+
+Last but not least, as described in section \ref{sec:devops}, in order
 to facilitate the usage of the INDIGO--DataCloud services, they can be deployed
 automatically using either Ansible \cite{indigo-ansible} or Puppet
-\cite{indigo-puppet} open--source tools.
+\cite{indigo-puppet} open--source tools. The adoption of such Configuration Management
+tools not only eases the consumption of the products developed by external users or
+infrastructures, but also tackles the correct installation and configuration of the
+services and applications. A representative example is the number of roles currently
+hosted in the Ansible Galaxy portal for the project.
+
+\begin{figure*}
+\centering
+\includegraphics[width=\textwidth]{images/unittest.png}
+\caption{Unit testing coverage for the two major INDIGO--DataCloud releases.}
+\label{fig:fig_unittest}
+\end{figure*}
+
+Fig. \ref{fig:fig_confman} shows the number of products that offer an automated means
+for deployment. It shows an increase after the {\sl INDIGO-1} release with specially
+in the previous weeks of each of the two major releases.
 
 The evaluation of the software quality is performed by measuring the values of
 the metrics and Key Performance Indicators (KPIs) defined based upon the
@@ -276,7 +298,14 @@ maintenance phases of the software lifecycle. Development and release metrics
 are obtained automatically from several sources, such as GitHub and Jenkins CI
 service, and graphically displayed as GitHub pages using GrimoireLab framework
 \cite{grimoirelab}. Maintenance and user support metrics are collected from the
-different sources of data like GGUS \cite{ggus} and Github Issues.
+different sources of data such as GGUS \cite{ggus} and Github Issues.
+
+\begin{figure*}
+\centering
+\includegraphics[width=\textwidth]{images/confman.png}
+\caption{Trend line showing the adoption of Configuration Management tools throughout the project lifetime.}
+\label{fig:fig_confman}
+\end{figure*}
 
 \subsection{Integration, preview and early adoption}
 
@@ -306,54 +335,11 @@ metric analysis are at the base of prompt issue solving. However, post--release
 validation, such as integration testbeds and the stage--rollout process, are
 also needed to strengthen the software reliability for scientific usage.
 
-
-%\appendices
-%\section{Proof of the First Zonklar Equation}
-%Appendix one text goes here.
-%
-%% you can choose not to have a title for an appendix
-%% if you want by leaving the argument blank
-%\section{}
-%Appendix two text goes here.
-
-
-% use section* for acknowledgment
 \section*{Acknowledgment}
 
 The authors would like to thanks European Commission with the various funded
 projects.
 
-
-% Can use something like this to put references on a page
-% by themselves when using endfloat and the captionsoff option.
-\ifCLASSOPTIONcaptionsoff
-  \newpage
-\fi
-
-
-
-% trigger a \newpage just before the given reference
-% number - used to balance the columns on the last page
-% adjust value as needed - may need to be readjusted if
-% the document is modified later
-%\IEEEtriggeratref{8}
-% The "triggered" command can be changed if desired:
-%\IEEEtriggercmd{\enlargethispage{-5in}}
-
-% references section
-
-% can use a bibliography generated by BibTeX as a .bbl file
-% BibTeX documentation can be easily obtained at:
-% http://mirror.ctan.org/biblio/bibtex/contrib/doc/
-% The IEEEtran BibTeX style support page is at:
-% http://www.michaelshell.org/tex/ieeetran/bibtex/
-%\bibliographystyle{IEEEtran}
-% argument is your BibTeX string definitions and bibliography database(s)
-%\bibliography{IEEEabrv,../bib/paper}
-%
-% <OR> manually copy in the resultant .bbl file
-% set second argument of \begin to the number of references
-% (used to reserve space for the reference number labels box)
 \begin{thebibliography}{1}
 
 \bibitem{cordis:datagrid}
@@ -502,17 +488,6 @@ https://galaxy.ansible.com/indigo-dc/
 
 \end{thebibliography}
 
-% biography section
-%
-% If you have an EPS/PDF photo (graphicx package needed) extra braces are
-% needed around the contents of the optional argument to biography to prevent
-% the LaTeX parser from getting confused when it sees the complicated
-% \includegraphics command within an optional argument. (You could create
-% your own custom macro containing the \includegraphics command to make things
-% simpler here.)
-%\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{mshell}}]{Michael Shell}
-% or if you just want to reserve a space for a photo:
-
 \begin{IEEEbiography}{Michael Shell}
 Biography text here.
 \end{IEEEbiography}
@@ -522,29 +497,6 @@ Biography text here.
 Biography text here.
 \end{IEEEbiographynophoto}
 
-% insert where needed to balance the two columns on the last page with
-% biographies
-%\newpage
-
-\begin{IEEEbiographynophoto}{Jane Doe}
-Biography text here.
-\end{IEEEbiographynophoto}
-
-% You can push biographies down or up by placing
-% a \vfill before or after them. The appropriate
-% use of \vfill depends on what kind of text is
-% on the last page and whether or not the columns
-% are being equalized.
-
-%\vfill
-
-% Can be used to pull up biographies so that the bottom of the last one
-% is flush with the other column.
-%\enlargethispage{-5in}
-
-
-
-% that's all folks
 \end{document}
 
 
