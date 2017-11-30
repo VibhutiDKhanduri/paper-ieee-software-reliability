@@ -307,20 +307,58 @@ different sources of data such as GGUS \cite{ggus} and Github Issues.
 \label{fig:fig_confman}
 \end{figure*}
 
+\subsection{DevOps adoption from user communities}
+
+The experience gathered throughout the project with regard to the adoption of
+different DevOps practices is not only useful and suitable for the software related
+to the core services in the INDIGO-DataCloud solution, but also applicable to the
+development and distribution of the applications coming from the user communities.
+
+Two applications from WP2, DisVis \cite{disvis} and PowerFit \cite{powerfit}, were
+integrated into a similar CI/CD pipeline described in section \ref{sec:devops}.
+Figure \ref{fig:fig_disvis} shows the pipeline for the Disvis application.
+
+User application developers were provided with both a means to validate the
+source code before merging and the creation of a new versioned Docker image,
+automatically available in the INDIGO-DataCloud’s application repository.
+
+The novelty introduced in the pipeline above is the validation of the application.
+Once the application is deployed as a Docker container, and subsequently uploaded
+to the Dockerhub repository, it is instantiated in a new container to be validated.
+The application is then executed and the results compared with a set of reference outputs.
+Thus this pipeline implementation goes a step forward by testing the application
+execution for the last available Docker image in the catalogue.
+
+\begin{figure*}
+\centering
+\includegraphics[width=\textwidth]{images/disvis.png}
+\caption{DevOps pipeline to distribute Docker images for Disvis application.}
+\label{fig:fig_disvis}
+\end{figure*}
+
 \subsection{Integration, preview and early adoption}
 
 Two pilot infrastructures are at the disposal of developers and scientific
 communities involved in the project. The aim of these testbeds is to test the
 level of integration between the components involved in the INDIGO--DataCloud
 solution and use cases validation, by deploying and executing the applications
-with the last stable version of the software.
+with the last stable version of the software. A map of the Pilot Preview
+infrastructure is depicted in Fig. \ref{fig:fig_pilotpreview}, it shows the
+resources providers and the components or services they deployed and supported.
+
+\begin{figure*}
+\centering
+\includegraphics[width=\textwidth]{images/pilotpreview.png}
+\caption{Resource centers supporting the Pilot Preview testbed and corresponding
+set of deployed INDIGO-DataCloud components or services.}
+\label{fig:fig_confman}
+\end{figure*}
 
 The released software is also tested in production environments through the
 stage--rollout process. Selected resource providers are requested to install
 the most updated stable versions of the software, accessed by their users. The
 stage--rollout process is key to detect and mitigate issues that could only
 appear in production.
-
 
 \section{Conclusion}
 
@@ -485,6 +523,14 @@ https://galaxy.ansible.com/indigo-dc/
 
 \bibitem{ggus}
 \emph{Global Grid User Support (GGUS)}, https://www.ggus.eu/
+
+\bibitem{disvis} G.C.P. Van Zundert, A.M.J.J. Bonvin,
+DisVis: quantifying and visualizing the accessible interaction space of distance
+restrained biomolecular complexes, Bioinformatics 31 (2015) 3222–3224
+
+\bibitem{powerfit} G.C.P. Van Zundert, A.M.J.J. Bonvin,
+Fast and sensitive rigid-body fitting into cryo-EM density maps with PowerFit,
+AIMS Biophys. 2 (2015) 73–87.
 
 \end{thebibliography}
 
