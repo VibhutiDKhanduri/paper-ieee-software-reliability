@@ -7,68 +7,70 @@
   % \DeclareGraphicsExtensions{.eps}
 \fi
 
-\hyphenation{op-tical net-works semi-conduc-tor}
+%\hyphenation{op-tical net-works semi-conduc-tor}
 
 \begin{document}
-\title{Delivering reliable software in the European scientific arena: evolution of methodologies and new trend analysis}
+\title{Delivering Reliable Software in the European Scientific Arena: Evolution of Methodologies and New Trend Analysis}
 %\title{15 years of European scientific software development: evolution and methodologies}
 
 \author{E. Ronchieri,
         P. Orviz Fernandez,
         M. David,
-		D.C. Duma,
+		D. C. Duma,
         J. Gomes,
         D. Salomoni
 \thanks{D. C. Duma, E. Ronchieri, and D. Salomoni are with INFN - CNAF, Bologna, Italy.}
 \thanks{P. Orviz Fernandez, is with CSIC, Santander, Spain, (e-mail: orviz@ifca.unican.es)}
-\thanks{M. David, and J. Gomes are with LIP, Lisbon, Portugal}%
+\thanks{M. David, and J. Gomes are with LIP, Lisbon, Portugal.}%
 }
 
 % The paper headers
-\markboth{Journal of \LaTeX\ Class Files,~Vol.~14, No.~8, August~2015}%
-{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for IEEE Journals}
+%\markboth{IEEEtran for IEEE Journals}
 
 \maketitle
 
 \begin{abstract}
 From the advent of Grid technology as the new paradigm of distributed
 computing to the current days of Cloud computing models, the continuous need
-of new tools and services to match the scientific community requirements was
+of new tools and services to match the scientific community requirements has been
 addressed in Europe by the creation of software development and
 e-Infrastructure coordination dedicated projects. This work examines the
 evolution of the software engineering methodologies used in past and present
-EU-funded software projects to illustrate how the research on software
+European Commission-funded software projects to illustrate how the research on software
 reliability has progressed in Europe over the last 15 years following the
 foundation of the first project in 2001. In particular, we describe the team
-organizational structure, techniques and procedures that guided the Quality
-Assurance definitions to deliver quality software. We highlight the challenges
-and barriers faced throughout these years and how to overcome them totally or
+organizational structure, techniques and procedures that have guided the Quality
+Assurance definitions in order to deliver quality software. We highlight the challenges
+and barriers that have been faced throughout these years and how to overcome them totally or
 partially. To conclude, we discuss the future directions of software
 Quality Assurance methodologies for the incoming projects.
 \end{abstract}
 
 \begin{IEEEkeywords}
-software reliability, quality assurance, software metrics, software testing
-techniques
+Software Reliability, Quality Assurance, Software Metrics, Software Testing
+Techniques
 \end{IEEEkeywords}
 
 \IEEEpeerreviewmaketitle
 
 \section{Introduction}
 
-\IEEEPARstart{I}{n} the European scientific research arena, the analysis of
-some of the last decade software development projects depicts a continuous
-increase of the prominence and robustness of testing and validation procedures.
-The observed trends are aligned with the evolution of the software engineering
-techniques (e.g. rise of DevOps practices) over the last years. This is tied to
-the parallel advancements in the ICT field (with virtualization and container
-technologies) and the emergence of automation and event-response tools. In the
-following, we introduce a set of European Commission funded projects that cover
-2001 up to now, where the authors of this summary were and are currently
-involved. For each project we explain how they addressed the challenge in
-software reliability.
+\IEEEPARstart{A}{n}alyzing the European Commission-funded software projects in the last decade we have observed a continuous
+increase of the prominence and robustness of testing and validation procedures. The first of many reasons is related to the evolution of the software engineering
+techniques (e.g. rise of DevOps practices \cite{zhu}) together with the parallel advancements in the ICT field with virtualization and container
+technologies. Another one is the emergence of automation and event-response tools. 
 
-\section{Evolution of research on software reliability in EU-projects}
+Software developers involved in these projects over time have learned  how to make their final products more reliable in order to satisfy requirements of different communities, such as physics.
+
+In this paper, we introduce a set of European Commission (EC)-funded projects that goes from
+2001 up to now, where the authors of this summary were and are currently
+involved. For each project, we explain how they addressed the challenge in
+software reliability. Furthermore, we detail new trends in software reliability.
+
+The reminder of this paper is organized as follows. Section \ref{sec:ev} details the evolution of research on software reliability in EC-projects. Section \ref{sec:ntsr} provides information about new research trends in software reliability. Finally, Section \ref{sec:con} concludes. 
+
+\section{Evolution of research on software reliability in EC-projects}
+\label{sec:ev}
 
 The DataGrid \cite{cordis:datagrid} project (Jan 2001 -- Dec 2003) was devoted
 to develop the first European infrastructure for Grid computing. The project
@@ -184,7 +186,8 @@ cloud Platform--as--a--Service (PaaS) and Software--as--a--Service (SaaS) levels
 helping developers, e--Infrastructures and scientific communities to exploit
 Cloud computing benefits.
 
-\section{New Trends in Software Reliability}
+\section{New trends in software reliability}
+\label{sec:ntsr}
 
 The INDIGO--Datacloud project reflects the progress made in software
 quality and reliability aspects throughout the past scientific European
@@ -361,6 +364,7 @@ stage--rollout process is key to detect and mitigate issues that could only
 appear in production.
 
 \section{Conclusion}
+\label{sec:con}
 
 It is a fact that the European software produced for scientific purposes is
 evolving to a more sustainable model where the quality and reliability of
@@ -379,6 +383,11 @@ The authors would like to thanks European Commission with the various funded
 projects.
 
 \begin{thebibliography}{1}
+
+\bibitem{zhu}
+L. Zhu and L. Bass and G. Champlin-Scharff, \emph{DevOps and Its Practices}, 
+IEEE Software, vol. 33, no. 3, pp. 32--34, May-June 2016.
+
 
 \bibitem{cordis:datagrid}
 \emph{DataGrid project}, European Community Research and Development
@@ -534,14 +543,35 @@ AIMS Biophys. 2 (2015) 73–87.
 
 \end{thebibliography}
 
-\begin{IEEEbiography}{Michael Shell}
-Biography text here.
+\begin{IEEEbiography} [{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{images/Ronchieri}}]{Elisabetta Ronchieri}
+is a Computer Science Engineer at INFN (Istituto Nazionale di Fisica Nucleare - National Institute of Nuclear Physics) CNAF. Her main area of interest include software engineering issues such as software quality and software prediction model. She is also interested in (big and open) data analysis by using predictive techniques coming from various theories. such as Machine Learning.
 \end{IEEEbiography}
 
 % if you will not have a photo at all:
-\begin{IEEEbiographynophoto}{John Doe}
+\begin{IEEEbiography}{Pablo Orviz Fernandez}
 Biography text here.
-\end{IEEEbiographynophoto}
+\end{IEEEbiography}
+
+\begin{IEEEbiography}{Mario David}
+Biography text here.
+\end{IEEEbiography}
+
+\begin{IEEEbiography}{D. Cristina Duma}
+Biography text here.
+\end{IEEEbiography}
+
+
+\begin{IEEEbiography}{J. Gomes}
+Biography text here.
+\end{IEEEbiography}
+
+\begin{IEEEbiography}{Davide Salomoni}
+Biography text here.
+\end{IEEEbiography}
+
+
+
+
 
 \end{document}
 
