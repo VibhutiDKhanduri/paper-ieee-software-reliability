@@ -57,19 +57,47 @@ Techniques
 
 \section{Introduction}
 
-\IEEEPARstart{A}{n}alyzing the European Commission-funded software projects in the last decade we have observed a continuous
-increase of the prominence and robustness of testing and validation procedures. The first of many reasons is related to the evolution of the software engineering
-techniques (e.g. rise of DevOps practices \cite{zhu}) together with the parallel advancements in the ICT field with virtualization and container
-technologies. Another one is the emergence of automation and event-response tools.
+\IEEEPARstart{W}hen e-Infrastructures in Europe were first conceived, new
+services to access distributed resources -- data, computing, instrumental --
+were initially considered. Major investments were then injected in order to
+develop distributed solutions that provided a seamless and transparent access
+to the resources, available for the researchers. One clear example is Worldwide
+Large Hadron Collider Computing Grid (WLCG) e-Infrastructure, powered by the
+Particle Physics scientific community, built up to satisfy the computing needs
+of processing, storing and analysing all the data coming from the Large Hadron
+Collider particle accelerator.
 
-Software developers involved in these projects over time have learned  how to make their final products more reliable in order to satisfy requirements of different communities, such as physics.
+Years of major developments followed, mainly focused on providing the new
+functionalities, hindering the adoption of software engineering methodologies.
+The software delivered was by then little tested, resulting in constant
+rollbacks and patches applied to production systems. Thereby, the stability and
+reliability of the e-Infrastructures was deeply compromised, affecting
+negatively their exploitation by the scientific communities.
 
-In this paper, we introduce a set of European Commission (EC)-funded projects that goes from
-2001 up to now, where the authors of this summary were and are currently
-involved. For each project, we explain how they addressed the challenge in
-software reliability. Furthermore, we detail new trends in software reliability.
+Soon it become apparent that a balance was needed between new features addition
+and the reliability of the software produced. Thus, a substantial part of the
+software lifecycle should be devoted to deal with the quality of software being
+delivered. At this point, evolving software engineering practices were
+considered and gradually adopted to define the quality procedures, team
+organization and pilot testbeds.
 
-The reminder of this paper is organized as follows. Section \ref{sec:ev} details the evolution of research on software reliability in EC-projects. Section \ref{sec:ntsr} provides information about new research trends in software reliability. Finally, Section \ref{sec:con} concludes.
+Analyzing the European Commission-funded software projects in the last decade
+we have observed a continuous increase of the prominence and robustness of
+testing and validation procedures. The first of many reasons is related to the
+evolution of the software engineering techniques (e.g. creation of the Agile
+Manifesto \cite{agile-manifesto}, rise of DevOps practices \cite{zhu}) together
+with the parallel advancements in the ICT field with virtualization and
+container technologies. Another one is the emergence of automation and
+event-response tools.
+
+In this paper, we introduce a set of European Commission (EC)-funded projects
+that goes from 2001 up to now, where the authors of this summary were involved.
+For each project, we describe the challenges arised, the methodologies used and
+the achievements towards software reliability. The reminder of this paper is
+organized as follows. Section \ref{sec:ev} details the evolution of research on
+software reliability in EC-projects. Section \ref{sec:ntsr} provides
+information about new research trends in software reliability. Finally,
+Section \ref{sec:con} concludes.
 
 \section{Evolution of research on software reliability in EC-projects}
 \label{sec:ev}
