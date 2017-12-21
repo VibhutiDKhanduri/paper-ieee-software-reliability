@@ -1,6 +1,7 @@
 \documentclass[journal]{IEEEtran}
 \usepackage{graphicx}
 \usepackage{array}
+\usepackage{subfigure}
 
 \ifCLASSINFOpdf
   % \usepackage[pdftex]{graphicx}
@@ -259,6 +260,14 @@ Researchers in Europe, May 2010 -- May 2014) project \cite{cordis:egi-inspire}
 arose as the continuation of the EGEE--III project, establishing and
 maintaining a sustainable European Grid Infrastructure.
 
+\begin{figure*}[ht]
+\centering
+\includegraphics[width=\textwidth]{images/devops.png}
+\caption{Continuous Delivery workflow for Docker images.}
+\label{fig:fig_CD}
+\end{figure*}
+
+
 EGI--InSPIRE did not
 develop any software but maintained a production--ready Grid computing
 middleware distribution called {\sl UMD} (Unified Middleware Distribution).
@@ -315,25 +324,17 @@ As DevOps suggests, frequent releases positively affects the reliability of the
 software. The software updates of INDIGO--DataCloud products taking place since
 the second major release are passing through a Continuous Delivery (CD)
 pipeline that adds the packaging of the software right after the execution of
-the quality checks (as part of the CI).
-
+the quality checks (as part of the CI). 
 The steps defined within the CD
-pipeline differ whether the software is to be distributed in the form of Docker
-images or via operating system’s packages. In the latter case an extra
+pipeline differ whether the software is to be distributed via Docker
+images (see Figure \ref{fig:fig_CD}) or via operating system’s packages. In the latter case an extra
 validation step is added, consisting in the product’s deployment using a
 Configuration Management (CM) solution. The installation uses the packages
 built in the previous step and uploaded to a testing
 repository. In the case of Docker images, the CM is used to build the image
 itself, installing and configuring the product before uploading it to the
-DockerHub repository \cite{indigo-dockerhub}. Figure \ref{fig:fig_CD} shows
-the workflow followed by the products distributed as Docker images.
+DockerHub repository \cite{indigo-dockerhub}. 
 
-\begin{figure*}
-\centering
-\includegraphics[width=\textwidth]{images/devops.png}
-\caption{Continuous Delivery workflow for Docker images.}
-\label{fig:fig_CD}
-\end{figure*}
 
 \subsection{Software Quality Procedures}
 
@@ -349,9 +350,9 @@ code is publicly available in GitHub repositories under an organization called
 catalogue, promoting the external contributions and software adoption. Furthermore,
 the source code is compliant with community de--facto style standards,
 selected from the variety of programming languages being used as seen in
-Fig. \ref{fig:fig_codestyle}.
+Figure \ref{fig:fig_codestyle}.
 
-\begin{figure}[!t]
+\begin{figure}[ht]
 \centering
 \includegraphics[width=0.5\textwidth]{images/codestyle.png}
 \caption{Code style standards followed by INDIGO--DataCloud's software products.}
@@ -363,7 +364,7 @@ second ({\sl INDIGO-2}) INDIGO--DataCloud releases, reaching an average value of
 66.69\% on the {\sl INDIGO-2} release, very close to the recommended 70\% threshold
 defined by the project’s SQA base criteria \cite{indigo-d31}. A comparison graph
 between the code coverage for the products involved both in {\sl INDIGO-1} and
-{\sl INDIGO-2} releases is shown in Fig. \ref{fig:fig_unittest}. As it can be seen,
+{\sl INDIGO-2} releases is shown in Figure \ref{fig:fig_unittest}. As it can be seen,
 a very small set of products with low coverage values highly impacted the overall
 result, although a significant part of these products are upstream contributions
 or products with codebases not fully under the control of the project. Nevertheless,
@@ -385,14 +386,14 @@ infrastructures, but also tackles the correct installation and configuration of 
 services and applications. A representative example is the number of roles currently
 hosted in the Ansible Galaxy portal for the project.
 
-\begin{figure*}
+\begin{figure*}[ht]
 \centering
 \includegraphics[width=\textwidth]{images/unittest.png}
 \caption{Unit testing coverage for the two major INDIGO--DataCloud releases.}
 \label{fig:fig_unittest}
 \end{figure*}
 
-Fig. \ref{fig:fig_confman} shows the number of products that offer an automated means
+Figure \ref{fig:fig_confman} shows the number of products that offer an automated means
 for deployment. It shows an increase after the {\sl INDIGO-1} release with specially
 in the previous weeks of each of the two major releases.
 
@@ -405,12 +406,31 @@ service, and graphically displayed as GitHub pages using GrimoireLab framework
 \cite{grimoirelab}. Maintenance and user support metrics are collected from the
 different sources of data such as GGUS \cite{ggus} and Github Issues.
 
-\begin{figure}
+\begin{figure}[ht]
 \centering
 \includegraphics[width=0.45\textwidth, height=50mm]{images/confman.png}
 \caption{Trend line showing the adoption of Configuration Management tools throughout the project lifetime.}
 \label{fig:fig_confman}
 \end{figure}
+
+\begin{figure*}	
+	\centering
+	\begin{subfigure}
+		\centering
+\includegraphics[width=\textwidth]{images/disvis.png}
+\caption{DevOps pipeline to distribute Docker images for Disvis application.}
+\label{fig:fig_disvis}		
+	\end{subfigure}
+	\quad
+	\begin{subfigure}
+		\centering
+\includegraphics[width=\textwidth]{images/pilotpreview.png}
+\caption{Resource centers supporting the Pilot Preview testbed and corresponding
+set of deployed INDIGO-DataCloud components or services.}
+\label{fig:fig_pilotpreview}
+	\end{subfigure}
+\end{figure*}
+
 
 \subsection{DevOps adoption from user communities}
 
@@ -434,13 +454,6 @@ The application is then executed and the results compared with a set of referenc
 Thus this pipeline implementation goes a step forward by testing the application
 execution for the last available Docker image in the catalogue.
 
-\begin{figure*}
-\centering
-\includegraphics[width=\textwidth]{images/disvis.png}
-\caption{DevOps pipeline to distribute Docker images for Disvis application.}
-\label{fig:fig_disvis}
-\end{figure*}
-
 \subsection{Integration, preview and early adoption}
 
 Two pilot infrastructures are at the disposal of developers and scientific
@@ -448,16 +461,9 @@ communities involved in the project. The aim of these testbeds is to test the
 level of integration between the components involved in the INDIGO--DataCloud
 solution and use cases validation, by deploying and executing the applications
 with the last stable version of the software. A map of the Pilot Preview
-infrastructure is depicted in Fig. \ref{fig:fig_pilotpreview}, it shows the
+infrastructure is depicted in Figure \ref{fig:fig_pilotpreview}, it shows the
 resources providers and the components or services they deployed and supported.
 
-\begin{figure*}
-\centering
-\includegraphics[width=\textwidth]{images/pilotpreview.png}
-\caption{Resource centers supporting the Pilot Preview testbed and corresponding
-set of deployed INDIGO-DataCloud components or services.}
-\label{fig:fig_pilotpreview}
-\end{figure*}
 
 The released software is also tested in production environments through the
 stage--rollout process. Selected resource providers are requested to install
