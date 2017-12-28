@@ -206,8 +206,8 @@ collaborative projects, a big effort was spent trying to devise solutions for se
 challenges \cite{datagrid}, namely the 1) communication overhead, as a
 result of the large geographical separation of the parties involved in the
 development tasks, 2) the evolution of the requirements coming from the user
-communities (50 use cases from the three scientific area), and 3) the lack of a body of knowledge for academic software
-engineering.
+communities (50 use cases from the three scientific area), and 3) the lack of a body 
+of knowledge for academic software engineering.
 
 Agile methodologies were being introduced at the time
 through the Agile manifesto \cite{agile-manifesto}, as such the project's
@@ -244,7 +244,7 @@ certification procedure at the time of the release. This procedure tried to
 improve the reliability of the software components by applying a set of
 requirements [ref] to be fulfilled at each stage of the  development lifecycle (integration, certification,
 pre--production, production), carried out by different teams. However, with 
-EGEE--II, the developers started to use the the ETICS system [ref], solution aiming to develop
+EGEE--II, the developers started to use the the ETICS system \cite{etics}, solution aiming to develop
 an automatic build system for Grid middleware.
 
 \subsection{E--Infrastructure for Testing, Integration and Configuration of Software}
@@ -256,7 +256,7 @@ collaborative projects such as EGEE and its gLite middleware. The framework
 integrated different technologies and tools in order to provide automated configuration,
 build and testing capabilities, as well as auto-generated documentation and
 software metrics gathering such as Source Lines Of Code (SLOC), complexity and
-number of defects/bugs \cite{etics}. The ETICS portal was the first automated
+number of defects/bugs \cite{etics}. The ETICS framework was the first automated
 service for delivering quality software products in distributed environments like
 the Grids.
 
@@ -297,8 +297,8 @@ maintaining a sustainable European Grid Infrastructure.
 EGI--InSPIRE not only ensured the coordination of the operation of a secure, reliable 
 European-wide production grid infrastructure federated from national grid initiatives 
 that is integrated and interoperates with other grids worldwide but also foreseed the 
-maintenance and development of operational tools, like the Operations Portal [ref], 
-the EGI Helpdesk [ref] or Grid configuration repository (GOCDB) [ref] and the 
+maintenance and development of operational tools, like the Operations Portal \cite{egi-ops}, 
+the EGI Helpdesk \cite{ggus} or Grid configuration repository (GOCDB) \cite{gocdb} and the 
 coordination of the of  the external provision of software required by EGI to 
 form the production infrastructure. For the later it maintained a production--ready 
 Grid computing middleware distribution called {\sl UMD} (Unified Middleware Distribution) and 
@@ -348,8 +348,8 @@ requires an automation ready--to--go infrastructure where the different services
 (source code management platform, automation server) interact with each other
 to trigger the quality check execution and return back the exit codes, together
 with their outputs. To accomplish this, the project leveraged on tightly
-integrated open source tools such as GitHub [ref], as source code repository
-and Jenkins [ref], as continuous integration system, as well as relying on
+integrated open source tools such as GitHub \cite{github}, as source code repository
+and Jenkins \cite{jenkins}, as continuous integration system, as well as relying on
 Docker container provisioning to speed up the source code validation. This CI
 approach is guiding the project’s software development phase throughout the
 first and second major releases.
@@ -623,6 +623,26 @@ Organization for Standarization, https://www.iso.org/standard/22749.html
 Infrastructure for Researchers in Europe (EGI-InSPIRE)} project, European
 Community Research and Development Information Service (CORDIS),
 http://cordis.europa.eu/project/rcn/95923\_en.html
+
+\bibitem{egi-ops}
+\emph{EGI Operations Portal},
+https://operations-portal.egi.eu/
+
+\bibitem{ggus}
+\emph{GGUS} EGI Helpdesk,
+https://ggus.eu/
+
+\bibitem{gocdb}
+\emph{GOCDB} EGI Grid Configuration Repository,
+https://ggus.eu/
+
+\bibitem{github}
+\emph{GITHUB},
+https://github.com/
+
+\bibitem{jenkins}
+\emph{Jenkins} Continuous Integration System,
+https://jenkins-ci.org/
 
 \bibitem{egi-qc}
 \emph{EGI Quality Criteria}. Available: http://egi-qc.github.io/
