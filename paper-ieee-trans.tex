@@ -313,10 +313,10 @@ Commons) \cite{cordis:egi-engage}. This distribution is currently complemented
 by a Cloud--specific one called {\sl CMD} (Cloud Middleware Distribution).
 
 \subsection{INtegrating Distributed data Infrastructures for Global
-ExplOitation}
+explOitation}
 
 The INDIGO-DataCloud (INtegrating Distributed data Infrastructures for Global
-ExplOitation, Apr 2015 -- Sep 2017) \cite{cordis:indigo} is the last
+explOitation, Apr 2015 -- Sep 2017) \cite{cordis:indigo} is the last
 project of software development considered in this review. At the time of writing
 the project is succeeding in providing solutions to address the existing gaps in
 cloud Platform--as--a--Service (PaaS) and Software--as--a--Service (SaaS) levels,
@@ -328,12 +328,12 @@ Cloud computing benefits.
 
 The INDIGO--Datacloud project reflects the progress made in software
 quality and reliability aspects throughout the past scientific European
-experiences. Nevertheless, the project’s Quality Assurance procedures are also
+experiences. Nevertheless (I would remove this), the project’s Quality Assurance procedures are also
 highly influenced by the insights of current big worldwide collaborations of
-software development. These collaborations have continuously inspired the use new
+software development. These collaborations have continuously inspired the use of new
 technologies and procedures to increase the robustness and quality of the
 software being delivered. In this scenario, the implementation of the DevOps culture 
-is one of the major outcomes, as this paradigm has been progressively adopted by
+is one of the major outcomes, as this paradigm has been progressively adopted by the
 project.
 
 \subsection{DevOps practices}
@@ -341,26 +341,26 @@ project.
 
 The DevOps methods emphasize on exercising Quality Assurance techniques to
 avoid infrastructure disruption whenever new developments are deployed into
-production. The INDIGO--DataCloud project promoted the application of a Continuous Integration (CI)
-scenario to enforce the Quality Assurance requirements for any piece of
-software being produced within the project. Such environment requires an
-automated ready--to--go infrastructure where the different services involved
+production. The INDIGO--DataCloud project promoted the application of a 
+Continuous Integration (CI) scenario to enforce the Quality Assurance requirements 
+for any piece of software being produced within the project. Such environment 
+requires an automation ready--to--go infrastructure where the different services involved
 (source code management platform, automation server) interact with each other
 to trigger the quality check execution and return back the exit codes, together
 with their outputs. To accomplish this, the project leveraged on tightly
-integrated open source tools such as GitHub and Jenkins, as well as relying on
+integrated open source tools such as GitHub [ref], as source code repository
+and Jenkins [ref], as continuous integration system, as well as relying on
 Docker container provisioning to speed up the source code validation. This CI
 approach is guiding the project’s software development phase throughout the
 first and second major releases.
 
-As DevOps suggests, frequent releases positively affects the reliability of the
+As DevOps suggests, frequent releases positively affect the reliability of the
 software. The software updates of INDIGO--DataCloud products taking place since
 the second major release are passing through a Continuous Delivery (CD)
-pipeline that adds the packaging of the software right after the execution of
+pipeline that adds the packaging of the software right after the successful execution of
 the quality checks (as part of the CI). 
-The steps defined within the CD
-pipeline differ whether the software is to be distributed via Docker
-images (see Figure \ref{fig:fig_CD}) or via operating system’s packages. In the latter case an extra
+The steps defined within the CD pipeline differ whether the software is to be distributed via Docker
+images (see Figure \ref{fig:fig_CD}) or via operating system’s packages, rpms or debs. In the latter case an extra
 validation step is added, consisting in the product’s deployment using a
 Configuration Management (CM) solution. The installation uses the packages
 built in the previous step and uploaded to a testing
@@ -371,18 +371,18 @@ DockerHub repository \cite{indigo-dockerhub}.
 
 \subsection{Software Quality Procedures}
 
-The software quality procedures \cite{indigo-d31} cover: 1) the identification
+The software quality policies \cite{indigo-d31} cover: 1) the identification
 and description of the \emph{quality requirements} that the software need to
 comply with, and 2) the \emph{quality metrics}.
 
-The requirements are applied at early stages in the software development
+The requirements are checked at early stages in the software development
 process, integrated in the Jenkins CI service \cite{indigo-jenkins}, so that any
 bug or design issue is likely to be detected and corrected promptly. The source
-code is publicly available in GitHub repositories under an organization called
-{\sl indigo-dc} \cite{indigo-github} to increase the visibility of the product
+code is publicly available in GitHub repositories under the project organization called
+{\sl indigo-dc} \cite{indigo-github} to increase the visibility of the products
 catalogue, promoting the external contributions and software adoption. Furthermore,
-the source code is compliant with community de--facto style standards,
-selected from the variety of programming languages being used as seen in
+the source code is checked for compliance with community de--facto style standards,
+selected for each one of the variety of programming languages being used as seen in
 Figure \ref{fig:fig_codestyle}.
 
 \begin{figure}[ht]
@@ -392,7 +392,7 @@ Figure \ref{fig:fig_codestyle}.
 \label{fig:fig_codestyle}
 \end{figure}
 
-Unit testing coverage has increased between the first ({\sl INDIGO-1}) and the
+Unit testing coverage, another project quality metric, has increased between the first ({\sl INDIGO-1}) and the
 second ({\sl INDIGO-2}) INDIGO--DataCloud releases, reaching an average value of
 66.69\% on the {\sl INDIGO-2} release, very close to the recommended 70\% threshold
 defined by the project’s SQA base criteria \cite{indigo-d31}. A comparison graph
@@ -401,23 +401,23 @@ between the code coverage for the products involved both in {\sl INDIGO-1} and
 a very small set of products with low coverage values highly impacted the overall
 result, although a significant part of these products are upstream contributions
 or products with codebases not fully under the control of the project. Nevertheless,
-60\% of the products were over this threshold while 80\% of them have values above
+60\% of the products were over this threshold while 80\% of them had values above
 the 50\% coverage.
 
 The documentation of the products is treated as source code, using a markup
 language, automatically rendered and uploaded to online repositories
 \cite{indigo-gitbook}. Changes in both documentation and source code are
 human--reviewed as the last step before merging them into the production
-repository.
+repository or official documentation.
 
 Last but not least, as described in section \ref{sec:devops}, in order
 to facilitate the usage of the INDIGO--DataCloud services, they can be deployed
 automatically using either Ansible \cite{indigo-ansible} or Puppet
-\cite{indigo-puppet} open--source tools. The adoption of such Configuration Management
+\cite{indigo-puppet} open--source configuration tools. The adoption of such Configuration Management
 tools not only eases the consumption of the products developed by external users or
 infrastructures, but also tackles the correct installation and configuration of the
 services and applications. A representative example is the number of roles currently
-hosted in the Ansible Galaxy portal for the project.
+hosted in the Ansible Galaxy portal for the project [ref].
 
 \begin{figure*}[ht]
 \centering
@@ -427,7 +427,7 @@ hosted in the Ansible Galaxy portal for the project.
 \end{figure*}
 
 Figure \ref{fig:fig_confman} shows the number of products that offer an automated means
-for deployment. It shows an increase after the {\sl INDIGO-1} release with specially
+for deployment. It shows an increase after the {\sl INDIGO-1} release especially
 in the previous weeks of each of the two major releases.
 
 The evaluation of the software quality is performed by measuring the values of
@@ -472,7 +472,8 @@ different DevOps practices is not only useful and suitable for the software rela
 to the core services in the INDIGO-DataCloud solution, but also applicable to the
 development and distribution of the applications coming from the user communities.
 
-Two applications from WP2, DisVis \cite{disvis} and PowerFit \cite{powerfit}, were
+Two applications from "Definition of Support to Research Communities" workpackage, 
+DisVis \cite{disvis} and PowerFit \cite{powerfit}, were
 integrated into a similar CI/CD pipeline described in section \ref{sec:devops}.
 Figure \ref{fig:fig_disvis} shows the pipeline for the Disvis application.
 
@@ -481,28 +482,30 @@ source code before merging and the creation of a new versioned Docker image,
 automatically available in the INDIGO-DataCloud’s application repository.
 
 The novelty introduced in the pipeline above is the validation of the application.
-Once the application is deployed as a Docker container, and subsequently uploaded
+Once the application is packaged as a Docker image, and subsequently uploaded
 to the Dockerhub repository, it is instantiated in a new container to be validated.
 The application is then executed and the results compared with a set of reference outputs.
 Thus this pipeline implementation goes a step forward by testing the application
-execution for the last available Docker image in the catalogue.
+execution for the latest available Docker image in the catalogue.
 
 \subsection{Integration, preview and early adoption}
 
 Two pilot infrastructures are at the disposal of developers and scientific
 communities involved in the project. The aim of these testbeds is to test the
 level of integration between the components involved in the INDIGO--DataCloud
-solution and use cases validation, by deploying and executing the applications
-with the last stable version of the software. A map of the Pilot Preview
+solutions and use cases validation, by deploying and executing the applications
+with the last stable version of the software in environments as similar as 
+possible to production ones. A map of the Pilot Preview
 infrastructure is depicted in Figure \ref{fig:fig_pilotpreview}, it shows the
 resources providers and the components or services they deployed and supported.
 
 
-The released software is also tested in production environments through the
-stage--rollout process. Selected resource providers are requested to install
-the most updated stable versions of the software, accessed by their users. The
-stage--rollout process is key to detect and mitigate issues that could only
-appear in production.
+The released software is tested in production environments through the
+Staged--Rollout process, before inclusion in the EGI's CloudManagement Distribution (CMD). 
+Selected resource providers are requested to install
+the most updated stable versions of the software, and to give access to them to their users. The
+Staged--Rollout process is key to detect and mitigate issues that could only
+appear in production environments.
 
 \section{Conclusion}
 \label{sec:con}
@@ -510,12 +513,12 @@ appear in production.
 It is a fact that the European software produced for scientific purposes is
 evolving to a more sustainable model where the quality and reliability of
 software is being prioritized. Recent software engineering insights, such as
-DevOps, are gradually being applied as the open--source collaborative tools
-evolve, allowing tighter integrations. The focus of the Software Quality
-Assurance procedures has been integrated in the development stage, trying to
+DevOps approaches, are gradually being applied as the open--source collaborative tools
+evolve, allowing tighter integrations. The Software Quality
+Assurance procedures have been integrated in the development stage, in order to
 detect and correct issues early in the software lifecycle. Automation and
-metric analysis are at the base of prompt issue solving. However, post--release
-validation, such as integration testbeds and the stage--rollout process, are
+metrics analysis are at the base of prompt issue solving. However, post--release
+validation, through the preview testbeds or the Staged--rollout process, are
 also needed to strengthen the software reliability for scientific usage.
 
 \section*{Acknowledgment}
