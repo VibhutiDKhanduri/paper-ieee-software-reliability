@@ -251,11 +251,11 @@ The E--Infrastructure for Testing, Integration and Configuration of Software
 \cite{cordis:etics, cordis:etics2} (ETICS, Jan 2006 -- Feb 2010) project aimed
 at addressing the challenges in producing quality software in distributed,
 collaborative projects such as EGEE and its gLite middleware. The framework
-integrated different technologies and tools to provide automated configuration,
+integrated different technologies and tools in order to provide automated configuration,
 build and testing capabilities, as well as auto-generated documentation and
 software metrics gathering such as Source Lines Of Code (SLOC), complexity and
 number of defects/bugs \cite{etics}. The ETICS portal was the first automated
-service for delivering software products in distributed environments like
+service for delivering quality software products in distributed environments like
 the Grids.
 
 \subsection{European Middleware Initiative}
@@ -263,8 +263,8 @@ the Grids.
 The European Middleware Initiative (EMI, May 2010 -- Apr 2013)
 \cite{cordis:emi} project joined the 4 major Grid middleware providers in
 Europe at the time -- {\sl gLite}, {\sl UNICORE}, {\sl ARC} and {\sl dCache} --
-to maintain and evolve the middleware focusing on extending the
-interoperability in the Grid and improving the reliability of the services. The
+with the goal to maintain and evolve the middleware focusing on extending their
+interoperability and improving the reliability of the services. The
 ISO/IEC 9126 \cite{iso-9126} standard was used in order to identify a set of
 characteristics that needed to be present in the EMI software products and
 processes to be able to meet the EMI quality requirements
@@ -273,16 +273,15 @@ processes to be able to meet the EMI quality requirements
 For each software characteristic, a set of associated
 metrics and Key Performance Indicators (KPIs) were identified and defined in
 detail in the EMI Metrics Specification \cite{emi-metrics}. The project
-leveraged the {\sl ETICS} service for the development and release management,
+leveraged the {\sl ETICS} service for the development, continuous integration and release management,
 as well as for metric tracking, making queries on the collected data to display
 them through the chart generation framework.
 
 \subsection{EGI--Integrated Sustainable Pan--European Infrastructure}
 
-
 The EGI--InSPIRE (Integrated Sustainable Pan--European Infrastructure for
 Researchers in Europe, May 2010 -- May 2014) project \cite{cordis:egi-inspire}
-arose as the continuation of the EGEE--III project, establishing and
+arose as the continuation of the EGEE--III project, with the mission of establishing and
 maintaining a sustainable European Grid Infrastructure.
 
 \begin{figure*}[ht]
@@ -293,11 +292,18 @@ maintaining a sustainable European Grid Infrastructure.
 \end{figure*}
 
 
-EGI--InSPIRE did not
-develop any software but maintained a production--ready Grid computing
-middleware distribution called {\sl UMD} (Unified Middleware Distribution).
-The role of {\sl UMD} was to enforce the fulfilment of a set of quality
-criteria definitions \cite{egi-qc} in the software being delivered (i.e.,
+EGI--InSPIRE not only ensured the coordination of the operation of a secure, reliable 
+European-wide production grid infrastructure federated from national grid initiatives 
+that is integrated and interoperates with other grids worldwide but also foreseed the 
+maintenance and development of operational tools, like the Operations Portal [ref], 
+the EGI Helpdesk [ref] or Grid configuration repository (GOCDB) [ref] and the 
+coordination of the of  the external provision of software required by EGI to 
+form the production infrastructure. For the later it maintained a production--ready 
+Grid computing middleware distribution called {\sl UMD} (Unified Middleware Distribution) and 
+defined general and component specific quality criteria to be applied to software 
+components made available through this repository.
+The role of {\sl UMD} was to enforce the fulfilment of this set of quality
+criteria \cite{egi-qc} in the software being delivered (i.e.,
 {\sl EMI} and {\sl Globus}) \cite{mario}. {\sl UMD} is still being used and
 deployed in the European scientific e--Infrastructures under a follow--up
 project, the EGI--Engage (Engaging the EGI Community towards an Open Science
@@ -322,10 +328,10 @@ The INDIGO--Datacloud project reflects the progress made in software
 quality and reliability aspects throughout the past scientific European
 experiences. Nevertheless, the project’s Quality Assurance procedures are also
 highly influenced by the insights of current big worldwide collaborations of
-software development. These collaborations have continuously inspired new
+software development. These collaborations have continuously inspired the use new
 technologies and procedures to increase the robustness and quality of the
-software being delivered. In this scenario, the DevOps culture is one of the
-major outcomes that has been progressively adopted in the INDIGO--DataCloud
+software being delivered. In this scenario, the implementation of the DevOps culture 
+is one of the major outcomes, as this paradigm has been progressively adopted by
 project.
 
 \subsection{DevOps practices}
