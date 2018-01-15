@@ -2,6 +2,7 @@
 \usepackage{graphicx}
 \usepackage{array}
 \usepackage{subfigure}
+\usepackage{adjustbox}
 
 \ifCLASSINFOpdf
   % \usepackage[pdftex]{graphicx}
@@ -119,9 +120,14 @@ Section \ref{sec:con} concludes.
 \section{Evolution of research on software reliability in EC-projects}
 \label{sec:ev}
 
-In the following we provide an overview of the main EC-projects that have dealt with 
-the issue of software reliability. Table \ref{tab:eup} shows the various projects 
-with their logo, short name, long name and duration.
+The EC projects considered in this text are listed chronologically in Table
+\ref{tab:eup}. In most cases, each project paved the way of the subsequent projects,
+following a logic evolution in which the quality and reliability of software have
+increasingly had a more significant role. Experiences gathered during the 
+course of each project support this fact and, as it is shown in Table \ref{tab:feat},
+latest projects are the most committed in terms of software reliability awareness.
+This table summarizes the topics addressed in the following sections, highlighting 
+the commonalities and specific features on software reliability.
 
 \begin{table}[!h]
 %% increase table row spacing, adjust to taste
@@ -260,6 +266,8 @@ number of defects/bugs \cite{etics}. The ETICS framework was the first automated
 service for delivering quality software products in distributed environments like
 the Grids.
 
+
+
 \subsection{European Middleware Initiative}
 
 The European Middleware Initiative (EMI, May 2010 -- Apr 2013)
@@ -316,13 +324,7 @@ cloud Platform--as--a--Service (PaaS) and Software--as--a--Service (SaaS) levels
 helping developers, e--Infrastructures and scientific communities to exploit
 Cloud computing benefits.
 
-\subsection{Features on software reliability in EC-projects}
-
-In the following we summarize the features on software reliability in the aforementioned EC-projects.
-Table \ref{tab:feat} shows the various projects 
-with their features: the symbol $\surd$ crosses project and feature.
-
-\begin{table*}[!h]
+\begin{table}[!h]
 %% increase table row spacing, adjust to taste
 \renewcommand{\arraystretch}{1.3}
 % if using array.sty, it might be a good idea to tweak the value of
@@ -332,28 +334,30 @@ with their features: the symbol $\surd$ crosses project and feature.
 \centering
 %% Some packages, such as MDW tools, offer better commands for making tables
 %% than the plain LaTeX2e tabular which is used here.
+\begin{adjustbox}{max width=0.5\textwidth}
 \begin{tabular}{llllllll}
 \hline
 \hline
-Feature & DataGrid & EGEE I, II, III & ETICS 1, 2 & EMI & EGI-Inspire & EGI Engage & INDIGO-DataCloud\\
+Feature & DataGrid & EGEE I, II, III & ETICS 1, 2 & EMI & EGI-Inspire \& Engage & INDIGO-DataCloud\\
 \hline
 \hline
-Architecture Task Force&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
-Communication Handling&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
-Requirements Handling&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
-Agile Methodologies&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
-Buu/Test Management Procedure&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
-Manual Certification Procedure&$\surd$&$\surd$&&$\surd$&&&\\
-Automatic Certification Tool&&&$\surd$&&$\surd$&$\surd$&$\surd$\\
-Auto-generated Documentation&&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
-Software Product Metrics&$\surd$&$\surd$&$\surd$&&$\surd$&$\surd$&$\surd$\\
-Quality Criteria Definition&&&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
+Architecture Task Force&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
+Communication Handling&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
+Requirements Handling&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
+Agile Methodologies&&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
+Source code inspection&&&&$\surd$&&$\surd$\\
+Build/Testing Management Procedure&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
+Software Product Metrics&$\surd$&$\surd$&$\surd$&&$\surd$&$\surd$\\
+Quality Criteria Definition&&&$\surd$&$\surd$&$\surd$&$\surd$\\
+%Manual Certification Procedure&$\surd$&$\surd$&&$\surd$&&\\
+Automatic Certification&&&$\surd$&&$\surd$&$\surd$\\
+Auto-generated Documentation&&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
+DevOps practices adoption (CI, CD)&&&&&&$\surd$\\
 \hline
 \hline
 \end{tabular}
-\end{table*}
-
-
+\end{adjustbox}
+\end{table}
 
 \section{New trends in software reliability}
 \label{sec:ntsr}
