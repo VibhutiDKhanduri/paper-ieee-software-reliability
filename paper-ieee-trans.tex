@@ -239,13 +239,13 @@ industrial partners, that issued more than 10 thousand bug fixes, 1.7 thousand p
 defined over 300 development tasks tracked by the use of bug/task management tools.
 
 The source code was available at a private, centralized version control system.
-The code was not validated by any Quality Assurance policy, but passed through a manual
-certification procedure at the time of the release. This procedure tried to
-improve the reliability of the software components by applying a set of
-requirements [ref] to be fulfilled at each stage of the  development lifecycle (integration, certification,
-pre--production, production), carried out by different teams. However, with 
-EGEE--II, the developers started to use the ETICS system \cite{etics}, solution aiming to develop
-an automatic build system for Grid middleware.
+The code was passed through a manual certification procedure at the time of the release. 
+This procedure tried to improve the reliability of the software components by applying an
+acceptance criteria plan at each stage of the software release process 
+\cite{egee:acceptance-criteria} i.e. integration, certification, pre--production and 
+production. Starting with EGEE--II, the project adopted automation in the software
+lifecycle process by leveraging the automatic build system for Grid middleware: ETICS 
+\cite{etics} solution.
 
 \subsection{E--Infrastructure for Testing, Integration and Configuration of Software}
 
@@ -491,7 +491,7 @@ different sources of data such as GGUS \cite{ggus} and Github Issues.
 	\centering
 	\begin{subfigure}
 		\centering
-\includegraphics[width=\textwidth]{images/disvis.png}
+\includegraphics[width=0.85\textwidth]{images/disvis-flow.png}
 \caption{DevOps pipeline to distribute Docker images for Disvis application.}
 \label{fig:fig_disvis}		
 	\end{subfigure}
@@ -616,6 +616,11 @@ http://cordis.europa.eu/project/rcn/99189\_en.html
 \emph{Enabling Grids for E-sciencE-III (EGEE-III)} project, European Community
 Research and Development Information Service (CORDIS),
 http://cordis.europa.eu/project/rcn/87264\_en.html
+
+\bibitem{egee:acceptance-criteria}
+\emph{Definition and Documentation of the Revised Software Life-Cycle Process},
+Milestone MSA3.4.2, 2010, EGEE-III project,
+https://edms.cern.ch/ui/file/1062487/2/EGEE-III-MSA3.4.2-1062487-v1\_4.pdf
 
 \bibitem{glite}
 E. Laure et al, \emph{Programming the Grid with gLite}, in Jin, H., Reed, D.A.,
