@@ -189,8 +189,6 @@ INtegrating Distributed data Infrastructures for Global ExplOitation
 \end{tabular}
 \end{table}
 
-
-
 \subsection{DataGrid}
 
 The DataGrid \cite{cordis:datagrid} project (Jan 2001 -- Dec 2003) 
@@ -222,6 +220,41 @@ practices emerging from the new discipline of software engineering
 \cite{agile}. Nonetheless, the project focused on the experiences and procedures
 used by different open source software projects, such as Linux and Apache, trying to reach a
 higher maturity level \cite{cmm}.
+
+\begin{table}[!h]
+%% increase table row spacing, adjust to taste
+\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+\caption{Features on software reliability in EC-projects}
+\label{tab:feat}
+\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+\begin{adjustbox}{max width=0.5\textwidth}
+\begin{tabular}{llllllll}
+\hline
+\hline
+Feature & DataGrid & EGEEs & ETICSs & EMI & EGIs & INDIGO-DC\\
+\hline
+\hline
+Architecture Task Force&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
+Communication Handling&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
+Requirements Handling&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
+Agile Methodologies&&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
+Source code inspection&&&&$\surd$&&$\surd$\\
+Build/Testing Management Procedure&$\surd$&$\surd$&$\surd$&$\surd$&&$\surd$\\
+Software Product Metrics&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
+Quality Criteria Definition&&&$\surd$&$\surd$&$\surd$&$\surd$\\
+%Manual Certification Procedure&$\surd$&$\surd$&&$\surd$&&\\
+Automatic Certification&&&$\surd$&&$\surd$&$\surd$\\
+Auto-generated Documentation&&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
+DevOps practices adoption (CI, CD)&&&&&&$\surd$\\
+\hline
+\hline
+\end{tabular}
+\end{adjustbox}
+\end{table}
 
 \subsection{Enabling Grids for E--sciencE}
 
@@ -323,41 +356,6 @@ the project is succeeding in providing solutions to address the existing gaps in
 cloud Platform--as--a--Service (PaaS) and Software--as--a--Service (SaaS) levels,
 helping developers, e--Infrastructures and scientific communities to exploit
 Cloud computing benefits.
-
-\begin{table}[!h]
-%% increase table row spacing, adjust to taste
-\renewcommand{\arraystretch}{1.3}
-% if using array.sty, it might be a good idea to tweak the value of
-% \extrarowheight as needed to properly center the text within the cells
-\caption{Features on software reliability in EC-projects}
-\label{tab:feat}
-\centering
-%% Some packages, such as MDW tools, offer better commands for making tables
-%% than the plain LaTeX2e tabular which is used here.
-\begin{adjustbox}{max width=0.5\textwidth}
-\begin{tabular}{llllllll}
-\hline
-\hline
-Feature & DataGrid & EGEEs & ETICSs & EMI & EGIs & INDIGO-DC\\
-\hline
-\hline
-Architecture Task Force&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
-Communication Handling&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
-Requirements Handling&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
-Agile Methodologies&&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
-Source code inspection&&&&$\surd$&&$\surd$\\
-Build/Testing Management Procedure&$\surd$&$\surd$&$\surd$&$\surd$&&$\surd$\\
-Software Product Metrics&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
-Quality Criteria Definition&&&$\surd$&$\surd$&$\surd$&$\surd$\\
-%Manual Certification Procedure&$\surd$&$\surd$&&$\surd$&&\\
-Automatic Certification&&&$\surd$&&$\surd$&$\surd$\\
-Auto-generated Documentation&&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
-DevOps practices adoption (CI, CD)&&&&&&$\surd$\\
-\hline
-\hline
-\end{tabular}
-\end{adjustbox}
-\end{table}
 
 \section{New trends in software reliability}
 \label{sec:ntsr}
