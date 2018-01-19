@@ -77,12 +77,13 @@ Techniques
 which supports an unified access to large-scale computing and intense data analysis
 applications, has been driven by the needs of scientific communities as part of their
 pan-European research collaborations. One of the well-known examples is the Worldwide 
-Large Hadron Collider Computing Grid (WLCG) global computing infrastructure, powered 
-by the Particle Physics scientific community, built up to satisfy the computing needs
+Large Hadron Collider (LHC) Computing Grid (WLCG) global computing infrastructure, powered 
+by the particle physics scientific community, built up to satisfy the computing needs
 of processing, storing and analysing the huge quantity of data coming from the Large 
 Hadron Collider particle accelerator. A significant number of innovation projects and
 technology transfer activities -- embraced by the 5th, 6th and 7th Framework Programmes,
-and ultimately by the Horizon 2020 programme\footnote{https://ec.europa.eu/programmes/horizon2020/} -- are being held to coordinate and 
+and ultimately by the Horizon 2020 programme\footnote{HORIZON 2020 - The EU Framework
+Programme for Research and Innovation https://ec.europa.eu/programmes/horizon2020/} -- are being held to coordinate and 
 develop distributed solutions that provide a seamless and transparent access to those
 computing and data resources, available for the researchers.
 
@@ -103,11 +104,11 @@ organization and pilot testbeds.
 Analyzing the European Commission (EC)-funded software projects in the last decade
 we have observed a continuous increase of the prominence and robustness of
 testing and validation procedures. One of many reasons is related to the
-evolution of the software engineering methodologies (e.g. creation of the Agile
-Manifesto \cite{agile-manifesto}, rise of DevOps practices \cite{zhu}) together
-with the parallel advancements in the information and communications technology (ICT)
-field such as virtualization, enabling technology for Cloud computing and 
-operating--system--level virtualization known as containerization. All of which
+evolution of the software engineering methodologies (creation of the Agile
+Manifesto \cite{agile-manifesto}, and rise of DevOps practices \cite{zhu}) together
+with the parallel advancements in the information and communication technology (ICT)
+field (such as virtualization, the enabling technology for Cloud computing and 
+operating--system--level virtualization known as containerization). All of which
 complemented by the emergence of automation and event-response tools.
 
 In this paper, we introduce a set of EC-funded projects
@@ -128,7 +129,7 @@ following a logic evolution in which the quality and reliability of software hav
 increasingly had a more significant role. Experiences gathered during the 
 course of each project support this fact and, as it is shown in Table \ref{tab:feat},
 latest projects are the most committed in terms of software reliability awareness.
-This table summarizes the topics addressed in the following sections, highlighting 
+Table \ref{tab:feat} summarizes also the topics addressed in the following sections, highlighting 
 the commonalities and specific features on software reliability.
 
 \begin{table}[!h]
@@ -152,7 +153,7 @@ Logo & Short Name & Long Name & Duration\\
 \includegraphics[width=15mm,height=7.5mm]{images/datagrid}
 \end{minipage}
     & DataGrid &
-Research and Technological Development for an International Data Grid & 2001--2004\\
+Research and Technological Development for an International Data Grid & 2001--2003\\
 \begin{minipage}{.3\textwidth}
 \includegraphics[width=15mm,height=7.5mm]{images/egee}
 \end{minipage}
@@ -194,15 +195,14 @@ INtegrating Distributed data Infrastructures for Global ExplOitation
 \subsection{DataGrid}
 
 The DataGrid \cite{cordis:datagrid} project (Jan 2001 -- Dec 2003) 
-had as main goal to develop the software to provide basic grid functionality
+had as main goal to develop the software to provide basic Grid functionality
 and associated management tools for a large scale testbed for demonstration projects in three
-specific areas of science, such as Particle physics, Bioinformatics and Earth observation.
+specific areas of science, such as particle physics, bioinformatics and earth observation.
 %was devoted to develop the first European infrastructure for Grid computing. 
 The project brought together 21 academic and industry partners, from 15 different
 countries. 
-%There were 3 application areas for requirement gathering; Particle physics, Bioinformatics and Earth observation. 
 The project delivered its own software distribution, named EDG (EU DataGrid), strongly 
-based on Globus Middleware Services \cite{globus}. The project was organized in 12 workpages, from 
+based on Globus middleware services \cite{globus}. The project was organized in 12 workpages, from 
 which 5 were devoted to software development coordinated by an 
 Architecture Task Force, supervising the overall design and technical consistency 
 of the developments.
@@ -285,8 +285,8 @@ This procedure tried to improve the reliability of the software components by ap
 acceptance criteria plan at each stage of the software release process 
 \cite{egee:acceptance-criteria} i.e. integration, certification, pre--production and 
 production. Starting with EGEE--II, the project adopted automation in the software
-lifecycle process by leveraging the automatic build system for Grid middleware: ETICS 
-\cite{etics} solution.
+lifecycle process by leveraging the automatic build system for Grid middleware, that is
+the ETICS \cite{etics} solution.
 
 \subsection{E--Infrastructure for Testing, Integration and Configuration of Software}
 
@@ -331,13 +331,13 @@ maintaining a sustainable European Grid Infrastructure.
 
 
 EGI--InSPIRE not only ensured the coordination of the operation of a secure, reliable 
-European-wide production grid infrastructure federated from national grid initiatives 
-that is integrated and interoperates with other grids worldwide but also foreseed the 
+European-wide production Grid infrastructure federated from National Grid Initiatives (NGIs)
+that is integrated and interoperates with other Grids worldwide but also foreseed the 
 maintenance and development of operational tools, like the Operations Portal \cite{egi-ops}, 
 the EGI Helpdesk \cite{ggus} or Grid configuration repository (GOCDB) \cite{gocdb} and the 
 coordination of the external provision of software required by EGI to 
 form the production infrastructure. For the later it maintained a production--ready 
-Grid computing middleware distribution called {\sl UMD} (Unified Middleware Distribution) and 
+Grid computing middleware distribution called {\sl UMD} (Unified Middleware Distribution), and 
 defined general and component specific quality criteria to be applied to software 
 components made available through this repository.
 The role of {\sl UMD} was to enforce the fulfilment of this set of quality
@@ -354,84 +354,46 @@ explOitation}
 The INDIGO-DataCloud (INtegrating Distributed data Infrastructures for Global
 explOitation, Apr 2015 -- Sep 2017) \cite{cordis:indigo} is the last
 project of software development considered in this review. At the time of writing
-the project is succeeding in providing solutions to address the existing gaps in
-cloud Platform--as--a--Service (PaaS) and Software--as--a--Service (SaaS) levels,
+this paper, the project is succeeding in providing solutions to address the existing gaps in
+Cloud Platform--as--a--Service (PaaS) and Software--as--a--Service (SaaS) levels,
 helping developers, e--Infrastructures and scientific communities to exploit
 Cloud computing benefits.
 
 \section{New trends in software reliability}
 \label{sec:ntsr}
 
-The INDIGO--DataCloud project is the most recent project in the list and, as such, it is 
-the result of the lessons learned from previous experiences in terms of the evaluation and application
-of innovative software engineering methodologies, the management of new technologies to put
-them into practice, and the compilation and analysis of metrics to measure the success of the
-solutions implemented. The expertise gathered is complemented by the fact of being framed in
-collaborative projects with an extensive list of partners.
+INDIGO--DataCloud is the most recent project included in this paper thus it
+emerged from the lessons learned in the previous experiences described in
+Section \ref{sec:ev}. The expertise gathered throughout these years in terms
+of the evaluation and application of innovative software engineering
+methodologies, the management of new technologies to put those methodologies
+into practice, and the compilation and analysis of metrics to measure the
+success of the solutions implemented, has been complemented by the added 
+complexity of being framed into large collaborative projects with an extensive
+list of partners.
 
+Three main pillars sustain the project's strategy to seek reliability in the 
+software produced. A solid \textit{Software Quality Assurance (SQA) criteria
+and metrics gathering definition} guides the development of the software in
+a per-change basis, validating the software at the very early stages. The 
+software delivery process is designed as a bottom-up \textit{adoption of DevOps
+principles}, passing through Continuous Integration (CI) and Continuous
+Delivery (CD) approaches. Once the software is released, it follows a 
+\textit{two-factor validation} in the project's pilot infrastructures and
+resource provider's early-adoption.
 
-framed projects 
-
-All of this with the added complexity of being framed in major
-collaborations with 
-
-
-
-
-procollecting and analyzing metrics relevant for the .. to empower the sw reliability bla bla bla
-
-The INDIGO--Datacloud project reflects the progress made in software
-quality and reliability aspects throughout the past scientific European
-experiences. Nevertheless (I would remove this), the project’s Quality Assurance procedures are also
-highly influenced by the insights of current big worldwide collaborations of
-software development. These collaborations have continuously inspired the use of new
-technologies and procedures to increase the robustness and quality of the
-software being delivered. In this scenario, the implementation of the DevOps culture 
-is one of the major outcomes, as this paradigm has been progressively adopted by the
-project.
-
-\subsection{DevOps practices}
-\label{sec:devops}
-
-The DevOps methods emphasize on exercising Quality Assurance techniques to
-avoid infrastructure disruption whenever new developments are deployed into
-production. The INDIGO--DataCloud project promoted the application of a 
-Continuous Integration (CI) scenario to enforce the Quality Assurance requirements 
-for any piece of software being produced within the project. Such environment 
-requires an automation ready--to--go infrastructure where the different services involved
-(source code management platform, automation server) interact with each other
-to trigger the quality check execution and return back the exit codes, together
-with their outputs. To accomplish this, the project leveraged on tightly
-integrated open source tools such as GitHub \cite{github}, as source code repository
-and Jenkins \cite{jenkins}, as continuous integration system, as well as relying on
-Docker container provisioning to speed up the source code validation. This CI
-approach is guiding the project’s software development phase throughout the
-first and second major releases.
-
-As DevOps suggests, frequent releases positively affect the reliability of the
-software. The software updates of INDIGO--DataCloud products taking place since
-the second major release are passing through a Continuous Delivery (CD)
-pipeline that adds the packaging of the software right after the successful execution of
-the quality checks (as part of the CI). 
-The steps defined within the CD pipeline differ whether the software is to be distributed via Docker
-images (see Figure \ref{fig:fig_CD}) or via operating system’s packages, rpms or debs. In the latter case an extra
-validation step is added, consisting in the product’s deployment using a
-Configuration Management (CM) solution. The installation uses the packages
-built in the previous step and uploaded to a testing
-repository. In the case of Docker images, the CM is used to build the image
-itself, installing and configuring the product before uploading it to the
-DockerHub repository \cite{indigo-dockerhub}. 
-
-
-\begin{figure*}[ht]
-\centering
-\includegraphics[width=\textwidth]{images/devops.png}
-\caption{Continuous Delivery workflow for Docker images.}
-\label{fig:fig_CD}
-\end{figure*}
-
+%The INDIGO--Datacloud project reflects the progress made in software
+%quality and reliability aspects throughout the past scientific European
+%experiences. Nevertheless (I would remove this), the project’s Quality Assurance procedures are also
+%highly influenced by the insights of current big worldwide collaborations of
+%software development. These collaborations have continuously inspired the use of new
+%technologies and procedures to increase the robustness and quality of the
+%software being delivered. In this scenario, the implementation of the DevOps culture 
+%is one of the major outcomes, as this paradigm has been progressively adopted by the
+%project.
 
 \subsection{Software Quality Procedures}
+\label{subsec:sqa}
 
 The software quality policies \cite{indigo-d31} cover: 1) the identification
 and description of the \emph{quality requirements} that the software need to
@@ -502,6 +464,55 @@ service, and graphically displayed as GitHub pages using GrimoireLab framework
 \cite{grimoirelab}. Maintenance and user support metrics are collected from the
 different sources of data such as GGUS \cite{ggus} and Github Issues.
 
+\subsection{DevOps practices}
+\label{sec:devops}
+
+The DevOps methods emphasize on exercising SQA techniques to avoid infrastructure
+disruption whenever new developments are deployed into production systems. The 
+following DevOps approaches have been progressively adopted throughout the project's
+lifetime, being one of its major outcomes.
+
+\subsubsection{Continuous Integration}
+The INDIGO--DataCloud project promoted the application of a CI scenario to enforce
+the SQA requirements -- described in Section \ref{subsec:sqa} -- for any piece of
+software being produced within the project. Such environment requires an automation
+ready--to--go infrastructure where the different technologies involved -- source code
+management platform, automation server and containerization -- interact with each
+other to trigger the source code validation pipeline for each candidate change. The
+pipeline is comprised of diverse quality checks, enforcing at least the successful
+execution of code style and minimum unit testing coverage. To take over the 
+implementation of such infrastructure, the project leveraged on tightly integrated open
+source tools such as GitHub \cite{github}, as the online source code repository,
+and Jenkins \cite{jenkins}, the event-response CI system. Docker container provisioning
+is used to provide instant computing power needed for executing the pipeline jobs. 
+
+This CI approach is guiding the project’s software development phase throughout the
+first and second major releases.
+
+\subsubsection{Continuous Delivery}
+As DevOps suggests, frequent releases positively affect the reliability of the
+software. The software updates of INDIGO--DataCloud products taking place since
+the second major release are passing through a Continuous Delivery (CD)
+pipeline that adds the packaging of the software right after the successful execution of
+the quality checks (as part of the CI). 
+The steps defined within the CD pipeline differ whether the software is to be distributed via Docker
+images (see Figure \ref{fig:fig_CD}) or via operating system’s packages, rpms or debs. In the latter case an extra
+validation step is added, consisting in the product’s deployment using a
+Configuration Management (CM) solution. The installation uses the packages
+built in the previous step and uploaded to a testing
+repository. In the case of Docker images, the CM is used to build the image
+itself, installing and configuring the product before uploading it to the
+DockerHub repository \cite{indigo-dockerhub}. 
+
+
+\begin{figure*}[ht]
+\centering
+\includegraphics[width=\textwidth]{images/devops.png}
+\caption{Continuous Delivery workflow for Docker images.}
+\label{fig:fig_CD}
+\end{figure*}
+
+
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.45\textwidth, height=50mm]{images/confman.png}
@@ -528,7 +539,7 @@ set of deployed INDIGO-DataCloud components or services.}
 \end{figure*}
 
 
-\subsection{DevOps adoption from user communities}
+\subsubsection{DevOps adoption from user communities}
 
 The experience gathered throughout the project with regard to the adoption of
 different DevOps practices is not only useful and suitable for the software related
@@ -550,6 +561,7 @@ to the Dockerhub repository, it is instantiated in a new container to be validat
 The application is then executed and the results compared with a set of reference outputs.
 Thus this pipeline implementation goes a step forward by testing the application
 execution for the latest available Docker image in the catalogue.
+
 
 \subsection{Integration, preview and early adoption}
 
@@ -650,7 +662,7 @@ Jiang, W. (eds.) Computational Methods in Science and Technology, vol. 12(1),
 pp. 33–45, Scientific Publishers OWN, 2006.
 
 \bibitem{condor}
-D. Thain, T. Tannenbaum, M. Livny, \emph{Condor and the grid}, in Grid
+D. Thain, T. Tannenbaum, M. Livny, \emph{Condor and the Grid}, in Grid
 Computing: Making the Global Infrastructure a Reality, Chapter 11, pp. 63–70,
 Eds. John Wiley \& Sons Inc., 2002.
 
@@ -667,7 +679,7 @@ http://cordis.europa.eu/project/rcn/86604\_en.html
 
 \bibitem{etics}
 A. Di Meglio, M.-E.Bégin, P. Couvares, E. Ronchieri, E. Takacs, \emph{ETICS:
-the international software engineering service for the grid}, in Journal of
+the international software engineering service for the Grid}, in Journal of
 Physics: Conference Series, Vol. 119, N. 4, IOP Publishing Ltd, 2008.
 
 \bibitem{cordis:emi}
@@ -786,13 +798,13 @@ Cientificas), holding an MSc in Scientific Computing from the University of
 Cantabria. During the past years he has been devoted to software quality
 assurance tasks within different European advanced computing research projects
 such as INDIGO-DataCloud and EGI-Engage. Currently involved in EOSC-hub project
-and participating in the software quality work packages of DEEP-HybridDatacloud
+and participating in the software quality work packages of DEEP-HybridDataCloud
 and eXtreme-DataCloud.
 \end{IEEEbiography}
 
 \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{images/mario-david}}]{Mario David}
 is a research associate at LIP. He holds a PhD in Experimental Particle Physics from the University of Lisbon.
-Member of DEEP-HybridDatacloud project as Work Package leader of Testbed and integration with EOSC services. Member of EOSC-hub project and
+Member of DEEP-HybridDataCloud project as Work Package leader of Testbed and integration with EOSC services. Member of EOSC-hub project and
 of the Portuguese National Computing Distributed Infrastructure.
 He held a research associate position at Institut de Physique du Globe de Paris (IPGP/CNRS) as Scientific Software Developer for the VERCE project, in particular in the data intensive use cases for seismology.
 He was been actively involved in the Validation, Quality Assurance and testing of middleware, in regional and global operations.
