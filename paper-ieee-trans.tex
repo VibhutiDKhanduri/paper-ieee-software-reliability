@@ -372,7 +372,7 @@ success of the solutions implemented, has been complemented by the added
 complexity of being framed into large collaborative projects with an extensive
 list of partners.
 
-Three main pillars sustain the project's strategy to seek reliability in the 
+In the following section we will describe the three main pillars that sustain the project's strategy to seek reliability in the 
 software produced. A solid \textit{Software Quality Assurance (SQA) criteria
 and metrics gathering definition} guides the development of the software in
 a per-change basis, validating the software at the very early stages. The 
@@ -396,11 +396,33 @@ resource provider's early-adoption.
 \label{subsec:sqa}
 
 The software quality policies \cite{indigo-d31} cover: 1) the identification
-and description of the \emph{quality requirements} that the software need to
-comply with, and 2) the \emph{quality metrics}.
+and description of the \emph{SQA requirements} that the produced software need 
+to comply with, and 2) the \emph{quality metrics}, to monitor each software product's 
+behaviour throughout the development, release and production stages.
 
-The requirements are checked at early stages in the software development
-process, integrated in the Jenkins CI service \cite{indigo-jenkins}, so that any
+The SQA requirements are checked automatically at early stages in the software
+development process, following a CI approach described in Section \ref{subsec:ci}, so
+that that any bug or design issue is likely to be detected and corrected promptly.
+
+\subsubsection{Code style}
+The source code is adhered to any style standard and shall be compliant with the de-facto
+guidelines present for the programming language being used.
+\subsubsection{Unit and Functional testing}
+Whenever a new change involves a new functionality addition, it is requested to be tested. 
+Regression testing in this context is done enforcing the successful execution of the previous
+functionality tests already present in the code. On the other hand, unit testing evaluates the
+code's internal design setting a threshold of 70\% coverage for the code developed.
+\subsubsection{Documentation}
+\subsubsection{Code review}
+Represents the last step in the change management pipeline, once the candidate change has 
+successfully passed through the testing methods described previously. It implies the human-based
+revision of the proposed change to discuss its adequance in terms of scope, objective fulfillment, 
+documentation completeness, etc. On approval, the candidate change is definetively merged into
+production.
+\subsubsection{Automated deployment}
+
+
+integrated in the Jenkins CI service \cite{indigo-jenkins}, so that any
 bug or design issue is likely to be detected and corrected promptly. The source
 code is publicly available in GitHub repositories under the project organization called
 {\sl indigo-dc} \cite{indigo-github} to increase the visibility of the products
@@ -473,6 +495,7 @@ following DevOps approaches have been progressively adopted throughout the proje
 lifetime, being one of its major outcomes.
 
 \subsubsection{Continuous Integration}
+\label{subsec:ci}
 The INDIGO--DataCloud project promoted the application of a CI scenario to enforce
 the SQA requirements -- described in Section \ref{subsec:sqa} -- for any piece of
 software being produced within the project. Such environment requires an automation
