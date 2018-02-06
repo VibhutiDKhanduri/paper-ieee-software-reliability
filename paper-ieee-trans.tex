@@ -118,7 +118,7 @@ the achievements towards software reliability. The reminder of this paper is
 organized as follows. Section \ref{sec:ev} details the evolution of research on
 software reliability in EC-projects. Section \ref{sec:ntsr} provides
 information about new research trends in software reliability based upon the 
-experiences from the recent INDIGO-DataCloud project. Finally, Section \ref{sec:con} concludes.
+experiences from the recent INDIGO--DataCloud project. Finally, Section \ref{sec:con} concludes.
 
 \section{Evolution of research on software reliability in EC-projects}
 \label{sec:ev}
@@ -184,7 +184,7 @@ Engaging the EGI Community towards an Open Science Commons
 \begin{minipage}{.3\textwidth}
 \includegraphics[width=15mm,height=7.5mm]{images/indigo}
 \end{minipage}
-     & INDIGO-DataCloud &
+     & INDIGO--DataCloud &
 INtegrating Distributed data Infrastructures for Global ExplOitation
  & 2015--2017\\
 \hline
@@ -237,7 +237,7 @@ higher maturity level \cite{cmm}.
 \begin{tabular}{llllllll}
 \hline
 \hline
-Feature & DataGrid & EGEEs & ETICSs & EMI & EGIs & INDIGO-DC\\
+Feature & DataGrid & EGEEs & ETICSs & EMI & EGIs & INDIGO--DC\\
 \hline
 \hline
 Architecture Task Force&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
@@ -351,7 +351,7 @@ by a Cloud--specific one called {\sl CMD} (Cloud Middleware Distribution).
 \subsection{INtegrating Distributed data Infrastructures for Global
 explOitation}
 
-The INDIGO-DataCloud (INtegrating Distributed data Infrastructures for Global
+The INDIGO--DataCloud (INtegrating Distributed data Infrastructures for Global
 explOitation, Apr 2015 -- Sep 2017) \cite{cordis:indigo} is the last
 project of software development considered in this review. At the time of writing
 this paper, the project is succeeding in providing solutions to address the existing gaps in
@@ -423,8 +423,8 @@ functionality tests already present in the code, so to uncover any malfunction i
 the changes. On the other hand, \textit{unit testing} completes the source code testing evaluation by
 focusing on the code's internal design. Project's SQA criteria sets a recommended threshold of
 70\% coverage for unit testing. In Figure \ref{fig:fig_unittest}, unit testing coverage is compared
-for each software component over the two major INDIGO-DataCloud releases, showing an increment in the 
-averaged value of {\sl INDIGO-2} release. As it can be seen, a very small set of products with low coverage
+for each software component over the two major INDIGO--DataCloud releases, showing an increment in the 
+averaged value of {\sl INDIGO--2} release. As it can be seen, a very small set of products with low coverage
 values highly impacted the overall result, although a significant part of these products are upstream
 contributions or products with codebases not fully under the control of the project. Nevertheless,
 60\% of the products were over this threshold while 80\% of them had values above
@@ -465,7 +465,7 @@ as Ansible \cite{indigo-ansible} and Puppet \cite{indigo-puppet}. A representati
 such contribution are the \textit{50 roles} being developed from scratch, currently hosted in
 the Ansible Galaxy portal \footnote{https://galaxy.ansible.com/indigo-dc/}. Figure 
 \ref{fig:fig_confman} shows the number of products that offer an automated means for deployment.
-It shows an increase after the {\sl INDIGO-1} release especially in the previous weeks of each
+It shows an increase after the {\sl INDIGO--1} release especially in the previous weeks of each
 of the two major releases.
 \end{itemize}
 
@@ -481,11 +481,25 @@ of the two major releases.
 The evaluation of the software quality is performed by measuring the values of
 the metrics and Key Performance Indicators (KPIs) defined based upon the
 ISO/IEC 9126 standard. These metrics cover the development, release and
-maintenance phases of the software lifecycle. Development and release metrics
-are obtained automatically from several sources, such as GitHub and Jenkins CI
-service, and graphically displayed as GitHub pages using GrimoireLab framework
-\cite{grimoirelab}. Maintenance and user support metrics are collected from the
-different sources of data such as GGUS \cite{ggus} and Github Issues.
+maintenance phases of the software lifecycle. 
+
+\textit{Development metrics} are obtained programatically from several sources, namely GitHub
+API and Jenkins service, and graphically displayed as GitHub pages using GrimoireLab
+framework \cite{grimoirelab}. Per-component weekly reports, including the SQA requirement
+completeness, are issued and individually discussed through the different communication channels
+with the development teams. Issue tracking metrics and KPIs are an essential piece of information
+of both feature addition and defect solving, useful to detect and fix misbehaviours while in the
+development phase. 
+
+\textit{Release metric} sources are mainly the online repository servers, namely the 
+Linux package \cite{indigo-pkg-repo} and DockerHub \cite{indigo-dockerhub} repositories. Jenkins 
+server contains as well valuable release data as it is the service where the packages
+and containers are being built before being uploaded to the online repositories. Release
+KPIs primarly focus on the frequency and effiency -- mainly rollbacks -- statistics.
+
+\textit{Maintenance and user support metrics} are key for continuously improving the response
+to issues reported by external users. Feeback is collected from outside helpdesks, such as 
+EGI's GGUS \cite{ggus}, and the INDIGO--DataCloud's GitHub Issues tracker.
 
 \subsection{DevOps practices}
 \label{sec:devops}
@@ -532,27 +546,37 @@ is dramatically reduced and the reliability of the software solutions improved, 
 bug or design issue is likely to be detected and subsequently corrected at this phase.
 
 Figure \ref{fig:fig_jenkins_CI_builds} shows the evolution, throughout the 
-INDIGO-DataCloud's first and second releases, of the required test types builds since the
+INDIGO--DataCloud's first and second releases, of the required test types builds since the
 implementation of the CI infrastructure. Automated functional testing coverage were not
 available for all the software stack, thus the associated number of builds are fewer. The
 executions are not precisely aligned as checks can be manually triggered, through Jenkins
 interface, useful for instance whenever a failed check needs to be rebuilt.
 
 \subsubsection{Continuous Delivery}
-As DevOps suggests, frequent releases positively affect the reliability of the
-software. The software updates of INDIGO--DataCloud products taking place since
-the second major release are passing through a Continuous Delivery (CD)
-pipeline that adds the packaging of the software right after the successful execution of
-the quality checks (as part of the CI). 
-The steps defined within the CD pipeline differ whether the software is to be distributed via Docker
-images (see Figure \ref{fig:fig_CD}) or via operating system’s packages, rpms or debs. In the latter case an extra
-validation step is added, consisting in the product’s deployment using a
-Configuration Management (CM) solution. The installation uses the packages
-built in the previous step and uploaded to a testing
-repository. In the case of Docker images, the CM is used to build the image
-itself, installing and configuring the product before uploading it to the
-DockerHub repository \cite{indigo-dockerhub}. 
+As DevOps suggests, frequent releases positively affect the reliability of the software as
+they involve fewer changes and usually more correlated. The software updates of 
+INDIGO--DataCloud products, taking place since the second major release, are passing through
+a Continuous Delivery (CD) pipeline that adds the packaging of the software right after the
+successful execution of the CI pipeline previously described. Consequently, CI-validated 
+software components are automatically delivered in online repositories without the need of 
+any human interaction but ultimately requiring expert supervision to validate the results.
 
+INDIGO--DataCloud software stack is delivered in form of Linux software packages (rpms, debs) 
+and Docker containers. The CD approach is different for each type of software packaging. \textit{Linux
+package pipeline} intentionally delivers the packages produced in a pre-production -- preview --
+branch. Before that, once the software packages have been created, they are uploaded to a 
+testing branch. The available automated deployment solution -- see \cite{subsec:sqa} -- checks
+the installation and configuration of the component relying on the testing repository. On 
+successful completion, the packages are then automatically signed and subsequently moved to 
+the preview branch, from where they finally be made available in the production branch after
+the release manager supervises the process. 
+
+The \textit{Docker container pipeline} uses instead the automated deployment solution to 
+actually install and configure the software component in the container image. Once this is 
+done the recently created image is uploaded to the production DockerHub repository, tagged
+with the label corresponding to the current INDIGO-DataCloud release. Figure 
+\ref{fig:fig_CD} shows the complete workflow of the Docker container CD implementation, 
+automatically triggered by a change in the source code.
 
 \begin{figure*}[ht]
 \centering
@@ -582,7 +606,7 @@ DockerHub repository \cite{indigo-dockerhub}.
 		\centering
 \includegraphics[width=\textwidth]{images/pilotpreview.png}
 \caption{Resource centers supporting the Pilot Preview testbed and corresponding
-set of deployed INDIGO-DataCloud components or services.}
+set of deployed INDIGO--DataCloud components or services.}
 \label{fig:fig_pilotpreview}
 	\end{subfigure}
 \end{figure*}
@@ -592,7 +616,7 @@ set of deployed INDIGO-DataCloud components or services.}
 
 The experience gathered throughout the project with regard to the adoption of
 different DevOps practices is not only useful and suitable for the software related
-to the core services in the INDIGO-DataCloud solution, but also applicable to the
+to the core services in the INDIGO--DataCloud solution, but also applicable to the
 development and distribution of the applications coming from the user communities.
 
 Two applications from "Definition of Support to Research Communities" workpackage, 
@@ -602,7 +626,7 @@ Figure \ref{fig:fig_disvis} shows the pipeline for the Disvis application.
 
 User application developers were provided with both a means to validate the
 source code before merging and the creation of a new versioned Docker image,
-automatically available in the INDIGO-DataCloud’s application repository.
+automatically available in the INDIGO--DataCloud’s application repository.
 
 The novelty introduced in the pipeline above is the validation of the application.
 Once the application is packaged as a Docker image, and subsequently uploaded
@@ -623,7 +647,6 @@ possible to production ones. A map of the Pilot Preview
 infrastructure is depicted in Figure \ref{fig:fig_pilotpreview}, it shows the
 resources providers and the components or services they deployed and supported.
 
-
 The released software is tested in production environments through the
 Staged--Rollout process, before inclusion in the EGI's CloudManagement Distribution (CMD). 
 Selected resource providers are requested to install
@@ -637,8 +660,8 @@ appear in production environments.
 It is a fact that the European software produced for scientific purposes is
 evolving to a more sustainable model where the quality and reliability of
 software is being prioritized. Recent software engineering insights, such as
-DevOps approaches, are gradually being applied as the open--source collaborative tools
-evolve, allowing tighter integrations. The Software Quality
+DevOps approaches, are gradually being applied as the open--source collaborative 
+tools evolve, allowing tighter integrations. The Software Quality
 Assurance procedures have been integrated in the development stage, in order to
 detect and correct issues early in the software lifecycle. Automation and
 metrics analysis are at the base of prompt issue solving. However, post--release
@@ -788,40 +811,43 @@ project, European Community Research and Development Information Service
 
 \bibitem{cordis:indigo}
 \emph{INtegrating Distributed data Infrastructures for Global ExplOitation
-(INDIGO-DataCloud)} project, European Community Research and Development
+(INDIGO--DataCloud)} project, European Community Research and Development
 Information Service (CORDIS),
 http://cordis.europa.eu/project/rcn/194882\_en.html
 
 \bibitem{indigo-dockerhub}
-\emph{INDIGO-DataCloud DockerHub repository},
+\emph{INDIGO--DataCloud DockerHub repository},
 https://hub.docker.com/u/indigodatacloud
 
 \bibitem{indigo-d31}
-\emph{Initial Plan for WP3} INDIGO-DataCloud Deliverable 3.1,
+\emph{Initial Plan for WP3} INDIGO--DataCloud Deliverable 3.1,
 https://www.indigo-datacloud.eu/documents/initial-plan-wp3-d31
 
 \bibitem{indigo-jenkins}
-\emph{INDIGO-DataCloud Jenkins CI service},
+\emph{INDIGO--DataCloud Jenkins CI service},
 https://jenkins.indigo-datacloud.eu:8080/
 
 \bibitem{indigo-github}
-\emph{INDIGO-DataCloud GitHub Source Code repository},
+\emph{INDIGO--DataCloud GitHub Source Code repository},
 https://www.github.com/indigo-dc
 
 \bibitem{indigo-gitbook}
-\emph{INDIGO-DataCloud GitBook Documentation repository},
+\emph{INDIGO--DataCloud GitBook Documentation repository},
 https://www.gitbook.com/@indigo-dc
 
 \bibitem{indigo-puppet}
-\emph{INDIGO-DataCloud PuppetForge repository},
+\emph{INDIGO--DataCloud PuppetForge repository},
 https://forge.puppet.com/indigodc
 
 \bibitem{indigo-ansible}
-\emph{INDIGO-DataCloud Ansible Galaxy repository},
+\emph{INDIGO--DataCloud Ansible Galaxy repository},
 https://galaxy.ansible.com/indigo-dc/
 
 \bibitem{grimoirelab}
 \emph{GrimoireLab}, http://grimoirelab.github.io/
+
+\bibitem{indigo-pkg-repo}
+\emph{INDIGO--DataCloud Linux Package repository}, https://jenkins.indigo-datacloud.eu/
 
 \bibitem{ggus}
 \emph{Global Grid User Support (GGUS)}, https://www.ggus.eu/
@@ -846,7 +872,7 @@ is a computing researcher at CSIC (Consejo Superior de Investigaciones
 Cientificas), holding an MSc in Scientific Computing from the University of
 Cantabria. During the past years he has been devoted to software quality
 assurance tasks within different European advanced computing research projects
-such as INDIGO-DataCloud and EGI-Engage. Currently involved in EOSC-hub project
+such as INDIGO--DataCloud and EGI-Engage. Currently involved in EOSC-hub project
 and participating in the software quality work packages of DEEP-HybridDataCloud
 and eXtreme-DataCloud.
 \end{IEEEbiography}
@@ -863,13 +889,12 @@ He was been actively involved in the Validation, Quality Assurance and testing o
 is the leader of the Distributed Systems group at the INFN National Center (CNAF), providing the core operational support for the INFN-wide Grid infrastructure and for the CNAF Cloud infrastructure. She has a long experience in managing distributed e-infrastructures, being involved since 2003 in major European projects such as DataGrid, EGEE (I, II, III), EGI-Inspire and EGI-Engage. She was the Release Manager of the EMI (European Middleware Initiative) and INDIGO - DataCloud European project project and having as main responsibilities to manage all release activities, including release planning, building, deploying, reporting, establishing and maintaining the overall release timeline and milestones.
 \end{IEEEbiography}
 
-
 \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{images/jorge-gomes}}]{Jorge Gomes}
 is a computing researcher at LIP. He worked in the development of advanced data acquisition systems at CERN, and participated in pioneering projects in the domain of digital satellite data communications, IP over ATM, and advanced videoconferencing over IP networks. Since 2001 he has participated in numerous projects regarding distributed computing, networks and security in Europe and Latin America. He is the head of the LIP Advanced Computing and Digital Infrastructures Group and technical coordinator of the Portuguese National Grid Infrastructure, representative of Portugal in the Council of the European Grid Infrastructure (EGI) and responsible for the Portuguese participation in IBERGRID, that joins Portuguese and Spanish distributed computing infrastructures.
 \end{IEEEbiography}
 
 \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{images/DavideSalomoni}}]{Davide Salomoni}
-is Director of Technology at the Italian National Institute for Nuclear Physics (INFN). He has 27 years of international experience in private and public environments related to distributed computing and communication technologies. He currently leads the Software Development and Distributed Systems department at CNAF, the INFN National Center dedicated to research and development on IT technologies, located in Bologna, Italy. He was Project Coordinator of INDIGO-DataCloud, a project funded by the EC Horizon2020, that developed innovative open source computing and storage solutions.
+is Director of Technology at the Italian National Institute for Nuclear Physics (INFN). He has 27 years of international experience in private and public environments related to distributed computing and communication technologies. He currently leads the Software Development and Distributed Systems department at CNAF, the INFN National Center dedicated to research and development on IT technologies, located in Bologna, Italy. He was Project Coordinator of INDIGO--DataCloud, a project funded by the EC Horizon2020, that developed innovative open source computing and storage solutions.
 \end{IEEEbiography}
 
 
