@@ -413,7 +413,8 @@ Code style standards are enforced for every software component in the project st
 most-adopted or \textit{de-facto standard} is initially recommended, however the developer teams eventually
 choose the set of guidelines to comply with. The ultimate goal for code style assessment is to
 improve the readability and reusability of the source code produced under the scope of the
-project.
+project. Figure \ref{fig:fig_codestyle} showcases the code style standards and their popularity
+over the software components contributing to the project.
 
 \item \textbf{Unit and Functional testing}.
 Changes involving the addition of new functionalities are requested to be tested. \textit{Regression
@@ -421,7 +422,20 @@ testing} in this context is done enforcing the successful execution of the previ
 functionality tests already present in the code, so to uncover any malfunction introduced by
 the changes. On the other hand, \textit{unit testing} completes the source code testing evaluation by
 focusing on the code's internal design. Project's SQA criteria sets a recommended threshold of
-70\% coverage for unit testing.
+70\% coverage for unit testing. In Figure \ref{fig:fig_unittest}, unit testing coverage is compared
+for each software component over the two major INDIGO-DataCloud releases, showing an increment in the 
+averaged value of {\sl INDIGO-2} release. As it can be seen, a very small set of products with low coverage
+values highly impacted the overall result, although a significant part of these products are upstream
+contributions or products with codebases not fully under the control of the project. Nevertheless,
+60\% of the products were over this threshold while 80\% of them had values above
+the 50\% coverage.
+
+\item \textbf{Integration testing}. Software components usually interact with other services while on
+operation state. Integration testing deals with the interactions among coupled software components or
+parts of a system that cooperates to achieve a given functionality. This type of testing might be 
+complex and, based on the project's experience, tough to be tackled automatically. The aim is to 
+guarantee the overall operation of the component, focused on the services it intefaces with, whenever
+new functionalities are introduced.
 
 \item \textbf{Code review}.
 Represents the last step in the change management pipeline, once the candidate change has 
@@ -430,28 +444,30 @@ revision of the proposed change to discuss its adequance in terms of scope, obje
 documentation completeness, etc. On approval, the candidate change is definitely merged into
 production.
 
-\item \textbf{Documentation and Automated Deployment}.
+\item \textbf{Documentation}.
 Last but not least, the SQA criteria sets the path for the adoption of the developed software by
 defining the documentation content, according to the target audience. These requirements also 
 promote the automation, both in terms of documentation creation and service deployment. The
-\textit{documentation is treated as code} so that it is portable and easily reviewed, using the same workflow
-as the code does, validating the changes before being updated into the production repository. On the
-other hand, the software component deployment is requested to be automated using a configuration 
-management tool. These tools allow to have an \textit{infrastructure as code}, managing the component's
-deployment through declarative definitions. The definition files appear as self-documenting 
-code, as they sequentially guide the component's deployment process in multiple platforms.
+\textit{documentation is treated as code}, using a markup language, automatically rendered and
+uploaded to online repositories \cite{indigo-gitbook}. Thus documentation is portable and 
+human--reviewed, using the same workflow as the code does, validating the changes before being
+updated into the production repository. 
+
+\item \textbf{Automated Deployment}.
+In order to lower the barriers of software adoption, the SQA criteria requires the automated 
+deployment of the products delivered as part of the catalogue. Automation in this context is 
+tackled using a configuration management tool. These tools allow to have an 
+\textit{infrastructure as code} (IaC), managing the component's deployment through declarative
+definitions. The definition files appear as additional source of documentation, 
+self-documenting code, as they sequentially guide the component's deployment process in multiple
+platforms. In this regard, INDIGO--DataCloud project contributed to open--source IaC tools such 
+as Ansible \cite{indigo-ansible} and Puppet \cite{indigo-puppet}. A representative example of 
+such contribution are the \textit{50 roles} being developed from scratch, currently hosted in
+the Ansible Galaxy portal \footnote{https://galaxy.ansible.com/indigo-dc/}. Figure 
+\ref{fig:fig_confman} shows the number of products that offer an automated means for deployment.
+It shows an increase after the {\sl INDIGO-1} release especially in the previous weeks of each
+of the two major releases.
 \end{itemize}
-
-
-
-%integrated in the Jenkins CI service \cite{indigo-jenkins}, so that any
-%bug or design issue is likely to be detected and corrected promptly. The source
-%code is publicly available in GitHub repositories under the project organization called
-%{\sl indigo-dc} \cite{indigo-github} to increase the visibility of the products
-%catalogue, promoting the external contributions and software adoption. Furthermore,
-%the source code is checked for compliance with community de--facto style standards,
-%selected for each one of the variety of programming languages being used as seen in
-%Figure \ref{fig:fig_codestyle}.
 
 \begin{figure}[ht]
 \centering
@@ -460,44 +476,7 @@ code, as they sequentially guide the component's deployment process in multiple 
 \label{fig:fig_codestyle}
 \end{figure}
 
-Unit testing coverage, another project quality metric, has increased between the first ({\sl INDIGO-1}) and the
-second ({\sl INDIGO-2}) INDIGO--DataCloud releases, reaching an average value of
-66.69\% on the {\sl INDIGO-2} release, very close to the recommended 70\% threshold
-defined by the project’s SQA base criteria \cite{indigo-d31}. A comparison graph
-between the code coverage for the products involved both in {\sl INDIGO-1} and
-{\sl INDIGO-2} releases is shown in Figure \ref{fig:fig_unittest}. As it can be seen,
-a very small set of products with low coverage values highly impacted the overall
-result, although a significant part of these products are upstream contributions
-or products with codebases not fully under the control of the project. Nevertheless,
-60\% of the products were over this threshold while 80\% of them had values above
-the 50\% coverage.
-
-The documentation of the products is treated as source code, using a markup
-language, automatically rendered and uploaded to online repositories
-\cite{indigo-gitbook}. Changes in both documentation and source code are
-human--reviewed as the last step before merging them into the production
-repository or official documentation.
-
-Last but not least, as described in section \ref{sec:devops}, in order
-to facilitate the usage of the INDIGO--DataCloud services, they can be deployed
-automatically using either Ansible \cite{indigo-ansible} or Puppet
-\cite{indigo-puppet} open--source configuration tools. The adoption of such Configuration Management
-tools not only eases the consumption of the products developed by external users or
-infrastructures, but also tackles the correct installation and configuration of the
-services and applications. A representative example is the \textit{50 roles} being 
-developed within the project and currently hosted in the Ansible Galaxy portal for 
-the project \footnote{https://galaxy.ansible.com/indigo-dc/}.
-
-\begin{figure*}[ht]
-\centering
-\includegraphics[width=\textwidth]{images/unittest.png}
-\caption{Unit testing coverage for the two major INDIGO--DataCloud releases.}
-\label{fig:fig_unittest}
-\end{figure*}
-
-Figure \ref{fig:fig_confman} shows the number of products that offer an automated means
-for deployment. It shows an increase after the {\sl INDIGO-1} release especially
-in the previous weeks of each of the two major releases.
+\subsubsection{Quality metrics}
 
 The evaluation of the software quality is performed by measuring the values of
 the metrics and Key Performance Indicators (KPIs) defined based upon the
@@ -519,7 +498,7 @@ lifetime, being one of its major outcomes in terms of sofware reliability.
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.5\textwidth, height=50mm]{images/jenkins_CI_builds.png}
-\caption{.}
+\caption{Evolution of the number of builds triggered as part of the CI implementation.}
 \label{fig:fig_jenkins_CI_builds}
 \end{figure}
 
@@ -547,23 +526,17 @@ The project defined a source code contribution workflow, based on GitHub Pull Re
 (PRs), where each change automatically triggers in Jenkins the associated quality and
 metric tracking checks on PR creation or update. The set of required checks contained
 in the CI pipeline report their exit status back to GitHub, preventing the change to be
-approved if they are not successfully executed.
+approved if they are not successfully executed. As each change is validated, the chances
+of early detection of defects augments. Within this scenario, the cost of defect solving
+is dramatically reduced and the reliability of the software solutions improved, as any
+bug or design issue is likely to be detected and subsequently corrected at this phase.
 
-Figure \ref{fig:fig_jenkins_CI_builds}
-
-
-The described CI approach is guiding the project’s software development phase throughout
-the first and second major releases. Throughout its lifetime, 
-% FIXME complement with the paragraph above and the references to the figures for code style and unit testing!!!!
-%The implementation of a CI scenario is accomplished by automating the execution of
-%the test types defined in the SQA criteria described in Section \ref{subsec:sqa}. 
-%Each change in the source code will trigger the associated with the software component.
-%As each change is validated, the chances of early detection of defects increases. Within
-%this scenario, the cost of defect solving is dramatically reduced and the reliability of the 
-%software solutions improved, as any bug or design issue is likely to be detected and subsequently
-%corrected at this phase.
-%
-
+Figure \ref{fig:fig_jenkins_CI_builds} shows the evolution, throughout the 
+INDIGO-DataCloud's first and second releases, of the required test types builds since the
+implementation of the CI infrastructure. Automated functional testing coverage were not
+available for all the software stack, thus the associated number of builds are fewer. The
+executions are not precisely aligned as checks can be manually triggered, through Jenkins
+interface, useful for instance whenever a failed check needs to be rebuilt.
 
 \subsubsection{Continuous Delivery}
 As DevOps suggests, frequent releases positively affect the reliability of the
