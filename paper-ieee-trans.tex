@@ -24,7 +24,7 @@
         J. Gomes,
         D. Salomoni
 \thanks{D. C. Duma, E. Ronchieri, and D. Salomoni are with INFN - CNAF, Bologna, Italy.}
-\thanks{P. Orviz Fernandez, is with CSIC, Santander, Spain, (e-mail: orviz@ifca.unican.es)}
+\thanks{P. Orviz Fernandez, is with CSIC, Santander, Spain.}
 \thanks{M. David, and J. Gomes are with LIP, Lisbon, Portugal.}%
 }
 
@@ -55,7 +55,7 @@ procedures is present since the very early stages of the software development pr
 
 \begin{IEEEkeywords}
 Software Reliability, Quality Assurance, Software Metrics, Software Testing
-Techniques
+Techniques, DevOps
 \end{IEEEkeywords}
 
 \IEEEpeerreviewmaketitle
@@ -71,8 +71,7 @@ by the particle physics scientific community, built up to satisfy the computing 
 of processing, storing and analysing the huge quantity of data coming from the Large 
 Hadron Collider particle accelerator. A significant number of innovation projects and
 technology transfer activities -- embraced by the 5th, 6th and 7th Framework Programmes,
-and ultimately by the Horizon 2020 programme\footnote{HORIZON 2020 - The EU Framework
-Programme for Research and Innovation https://ec.europa.eu/programmes/horizon2020/} -- are being held to coordinate and 
+and ultimately by the Horizon 2020 programme \cite{h2020} -- are being held to coordinate and 
 develop distributed solutions that provide a seamless and transparent access to those
 computing and data resources, available for the researchers.
 
@@ -472,7 +471,7 @@ self-documenting code, as they sequentially guide the component's deployment pro
 platforms. In this regard, {\sl INDIGO--DataCloud} project contributed to open--source IaC tools such 
 as Ansible \cite{indigo-ansible} and Puppet \cite{indigo-puppet}. A representative example of 
 such contribution are the \textit{50 roles} being developed from scratch, currently hosted in
-the Ansible Galaxy portal \footnote{https://galaxy.ansible.com/indigo-dc/}. Figure 
+the Ansible Galaxy portal \cite{indigo-galaxy}. Figure 
 \ref{fig:fig_confman} shows the number of products that offer an automated means for deployment.
 It shows an increase after the {\sl INDIGO--1} release especially in the previous weeks of each
 of the two major releases.
@@ -694,10 +693,13 @@ projects.
 
 \begin{thebibliography}{1}
 
+
+\bibitem{h2020}
+\emph{HORIZON 2020}, The EU Framework Programme for Research and Innovation [Online]. Available: https://ec.europa.eu/programmes/horizon2020/
+
 \bibitem{zhu}
 L. Zhu and L. Bass and G. Champlin-Scharff, \emph{DevOps and Its Practices},
 IEEE Software, vol. 33, no. 3, pp. 32--34, May-June 2016.
-
 
 \bibitem{cordis:datagrid}
 \emph{DataGrid project}, European Community Research and Development
@@ -857,6 +859,10 @@ https://www.gitbook.com/@indigo-dc
 \bibitem{indigo-puppet}
 \emph{INDIGO--DataCloud PuppetForge repository},
 https://forge.puppet.com/indigodc
+
+\bibitem{indigo-galaxy}
+\emph{INDIGO--DataCloud Ansible Galaxy repository},
+https://galaxy.ansible.com/indigo-dc/
 
 \bibitem{indigo-ansible}
 \emph{INDIGO--DataCloud Ansible Galaxy repository},
