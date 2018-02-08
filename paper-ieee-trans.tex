@@ -364,23 +364,23 @@ Cloud computing benefits.
 
 INDIGO--DataCloud is the most recent project included in this paper thus it
 emerged from the lessons learned in the previous experiences described in
-Section \ref{sec:ev}. The expertise gathered throughout these years in terms
-of the evaluation and application of innovative software engineering
+Section \ref{sec:ev}. The expertise gathered throughout these years was highly
+profitable in terms of the evaluation and application of innovative software engineering
 methodologies, the management of new technologies to put those methodologies
-into practice, and the compilation and analysis of metrics to measure the
-success of the solutions implemented, has been complemented by the added 
-complexity of being framed into large collaborative projects with an extensive
-list of partners.
+into practice, and the compilation and analysis of the appropriate set of metrics to measure the
+success of the solutions implemented. All the above with the additional complexity of
+being framed into large collaborative projects with an extensive list of partners.
 
-In the following section we will describe the three main pillars that sustain the project's strategy to seek reliability in the 
-software produced. A solid \textit{Software Quality Assurance (SQA) criteria
-and metrics gathering definition} guides the development of the software in
-a per-change basis, validating the software at the very early stages. The 
-software delivery process is designed as a bottom-up \textit{adoption of DevOps
-principles}, passing through Continuous Integration (CI) and Continuous
-Delivery (CD) approaches. Once the software is released, it follows a 
-\textit{two-factor validation} in the project's pilot infrastructures and
-resource provider's early-adoption.
+In the following section we will describe the three main pillars that sustain the project's strategy to seek reliability throughout the 
+software lifecycle. A solid \textit{Software Quality Assurance (SQA) criteria
+and metrics gathering definition} will provide guidelines to develop quality 
+software, validating each change in the code, and facilitate its adoption. The software lifecycle is continuously monitored
+by a set of metrics, allowing promptly reactions to detected malfunctions throughout the
+process. A \textit{bottom-up adoption of DevOps principles} will promote automation to enable
+the foregoing change-based development process and set up advanced delivery mechanisms.
+The last key pillar is constituted by a \textit{two-factor validation} carried out over the project's pilot testbeds and
+e-Infrastructure resource provider's early-adoption.
+
 
 %The INDIGO--Datacloud project reflects the progress made in software
 %quality and reliability aspects throughout the past scientific European
@@ -408,7 +408,7 @@ produced. The SQA criteria is in continuous evolution, reviewed periodically to 
 project's needs.
 
 \begin{itemize}
-\item \textbf{Code style}.
+\item \textit{Code style}.
 Code style standards are enforced for every software component in the project stack. Community
 most-adopted or \textit{de-facto standard} is initially recommended, however the developer teams eventually
 choose the set of guidelines to comply with. The ultimate goal for code style assessment is to
@@ -416,7 +416,7 @@ improve the readability and reusability of the source code produced under the sc
 project. Figure \ref{fig:fig_codestyle} showcases the code style standards and their popularity
 over the software components contributing to the project.
 
-\item \textbf{Unit and Functional testing}.
+\item \textit{Unit and Functional testing}.
 Changes involving the addition of new functionalities are requested to be tested. \textit{Regression
 testing} in this context is done enforcing the successful execution of the previous
 functionality tests already present in the code, so to uncover any malfunction introduced by
@@ -430,21 +430,21 @@ contributions or products with codebases not fully under the control of the proj
 60\% of the products were over this threshold while 80\% of them had values above
 the 50\% coverage.
 
-\item \textbf{Integration testing}. Software components usually interact with other services while on
+\item \textit{Integration testing}. Software components usually interact with other services while on
 operation state. Integration testing deals with the interactions among coupled software components or
 parts of a system that cooperates to achieve a given functionality. This type of testing might be 
 complex and, based on the project's experience, tough to be tackled automatically. The aim is to 
 guarantee the overall operation of the component, focused on the services it intefaces with, whenever
 new functionalities are introduced.
 
-\item \textbf{Code review}.
+\item \textit{Code review}.
 Represents the last step in the change management pipeline, once the candidate change has 
 successfully passed through the testing methods described previously. It implies the human-based
 revision of the proposed change to discuss its adequance in terms of scope, objective fulfillment, 
 documentation completeness, etc. On approval, the candidate change is definitely merged into
 production.
 
-\item \textbf{Documentation}.
+\item \textit{Documentation}.
 Last but not least, the SQA criteria sets the path for the adoption of the developed software by
 defining the documentation content, according to the target audience. These requirements also 
 promote the automation, both in terms of documentation creation and service deployment. The
@@ -453,7 +453,7 @@ uploaded to online repositories \cite{indigo-gitbook}. Thus documentation is por
 human--reviewed, using the same workflow as the code does, validating the changes before being
 updated into the production repository. 
 
-\item \textbf{Automated Deployment}.
+\item \textit{Automated Deployment}.
 In order to lower the barriers of software adoption, the SQA criteria requires the automated 
 deployment of the products delivered as part of the catalogue. Automation in this context is 
 tackled using a configuration management tool. These tools allow to have an 
