@@ -392,60 +392,80 @@ e-Infrastructure resource provider's early-adoption.
 %is one of the major outcomes, as this paradigm has been progressively adopted by the
 %project.
 
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.5\textwidth]{images/codestyle.png}
+\caption{Code style standards followed by INDIGO--DataCloud's software products.}
+\label{fig:fig_codestyle}
+\end{figure}
+
+\begin{figure*}[ht]
+\centering
+\includegraphics[width=\textwidth]{images/unittest.png}
+\caption{Comparison of the unit testing coverage values for the {\sl INDIGO--DataCloud} software stack over the {\sl INDIGO--1} and {\sl INDIGO--2} major releases.}
+\label{fig:fig_unittest}
+\end{figure*}
+
+
 \subsection{Software Quality Procedures}
 \label{subsec:sqa}
 
-The software quality policies \cite{indigo-d31} cover: 1) the identification
+The software quality policies were initially defined in the first deliverable document of the
+project \cite{indigo-d31} and periodically reviewed to be endowed with applicable insights of 
+software engineering practices, responses to evolving needs emanated from the user communities and 
+feedback obtained from development teams. These policies cover the 1) identification
 and description of the \emph{SQA requirements} that the produced software need 
-to comply with, and 2) the \emph{quality metrics}, to monitor each software product's 
-behaviour throughout the development, release and production stages.
+to comply with, and the 2) \emph{quality metrics}, to monitor each software product's 
+behaviour throughout the development, release and post-release stages.
 
 \subsubsection{SQA criteria}
 
-The SQA requirements cover the set of conventions and recommendations that pave the way for
-an adequate development, timely deliver and reliable operation of the software components
-produced. The SQA criteria is in continuous evolution, reviewed periodically to match the
-project's needs.
+The SQA criteria is a collection of conventions and recommendations that pave the way for
+the adequate development, timely deliver and reliable operation of the software components
+produced. It emphasizes the quality requirements and best practices to be applied at the
+development phase, such as style and testing compliance or human code reviews, to protect the
+production source code versions. Besides, the criteria promotes the adoption of the software 
+by providing minimum requirements of documentation content and stressing the usage of automated
+solutions for software deployment.
 
 \begin{itemize}
 \item \textit{Code style}.
-Code style standards are enforced for every software component in the project stack. Community
-most-adopted or \textit{de-facto standard} is initially recommended, however the developer teams eventually
-choose the set of guidelines to comply with. The ultimate goal for code style assessment is to
-improve the readability and reusability of the source code produced under the scope of the
-project. Figure \ref{fig:fig_codestyle} showcases the code style standards and their popularity
-over the software components contributing to the project.
+The ultimate goal for code style assessment is to improve the readability and reusability of the source code produced under the scope of the
+project. Code style standards are enforced for every software component in the project stack. Community
+most-adopted or \textit{de-facto standards} are initially recommended, however the development teams eventually
+choose the set of guidelines to comply with.  Figure \ref{fig:fig_codestyle} highlights the code style standards and their popularity
+over the INDIGO--DataCloud software stack.
 
 \item \textit{Unit and Functional testing}.
 Changes involving the addition of new functionalities are requested to be tested. \textit{Regression
 testing} in this context is done enforcing the successful execution of the previous
 functionality tests already present in the code, so to uncover any malfunction introduced by
 the changes. On the other hand, \textit{unit testing} completes the source code testing evaluation by
-focusing on the code's internal design. Project's SQA criteria sets a recommended threshold of
+focusing on the code's internal design. The SQA criteria sets a recommended threshold of
 70\% coverage for unit testing. In Figure \ref{fig:fig_unittest}, unit testing coverage is compared
-for each software component over the two major INDIGO--DataCloud releases, showing an increment in the 
-averaged value of {\sl INDIGO--2} release. As it can be seen, a very small set of products with low coverage
-values highly impacted the overall result, although a significant part of these products are upstream
-contributions or products with codebases not fully under the control of the project. Nevertheless,
-60\% of the products were over this threshold while 80\% of them had values above
-the 50\% coverage.
+for each software component over the two major INDIGO--DataCloud releases, denoting an incremental 
+trend over the course of the project. As depicted in the Figure, 50\% of the components were over the
+70\% threshold while slightly less than 80\% of the product stack had values over 50\% coverage.
 
 \item \textit{Integration testing}. Software components usually interact with other services while on
 operation state. Integration testing deals with the interactions among coupled software components or
 parts of a system that cooperates to achieve a given functionality. This type of testing might be 
 complex and, based on the project's experience, tough to be tackled automatically. The aim is to 
-guarantee the overall operation of the component, focused on the services it intefaces with, whenever
-new functionalities are introduced.
+guarantee the overall operation of the component with regards to the services it interfaces with,
+whenever new functionalities are introduced.
 
 \item \textit{Code review}.
 Represents the last step in the change management pipeline, once the candidate change has 
 successfully passed through the testing methods described previously. It implies the human-based
 revision of the proposed change to discuss its adequance in terms of scope, objective fulfillment, 
 documentation completeness, etc. On approval, the candidate change is definitely merged into
-production.
+production. Human code reviewing is paramount in the software quality assessment, specially 
+important when the SQA testing requirements are fully automated. Secure code reviews are
+done at this stage, assessing common vulnerabilities from inputs coming from automated linters
+and manual dynamic application security testing.
 
 \item \textit{Documentation}.
-Last but not least, the SQA criteria sets the path for the adoption of the developed software by
+The SQA criteria sets the path for the adoption of the developed software by
 defining the documentation content, according to the target audience. These requirements also 
 promote the automation, both in terms of documentation creation and service deployment. The
 \textit{documentation is treated as code}, using a markup language, automatically rendered and
@@ -468,13 +488,6 @@ the Ansible Galaxy portal \footnote{https://galaxy.ansible.com/indigo-dc/}. Figu
 It shows an increase after the {\sl INDIGO--1} release especially in the previous weeks of each
 of the two major releases.
 \end{itemize}
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=0.5\textwidth]{images/codestyle.png}
-\caption{Code style standards followed by INDIGO--DataCloud's software products.}
-\label{fig:fig_codestyle}
-\end{figure}
 
 \subsubsection{Quality metrics}
 
@@ -499,7 +512,7 @@ KPIs primarly focus on the frequency and effiency -- mainly rollbacks -- statist
 
 \textit{Maintenance and user support metrics} are key for continuously improving the response
 to issues reported by external users. Feeback is collected from outside helpdesks, such as 
-EGI's GGUS \cite{ggus}, and the INDIGO--DataCloud's GitHub Issues tracker.
+EGI's GGUS \cite{ggus}, and the GitHub Issues tracker.
 
 \subsection{DevOps practices}
 \label{sec:devops}
@@ -512,22 +525,21 @@ lifetime, being one of its major outcomes in terms of sofware reliability.
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.5\textwidth, height=50mm]{images/jenkins_CI_builds.png}
-\caption{Evolution of the number of builds triggered as part of the CI implementation.}
+\caption{Evolution of the total number of testing builds triggered automatically as part of the Jenkins CI implementation.}
 \label{fig:fig_jenkins_CI_builds}
 \end{figure}
 
-\subsubsection{Continuous Integration}
+\subsubsection{Continuous Integration (CI)}
 \label{subsec:ci}
 The INDIGO--DataCloud project promoted the application of a CI scenario that enforces,
 for any piece of software produced, the testing requirements defined in the SQA criteria,
 as described in Section \ref{subsec:sqa}. Such environment requires an automation
-ready--to--go infrastructure where the different technologies involved -- source code
-management platform, automation server and containerization -- interact with each
+ready--to--go infrastructure where the different services and technologies involved interact with each
 other to trigger the source code validation pipeline for each candidate change. The
 pipeline is mainly comprised by the code style validation, unit and functional testing
 coverage. The CI pipeline is complemented with additional quality checks, such as 
 integration tests for the software components where automation of this type of testing
-is applicable, or security linters for the static analysis of suspicious
+is applicable, or security linters for the code static analysis of suspicious
 constructs that could lead to security risks. Metrics gathering also takes part of
 the CI pipeline so to have a per-change trend evolution of the common source code 
 related metrics, such as the source lines of code (SLOC) or the cyclomatic complexity. 
@@ -548,9 +560,7 @@ bug or design issue is likely to be detected and subsequently corrected at this 
 Figure \ref{fig:fig_jenkins_CI_builds} shows the evolution, throughout the 
 INDIGO--DataCloud's first and second releases, of the required test types builds since the
 implementation of the CI infrastructure. Automated functional testing coverage were not
-available for all the software stack, thus the associated number of builds are fewer. The
-executions are not precisely aligned as checks can be manually triggered, through Jenkins
-interface, useful for instance whenever a failed check needs to be rebuilt.
+available for all the software stack, thus the associated number of builds are fewer.
 
 \subsubsection{Continuous Delivery}
 As DevOps suggests, frequent releases positively affect the reliability of the software as
@@ -619,7 +629,7 @@ different DevOps practices is not only useful and suitable for the software rela
 to the core services in the INDIGO--DataCloud solution, but also applicable to the
 development and distribution of the applications coming from the user communities.
 
-Two applications from "Definition of Support to Research Communities" workpackage, 
+Two applications from "Definition of Support to Research Communities" work package, 
 DisVis \cite{disvis} and PowerFit \cite{powerfit}, were
 integrated into a similar CI/CD pipeline described in section \ref{sec:devops}.
 Figure \ref{fig:fig_disvis} shows the pipeline for the Disvis application.
@@ -648,7 +658,7 @@ infrastructure is depicted in Figure \ref{fig:fig_pilotpreview}, it shows the
 resources providers and the components or services they deployed and supported.
 
 The released software is tested in production environments through the
-Staged--Rollout process, before inclusion in the EGI's CloudManagement Distribution (CMD). 
+Staged--Rollout process, before inclusion in the EGI's Cloud Middleware Distribution (CMD). 
 Selected resource providers are requested to install
 the most updated stable versions of the software, and to give access to them to their users. The
 Staged--Rollout process is key to detect and mitigate issues that could only
