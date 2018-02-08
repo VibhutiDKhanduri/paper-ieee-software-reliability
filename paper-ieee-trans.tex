@@ -68,15 +68,15 @@ applications, has been driven by the needs of scientific communities as part of 
 pan-European research collaborations. One of the well-known examples is the Worldwide 
 Large Hadron Collider (LHC) Computing Grid infrastructure, powered 
 by the particle physics scientific community, built up to satisfy the computing needs
-of processing, storing and analysing the huge quantity of data coming from the Large 
-Hadron Collider particle accelerator. A significant number of innovation projects and
+of processing, storing and analysing the huge quantity of data coming from the 
+LHC particle accelerator. A significant number of innovation projects and
 technology transfer activities -- embraced by the 5th, 6th and 7th Framework Programmes,
 and ultimately by the Horizon 2020 programme \cite{h2020} -- are being held to coordinate and 
 develop distributed solutions that provide a seamless and transparent access to those
 computing and data resources, available for the researchers.
 
 Major developments were done throughout the years, mainly focused on providing new
-functionalities, leaving aside at early times the adoption of software engineering methodologies.
+functionalities, leaving aside in the early times the adoption of software engineering methodologies.
 The software delivered was then less tested, resulting in constant
 rollbacks and patches applied to production systems. Thereby, the stability and
 reliability of the e-Infrastructures was often compromised, affecting
@@ -89,7 +89,7 @@ delivered. At this point, evolving software engineering practices were
 considered and gradually adopted to define the quality procedures, teams
 organization and pilot testbeds.
 
-Analyzing the European Commission (EC)-funded software projects in the last decade
+By analyzing the European Commission (EC)-funded software projects in the last decade
 we have observed a continuous increase of the prominence and robustness of
 testing and validation procedures. One of many reasons is related to the
 evolution of the software engineering methodologies (creation of the Agile
@@ -117,7 +117,7 @@ following a logic evolution in which the quality and reliability of software hav
 increasingly had a more significant role. Experiences gathered during the 
 course of each project support this fact and, as it is shown in Table \ref{tab:feat},
 latest projects are the most committed in terms of software reliability awareness.
-Table \ref{tab:feat} summarizes also the topics addressed in the following sections, highlighting 
+Table \ref{tab:feat} summarizes also the topics addressed in the following sections, highlighting both
 the commonalities and specific features on software reliability.
 
 \begin{table}[!h]
@@ -183,13 +183,11 @@ INtegrating Distributed data Infrastructures for Global ExplOitation
 \subsection{DataGrid}
 
 The {\sl DataGrid} \cite{cordis:datagrid} project (Jan 2001 -- Dec 2003) 
-had as main goal to develop the software to provide basic Grid functionality
-and associated management tools for a large scale testbed for demonstration projects in three
-specific areas of science, such as particle physics, bioinformatics and earth observation.
-%was devoted to develop the first European infrastructure for Grid computing. 
-The project brought together 21 academic and industry partners, from 15 different
-countries. 
-The project delivered its own software distribution, named EDG (EU {\sl DataGrid}), strongly 
+had as the main goal to provide scientific communities, including physics, biology and 
+earth sciences, with intensive computing and large-scale dataset analysis capabilites.
+The project brought together 21 academic and industry partners, from 15 different countries \cite{gagliardi}. 
+Grid technology was the emerging technology to be used in order to address these requirements,
+thus the project delivered its own software distribution, named EDG (EU {\sl DataGrid}), strongly 
 based on Globus middleware services \cite{globus}. The project was organized in 12 workpages, from 
 which 5 were devoted to software development coordinated by an 
 Architecture Task Force, supervising the overall design and technical consistency 
@@ -203,13 +201,13 @@ development tasks, 2) the evolution of the requirements coming from the user
 communities (50 use cases from the three scientific area), and 3) the lack of a body 
 of knowledge for academic software engineering.
 
-Agile methodologies were being introduced at the time
-through the Agile manifesto \cite{agile-manifesto}, as such the project's
+The Agile manifesto \cite{agile-manifesto} was by then an emerging methodology, thus not
+considered by the project, and as such the project's
 development design suffered from the methods, tools, techniques and best
 practices emerging from the new discipline of software engineering
 \cite{agile}. Nonetheless, the project focused on the experiences and procedures
-used by different open source software projects, such as Linux and Apache, trying to reach a
-higher maturity level \cite{cmm}.
+used by diverse collaborative open source software projects, such as Linux and Apache, trying to 
+reach a higher maturity level \cite{cmm}.
 
 \begin{table}[!h]
 %% increase table row spacing, adjust to taste
@@ -268,7 +266,7 @@ industrial partners, that issued more than 10 thousand bug fixes, 1.7 thousand p
 defined over 300 development tasks tracked by the use of bug/task management tools.
 
 The source code was available at a private, centralized version control system.
-The code was passed through a manual certification procedure at the time of the release. 
+The code passed through a manual certification procedure at the time of the release. 
 This procedure tried to improve the reliability of the software components by applying an
 acceptance criteria plan at each stage of the software release process 
 \cite{egee:acceptance-criteria} i.e. integration, certification, pre--production and 
@@ -315,22 +313,20 @@ them through the chart generation framework.
 The {\sl EGI--InSPIRE} (Integrated Sustainable Pan--European Infrastructure for
 Researchers in Europe, May 2010 -- May 2014) project \cite{cordis:egi-inspire}
 arose as the continuation of the {\sl EGEE--III} project, with the mission of establishing and
-maintaining a sustainable European Grid Infrastructure.
-
-
-{\sl EGI--InSPIRE} not only ensured the coordination of the operation of a secure, reliable 
-European-wide production Grid infrastructure federated from National Grid Initiatives (NGIs)
-that is integrated and interoperates with other Grids worldwide but also foreseed the 
+maintaining a sustainable European Grid Infrastructure, composed by a federation of National 
+Grid Initiatives and interoperable with other Grids worldwide.
+To accomplish this goal the project foreseed the 
 maintenance and development of operational tools, like the Operations Portal \cite{egi-ops}, 
-the {\sl EGI} Helpdesk \cite{ggus} or Grid configuration repository (GOCDB) \cite{gocdb} and the 
-coordination of the external provision of software required by {\sl EGI} to 
-form the production infrastructure. For the later it maintained a production--ready 
-Grid computing middleware distribution called {\sl UMD} (Unified Middleware Distribution), and 
-defined general and component specific quality criteria to be applied to software 
-components made available through this repository.
-The role of {\sl UMD} was to enforce the fulfilment of this set of quality
-criteria \cite{egi-qc} in the software being delivered (i.e.,
-{\sl EMI} and {\sl Globus}) \cite{mario}. {\sl UMD} is still being used and
+the {\sl EGI} Helpdesk \cite{ggus} or the Grid configuration database (GOCDB) \cite{gocdb}, and the 
+management of the software provisioning process \cite{mario}, to validate and distribute the software that conformed
+the production infrastructure. As a result of this process, a production--ready 
+Grid computing middleware distribution named {\sl UMD} (Unified Middleware Distribution) was
+maintained, comprised by roughly 250 software components supplied by diverse technology providers such 
+as {\sl EMI} and {\sl Globus}. In order to be distributed through UMD
+repositories, the software has to be compliant with EGI's Quality Criteria (QC) \cite{egi-qc}. The 
+QC defines a set of requirements in different areas: documentation, deployment, security, information
+model and operations.
+{\sl UMD} is still being used and
 deployed in the European scientific e--Infrastructures under a follow--up
 project, the {\sl EGI--Engage} (Engaging the EGI Community towards an Open Science
 Commons) \cite{cordis:egi-engage}. This distribution is currently complemented
@@ -359,7 +355,7 @@ into practice, and the compilation and analysis of the appropriate set of metric
 success of the solutions implemented. All the above with the additional complexity of
 being framed into large collaborative projects with an extensive list of partners.
 
-In the following section we will describe the three main pillars that sustain the project's strategy to seek reliability throughout the 
+In the following sections we will describe the three main pillars that sustain the project's strategy to seek reliability throughout the 
 software lifecycle. A solid \textit{Software Quality Assurance (SQA) criteria
 and metrics gathering definition} will provide guidelines to develop quality 
 software, validating each change in the code, and facilitate its adoption. The software lifecycle is continuously monitored
@@ -453,7 +449,7 @@ Represents the last step in the change management pipeline, once the candidate c
 successfully passed through the testing methods described previously. It implies the human-based
 revision of the proposed change to discuss its adequance in terms of scope, objective fulfillment, 
 documentation completeness, etc. On approval, the candidate change is definitely merged into
-production. Human code reviewing is paramount in the software quality assessment, specially 
+the source code's production version. Human code reviewing is paramount in the software quality assessment, specially 
 important when the SQA testing requirements are fully automated. Secure code reviews are
 done at this stage, assessing common vulnerabilities from inputs coming from automated linters
 and manual dynamic application security testing.
@@ -471,9 +467,9 @@ updated into the production repository.
 In order to lower the barriers of software adoption, the SQA criteria requires the automated 
 deployment of the products delivered as part of the catalogue. Automation in this context is 
 tackled using a configuration management tool. These tools allow to have an 
-\textit{infrastructure as code} (IaC), managing the component's deployment through declarative
-definitions. The definition files appear as additional source of documentation, 
-self-documenting code, as they sequentially guide the component's deployment process in multiple
+\textit{Infrastructure as Code} (IaC), managing the component's deployment through declarative
+definitions. The definition files appear as additional source of documentation
+-- self-documenting code -- as they sequentially guide the component's deployment process in multiple
 platforms. In this regard, {\sl INDIGO--DataCloud} project contributed to open--source IaC tools such 
 as Ansible \cite{indigo-ansible} and Puppet \cite{indigo-puppet}. A representative example of 
 such contribution are the \textit{50 roles} being developed from scratch, currently hosted in
@@ -695,6 +691,9 @@ projects.
 \bibitem{h2020}
 \emph{HORIZON 2020}, The EU Framework Programme for Research and Innovation [Online]. Available: https://ec.europa.eu/programmes/horizon2020/
 
+\bibitem{agile-manifesto}
+\emph{Manifesto for Agile Software Development} [Online]. Available: http://agilemanifesto.org
+
 \bibitem{zhu}
 L. Zhu and L. Bass and G. Champlin-Scharff, \emph{DevOps and Its Practices},
 IEEE Software, vol. 33, no. 3, pp. 32--34, May-June 2016.
@@ -702,6 +701,10 @@ IEEE Software, vol. 33, no. 3, pp. 32--34, May-June 2016.
 \bibitem{cordis:datagrid}
 \emph{DataGrid project}, European Community Research and Development
 Information Service (CORDIS) [Online]. Available: http://cordis.europa.eu/project/rcn/53665\_en.html
+
+\bibitem{gagliardi}
+Gagliardi F., Jones B., Reale M., Burke S., \emph{European DataGrid Project: Experiences of Deploying a Large Scale Testbed for E-science Applications},
+in Calzarossa M.C., Tucci S. (eds) Performance Evaluation of Complex Systems: Techniques and Tools, Lecture Notes in Computer Science, vol 2459. Springer, 2002.
 
 \bibitem{globus}
 I. Foster and C. Kesselman, \emph{Globus: a Metacomputing Infrastructure
@@ -713,9 +716,6 @@ L. Momtahan and A. Martin, \emph{e-Science Experiences: Software Engineering
 Practice and the EU DataGrid}, in Proc. Asia-Pacific Software Engineering
 Conference, Gold Coast, Queensland, Australia, pp. 269-275, IEEE Press,
 4-6 Dec. 2002.
-
-\bibitem{agile-manifesto}
-\emph{Manifesto for Agile Software Development} [Online]. Available: http://agilemanifesto.org
 
 \bibitem{agile}
 T. Dingsoyr, \emph{A decade of agile methodologies: Towards explaining agile
@@ -782,7 +782,6 @@ Organization for Standarization [Online]. Available: https://www.iso.org/standar
 \bibitem{emi-metrics}
 \emph{EMI Metrics Specification} [Online]. Available: https://goo.gl/CCtY7x
 
-
 \bibitem{emi-quality-model}
 \emph{EMI Quality Model} [Online]. Available: https://goo.gl/LdS6fL
 
@@ -803,6 +802,10 @@ https://ggus.eu/
 \bibitem{gocdb}
 \emph{GOCDB} EGI Grid Configuration Repository [Online]. Available: 
 https://ggus.eu/
+
+\bibitem{egi-qc}
+\emph{EGI Quality Criteria} [Online]. Available: 
+https://egi-qc.github.io/
 
 \bibitem{github}
 \emph{GITHUB} [Online]. Available: 
@@ -916,10 +919,6 @@ is a computing researcher at LIP. He worked in the development of advanced data 
 \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{images/DavideSalomoni}}]{Davide Salomoni}
 is Director of Technology at the Italian National Institute for Nuclear Physics (INFN). He has 27 years of international experience in private and public environments related to distributed computing and communication technologies. He currently leads the Software Development and Distributed Systems department at CNAF, the INFN National Center dedicated to research and development on IT technologies, located in Bologna, Italy. He was Project Coordinator of INDIGO--DataCloud, a project funded by the EC Horizon2020, that developed innovative open source computing and storage solutions.
 \end{IEEEbiography}
-
-
-
-
 
 \end{document}
 
