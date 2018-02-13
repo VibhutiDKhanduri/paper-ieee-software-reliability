@@ -45,7 +45,7 @@ present European Commission-funded projects to illustrate how the research on so
 reliability has progressed in Europe over the last 15 years following the foundation of the
 first project in 2001. In particular, we will summarize the techniques and procedures
 applied to deliver quality software, highlighting the main challenges and barriers confronted
-at the time, and how they were partially or totally overcome. The base of knowledge collected
+at the time, and how they were partially or totally overcome. The knowledge base established
 throughout the years, sustained by the advances in the area of software engineering,
 definitely conformed a significant breakthrough in the reliability of software delivered in the
 European research arena. Recent software development projects funded by the European
@@ -66,12 +66,12 @@ Techniques, DevOps
 supporting an unified access to large-scale computing and intense data analysis
 applications, has been driven by the needs of scientific communities as part of their
 pan-European research collaborations. One such example is the Worldwide
-Large Hadron Collider (LHC) Computing Grid infrastructure, motivated
+Large Hadron Collider (LHC) Computing Grid infrastructure, driven
 by the particle physics scientific community, built to satisfy the computing needs
 of processing, storing and analysis of the very large amount of data produced by the
 LHC particle accelerator. A significant number of innovation projects and
-technology transfer activities -- from the 5th, 6th and 7th Framework Programmes,
-and recently by the Horizon 2020 programme \cite{h2020} -- are under way to
+technology transfer activities -- from the European Union's funded 5th, 6th and 7th Framework Programmes,
+and recently from the Horizon 2020 programme \cite{h2020} -- have as their main goal to
 develop software solutions that provide a seamless and transparent access to distributed
 computing and data resources by the researchers.
 
@@ -82,11 +82,11 @@ rollbacks and patches applied to production systems. Thereby, the stability and
 reliability of the e-Infrastructures was often compromised, affecting
 negatively their exploitation by the scientific communities.
 
-Soon it become apparent the need for a better balance between the addition of new features
+Soon it became apparent the need for a better balance between the addition of new features
 and the reliability of the released software. Consequently, a substantial part of the
-software lifecycle would have to be devoted to the quality of the software being
+software lifecycle would have to be devoted to the improvement of the quality of the software being
 delivered. At this point, evolving software engineering practices were
-considered and gradually adopted to define and implement quality procedures, the organization of teams
+considered and gradually adopted to define and implement quality procedures, the organization of development teams
 and deployment of pilot testbeds.
 
 Analysing the European Commission (EC)-funded software projects over the last decade,
@@ -116,7 +116,7 @@ experiences from the recent {\sl INDIGO--DataCloud} project. Conclusions are dra
 The EC projects considered in this paper are listed chronologically in Table
 \ref{tab:eup}. Each project paved the way of the subsequent projects,
 following a logic evolution in which the role of the quality and reliability of the software have
-consistently increased. As shown in Table \ref{tab:feat}, the most recent projects are more committed and aware to software reliability practices.
+consistently increased. As shown in Table \ref{tab:feat}, the most recent projects are more committed to and aware of software reliability practices.
 Table \ref{tab:feat} also shows the topics addressed in the following sections, highlighting
 the commonalities and specific features on software reliability.
 
@@ -186,7 +186,7 @@ The {\sl DataGrid} \cite{cordis:datagrid} project (Jan 2001 -- Dec 2003)
 main goal was to provide scientific communities, including physics, biology and
 earth sciences, with intensive computing and large-scale dataset analysis capabilities.
 The project brought together 21 academic and industry partners, from 15 different countries \cite{gagliardi}.
-Grid was the emerging technology to be used in order to address these requirements,
+Grid was the emerging technology to be used in order to address their requirements,
 thus the project delivered its own software distribution, named EDG (EU {\sl DataGrid}), strongly
 based on Globus middleware components and services \cite{globus}. The project was organized in 12 work packages, from
 which 5 were devoted to software development and coordinated by an
@@ -201,10 +201,10 @@ development tasks, 2) the fast evolution of the requirements from the user
 communities (50 use cases from the three scientific area), and 3) the lack of a body
 of knowledge for academic software engineering.
 
-The Agile manifesto \cite{agile-manifesto} was by then an emerging methodology, thus not
+The Agile manifesto \cite{agile-manifesto} was by then an emerging methodology, not yet
 considered by the project, and as such the project's
-development design suffered from the methods, tools, techniques and best
-practices emerging from the new discipline of software engineering
+development design suffered from the lack of the methods, tools, techniques and best
+practices emerging from these new discipline of software engineering
 \cite{agile}. Nevertheless, the project focused on the experiences and procedures
 used by diverse collaborative open source software projects, such as Linux and Apache, trying to
 achieve a higher maturity level \cite{cmm}.
@@ -248,11 +248,11 @@ DevOps practices adoption (CI, CD)&&&&&&$\surd$\\
 
 The three phases of Enabling Grids for E--sciencE ({\sl EGEE}, Apr 2004 -- Apr 2010)
 \cite{cordis:egee, cordis:egee2, cordis:egee3} projects brought together
-scientists and engineers from over 240 institutions in 45 countries to
+scientists and engineers from over 240 institutions in 45 countries aiming to
 provide a seamless Grid infrastructure for e--Science. {\sl EGEE--II} and {\sl EGEE--III}
 featured the internationalization (outside Europe) of the project, embracing worldwide research
 institutions and user communities. The software to sustain the increasing
-requirements from the diverse scientific communities would need to develop a
+requirements coming from the diverse scientific communities would need to develop a
 rich set of new services while maintaining a sustainable infrastructure for
 Grid computing, eventually used by more than 15 thousand researchers and deployed in
 over 250 institutions.
@@ -262,13 +262,13 @@ official software distribution of {\sl EGEE} as of 2006, after two years of prot
 re--engineering efforts to converge with the {\sl LHC} Computing Grid (LCG--2), Virtual
 Data Toolkit (VDT) and Condor \cite{condor} software stacks. The
 development team was comprised of more that 80 people from 12 academic and
-industrial partners, which issued more than 10 thousand bug, 1.7 thousand patches and
-defined over 300 development tasks tracked by the use of bug/task management tools.
+industrial partners, which issued more than 10 thousand bugs fixes, 1.7 thousand patches and
+defined over 300 development tasks tracked using bug/task management tools.
 
 The source code was available at a private, centralized version control system.
 The code passed through a manual certification procedure at the time of the release.
-This procedure aimed to improve the reliability of the software components by applying an
-acceptance criteria plan at each stage of the software release process
+This procedure aimed to improve the reliability of the software components by applying
+acceptance criteria checks at each stage of the software development lifecycle
 \cite{egee:acceptance-criteria} i.e. integration, certification, pre--production and
 production. Starting with {\sl EGEE--II}, the project adopted automation in the software
 lifecycle process by leveraging the automatic build system for Grid middleware, that is
@@ -315,16 +315,16 @@ Researchers in Europe, May 2010 -- May 2014) project \cite{cordis:egi-inspire}
 was the continuation of the {\sl EGEE--III} project, with the objective of establishing and
 maintaining a sustainable European Grid Infrastructure, composed by a federation of National
 Grid Initiatives and interoperable with other Grids worldwide.
-This goal would be accomplished through the
-development and maintenance of operational tools, such as the Operations Portal \cite{egi-ops},
+This goal would had been accomplished through the
+development and maintenance of some operational tools, such as the Operations Portal \cite{egi-ops},
 the {\sl EGI} Helpdesk \cite{ggus}, or the Grid configuration database (GOCDB) \cite{gocdb}, and the
-management of the software provisioning process \cite{mario}, to validate and distribute the software to
-the production infrastructure. As a result, this process led to a production--ready
+management of the software provisioning process \cite{mario}, dealing with the validation and distribution of the software to
+the production infrastructures. As a result, this process led to a production--ready
 Grid computing middleware distribution named {\sl UMD} (Unified Middleware Distribution). At that time the {\sl UMD}
 was a stack of about 250 software components from several technology providers such
 as {\sl EMI} and {\sl Globus}. In order to be distributed through UMD
-repositories, the software has to be compliant with EGI's Quality Criteria (QC) \cite{egi-qc}. The
-QC defines a set of requirements in different areas: documentation, deployment, security, information
+repositories, the software had to be compliant with EGI's Quality Criteria (QC) \cite{egi-qc}. The
+QC defined a set of requirements in different areas: documentation, deployment, security, information
 model and operations.
 {\sl UMD} is still being used and
 deployed in the European scientific e--Infrastructures under the follow--up
@@ -340,7 +340,7 @@ explOitation, Apr 2015 -- Sep 2017) \cite{cordis:indigo} is the last
 project of software development considered in this paper. At the time of writing
 this paper, the project is succeeding in providing solutions to address the existing gaps in
 Cloud Platform--as--a--Service (PaaS) and Software--as--a--Service (SaaS) levels,
-helping developers, e--Infrastructures and scientific communities to exploit
+helping developers, e--Infrastructures administrators and scientific communities to exploit
 Cloud computing benefits.
 
 \section{New trends in software reliability}
@@ -352,13 +352,13 @@ Section \ref{sec:ev}. The expertise gathered throughout these years was highly
 profitable in terms of the evaluation and application of innovative software engineering
 methodologies, the management of new technologies to put those methodologies
 into practice, and the compilation and analysis of the appropriate set of metrics to measure the
-success of the solutions implemented. All the above with the additional complexity of being framed into
-large collaborative projects with an extensive list of partners.
+quality of the solutions implemented. All the above with the additional complexity of being framed into a
+large collaborative project with an extensive list of partners.
 
 In the following sections, we will describe the three main pillars that sustain the project's strategy to attain reliability throughout the
 software lifecycle. A solid \textit{Software Quality Assurance (SQA) criteria
 and metrics gathering definition}, will provide guidelines to develop quality
-software, validating each change in the code, and facilitate its adoption. The software lifecycle is continuously monitored
+software, validating each change in the code, and facilitating its adoption. The software lifecycle is continuously monitored
 by a set of metrics, allowing promptly reactions to detected malfunctions throughout the
 process. A \textit{bottom-up adoption of DevOps principles} will promote automation to enable
 the foregoing change-based development process and set up advanced delivery mechanisms.
@@ -368,7 +368,7 @@ e-Infrastructure resource provider's early-adoption.
 
 %The {\sl INDIGO--DataCloud} project reflects the progress made in software
 %quality and reliability aspects throughout the past scientific European
-%experiences. Nevertheless (I would remove this), the project’s Quality Assurance procedures are also
+%experiences. Nevertheless (I would remove this), the project???s Quality Assurance procedures are also
 %highly influenced by the insights of current big worldwide collaborations of
 %software development. These collaborations have continuously inspired the use of new
 %technologies and procedures to increase the robustness and quality of the
@@ -400,7 +400,7 @@ e-Infrastructure resource provider's early-adoption.
 \subsection{Software Quality Procedures}
 \label{subsec:sqa}
 
-The software quality policies were initially defined in the first deliverable document of the
+The initial software quality policies were defined in the first deliverable document of the
 project \cite{indigo-d31}. The policies where reviewed periodically taking into account the requirements
 from the user communities, the feedback from the development teams and the insights of software engineering practices. These policies cover the 1) identification
 and description of the \emph{SQA requirements} that the produced software need
@@ -413,8 +413,7 @@ The SQA criteria is a set of conventions and recommendations that pave the way f
 the adequate development, timely deliver and reliable operation of the produced software components.
 It emphasizes the quality requirements and best practices to be applied at the
 development phase, such as style and testing compliance or human code reviews, to protect the
-production source code versions. Furthermore, the criteria promotes the adoption of the software
-by providing minimum requirements of documentation content and stressing the usage of automated
+production source code versions. Furthermore, there are provided the minimum requirements on documentation content and it is stresed the importance of the usage of automated
 solutions for software deployment.
 
 \begin{itemize}
@@ -427,9 +426,8 @@ in the {\sl INDIGO--DataCloud} software stack.
 
 \item \textit{Unit and Functional testing}.
 Changes involving the addition of new functionalities, are required to be tested. \textit{Regression
-testing} in this context is accomplished by enforcing the successful execution of the previous
-functionality tests already present in the code to uncover any malfunction introduced by
-the changes. \textit{Unit testing} completes the source code testing evaluation by
+testing} in this context is accomplished by enforcing the definition, and periodic execution, of tests for the fixed issues that ensure these issues are not reintroduced during the development activities.
+ \textit{Unit testing} completes the source code testing evaluation by
 focusing on the code's internal design. The SQA criteria sets a recommended threshold of
 70\% coverage for unit testing. In Figure \ref{fig:fig_unittest}, unit testing coverage is compared
 for each software component between the two major {\sl INDIGO--DataCloud} releases, denoting an incremental
@@ -449,7 +447,7 @@ successfully passed through the testing methods described previously. It implies
 revision of the proposed change to discuss its adequacy in terms of scope, objective fulfilment,
 documentation completeness, etc. On approval, the candidate change is definitely merged into
 the source code's production version. Human code reviewing is paramount in the software quality assessment, specially
-important when the SQA testing requirements are fully automated. Secure code reviews are
+important when the SQA testing requirements are fully automated. Secure code reviews are also 
 done at this stage, assessing common vulnerabilities from inputs coming from automated linters
 and manual dynamic application security testing.
 
@@ -474,7 +472,7 @@ as Ansible \cite{indigo-ansible} and Puppet \cite{indigo-puppet}. A representati
 such contribution are the \textit{50 roles} being developed from scratch, currently hosted in
 the Ansible Galaxy portal \cite{indigo-galaxy}. Figure
 \ref{fig:fig_confman} shows the number of products that offer an automated means for deployment.
-It shows an increase after the {\sl INDIGO--1} release especially in the previous weeks of each
+It shows an increase after the {\sl INDIGO--1} release and in the previous weeks of each
 of the two major releases.
 \end{itemize}
 
@@ -488,13 +486,13 @@ maintenance phases of the software lifecycle.
 \textit{Development metrics} are obtained programatically from several sources, namely GitHub
 API and Jenkins service, and graphically displayed as GitHub pages using GrimoireLab
 framework \cite{grimoirelab}. Per-component weekly reports, including the SQA requirement
-completeness, are issued and individually discussed through the different communication channels
+fulfilment, are issued and individually discussed through the different communication channels
 with the development teams. Issue tracking metrics and KPIs are an essential piece of information
 of both feature addition and defect solving, useful to detect and fix misbehaviours while in the
 development phase.
 
 \textit{Release metric} sources are the online repository servers, namely the
-Linux package \cite{indigo-pkg-repo} and DockerHub \cite{indigo-dockerhub} repositories. Jenkins
+Linux packages \cite{indigo-pkg-repo} and DockerHub \cite{indigo-dockerhub} repositories. Jenkins
 server also contains valuable release data as it is the service where the packages
 and containers are being built before being uploaded to the online repositories. Release
 KPIs primarily focus on the frequency and efficiency -- mainly rollbacks -- statistics.
@@ -618,7 +616,7 @@ Figure \ref{fig:fig_disvis} shows the pipeline for the Disvis application.
 
 User application developers were provided with both a means to validate the
 source code before merging and the creation of a new versioned Docker image,
-automatically available in the {\sl INDIGO--DataCloud}’s application repository.
+automatically available in the {\sl INDIGO--DataCloud}???s application repository.
 
 The novelty introduced in the pipeline above is the validation of the application.
 Once the application is packaged as a Docker image, and subsequently uploaded
@@ -640,7 +638,7 @@ infrastructure is depicted in Figure \ref{fig:fig_pilotpreview}, it shows the
 resources providers and the components or services they deployed and supported.
 
 The released software is tested in production environments through the
-Staged--Rollout process, before inclusion in the EGI's Cloud Middleware Distribution (CMD).
+Staged--Rollout process, before its inclusion in the EGI's Cloud Middleware Distribution (CMD).
 Selected resource providers are requested to install
 the most updated stable versions of the software, and to give access to them to their users. The
 Staged--Rollout process is key to detect and mitigate issues that could only
@@ -684,7 +682,7 @@ criteria through each stage of the software lifecycle.
 
 {\sl INDIGO--DataCloud} project has received funding from the European Research
 Council (ERC) under the European Union's Horizon 2020 research and innovation
-programme (grant agreement n° 777536).
+programme (grant agreement n?? 777536).
 
 \begin{thebibliography}{1}
 
@@ -709,7 +707,7 @@ in Calzarossa M.C., Tucci S. (eds) Performance Evaluation of Complex Systems: Te
 \bibitem{globus}
 I. Foster and C. Kesselman, \emph{Globus: a Metacomputing Infrastructure
 Toolkit}, International Journal of Supercomputer Applications, vol. 11, no. 2,
-pp. 115–128, 1997.
+pp. 115???128, 1997.
 
 \bibitem{datagrid}
 L. Momtahan and A. Martin, \emph{e-Science Experiences: Software Engineering
@@ -748,11 +746,11 @@ Milestone MSA3.4.2, 2010, EGEE-III project [Online]. Available: https://edms.cer
 \bibitem{glite}
 E. Laure et al, \emph{Programming the Grid with gLite}, in Jin, H., Reed, D.A.,
 Jiang, W. (eds.) Computational Methods in Science and Technology, vol. 12(1),
-pp. 33–45, Scientific Publishers OWN, 2006.
+pp. 33???45, Scientific Publishers OWN, 2006.
 
 \bibitem{condor}
 D. Thain, T. Tannenbaum, M. Livny, \emph{Condor and the Grid}, in Grid
-Computing: Making the Global Infrastructure a Reality, Chapter 11, pp. 63–70,
+Computing: Making the Global Infrastructure a Reality, Chapter 11, pp. 63???70,
 Eds. John Wiley \& Sons Inc., 2002.
 
 \bibitem{cordis:etics}
@@ -766,7 +764,7 @@ Phase 2 (ETICS 2)} project, European Community Research and Development
 Information Service (CORDIS), [Online]. Available: http://cordis.europa.eu/project/rcn/86604\_en.html
 
 \bibitem{etics}
-A. Di Meglio, M.-E.Bégin, P. Couvares, E. Ronchieri, E. Takacs, \emph{ETICS:
+A. Di Meglio, M.-E.B??gin, P. Couvares, E. Ronchieri, E. Takacs, \emph{ETICS:
 the international software engineering service for the Grid}, in Journal of
 Physics: Conference Series, Vol. 119, N. 4, IOP Publishing Ltd, 2008.
 
@@ -820,7 +818,7 @@ https://jenkins-ci.org/
 
 \bibitem{mario}
 M. David et al, \emph{Validation of Grid Middleware for the European Grid
-Infrastructure}, in Journal of Grid Computing, vol. 12, issue 3, pp. 543–558,
+Infrastructure}, in Journal of Grid Computing, vol. 12, issue 3, pp. 543???558,
 Springer, 2014.
 
 \bibitem{cordis:egi-engage}
@@ -877,11 +875,11 @@ https://galaxy.ansible.com/indigo-dc/
 
 \bibitem{disvis} G.C.P. Van Zundert, A.M.J.J. Bonvin,
 DisVis: quantifying and visualizing the accessible interaction space of distance
-restrained biomolecular complexes, Bioinformatics 31 (2015) 3222–3224
+restrained biomolecular complexes, Bioinformatics 31 (2015) 3222???3224
 
 \bibitem{powerfit} G.C.P. Van Zundert, A.M.J.J. Bonvin,
 Fast and sensitive rigid-body fitting into cryo-EM density maps with PowerFit,
-AIMS Biophys. 2 (2015) 73–87.
+AIMS Biophys. 2 (2015) 73???87.
 
 \end{thebibliography}
 
