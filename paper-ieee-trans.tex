@@ -66,7 +66,7 @@ Techniques, DevOps
 supporting an unified access to large-scale computing and intense data analysis
 applications, has been driven by the needs of scientific communities as part of their
 pan-European research collaborations. One such example is the Worldwide
-Large Hadron Collider (LHC) Computing Grid infrastructure, motivated
+Large Hadron Collider (LHC) Grid computing infrastructure, motivated
 by the particle physics scientific community, built to satisfy the computing needs
 of processing, storing and analysis of the very large amount of data produced by the
 LHC particle accelerator. A significant number of innovation projects and
@@ -261,7 +261,7 @@ The {\sl gLite} middleware \cite{glite} was the
 official software distribution of {\sl EGEE} as of 2006, after two years of prototyping and
 re--engineering efforts to converge with the {\sl LHC} Computing Grid (LCG--2), Virtual
 Data Toolkit (VDT) and Condor \cite{condor} software stacks. The
-development team was comprised of more that 80 people from 12 academic and
+development team was comprised of more than 80 people from 12 academic and
 industrial partners, which issued more than 10 thousand bug, 1.7 thousand patches and
 defined over 300 development tasks tracked by the use of bug/task management tools.
 
@@ -317,14 +317,13 @@ maintaining a sustainable European Grid Infrastructure, composed by a federation
 Grid Initiatives and interoperable with other Grids worldwide.
 This goal would be accomplished through the
 development and maintenance of operational tools, such as the Operations Portal \cite{egi-ops},
-the {\sl EGI} Helpdesk \cite{ggus}, or the Grid configuration database (GOCDB) \cite{gocdb}, and the
+the {\sl EGI} Helpdesk \cite{ggus}, or the Grid Operations Configuration DataBase (GOCDB) \cite{gocdb}, and the
 management of the software provisioning process \cite{mario}, to validate and distribute the software to
 the production infrastructure. As a result, this process led to a production--ready
 Grid computing middleware distribution named {\sl UMD} (Unified Middleware Distribution). At that time the {\sl UMD}
-was a stack of about 250 software components from several technology providers such
+was a stack of about 250 software components from several technology providers, such
 as {\sl EMI} and {\sl Globus}. In order to be distributed through UMD
-repositories, the software has to be compliant with EGI's Quality Criteria (QC) \cite{egi-qc}. The
-QC defines a set of requirements in different areas: documentation, deployment, security, information
+repositories, the software has to be compliant with EGI's Quality Criteria (QC) \cite{egi-qc}. QC defines a set of requirements in different areas: documentation, deployment, security, information
 model and operations.
 {\sl UMD} is still being used and
 deployed in the European scientific e--Infrastructures under the follow--up
@@ -352,15 +351,15 @@ Section \ref{sec:ev}. The expertise gathered throughout these years was highly
 profitable in terms of the evaluation and application of innovative software engineering
 methodologies, the management of new technologies to put those methodologies
 into practice, and the compilation and analysis of the appropriate set of metrics to measure the
-success of the solutions implemented. All the above with the additional complexity of being framed into
+success of the solutions implemented. All the above achievements were with the additional complexity of being framed into
 large collaborative projects with an extensive list of partners.
 
-In the following sections, we will describe the three main pillars that sustain the project's strategy to attain reliability throughout the
+In the following sections, we describe the three main pillars that sustain the project's strategy to attain reliability throughout the
 software lifecycle. A solid \textit{Software Quality Assurance (SQA) criteria
-and metrics gathering definition}, will provide guidelines to develop quality
+and metrics gathering definition} provide guidelines to develop quality
 software, validating each change in the code, and facilitate its adoption. The software lifecycle is continuously monitored
 by a set of metrics, allowing promptly reactions to detected malfunctions throughout the
-process. A \textit{bottom-up adoption of DevOps principles} will promote automation to enable
+process. A \textit{bottom-up adoption of DevOps principles} promotes automation to enable
 the foregoing change-based development process and set up advanced delivery mechanisms.
 The last key pillar is the \textit{two-factor validation} carried out over the project's pilot testbeds and
 e-Infrastructure resource provider's early-adoption.
@@ -446,8 +445,8 @@ whenever new functionalities are introduced.
 \item \textit{Code review}.
 Represents the last step in the change management pipeline, once the candidate change has
 successfully passed through the testing methods described previously. It implies the human-based
-revision of the proposed change to discuss its adequacy in terms of scope, objective fulfilment,
-documentation completeness, etc. On approval, the candidate change is definitely merged into
+revision of the proposed change to discuss its adequacy in terms of e.g. scope, objective fulfilment,
+and documentation completeness. On approval, the candidate change is definitely merged into
 the source code's production version. Human code reviewing is paramount in the software quality assessment, specially
 important when the SQA testing requirements are fully automated. Secure code reviews are
 done at this stage, assessing common vulnerabilities from inputs coming from automated linters
@@ -542,8 +541,8 @@ the CI pipeline to have a per-change trend evolution of the common source code
 related metrics, such as SLOC or the cyclomatic complexity.
 
 The practical implementation of the CI scenario leveraged on tightly integrated open
-source tools such as GitHub \cite{github} -- as the online source code repository --,
-Jenkins \cite{jenkins} -- the event-response CI system -- and Docker container
+source tools such as GitHub \cite{github} as the online source code repository,
+Jenkins \cite{jenkins}, the event-response CI system, and Docker container
 provisioning to provide instant computing power needed for executing the pipeline jobs.
 The project defined a source code contribution workflow, based on GitHub Pull Requests
 (PRs), where each change automatically triggers in Jenkins the associated quality and
@@ -561,7 +560,7 @@ available for all the software stack, thus the associated number of builds are f
 
 \subsubsection{Continuous Delivery}
 As DevOps suggests, frequent releases positively affect the reliability of the software as
-they involve fewer changes and usually more correlated. The software updates of
+they involve fewer changes and usually are more correlated. The software updates of
 {\sl INDIGO--DataCloud} products, taking place since the second major release, are passing through
 a Continuous Delivery (CD) pipeline that adds the packaging of the software right after the
 successful execution of the CI pipeline previously described. Consequently, CI-validated
@@ -618,7 +617,7 @@ Figure \ref{fig:fig_disvis} shows the pipeline for the Disvis application.
 
 User application developers were provided with both a means to validate the
 source code before merging and the creation of a new versioned Docker image,
-automatically available in the {\sl INDIGO--DataCloud}’s application repository.
+automatically available in the {\sl INDIGO--DataCloud}'s application repository.
 
 The novelty introduced in the pipeline above is the validation of the application.
 Once the application is packaged as a Docker image, and subsequently uploaded
@@ -649,7 +648,7 @@ appear in production environments.
 \section{Conclusion}
 \label{sec:con}
 
-After more that a decade of experiences collected throughout the reviewed
+After more than a decade of experiences collected throughout the reviewed
 EU-funded software development and e-Infrastructure management projects, it
 becomes apparent that the European software produced for scientific purposes is
 evolving to a more sustainable model where the quality and reliability of
@@ -670,7 +669,7 @@ resulted in the implementation of CD pipelines to extend automation to the
 delivery of packages. Thereby, safe and frequent software releases are doable, reducing
 the impact on production systems. In this regard, a pre-production validation,
 through the preview testbeds or resource centers early adoption -- handled by the
-Staged--rollout process --, alleviates the likelihood of discovering uncovered
+Staged--rollout process -- alleviates the likelihood of discovering uncovered
 issues at production.
 
 Software lifecycle demands as well from a continuous measurement and analysis
