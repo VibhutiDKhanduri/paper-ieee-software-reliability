@@ -541,6 +541,7 @@ related metrics, such as SLOC or the cyclomatic complexity.
 
 The practical implementation of the CI scenario leveraged on tightly integrated open
 source tools such as GitHub \cite{github}, as the online source code repository,
+
 Jenkins \cite{jenkins}, the event-response CI system, and Docker container
 provisioning to provide instant computing power needed for executing the pipeline jobs.
 The project defined a source code contribution workflow, based on GitHub Pull Requests
@@ -559,7 +560,7 @@ available for all the software stack, thus the associated number of builds are f
 
 \subsubsection{Continuous Delivery}
 As DevOps suggests, frequent releases positively affect the reliability of the software as
-they involve fewer changes and usually more correlated. The software updates of
+they involve fewer changes and usually are more correlated. The software updates of
 {\sl INDIGO--DataCloud} products, taking place since the second major release, are passing through
 a Continuous Delivery (CD) pipeline that adds the packaging of the software right after the
 successful execution of the CI pipeline previously described. Consequently, CI-validated
@@ -570,7 +571,7 @@ any human interaction but ultimately requiring expert supervision to validate th
 and Docker containers. The CD approach is different for each type of software packaging. \textit{Linux
 package pipeline} intentionally delivers the packages produced in a pre-production -- preview --
 branch. Before that, once the software packages have been created, they are uploaded to a
-testing branch. The available automated deployment solution -- see \cite{subsec:sqa} -- checks
+testing branch. The available automated deployment solution -- see Section \ref{subsec:sqa} -- checks
 the installation and configuration of the component relying on the testing repository. On
 successful completion, the packages are then automatically signed and subsequently moved to
 the preview branch, from where they finally be made available in the production branch after
@@ -616,7 +617,7 @@ Figure \ref{fig:fig_disvis} shows the pipeline for the Disvis application.
 
 User application developers were provided with both a means to validate the
 source code before merging and the creation of a new versioned Docker image,
-automatically available in the {\sl INDIGO--DataCloud} application repository.
+automatically available in the {\sl INDIGO--DataCloud} applications repository.
 
 The novelty introduced in the pipeline above is the validation of the application.
 Once the application is packaged as a Docker image, and subsequently uploaded
