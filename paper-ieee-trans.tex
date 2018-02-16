@@ -108,7 +108,7 @@ The reminder of this paper is
 organized as follows. Section \ref{sec:ev} details the evolution of research on
 software reliability in EC-projects. Section \ref{sec:ntsr} provides
 information about new research trends in software reliability based upon the
-experiences from the recent {\sl INDIGO--DataCloud} project. Conclusions are drawn in Section \ref{sec:con}.
+experiences from the recent {\sl INDIGO--DataCloud} project (INDIGO--DC). Conclusions are drawn in Section \ref{sec:con}.
 
 \section{Evolution of research on software reliability in EC-projects}
 \label{sec:ev}
@@ -117,7 +117,7 @@ The EC projects considered in this paper are listed chronologically in Table
 \ref{tab:eup}. Each project paved the way of the subsequent projects,
 following a logic evolution in which the role of the quality and reliability of the software have
 consistently increased. As shown in Table \ref{tab:feat}, the most recent projects are more committed to and aware of software reliability practices.
-Table \ref{tab:feat} also shows the topics addressed in the following sections, highlighting
+Table ~\ref{tab:feat} also shows the topics addressed in the following sections, highlighting
 the commonalities and specific features on software reliability.
 
 \begin{table}[!h]
@@ -315,13 +315,13 @@ Researchers in Europe, May 2010 -- May 2014) project \cite{cordis:egi-inspire}
 was the continuation of the {\sl EGEE--III} project, with the objective of establishing and
 maintaining a sustainable European Grid Infrastructure, composed by a federation of National
 Grid Initiatives and interoperable with other Grids worldwide.
-This goal would had been accomplished through the
+This has been accomplished through the
 development and maintenance of some operational tools, such as the Operations Portal \cite{egi-ops},
 the {\sl EGI} Helpdesk \cite{ggus}, or the Grid configuration database (GOCDB) \cite{gocdb}, and the
 management of the software provisioning process \cite{mario}, dealing with the validation and distribution of the software to
 the production infrastructures. As a result, this process led to a production--ready
 Grid computing middleware distribution named {\sl UMD} (Unified Middleware Distribution). At that time the {\sl UMD}
-was a stack of about 250 software components from several technology providers such
+was a stack of about 250 software components from several technology providers, such
 as {\sl EMI} and {\sl Globus}. In order to be distributed through UMD
 repositories, the software had to be compliant with EGI's Quality Criteria (QC) \cite{egi-qc}. The
 QC defined a set of requirements in different areas: documentation, deployment, security, information
@@ -355,12 +355,12 @@ into practice, and the compilation and analysis of the appropriate set of metric
 quality of the solutions implemented. All the above with the additional complexity of being framed into a
 large collaborative project with an extensive list of partners.
 
-In the following sections, we will describe the three main pillars that sustain the project's strategy to attain reliability throughout the
+In the following sections, we describe the three main pillars that sustain the project's strategy to attain reliability throughout the
 software lifecycle. A solid \textit{Software Quality Assurance (SQA) criteria
-and metrics gathering definition}, will provide guidelines to develop quality
+and metrics gathering definition}, provides guidelines to develop quality
 software, validating each change in the code, and facilitating its adoption. The software lifecycle is continuously monitored
 by a set of metrics, allowing promptly reactions to detected malfunctions throughout the
-process. A \textit{bottom-up adoption of DevOps principles} will promote automation to enable
+process. A \textit{bottom-up adoption of DevOps principles} promotes automation to enable
 the foregoing change-based development process and set up advanced delivery mechanisms.
 The last key pillar is the \textit{two-factor validation} carried out over the project's pilot testbeds and
 e-Infrastructure resource provider's early-adoption.
@@ -444,8 +444,8 @@ whenever new functionalities are introduced.
 \item \textit{Code review}.
 Represents the last step in the change management pipeline, once the candidate change has
 successfully passed through the testing methods described previously. It implies the human-based
-revision of the proposed change to discuss its adequacy in terms of scope, objective fulfilment,
-documentation completeness, etc. On approval, the candidate change is definitely merged into
+revision of the proposed change to discuss its adequacy in terms of e.g. scope, objective fulfilment,
+and documentation completeness. On approval, the candidate change is definitely merged into
 the source code's production version. Human code reviewing is paramount in the software quality assessment, specially
 important when the SQA testing requirements are fully automated. Secure code reviews are also 
 done at this stage, assessing common vulnerabilities from inputs coming from automated linters
@@ -540,8 +540,8 @@ the CI pipeline to have a per-change trend evolution of the common source code
 related metrics, such as SLOC or the cyclomatic complexity.
 
 The practical implementation of the CI scenario leveraged on tightly integrated open
-source tools such as GitHub \cite{github} -- as the online source code repository --,
-Jenkins \cite{jenkins} -- the event-response CI system -- and Docker container
+source tools such as GitHub \cite{github}, as the online source code repository,
+Jenkins \cite{jenkins}, the event-response CI system, and Docker container
 provisioning to provide instant computing power needed for executing the pipeline jobs.
 The project defined a source code contribution workflow, based on GitHub Pull Requests
 (PRs), where each change automatically triggers in Jenkins the associated quality and
@@ -616,7 +616,7 @@ Figure \ref{fig:fig_disvis} shows the pipeline for the Disvis application.
 
 User application developers were provided with both a means to validate the
 source code before merging and the creation of a new versioned Docker image,
-automatically available in the {\sl INDIGO--DataCloud}???s application repository.
+automatically available in the {\sl INDIGO--DataCloud} application repository.
 
 The novelty introduced in the pipeline above is the validation of the application.
 Once the application is packaged as a Docker image, and subsequently uploaded
@@ -647,7 +647,7 @@ appear in production environments.
 \section{Conclusion}
 \label{sec:con}
 
-After more that a decade of experiences collected throughout the reviewed
+After more than a decade of experiences collected throughout the reviewed
 EU-funded software development and e-Infrastructure management projects, it
 becomes apparent that the European software produced for scientific purposes is
 evolving to a more sustainable model where the quality and reliability of
@@ -668,7 +668,7 @@ resulted in the implementation of CD pipelines to extend automation to the
 delivery of packages. Thereby, safe and frequent software releases are doable, reducing
 the impact on production systems. In this regard, a pre-production validation,
 through the preview testbeds or resource centers early adoption -- handled by the
-Staged--rollout process --, alleviates the likelihood of discovering uncovered
+Staged--rollout process, alleviates the likelihood of discovering uncovered
 issues at production.
 
 Software lifecycle demands as well from a continuous measurement and analysis
@@ -680,9 +680,26 @@ criteria through each stage of the software lifecycle.
 
 \section*{Acknowledgment}
 
+{\sl DataGrid - Research and Technological Development for an International Data Grid} project 
+has received funding from the European Commission - Community Research and Development Information System (CORDIS) under
+FP5-IST - Programme for research, technological development and demonstration on a "User-friendly information society, 1998-2002" (IST--2000--25182E)
+
+{\sl EGEE - Enabling grids For E-science} project
+has received funding from the European Commission - Community Research and Development Information System (CORDIS) under
+ FP6-INFRASTRUCTURES - Research infrastructures: Specific programme for research, technological development and demonstration: "Structuring the European Research Area" under the Sixth Framework Programme 2002-2006, (INFSO--RI--508833)
+
+{\sl EGEE - Enabling grids For E-science--II} project
+ has received funding from the European Commission - Community Research and Development Information System (CORDIS) under 
+ FP6-2005-INFRASTRUCTURES-7 programme, Topic - "INFRASTR-3 - Communication network development in conjunction with thematic priority 2 (Information Society Technologies) to establish a high-capacity and high-speed communications network for all researchers in Europe (GEANT)", (INFSO--RI--031688)
+
+{\sl EGEE - Enabling grids For E-science--III} project
+  has received funding from the European Commission - Community Research and Development Information System (CORDIS) under
+  FP7-INFRASTRUCTURES - Specific Programme "Capacities": Research infrastructures, Topic - "INFRA-2007-1.2-03 - e-Science Grid infrastructures", (INFSO--RI--222667)
+
 {\sl INDIGO--DataCloud} project has received funding from the European Research
 Council (ERC) under the European Union's Horizon 2020 research and innovation
-programme (grant agreement n?? 777536).
+programme (GA--777536).
+
 
 \begin{thebibliography}{1}
 
