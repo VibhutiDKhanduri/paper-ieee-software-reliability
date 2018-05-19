@@ -1,9 +1,12 @@
+% trial .tex file %
+
 \documentclass[journal]{IEEEtran}
+
 \usepackage{graphicx}
 \usepackage{array}
 \usepackage{subfigure}
 \usepackage{adjustbox}
-
+\usepackage{listings}
 \ifCLASSINFOpdf
   % \usepackage[pdftex]{graphicx}
   % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
@@ -384,7 +387,7 @@ e--Infrastructure resource provider's early--adoption.
 
 \begin{figure*}[ht]
 \centering
-\includegraphics[width=\textwidth]{images/unittest.png}
+\includegraphics[width=0.8\textwidth]{images/fig2.png}
 \caption{Comparison of the unit testing coverage values for the {\sl INDIGO--DataCloud} software stack over the {\sl INDIGO--1} and {\sl INDIGO--2} major releases.}
 \label{fig:fig_unittest}
 \end{figure*}
@@ -412,7 +415,7 @@ The SQA criteria are a set of conventions and recommendations that pave the way 
 the adequate development, timely deliver and reliable operation of the produced software components.
 It emphasizes the quality requirements and best practices to be applied at the
 development phase, such as style and testing compliance or human code reviews, to protect the
-production source code versions. Furthermore, the criteria promote the adoption of the software 
+production source code versions. Furthermore, the criteria promote the adoption of the software
 by providing minimum requirements of documentation content and stressing the usage of automated
 solutions for software deployment.
 
@@ -449,7 +452,7 @@ successfully passed through the testing methods described previously. It implies
 revision of the proposed change to discuss its adequacy in terms of e.g. scope, objective fulfilment,
 and documentation completeness. On approval, the candidate change is definitely merged into
 the source code's production version. Human code reviewing is paramount in the software quality assessment, specially
-important when the SQA testing requirements are fully automated. Secure code reviews are also 
+important when the SQA testing requirements are fully automated. Secure code reviews are also
 done at this stage, assessing common vulnerabilities from inputs coming from automated linters
 and manual dynamic application security testing.
 
@@ -683,14 +686,14 @@ criteria through each stage of the software lifecycle.
 
 \section*{Acknowledgment}
 
-%{\sl DataGrid - Research and Technological Development for an International Data Grid} project 
+%{\sl DataGrid - Research and Technological Development for an International Data Grid} project
 %has received funding from the European Commission - Community Research and Development Information System (CORDIS) under
 %FP5-IST - Programme for research, technological development and demonstration on a "User--friendly information society, 1998-2002" (IST--2000--25182E)
 %{\sl EGEE - Enabling grids For E--science} project
 %has received funding from the European Commission - Community Research and Development Information System (CORDIS) under
 % FP6-INFRASTRUCTURES - Research infrastructures: Specific programme for research, technological development and demonstration: "Structuring the European Research Area" under the Sixth Framework Programme 2002-2006, (INFSO--RI--508833)
 %{\sl EGEE - Enabling grids For E--science--II} project
-% has received funding from the European Commission - Community Research and Development Information System (CORDIS) under 
+% has received funding from the European Commission - Community Research and Development Information System (CORDIS) under
 % FP6-2005-INFRASTRUCTURES-7 programme, Topic - "INFRASTR-3 - Communication network development in conjunction with thematic priority 2 (Information Society Technologies) to establish a high--capacity and high--speed communications network for all researchers in Europe (GEANT)", (INFSO--RI--031688)
 %{\sl EGEE - Enabling grids For E--science--III} project has received funding from the European Commission - Community Research and Development Information System (CORDIS) under
 %  FP7-INFRASTRUCTURES - Specific Programme "Capacities": Research infrastructures, Topic - "INFRA-2007-1.2-03 - e--Science Grid infrastructures", (INFSO--RI--222667)
@@ -701,13 +704,13 @@ criteria through each stage of the software lifecycle.
 
 {\sl EGEE - Enabling grids For E--science--II} project has received funding from the European Union's Sixth Framework Programme under grant agreement INFSO--RI--031688.
 
-{\sl EGEE - Enabling grids For E--science--III} project has received funding from the European Union's Seventh Framework Programme under grant agreement INFSO--RI--222667. 
+{\sl EGEE - Enabling grids For E--science--III} project has received funding from the European Union's Seventh Framework Programme under grant agreement INFSO--RI--222667.
 
-{\sl ETICS - E--Infrastructure for Testing, Integration and Configuration of Software} project has received funding from the European Union's Sixth Framework Programme under grant agreement INFSO--RI--026753. 
+{\sl ETICS - E--Infrastructure for Testing, Integration and Configuration of Software} project has received funding from the European Union's Sixth Framework Programme under grant agreement INFSO--RI--026753.
 
-{\sl ETICS - E--Infrastructure for Testing, Integration and Configuration of Software - Phase 2} project has received funding from the European Union's Seventh Framework Programme under grant agreement INFSO--RI--223782. 
+{\sl ETICS - E--Infrastructure for Testing, Integration and Configuration of Software - Phase 2} project has received funding from the European Union's Seventh Framework Programme under grant agreement INFSO--RI--223782.
 
-{\sl EGI--InSPIRE - European Grid Initiative: Integrated Sustainable Pan--European Infrastructure for Researchers in Europe} project has received funding from the European Union's Seventh Framework Programme under grant agreement INFSO--RI--261323. 
+{\sl EGI--InSPIRE - European Grid Initiative: Integrated Sustainable Pan--European Infrastructure for Researchers in Europe} project has received funding from the European Union's Seventh Framework Programme under grant agreement INFSO--RI--261323.
 
 {\sl EGI--Engage} project has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement RIA--654142.
 
