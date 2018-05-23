@@ -1,0 +1,65 @@
+Product, Release, Value, Avg
+dCache, MidnightBlue (INDIGO-1), 22, 50.32
+dCache, ElectricIndigo (INDIGO-2), 14, 63.34
+TTS, MidnightBlue (INDIGO-1), 74, 50.32
+TTS, ElectricIndigo (INDIGO-2), 74, 63.34
+IDH, MidnightBlue (INDIGO-1), 54, 50.32
+IDH, ElectricIndigo (INDIGO-2), 32, 63.34
+QOS, MidnightBlue (INDIGO-1), 35, 50.32
+QOS, ElectricIndigo (INDIGO-2), 47, 63.34
+pOCCI, MidnightBlue (INDIGO-1), 20, 50.32
+pOCCI, ElectricIndigo (INDIGO-2), 20, 63.34
+IM, MidnightBlue (INDIGO-1), 68, 50.32
+IM, ElectricIndigo (INDIGO-2), 74, 63.34
+IM-Java-API, MidnightBlue (INDIGO-1), 76, 50.32
+IM-Java-API, ElectricIndigo (INDIGO-2), 86, 63.34
+Synergy, MidnightBlue (INDIGO-1), 13, 50.32
+Synergy, ElectricIndigo (INDIGO-2), 35, 63.34
+OOI, MidnightBlue (INDIGO-1), 87, 50.32
+OOI, ElectricIndigo (INDIGO-2), 87, 63.34
+OPIE, MidnightBlue (INDIGO-1), 92, 50.32
+OPIE, ElectricIndigo (INDIGO-2), 86, 63.34
+dynpart, MidnightBlue (INDIGO-1), 0, 50.32
+dynpart, ElectricIndigo (INDIGO-2), 56, 63.34
+udocker, MidnightBlue (INDIGO-1), 25, 50.32
+udocker, ElectricIndigo (INDIGO-2), 62, 63.34
+tosca-parser, MidnightBlue (INDIGO-1), 90, 50.32
+tosca-parser, ElectricIndigo (INDIGO-2), 90, 63.34
+heat-translator, MidnightBlue (INDIGO-1), 17, 50.32
+heat-translator, ElectricIndigo (INDIGO-2), 18, 63.34
+cdmi-s3-qos, MidnightBlue (INDIGO-1), 0, 50.32
+cdmi-s3-qos, ElectricIndigo (INDIGO-2), 77, 63.34
+CLUES, MidnightBlue (INDIGO-1), 89, 50.32
+CLUES, ElectricIndigo (INDIGO-2), 100, 63.34
+Orchestrator, MidnightBlue (INDIGO-1), 28, 50.32
+Orchestrator, ElectricIndigo (INDIGO-2), 64, 63.34
+Monitoring, MidnightBlue (INDIGO-1), 0, 50.32
+Monitoring, ElectricIndigo (INDIGO-2), 12, 63.34
+IAM, MidnightBlue (INDIGO-1), 64, 50.32
+IAM, ElectricIndigo (INDIGO-2), 71, 63.34
+Accounting, MidnightBlue (INDIGO-1), 70, 50.32
+Accounting, ElectricIndigo (INDIGO-2), 87, 63.34
+CloudProviderRanker, MidnightBlue (INDIGO-1), 70, 50.32
+CloudProviderRanker, ElectricIndigo (INDIGO-2), 58, 63.34
+CloudInfoProvider, MidnightBlue (INDIGO-1), 94, 50.32
+CloudInfoProvider, ElectricIndigo (INDIGO-2), 78, 63.34
+OMT, MidnightBlue (INDIGO-1), 14, 50.32
+OMT, ElectricIndigo (INDIGO-2), 88, 63.34
+Ophidia, MidnightBlue (INDIGO-1), 70, 50.32
+Ophidia, ElectricIndigo (INDIGO-2), 79, 63.34
+Kepler, MidnightBlue (INDIGO-1), 86, 50.32
+Kepler, ElectricIndigo (INDIGO-2), 89, 63.34
+FutureGateway, MidnightBlue (INDIGO-1), 0, 50.32
+FutureGateway, ElectricIndigo (INDIGO-2), 56, 63.34
+Liferay Plugins, MidnightBlue (INDIGO-1), 9, 50.32
+Liferay Plugins, ElectricIndigo (INDIGO-2), 9, 63.34
+OneData, MidnightBlue (INDIGO-1), 0, 50.32
+OneData, ElectricIndigo (INDIGO-2), 59, 63.34
+CDMI-QOS-Storm, MidnightBlue (INDIGO-1), 0, 50.32
+CDMI-QOS-Storm, ElectricIndigo (INDIGO-2), 97, 63.34
+SLAM, MidnightBlue (INDIGO-1), 88, 50.32
+SLAM, ElectricIndigo (INDIGO-2), 83, 63.34
+Analytics Porlets, MidnightBlue (INDIGO-1), 0, 50.32
+Analytics Porlets, ElectricIndigo (INDIGO-2), 72, 63.34
+OIDC Agent, MidnightBlue (INDIGO-1), 0, 50.32
+OIDC Agent, ElectricIndigo (INDIGO-2), 67, 63.34

@@ -1,9 +1,12 @@
+% trial .tex file %
+
 \documentclass[journal]{IEEEtran}
+
 \usepackage{graphicx}
 \usepackage{array}
 \usepackage{subfigure}
 \usepackage{adjustbox}
-
+\usepackage{listings}
 \ifCLASSINFOpdf
   % \usepackage[pdftex]{graphicx}
   % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
@@ -75,7 +78,7 @@ and recently from the Horizon 2020 programme \cite{h2020} -- have as their main 
 develop software solutions that provide a seamless and transparent access of researchers to distributed
 computing and data resources.
 
-Major developments were achieved throughout the years focused on providing new
+Major developments were carried out throughout the years focused on providing new
 functionalities, partially neglecting the adoption of software engineering methodologies, in the early days.
 The released software was less tested, resulting in a high rate of
 rollbacks and patches applied to production systems. Thereby, the stability and
@@ -84,7 +87,7 @@ negatively their exploitation by the scientific communities.
 
 Soon it became apparent the need for a better balance between the addition of new features
 and the reliability of the released software. Consequently, a substantial part of the
-software lifecycle would have to be devoted to the improvement of the quality of the software being
+software lifecycle was devoted to the improvement of the quality of the software being
 delivered. At this point, evolving software engineering practices were
 considered and gradually adopted to define and implement quality procedures, the organization of cross--functional teams
 and deployment of pilot testbeds.
@@ -114,8 +117,7 @@ experiences from the recent {\sl INDIGO--DataCloud} project (INDIGO--DC). Conclu
 \label{sec:ev}
 
 The EC projects considered in this paper are listed chronologically in Table
-\ref{tab:eup}. Each project paved the way of the subsequent projects,
-following a logic evolution in which the role of the quality and reliability of the software have
+\ref{tab:eup}. Each project paved the way for the following ones, according to a logic evolution in which the role of the quality and reliability of the software have
 consistently increased. As shown in Table \ref{tab:feat}, the most recent projects are more committed to and aware of software reliability practices.
 Table \ref{tab:feat} also shows the topics addressed in the following sections, highlighting
 the commonalities and specific features on software reliability.
@@ -209,7 +211,7 @@ practices emerging from this new discipline of software engineering
 used by diverse collaborative open source software projects, such as Linux and Apache, trying to
 achieve a higher maturity level \cite{cmm}.
 
-\begin{table}[!h]
+\begin{table*}[!h]
 %% increase table row spacing, adjust to taste
 \renewcommand{\arraystretch}{1.3}
 % if using array.sty, it might be a good idea to tweak the value of
@@ -219,7 +221,7 @@ achieve a higher maturity level \cite{cmm}.
 \centering
 %% Some packages, such as MDW tools, offer better commands for making tables
 %% than the plain LaTeX2e tabular which is used here.
-\begin{adjustbox}{max width=0.5\textwidth}
+%\begin{adjustbox}{max width=0.5\textwidth}
 \begin{tabular}{llllllll}
 \hline
 \hline
@@ -241,8 +243,8 @@ DevOps practices adoption (CI, CD)&&&&&&$\surd$\\
 \hline
 \hline
 \end{tabular}
-\end{adjustbox}
-\end{table}
+%\end{adjustbox}
+\end{table*}
 
 \subsection{Enabling Grids for E--sciencE}
 
@@ -252,7 +254,7 @@ scientists and engineers from over 240 institutions in 45 countries aiming to
 provide a seamless Grid infrastructure for e--Science. {\sl EGEE--II} and {\sl EGEE--III}
 featured the internationalization (outside Europe) of the project, embracing worldwide research
 institutions and user communities. The software to sustain the increasing
-requirements coming from the diverse scientific communities would need to develop a
+requirements coming from the diverse scientific communities needed developing a
 rich set of new services while maintaining a sustainable infrastructure for
 Grid computing, eventually used by more than 15 thousand researchers and deployed in
 over 250 institutions.
@@ -352,14 +354,14 @@ Section \ref{sec:ev}. The expertise gathered throughout these years was highly
 profitable in terms of the evaluation and application of innovative software engineering
 methodologies, the management of new technologies to put those methodologies
 into practice, and the compilation and analysis of the appropriate set of metrics to measure the
-quality of the solutions implemented. All the above with the additional complexity of being framed into
+quality of the implemented solutions. All the above with the additional complexity of being framed into
 large collaborative projects with an extensive list of partners.
 
 In the following sections, we describe the three main pillars that sustain the project's strategy to attain reliability throughout the
 software lifecycle. A solid \textit{Software Quality Assurance (SQA) criteria
-and metrics gathering definition}, provides guidelines to develop quality
+and metrics gathering definition} provides guidelines to develop quality
 software, validating each change in the code, and facilitating its adoption. The software lifecycle is continuously monitored
-by a set of metrics, allowing promptly reactions to detected malfunctions throughout the
+by a set of metrics, allowing prompt reactions to detected malfunctions throughout the
 process. A \textit{bottom--up adoption of DevOps principles} promotes automation to enable
 the foregoing change--based development process and set up advanced delivery mechanisms.
 The last key pillar is the \textit{two--factor validation} carried out over the project's pilot testbeds and
@@ -385,14 +387,15 @@ e--Infrastructure resource provider's early--adoption.
 
 \begin{figure*}[ht]
 \centering
-\includegraphics[width=\textwidth]{images/unittest.png}
+\includegraphics[width=\textwidth]{images/fig2.png}
 \caption{Comparison of the unit testing coverage values for the {\sl INDIGO--DataCloud} software stack over the {\sl INDIGO--1} and {\sl INDIGO--2} major releases.}
 \label{fig:fig_unittest}
 \end{figure*}
 
+
 \begin{figure}[ht]
 \centering
-\includegraphics[width=0.45\textwidth, height=50mm]{images/confman.png}
+\includegraphics[width=0.5\textwidth, height=50mm]{images/fig3.png}
 \caption{Trend line showing the adoption of Configuration Management tools throughout the project lifetime.}
 \label{fig:fig_confman}
 \end{figure}
@@ -401,19 +404,19 @@ e--Infrastructure resource provider's early--adoption.
 \label{subsec:sqa}
 
 The software quality policies were initially defined in the first deliverable document of the
-project \cite{indigo-d31}. The policies where reviewed periodically taking into account the requirements
-from the user communities, the feedback from the development teams and the insights of software engineering practices. These policies cover the 1) identification
+project \cite{indigo-d31}. The policies were reviewed periodically taking into account the requirements
+from the user communities, the feedback from the development teams and the insights of software engineering practices. These policies covered the 1) identification
 and description of the \emph{SQA requirements} that the produced software need
 to comply with, and the 2) \emph{quality metrics}, to monitor each software product's
 behaviour throughout the development, release and post--release stages.
 
 \subsubsection{SQA criteria}
 
-The SQA criteria is a set of conventions and recommendations that pave the way for
+The SQA criteria are a set of conventions and recommendations that pave the way for
 the adequate development, timely deliver and reliable operation of the produced software components.
 It emphasizes the quality requirements and best practices to be applied at the
 development phase, such as style and testing compliance or human code reviews, to protect the
-production source code versions. Furthermore, the criteria promotes the adoption of the software 
+production source code versions. Furthermore, the criteria promote the adoption of the software
 by providing minimum requirements of documentation content and stressing the usage of automated
 solutions for software deployment.
 
@@ -431,7 +434,7 @@ testing} in this context is accomplished by enforcing the definition and periodi
 of the tests, covering past fixed issues, to ensure that they are not reintroduced during the development activities.
 
  \textit{Unit testing} completes the source code testing evaluation by
-focusing on the code's internal design. The SQA criteria sets a recommended threshold of
+focusing on the code's internal design. The SQA criteria set a recommended threshold of
 70\% coverage for unit testing. In Figure \ref{fig:fig_unittest}, unit testing coverage is compared
 for each software component between the two major {\sl INDIGO--DataCloud} releases, denoting an incremental
 trend over the course of the project. It can be seen that 50\% of the components were over the
@@ -450,12 +453,12 @@ successfully passed through the testing methods described previously. It implies
 revision of the proposed change to discuss its adequacy in terms of e.g. scope, objective fulfilment,
 and documentation completeness. On approval, the candidate change is definitely merged into
 the source code's production version. Human code reviewing is paramount in the software quality assessment, specially
-important when the SQA testing requirements are fully automated. Secure code reviews are also 
+important when the SQA testing requirements are fully automated. Secure code reviews are also
 done at this stage, assessing common vulnerabilities from inputs coming from automated linters
 and manual dynamic application security testing.
 
 \item \textit{Documentation}.
-The SQA criteria sets the path for the adoption of the developed software by
+The SQA criteria set the path for the adoption of the developed software by
 defining the documentation content, according to the target audience. This requirement also
 promotes the automation, both in terms of documentation creation and service deployment. The
 \textit{documentation is treated as code}, using a markup language, automatically rendered and
@@ -464,7 +467,7 @@ human--reviewed, using the same workflow as the code does, validating the change
 updated into the production repository.
 
 \item \textit{Automated Deployment}.
-To lower the barriers of software adoption, the SQA criteria requires the automated
+To lower the barriers of software adoption, the SQA criteria require the automated
 deployment of the products delivered as part of the catalogue. Automation in this context is
 tackled using a configuration management tool. These tools allow to have an
 \textit{Infrastructure as Code} (IaC), managing the component's deployment through declarative
@@ -529,7 +532,7 @@ lifetime, being one of its major outcomes in terms of software reliability.
 
 \subsubsection{Continuous Integration (CI)}
 \label{subsec:ci}
-The {\sl INDIGO--DataCloud} project promoted the application of a CI scenario that enforces,
+The {\sl INDIGO--DataCloud} project promoted the application of a CI scenario that enforced,
 for any piece of produced software, the testing requirements defined in the SQA criteria,
 as described in Section \ref{subsec:sqa}. Such environment requires an automation
 ready--to--go infrastructure where the different services and technologies involved interact with each
@@ -580,7 +583,7 @@ successful completion, the packages are then automatically signed and subsequent
 the preview branch, from where they finally be made available in the production branch after
 the release manager supervises the process.
 
-The \textit{Docker container pipeline} uses instead the automated deployment solution to
+The \textit{Docker container pipeline} uses the automated deployment solution to
 actually install and configure the software component in the container image. Once this is
 done the recently created image is uploaded to the production DockerHub repository, tagged
 with the label corresponding to the current {\sl INDIGO--DataCloud} release. Figure
@@ -684,14 +687,14 @@ criteria through each stage of the software lifecycle.
 
 \section*{Acknowledgment}
 
-%{\sl DataGrid - Research and Technological Development for an International Data Grid} project 
+%{\sl DataGrid - Research and Technological Development for an International Data Grid} project
 %has received funding from the European Commission - Community Research and Development Information System (CORDIS) under
 %FP5-IST - Programme for research, technological development and demonstration on a "User--friendly information society, 1998-2002" (IST--2000--25182E)
 %{\sl EGEE - Enabling grids For E--science} project
 %has received funding from the European Commission - Community Research and Development Information System (CORDIS) under
 % FP6-INFRASTRUCTURES - Research infrastructures: Specific programme for research, technological development and demonstration: "Structuring the European Research Area" under the Sixth Framework Programme 2002-2006, (INFSO--RI--508833)
 %{\sl EGEE - Enabling grids For E--science--II} project
-% has received funding from the European Commission - Community Research and Development Information System (CORDIS) under 
+% has received funding from the European Commission - Community Research and Development Information System (CORDIS) under
 % FP6-2005-INFRASTRUCTURES-7 programme, Topic - "INFRASTR-3 - Communication network development in conjunction with thematic priority 2 (Information Society Technologies) to establish a high--capacity and high--speed communications network for all researchers in Europe (GEANT)", (INFSO--RI--031688)
 %{\sl EGEE - Enabling grids For E--science--III} project has received funding from the European Commission - Community Research and Development Information System (CORDIS) under
 %  FP7-INFRASTRUCTURES - Specific Programme "Capacities": Research infrastructures, Topic - "INFRA-2007-1.2-03 - e--Science Grid infrastructures", (INFSO--RI--222667)
@@ -702,13 +705,13 @@ criteria through each stage of the software lifecycle.
 
 {\sl EGEE - Enabling grids For E--science--II} project has received funding from the European Union's Sixth Framework Programme under grant agreement INFSO--RI--031688.
 
-{\sl EGEE - Enabling grids For E--science--III} project has received funding from the European Union's Seventh Framework Programme under grant agreement INFSO--RI--222667. 
+{\sl EGEE - Enabling grids For E--science--III} project has received funding from the European Union's Seventh Framework Programme under grant agreement INFSO--RI--222667.
 
-{\sl ETICS - E--Infrastructure for Testing, Integration and Configuration of Software} project has received funding from the European Union's Sixth Framework Programme under grant agreement INFSO--RI--026753. 
+{\sl ETICS - E--Infrastructure for Testing, Integration and Configuration of Software} project has received funding from the European Union's Sixth Framework Programme under grant agreement INFSO--RI--026753.
 
-{\sl ETICS - E--Infrastructure for Testing, Integration and Configuration of Software - Phase 2} project has received funding from the European Union's Seventh Framework Programme under grant agreement INFSO--RI--223782. 
+{\sl ETICS - E--Infrastructure for Testing, Integration and Configuration of Software - Phase 2} project has received funding from the European Union's Seventh Framework Programme under grant agreement INFSO--RI--223782.
 
-{\sl EGI--InSPIRE - European Grid Initiative: Integrated Sustainable Pan--European Infrastructure for Researchers in Europe} project has received funding from the European Union's Seventh Framework Programme under grant agreement INFSO--RI--261323. 
+{\sl EGI--InSPIRE - European Grid Initiative: Integrated Sustainable Pan--European Infrastructure for Researchers in Europe} project has received funding from the European Union's Seventh Framework Programme under grant agreement INFSO--RI--261323.
 
 {\sl EGI--Engage} project has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement RIA--654142.
 
