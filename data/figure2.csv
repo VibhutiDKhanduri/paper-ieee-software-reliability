@@ -1,0 +1,33 @@
+Product, MidnightBlue (INDIGO-1), ElectricIndigo (INDIGO-2), Avg MidnightBlue, Avg ElectricIndigo
+dCache, 22, 14, 50.32, 63.34
+TTS, 74, 74, 50.32, 63.34
+IDH, 54, 32, 50.32, 63.34
+QOS, 35, 47, 50.32, 63.34
+pOCCI, 20, 20, 50.32, 63.34
+IM, 68, 74, 50.32, 63.34
+IM-Java-API, 76, 86, 50.32, 63.34
+Synergy, 13, 35, 50.32, 63.34
+OOI, 87, 87, 50.32, 63.34
+OPIE, 92, 86, 50.32, 63.34
+dynpart, 0, 56, 50.32, 63.34
+udocker, 25, 62, 50.32, 63.34
+tosca-parser, 90, 90, 50.32, 63.34
+heat-translator, 17, 18, 50.32, 63.34
+cdmi-s3-qos, 0, 77, 50.32, 63.34
+CLUES, 89, 100, 50.32, 63.34
+Orchestrator, 28, 64, 50.32, 63.34
+Monitoring, 0, 12, 50.32, 63.34
+IAM, 64, 71, 50.32, 63.34
+Accounting, 70, 87, 50.32, 63.34
+CloudProviderRanker, 70, 58, 50.32, 63.34
+CloudInfoProvider, 94, 78, 50.32, 63.34
+OMT, 14, 88, 50.32, 63.34
+Ophidia, 70, 79, 50.32, 63.34
+Kepler, 86, 89, 50.32, 63.34
+FutureGateway, 0, 56, 50.32, 63.34
+Liferay Plugins, 9, 9, 50.32, 63.34
+OneData, 0, 59, 50.32, 63.34
+CDMI-QOS-Storm, 0, 97, 50.32, 63.34
+SLAM, 88, 83, 50.32, 63.34
+Analytics Porlets, 0, 72, 50.32, 63.34
+OIDC Agent, 0, 67, 50.32, 63.34
