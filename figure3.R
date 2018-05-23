@@ -42,8 +42,8 @@ ggplot(datafn, aes(x=Week, y=Number)) +
   scale_y_continuous(limits = c(0, 25)) +
   scale_x_continuous(limits = c(0, 34), 
                      breaks=c(0, 5, 10, 15, 20, 25, 30)) +
-  scale_colour_manual(name='Releases', values=c(MidnightBlue="blue",
-                                                ElectricIndigo="darkred"),
+  scale_colour_manual(name='Releases', values=c(MidnightBlue="darkred",
+                                                ElectricIndigo="blue"),
                       breaks=c('MidnightBlue',
                               'ElectricIndigo')) +
   theme(legend.key = element_rect(fill = "white", colour = "white"),
