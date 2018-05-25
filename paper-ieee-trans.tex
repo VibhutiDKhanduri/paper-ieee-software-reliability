@@ -67,18 +67,22 @@ Techniques, DevOps
 \section{Introduction}
 
 \IEEEPARstart{D}uring the last 15 years the provision of an European e--Infrastructure,
-supporting an unified access to large--scale computing and intense data analysis
+supporting unified access to large--scale computing and intense data analysis
 applications, has been driven by the needs of scientific communities as part of their
 pan--European research collaborations. One such example is the Worldwide
 Large Hadron Collider (LHC) Computing Grid infrastructure, driven
 by the particle physics scientific community, built to satisfy the computing needs
 of processing, storing and analysis of the very large amount of data produced by the
+% Comment from reviewer
+%(Update: I see this is discussed later... so it would be good just to signpost at the start that a) the focus is really on "grids", and b) that specific examples will be given.
 LHC particle accelerator. A significant number of innovation projects and
 technology transfer activities -- from the European Commission (EC)-funded 5th, 6th and 7th Framework Programmes,
 and recently from the Horizon 2020 programme \cite{h2020} -- have as their main goal to
 develop software solutions that provide a seamless and transparent access of researchers to distributed
 computing and data resources.
 
+% Comment
+%%top of second column:  think about saying this more gently
 Major developments were carried out throughout the years focused on providing new
 functionalities, partially neglecting the adoption of software engineering methodologies, in the early days.
 The released software was less tested, resulting in a high rate of
@@ -93,14 +97,18 @@ delivered. At this point, evolving software engineering practices were
 considered and gradually adopted to define and implement quality procedures, the organization of cross--functional teams
 and deployment of pilot testbeds.
 
+% Comment
+%P1 C2 L18: Claiming that stability and reliability was regularly compromised is quite a bold statement -- it needs at least some citations, and preferably some explanation of what forms this compromise took for a few prominent cases.
 Analysing the EC--funded software projects over the last decade,
 one can observe a continuous increase in the prominence and robustness of software
 testing and validation procedures. The
+% Comments
+%P1 C2 L24: Was this realisation imposed "from above" e.g. by coordinated EC/ERC oversight, or was it "emergent" from the demands of the independent scientific communities?
 evolution of the software engineering methodologies (creation of the Agile
 Manifesto \cite{agile-manifesto}, and rise of DevOps practices \cite{zhu}) together
 with the parallel advancements in the information and communication technology
 field (such as virtualization, the enabling technology for Cloud computing and
-operating--system--level virtualization known as containerization) definitely motivated this trend. All of which
+operating--system--level virtualization known as containerization) motivated this trend. All of which
 complemented by the emergence of automation and event--response tools.
 
 In this paper, we outline a set of EC--funded projects
@@ -229,18 +237,18 @@ achieve a higher maturity level \cite{cmm}.
 Feature & DataGrid & EGEEs & ETICSs & EMI & EGIs & INDIGO--DC\\
 \hline
 \hline
-Architecture Task Force&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
-Communication Handling&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
-Requirements Handling&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
-Agile Methodologies&&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
-Source code inspection&&&&$\surd$&&$\surd$\\
-Build/Testing Management Procedure&$\surd$&$\surd$&$\surd$&$\surd$&&$\surd$\\
-Software Product Metrics&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
-Quality Criteria Definition&&&$\surd$&$\surd$&$\surd$&$\surd$\\
+Architecture Task Force            &$\surd$&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
+Communication Handling             &$\surd$&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
+Requirements Handling              &$\surd$&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
+Agile Methodologies                &       &$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
+Source code inspection             &       &       &       &$\surd$&       &$\surd$\\
+Build/Testing Management Procedure &$\surd$&$\surd$&$\surd$&$\surd$&       &$\surd$\\
+Software Product Metrics           &$\surd$&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
+Quality Criteria Definition        &       &       &$\surd$&$\surd$&$\surd$&$\surd$\\
 %Manual Certification Procedure&$\surd$&$\surd$&&$\surd$&&\\
-Automatic Certification&&&$\surd$&&$\surd$&$\surd$\\
-Auto--generated Documentation&&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
-DevOps practices adoption (CI, CD)&&&&&&$\surd$\\
+Automatic Certification            &       &       &$\surd$&       &$\surd$&$\surd$\\
+Auto--generated Documentation      &       &$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
+DevOps practices adoption (CI, CD) &       &       &       &       &       &$\surd$\\
 \hline
 \hline
 \end{tabular}
@@ -248,9 +256,10 @@ DevOps practices adoption (CI, CD)&&&&&&$\surd$\\
 \end{table*}
 
 \subsection{Enabling Grids for E--sciencE}
-
+% Comment
+%%P2 C2 L24: Typographical: It would be good to merge the three citations into one bracket/\cite
 The three phases of Enabling Grids for E--sciencE ({\sl EGEE}, Apr 2004 -- Apr 2010)
-\cite{cordis:egee, cordis:egee2, cordis:egee3} projects brought together
+\cite{cordis:egee,cordis:egee2,cordis:egee3} projects brought together
 scientists and engineers from over 240 institutions in 45 countries aiming to
 provide a seamless Grid infrastructure for e--Science. {\sl EGEE--II} and {\sl EGEE--III}
 featured the internationalization (outside Europe) of the project, embracing worldwide research
@@ -340,8 +349,8 @@ explOitation}
 
 The {\sl INDIGO--DataCloud} (INtegrating Distributed data Infrastructures for Global
 explOitation, Apr 2015 -- Sep 2017) \cite{cordis:indigo} is the last
-project of software development considered in this paper. At the time of writing
-this paper, the project is succeeding in providing solutions to address the existing gaps in
+project of software development considered in this paper. At the time of writing,
+the project is succeeding in providing solutions to address the existing gaps in
 Cloud Platform--as--a--Service (PaaS) and Software--as--a--Service (SaaS) levels,
 helping developers, e--Infrastructure administrators and scientific communities to exploit
 Cloud computing benefits.
@@ -349,16 +358,21 @@ Cloud computing benefits.
 \section{New trends in software reliability}
 \label{sec:ntsr}
 
-{\sl INDIGO--DataCloud} is the most recent project included in this paper and thus
+{\sl INDIGO--DataCloud} is the most recent project included in this paper, it
 leveraged the lessons learned from the previous experiences described in
 Section \ref{sec:ev}. The expertise gathered throughout these years was highly
 profitable in terms of the evaluation and application of innovative software engineering
-methodologies, the management of new technologies to put those methodologies
-into practice, and the compilation and analysis of the appropriate set of metrics to measure the
+methodologies, management of new technologies to put those methodologies
+into practice, compilation and analysis of an appropriate set of metrics to measure the
+% Comment
+%%L26-29 Missing verb
+%%(not a sentence—no verb) 
 quality of the implemented solutions. All the above with the additional complexity of being framed into
 large collaborative projects with an extensive list of partners.
 
 In the following sections, we describe the three main pillars that sustain the project's strategy to attain reliability throughout the
+% Comment
+%%P3 C2 L29: This introductory paragraph goes into a bit too much jargony detail, I think, especially given that it is followed by in-depth coverage of each "pillar". I suggest a clearer identification of each pillar, maybe via bullets or definition paragraphs, avoiding or with general-audience definition of jargon like DevOps, delivery mechanisms, two-factor validation, pilot testbeds, and early adoption. I appreciate this may all be highly meaningful to someone steeped in this operational area, but to an interested outsider it reads much like management jargon -- particuarly the final sentence: is this a long-winded way of saying "used during the commissioning period"?
 software lifecycle. A solid \textit{Software Quality Assurance (SQA) criteria
 and metrics gathering definition} provides guidelines to develop quality
 software, validating each change in the code, and facilitating its adoption. The software lifecycle is continuously monitored
@@ -389,6 +403,7 @@ e--Infrastructure resource provider's early--adoption.
 \begin{figure*}[ht]
 \centering
 \includegraphics[width=\textwidth]{images/fig2.png}
+%\includegraphics[width=0.8\textwidth]{images/fig2a.pdf}
 \caption{Comparison of the unit testing coverage values for the {\sl INDIGO--DataCloud} software stack over the {\sl INDIGO--1} and {\sl INDIGO--2} major releases.}
 \label{fig:fig_unittest}
 \end{figure*}
@@ -426,7 +441,8 @@ solutions for software deployment.
 The ultimate goal for code style assessment is to improve the readability and reusability of the source code produced under the scope of the
 project. Code style standards are enforced for every software component in the project stack. Community
 most--adopted or \textit{de--facto standards} are initially recommended, however the development teams eventually
-choose the set of guidelines to comply with.  Figure \ref{fig:fig_codestyle} highlights the code style standards and their popularity
+choose the set of guidelines to comply with. Fig.~\ref{fig:fig_codestyle} highlights the code style standards and
+their popularity
 in the {\sl INDIGO--DataCloud} software stack.
 
 \item \textit{Unit and Functional testing}.
@@ -434,9 +450,12 @@ Changes involving the addition of new functionalities, are required to be tested
 testing} in this context is accomplished by enforcing the definition and periodic execution
 of the tests, covering past fixed issues, to ensure that they are not reintroduced during the development activities.
 
+%% Comment from reviewer
+%% These percentages appear as vague approximations by eye, please add the precise numbers rounded.
+
  \textit{Unit testing} completes the source code testing evaluation by
 focusing on the code's internal design. The SQA criteria set a recommended threshold of
-70\% coverage for unit testing. In Figure \ref{fig:fig_unittest}, unit testing coverage is compared
+70\% coverage for unit testing. In Fig.~\ref{fig:fig_unittest}, unit testing coverage is compared
 for each software component between the two major {\sl INDIGO--DataCloud} releases, denoting an incremental
 trend over the course of the project. It can be seen that 50\% of the components were over the
 70\% threshold while slightly less than 80\% of the product stack had values over 50\% coverage.
@@ -449,6 +468,8 @@ guarantee the overall operation of the component with regard to the services it 
 whenever new functionalities are introduced.
 
 \item \textit{Code review}.
+% Comment
+%%Represents …   (not a sentence) 
 Represents the last step in the change management pipeline, once the candidate change has
 successfully passed through the testing methods described previously. It implies the human--based
 revision of the proposed change to discuss its adequacy in terms of e.g. scope, objective fulfilment,
@@ -477,8 +498,8 @@ definitions. The definition files appear as additional source of documentation
 platforms. {\sl INDIGO--DataCloud} project contributed to open--source IaC tools such
 as Ansible \cite{indigo-ansible} and Puppet \cite{indigo-puppet}. A representative example of
 such contribution are the \textit{50 roles} being developed from scratch, currently hosted in
-the Ansible Galaxy portal \cite{indigo-galaxy}. Figure
-\ref{fig:fig_confman} shows the number of products that offer an automated means for deployment.
+the Ansible Galaxy portal \cite{indigo-galaxy}. Fig.~\ref{fig:fig_confman}
+shows the number of products that offer an automated means for deployment.
 It shows an increase after the {\sl INDIGO--1} release and in the previous weeks of each
 of the two major releases.
 \end{itemize}
@@ -510,7 +531,8 @@ EGI's GGUS \cite{ggus}, and the GitHub Issues tracker.
 
 \subsection{DevOps practices}
 \label{sec:devops}
-
+% Comment
+%P5 C2 L21: Define DevOps!
 The DevOps methods emphasize the SQA techniques to avoid infrastructure
 disruption whenever new developments are deployed into production systems. The
 following DevOps approaches have been progressively adopted throughout the project's
@@ -549,6 +571,8 @@ related metrics, such as SLOC or the cyclomatic complexity.
 The practical implementation of the CI scenario leveraged on tightly integrated open
 source tools such as GitHub \cite{github}, as the online source code repository,
 
+% Comment
+%%not a sentence, again
 Jenkins \cite{jenkins}, the event--response CI system, and Docker container
 provisioning to provide instant computing power needed for executing the pipeline jobs.
 The project defined a source code contribution workflow, based on GitHub Pull Requests
@@ -560,15 +584,17 @@ of early detection of defects increases. Within this scenario, the cost of defec
 is dramatically reduced and the reliability of the software solutions improved, as any
 bug or design issue is likely to be detected and subsequently corrected in this phase.
 
-Figure \ref{fig:fig_jenkins_CI_builds} shows the evolution, throughout the
+Fig.~\ref{fig:fig_jenkins_CI_builds} shows the evolution, throughout the
 {\sl INDIGO--DataCloud}'s first and second releases, of the required test types builds since the
 implementation of the CI infrastructure. Automated functional testing coverage were not
 available for all the software stack, thus the associated number of builds are fewer.
 
 \subsubsection{Continuous Delivery}
+% Comment from reviewer
+%Please add a reference.
 As DevOps suggests, frequent releases positively affect the reliability of the software as
 they involve fewer changes and usually are more correlated. The software updates of
-{\sl INDIGO--DataCloud} products, taking place since the second major release, are passing through
+{\sl INDIGO--DataCloud} products, that has been taking place since the second major release, are passing through
 a Continuous Delivery (CD) pipeline that adds the packaging of the software right after the
 successful execution of the CI pipeline previously described. Consequently, CI--validated
 software components are automatically delivered in online repositories without the need of
@@ -587,8 +613,8 @@ the release manager supervises the process.
 The \textit{Docker container pipeline} uses the automated deployment solution to
 actually install and configure the software component in the container image. Once this is
 done the recently created image is uploaded to the production DockerHub repository, tagged
-with the label corresponding to the current {\sl INDIGO--DataCloud} release. Figure
-\ref{fig:fig_CD} shows the complete workflow of the Docker container CD implementation,
+with the label corresponding to the current {\sl INDIGO--DataCloud} release.
+Fig.~\ref{fig:fig_CD} shows the complete workflow of the Docker container CD implementation,
 automatically triggered by a change in the source code.
 
 \begin{figure*}
@@ -620,7 +646,7 @@ development and distribution of the applications coming from the user communitie
 Two applications from "Definition of Support to Research Communities" work package,
 DisVis \cite{disvis} and PowerFit \cite{powerfit}, were
 integrated into a similar CI/CD pipeline described in section \ref{sec:devops}.
-Figure \ref{fig:fig_disvis} shows the pipeline for the Disvis application.
+Fig.~\ref{fig:fig_disvis} shows the pipeline for the Disvis application.
 
 User application developers were provided with both a means to validate the
 source code before merging and the creation of a new versioned Docker image,
@@ -642,7 +668,7 @@ level of integration between the components involved in the {\sl INDIGO--DataClo
 solutions and use cases validation, by deploying and executing the applications
 with the last stable version of the software in environments as similar as
 possible to production ones. A map of the Pilot Preview
-infrastructure is depicted in Figure \ref{fig:fig_pilotpreview}, it shows the
+infrastructure is depicted in Fig.~\ref{fig:fig_pilotpreview}, it shows the
 resources providers and the components or services they deployed and supported.
 
 The released software is tested in production environments through the
@@ -665,6 +691,8 @@ collaborative tools, extending their capabilities to bring along tight
 integrations amongst other services, matched the requirements of such practices
 and procedures, facilitating in a great manner their implementation in real scenarios.
 
+% Comment
+%%P8 C1 L26: What is the demonstration that reliability has been improved significantly with the addition of stricter methologies? Is there some quantitative evidence of uptime, or bug reports per user, or similar? Or some evidence of speed of defect detection & fixing, which you cite as greatly improved? I am very sympathetic to the idea that systematic development techniques can help improve software quality (without getting into circular definitions, where "quality" means that methodologies or standards have been applied!) but there will also be a point at which the methodology gets too heavy and compromises the "agility" of the development team: how can you identify which processes are helping and which are not?
 Reliability of the software has been substantially improved by applying the SQA
 criteria in the development stage. Consequently, each change in the source code
 that is meant to be integrated in the production version, is validated according
@@ -679,6 +707,8 @@ through the preview testbeds or resource centers early adoption -- handled by th
 Staged--rollout process -- alleviates the likelihood of discovering uncovered
 issues at production.
 
+% Comment
+%%L42-44 not clear, please rephrase
 Software lifecycle demands as well from a continuous measurement and analysis
 process that permits timely reactions to discover and fix defects throughout the
 development, release and post--release or maintenance stages. Conscientious metric
@@ -722,10 +752,10 @@ criteria through each stage of the software lifecycle.
 \begin{thebibliography}{1}
 
 \bibitem{h2020}
-\emph{HORIZON 2020}, The EU Framework Programme for Research and Innovation [Online]. Available: https://ec.europa.eu/programmes/horizon2020/
+\emph{HORIZON 2020}, The EU Framework Programme for Research and Innovation [Online]. Available: https://ec.europa.eu/programmes/horizon2020/ .
 
 \bibitem{agile-manifesto}
-\emph{Manifesto for Agile Software Development} [Online]. Available: http://agilemanifesto.org
+\emph{Manifesto for Agile Software Development} [Online]. Available: http://agilemanifesto.org .
 
 \bibitem{zhu}
 L. Zhu and L. Bass and G. Champlin--Scharff, \emph{DevOps and Its Practices},
@@ -733,7 +763,7 @@ IEEE Software, vol. 33, no. 3, pp. 32--34, May--June 2016.
 
 \bibitem{cordis:datagrid}
 \emph{DataGrid project}, European Community Research and Development
-Information Service (CORDIS) [Online]. Available: http://cordis.europa.eu/project/rcn/53665\_en.html
+Information Service (CORDIS) [Online]. Available: http://cordis.europa.eu/project/rcn/53665\_en.html .
 
 \bibitem{gagliardi}
 Gagliardi F., Jones B., Reale M., Burke S., \emph{European DataGrid Project: Experiences of Deploying a Large Scale Testbed for E--science Applications},
@@ -762,21 +792,21 @@ Engineering Institute, report CMU/SEI-93-TR-24, ESC--TR-93-177, Feb. 1993.
 \bibitem{cordis:egee}
 \emph{Enabling Grids for E--sciencE (EGEE)} project, European Community
 Research and Development Information Service (CORDIS) [Online]. Available:
-http://cordis.europa.eu/project/rcn/80149\_en.html
+http://cordis.europa.eu/project/rcn/80149\_en.html .
 
 \bibitem{cordis:egee2}
 \emph{Enabling Grids for E--sciencE--II (EGEE--II)} project, European Community
 Research and Development Information Service (CORDIS) [Online]. Available:
-http://cordis.europa.eu/project/rcn/99189\_en.html
+http://cordis.europa.eu/project/rcn/99189\_en.html .
 
 \bibitem{cordis:egee3}
 \emph{Enabling Grids for E--sciencE--III (EGEE--III)} project, European Community
 Research and Development Information Service (CORDIS) [Online]. Available:
-http://cordis.europa.eu/project/rcn/87264\_en.html
+http://cordis.europa.eu/project/rcn/87264\_en.html .
 
 \bibitem{egee:acceptance-criteria}
 \emph{Definition and Documentation of the Revised Software Life--Cycle Process},
-Milestone MSA3.4.2, 2010, EGEE--III project [Online]. Available: https://edms.cern.ch/ui/file/1062487/2/EGEE--III--MSA3.4.2-1062487-v1\_4.pdf
+Milestone MSA3.4.2, 2010, EGEE--III project [Online]. Available: https://edms.cern.ch/ui/file/1062487/2/EGEE--III--MSA3.4.2-1062487-v1\_4.pdf .
 
 \bibitem{glite}
 E. Laure et al, \emph{Programming the Grid with gLite}, in Jin, H., Reed, D.A.,
@@ -791,12 +821,12 @@ Eds. John Wiley \& Sons Inc., 2002.
 \bibitem{cordis:etics}
 \emph{E--Infrastructure for Testing, Integration and Configuration of Software
 (ETICS)} project, European Community Research and Development Information
-Service (CORDIS) [Online]. Available: http://cordis.europa.eu/project/rcn/80138\_en.html
+Service (CORDIS) [Online]. Available: http://cordis.europa.eu/project/rcn/80138\_en.html .
 
 \bibitem{cordis:etics2}
 \emph{E--Infrastructure for Testing, Integration and Configuration of Software -
 Phase 2 (ETICS 2)} project, European Community Research and Development
-Information Service (CORDIS), [Online]. Available: http://cordis.europa.eu/project/rcn/86604\_en.html
+Information Service (CORDIS), [Online]. Available: http://cordis.europa.eu/project/rcn/86604\_en.html .
 
 \bibitem{etics}
 A. Di Meglio, M.-E.B??gin, P. Couvares, E. Ronchieri, E. Takacs, \emph{ETICS:
@@ -806,50 +836,50 @@ Physics: Conference Series, Vol. 119, N. 4, IOP Publishing Ltd, 2008.
 \bibitem{cordis:emi}
 \emph{European Middleware Initiative (EMI)} project, European Community
 Research and Development Information Service (CORDIS) [Online]. Available:
-http://cordis.europa.eu/project/rcn/95311\_en.html
+http://cordis.europa.eu/project/rcn/95311\_en.html .
 
 \bibitem{iso-9126}
 \emph{ISO/IEC 9126 Software Engineering - Product Quality}, International
-Organization for Standarization [Online]. Available: https://www.iso.org/standard/22749.html
+Organization for Standarization [Online]. Available: https://www.iso.org/standard/22749.html .
 
 \bibitem{emi-metrics}
-\emph{EMI Metrics Specification} [Online]. Available: https://goo.gl/CCtY7x
+\emph{EMI Metrics Specification} [Online]. Available: https://goo.gl/CCtY7x .
 
 \bibitem{emi-quality-model}
-\emph{EMI Quality Model} [Online]. Available: https://goo.gl/LdS6fL
+\emph{EMI Quality Model} [Online]. Available: https://goo.gl/LdS6fL .
 
 \bibitem{cordis:egi-inspire}
 \emph{European Grid Initiative: Integrated Sustainable Pan--European
 Infrastructure for Researchers in Europe (EGI--InSPIRE)} project, European
 Community Research and Development Information Service (CORDIS) [Online]. Available:
-http://cordis.europa.eu/project/rcn/95923\_en.html
+http://cordis.europa.eu/project/rcn/95923\_en.html .
 
 \bibitem{egi-ops}
 \emph{EGI Operations Portal} [Online]. Available:
-https://operations-portal.egi.eu/
+https://operations-portal.egi.eu/ .
 
 \bibitem{ggus}
 \emph{GGUS} EGI Helpdesk [Online]. Available:
-https://ggus.eu/
+https://ggus.eu/ .
 
 \bibitem{gocdb}
 \emph{GOCDB} EGI Grid Configuration Repository [Online]. Available:
-https://ggus.eu/
+https://goc.egi.eu/ .
 
 \bibitem{egi-qc}
 \emph{EGI Quality Criteria} [Online]. Available:
-https://egi-qc.github.io/
+https://egi-qc.github.io/ .
 
 \bibitem{github}
 \emph{GITHUB} [Online]. Available:
-https://github.com/
+https://github.com/ .
 
 \bibitem{jenkins}
 \emph{Jenkins} Continuous Integration System [Online]. Available:
-https://jenkins-ci.org/
+https://jenkins-ci.org/ .
 
 \bibitem{egi-qc}
-\emph{EGI Quality Criteria} [Online]. Available: http://egi-qc.github.io/
+\emph{EGI Quality Criteria} [Online]. Available: http://egi-qc.github.io/ .
 
 \bibitem{mario}
 M. David et al, \emph{Validation of Grid Middleware for the European Grid
@@ -859,25 +889,25 @@ Springer, 2014.
 \bibitem{cordis:egi-engage}
 \emph{Engaging the EGI Community towards an Open Science Commons (EGI--ENGAGE)}
 project, European Community Research and Development Information Service
-(CORDIS), [Online]. Available:  http://cordis.europa.eu/project/rcn/194937\_en.html
+(CORDIS), [Online]. Available:  http://cordis.europa.eu/project/rcn/194937\_en.html .
 
 \bibitem{cordis:indigo}
 \emph{INtegrating Distributed data Infrastructures for Global ExplOitation
 (INDIGO--DataCloud)} project, European Community Research and Development
 Information Service (CORDIS) [Online]. Available:
-http://cordis.europa.eu/project/rcn/194882\_en.html
+http://cordis.europa.eu/project/rcn/194882\_en.html .
 
 \bibitem{indigo-dockerhub}
 \emph{INDIGO--DataCloud DockerHub repository} [Online]. Available:
-https://hub.docker.com/u/indigodatacloud
+https://hub.docker.com/u/indigodatacloud .
 
 \bibitem{indigo-d31}
 \emph{Initial Plan for WP3} INDIGO--DataCloud Deliverable 3.1 [Online]. Available:
-https://www.indigo-datacloud.eu/documents/initial-plan-wp3-d31
+https://www.indigo-datacloud.eu/documents/initial-plan-wp3-d31 .
 
 \bibitem{indigo-jenkins}
 \emph{INDIGO--DataCloud Jenkins CI service} [Online]. Available:
-https://jenkins.indigo-datacloud.eu:8080/
+https://jenkins.indigo-datacloud.eu:8080/ .
 
 \bibitem{indigo-github}
 \emph{INDIGO--DataCloud GitHub Source Code repository} [Online]. Available:
@@ -885,32 +915,38 @@ https://www.github.com/indigo-dc
 
 \bibitem{indigo-gitbook}
 \emph{INDIGO--DataCloud GitBook Documentation repository} [Online]. Available:
-https://www.gitbook.com/@indigo-dc
+https://www.gitbook.com/@indigo-dc .
 
 \bibitem{indigo-puppet}
 \emph{INDIGO--DataCloud PuppetForge repository} [Online]. Available:
-https://forge.puppet.com/indigodc
+https://forge.puppet.com/indigodc .
 
 \bibitem{indigo-galaxy}
 \emph{INDIGO--DataCloud Ansible Galaxy repository} [Online]. Available:
-https://galaxy.ansible.com/indigo-dc/
+https://galaxy.ansible.com/indigo-dc/ .
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+% Duplicate
 \bibitem{indigo-ansible}
 \emph{INDIGO--DataCloud Ansible Galaxy repository} [Online]. Available:
-https://galaxy.ansible.com/indigo-dc/
+https://galaxy.ansible.com/indigo-dc/ .
 
 \bibitem{grimoirelab}
-\emph{GrimoireLab} [Online]. Available: http://grimoirelab.github.io/
+\emph{GrimoireLab} [Online]. Available: http://grimoirelab.github.io/ .
 
 \bibitem{indigo-pkg-repo}
-\emph{INDIGO--DataCloud Linux Package repository} [Online]. Available: https://jenkins.indigo-datacloud.eu/
+\emph{INDIGO--DataCloud Linux Package repository} [Online]. Available: https://jenkins.indigo-datacloud.eu/ .
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+% Duplicate
 \bibitem{ggus}
 \emph{Global Grid User Support (GGUS)} [Online]. Available: https://www.ggus.eu/
 
 \bibitem{disvis} G.C.P. Van Zundert, A.M.J.J. Bonvin,
 DisVis: quantifying and visualizing the accessible interaction space of distance
-restrained biomolecular complexes, Bioinformatics 31 (2015) 3222--3224
+restrained biomolecular complexes, Bioinformatics 31 (2015) 3222--3224 .
 
 \bibitem{powerfit} G.C.P. Van Zundert, A.M.J.J. Bonvin,
 Fast and sensitive rigid--body fitting into cryo--EM density maps with PowerFit,
@@ -919,5 +955,3 @@ AIMS Biophys. 2 (2015) 73--87.
 \end{thebibliography}
 
 \end{document}
-
-
