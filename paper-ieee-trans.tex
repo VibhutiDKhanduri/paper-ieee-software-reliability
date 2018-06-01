@@ -299,8 +299,6 @@ number of defects/bugs \cite{etics}. The {\sl ETICS} framework was the first aut
 service for delivering quality software products in distributed environments like
 the Grids.
 
-
-
 \subsection{European Middleware Initiative}
 
 The European Middleware Initiative ({\sl EMI}, May 2010 -- Apr 2013)
@@ -410,7 +408,8 @@ e--Infrastructure resource provider's early--adoption.
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.5\textwidth]{images/fig3.png}
-\caption{Trend line showing the adoption of Configuration Management tools throughout the project lifetime.}
+\caption{Adoption of Configuration Management tools throughout the project lifetime. Also shown the trend lines
+leading to the first release (dark blue points and lines), and to the second release (light cream points and lines).}
 \label{fig:fig_confman}
 \end{figure}
 
@@ -489,17 +488,20 @@ updated into the production repository.
 \item \textit{Automated Deployment}.
 To lower the barriers of software adoption, the SQA criteria require the automated
 deployment of the products delivered as part of the catalogue. Automation in this context is
-tackled using a configuration management tool. These tools allow to have an
+tackled using a configuration management tool. These tools allow the adoption of
 \textit{Infrastructure as Code} (IaC), managing the component's deployment through declarative
 definitions. The definition files appear as additional source of documentation
 -- self--documenting code -- as they sequentially guide the component's deployment process in multiple
 platforms. {\sl INDIGO--DataCloud} project contributed to open--source IaC tools such
 as Ansible \cite{indigo-galaxy} and Puppet \cite{indigo-puppet}. A representative example of
-such contribution are the \textit{50 roles} being developed from scratch, currently hosted in
+such contribution are the \textit{50 roles} developed from scratch and currently hosted in
 the Ansible Galaxy portal \cite{indigo-galaxy}. Fig.~\ref{fig:fig_confman}
 shows the number of products that offer an automated means for deployment.
-It shows an increase after the {\sl INDIGO--1} release and in the previous weeks of each
-of the two major releases.
+It shows an increase in the adoption of such tools leading to the {\sl INDIGO--1} release
+(dark blue points and trend line), as well as to the {\sl INDIGO--2} release
+(light cream points and trend line). The rate of adoption is lower during the weeks
+before the second release because a significant fraction of the products had already adopted it
+previously to the first release.
 \end{itemize}
 
 \subsubsection{Quality metrics}
@@ -838,7 +840,7 @@ http://cordis.europa.eu/project/rcn/95311\_en.html .
 
 \bibitem{iso-9126}
 \emph{ISO/IEC 9126 Software Engineering - Product Quality}, International
-Organization for Standarization [Online]. Available: https://www.iso.org/standard/22749.html .
+Organization for Standardization [Online]. Available: https://www.iso.org/standard/22749.html .
 
 \bibitem{emi-metrics}
 \emph{EMI Metrics Specification} [Online]. Available: https://goo.gl/CCtY7x .
@@ -909,7 +911,7 @@ https://jenkins.indigo-datacloud.eu:8080/ .
 
 \bibitem{indigo-github}
 \emph{INDIGO--DataCloud GitHub Source Code repository} [Online]. Available:
-https://www.github.com/indigo-dc
+https://www.github.com/indigo-dc .
 
 \bibitem{indigo-gitbook}
 \emph{INDIGO--DataCloud GitBook Documentation repository} [Online]. Available:
