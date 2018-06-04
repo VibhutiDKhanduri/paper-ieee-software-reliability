@@ -26,22 +26,22 @@ ggplot(datafn, aes(fill=Release , x=Product, y=Value)) +
                      expand=c(0,1))+
   geom_hline(aes(yintercept=val1$Avg[1],  
                  linetype='MidnightBlue'),
-             colour='red',
-             size=1, alpha=1) +
+                 colour='darkred',
+                 size=1, alpha=1) +
   geom_hline(aes(yintercept=val2$Avg[1],  
                  linetype='ElectricIndigo'), 
-             colour='darkblue',
-             size=1, alpha=1)  +
-  scale_fill_manual(name='Releases', values=c("blue", "burlywood3"),
+                 colour='blue',
+                 size=1, alpha=1)  +
+  scale_fill_manual(name='Releases', values=c("blue", "burlywood1"),
                     breaks = c(rel1,
                                rel2)) +
   scale_linetype_manual(name="Avg", 
-                        values=c(2, 2),
-                        guide = guide_legend(override.aes = 
-                                               list(color = c("red", 
-                                                              "darkblue"))),
-                        labels = c(rel1avg,
-                                   rel2avg)) +
+                     values=c(2, 2),
+                     guide = guide_legend(override.aes = 
+                                            list(color = c("burlywood1", 
+                                                           "blue"))),
+                     labels = c(rel1avg,
+                                rel2avg)) +
   coord_flip()+
   theme(legend.key = element_rect(fill = "white", colour = "white"),
         axis.text=element_text(size=14),
