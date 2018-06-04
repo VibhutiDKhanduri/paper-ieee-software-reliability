@@ -25,9 +25,9 @@ str(datafn)
 library(ggplot2)
 
 ggplot(datafn, aes(x=Week, y=Number)) +
-  geom_rect(data=NULL,aes(xmin=0.25,xmax=8.25,ymin=-Inf,ymax=Inf),
+  geom_rect(data=NULL,aes(xmin=0.25,xmax=8.75,ymin=-Inf,ymax=Inf),
                     fill="papayawhip")+
-  geom_rect(data=NULL,aes(xmin=20.25,xmax=33.75,ymin=-Inf,ymax=Inf),
+  geom_rect(data=NULL,aes(xmin=8.76,xmax=33.75,ymin=-Inf,ymax=Inf),
                     fill="aliceblue")+
   geom_point(data=datafn[datafn$Release=='INDIGO-1',],
              aes(x=Week, y=Number, color='MidnightBlue (INDIGO-1)'), 
