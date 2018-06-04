@@ -25,7 +25,7 @@ str(datafn)
 library(ggplot2)
 
 ggplot(datafn, aes(x=Week, y=Number)) +
-  geom_rect(data=NULL,aes(xmin=0.25,xmax=8.75,ymin=-Inf,ymax=Inf),
+  geom_rect(data=NULL,aes(xmin=0,xmax=8.75,ymin=-Inf,ymax=Inf),
                     fill="papayawhip")+
   geom_rect(data=NULL,aes(xmin=8.76,xmax=33.75,ymin=-Inf,ymax=Inf),
                     fill="aliceblue")+
@@ -43,9 +43,11 @@ ggplot(datafn, aes(x=Week, y=Number)) +
              size=2) +
   xlab("Weeks") +
   ylab("Number of Software Products") +
-  scale_y_continuous(limits = c(0, 25)) +
+  scale_y_continuous(limits = c(0, 25), 
+                     expand = c(0, 0)) +
   scale_x_continuous(limits = c(0, 34), 
-                     breaks=c(0, 5, 10, 15, 20, 25, 30)) +
+                     breaks=c(0, 5, 10, 15, 20, 25, 30),
+                     expand = c(0, 0)) +
   scale_colour_manual(name='Releases', values=c('MidnightBlue (INDIGO-1)'="burlywood1",
                                                 'ElectricIndigo (INDIGO-2)'="blue"),
                       breaks=c('MidnightBlue (INDIGO-1)',
