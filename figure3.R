@@ -25,41 +25,40 @@ str(datafn)
 library(ggplot2)
 
 ggplot(datafn, aes(x=Week, y=Number)) +
+  geom_rect(data=NULL,aes(xmin=0,xmax=8.75,ymin=-Inf,ymax=Inf),
+                    fill="papayawhip")+
+  geom_rect(data=NULL,aes(xmin=8.76,xmax=33.75,ymin=-Inf,ymax=Inf),
+                    fill="aliceblue")+
   geom_point(data=datafn[datafn$Release=='INDIGO-1',],
-             aes(x=Week, y=Number, color='MidnightBlue'), 
-             size=3) +
+             aes(x=Week, y=Number, color='MidnightBlue (INDIGO-1)'), 
+             size=5) +
   geom_point(data=datafn[datafn$Release=='INDIGO-2',],
-             aes(x=Week, y=Number, color='ElectricIndigo'), 
-             size=3) +
+             aes(x=Week, y=Number, color='ElectricIndigo (INDIGO-2)'), 
+             size=5) +
   geom_line(data=datafn[datafn$Release=='INDIGO-1',],
-            aes(x=Week, y=Lm, color='MidnightBlue'), 
-            size=1) +
+             aes(x=Week, y=Lm, color='MidnightBlue (INDIGO-1)'), 
+             size=2) +
   geom_line(data=datafn[datafn$Release=='INDIGO-2',],
-            aes(x=Week, y=Lm, color='ElectricIndigo'), 
-            size=1) +
+             aes(x=Week, y=Lm, color='ElectricIndigo (INDIGO-2)'), 
+             size=2) +
   xlab("Weeks") +
   ylab("Number of Software Products") +
-  scale_y_continuous(limits = c(0, 25)) +
+  scale_y_continuous(limits = c(0, 25), 
+                     expand = c(0, 0)) +
   scale_x_continuous(limits = c(0, 34), 
-                     breaks=c(0, 5, 10, 15, 20, 25, 30)) +
-  scale_colour_manual(name='Releases', values=c(MidnightBlue="darkblue",
-                                                ElectricIndigo="red"),
-                      breaks=c('MidnightBlue',
-                               'ElectricIndigo')) +
-  geom_vline(aes(xintercept=8),
-             colour='darkblue',
-             size=1, alpha=1) +
-  geom_vline(aes(xintercept=28), 
-             colour='red',
-             size=1, alpha=1)  +
+                     breaks=c(0, 5, 10, 15, 20, 25, 30),
+                     expand = c(0, 0)) +
+  scale_colour_manual(name='Releases', values=c('MidnightBlue (INDIGO-1)'="burlywood1",
+                                                'ElectricIndigo (INDIGO-2)'="blue"),
+                      breaks=c('MidnightBlue (INDIGO-1)',
+                              'ElectricIndigo (INDIGO-2)')) +
   theme(legend.key = element_rect(fill = "white", colour = "white"),
-        axis.text=element_text(size=14),
-        axis.title=element_text(size=16),
+        axis.text=element_text(size=12),
+        axis.title=element_text(size=12),
         axis.line = element_line(colour = "black"),
         panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(),
         panel.border = element_blank(),
         panel.background = element_blank(),
         legend.position="top",
-        legend.text=element_text(size=14))
-
+        legend.text=element_text(size=12))
