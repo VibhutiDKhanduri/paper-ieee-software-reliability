@@ -77,11 +77,11 @@ by the particle physics scientific community, built to satisfy the computing nee
 of processing, storing and analysis of the very large amount of data produced by the
 % Comment from reviewer
 %(Update: I see this is discussed later... so it would be good just to signpost at the start that a) the focus is really on "grids", and b) that specific examples will be given.
-LHC particle accelerator. A significant number of innovation projects and
-technology transfer activities -- from the European Commission (EC)-funded 5th, 6th and 7th Framework Programmes,
-and recently from the Horizon 2020 programme \cite{h2020} -- have as their main goal to
-develop software solutions that provide a seamless and transparent access of researchers to distributed
-computing and data resources.
+LHC particle accelerator. A significant number of innovation projects and technology transfer
+activities -- later discussed in Section \ref{sec:ev} -- from the European Commission
+(EC)-funded 5th, 6th and 7th Framework Programmes, and recently from the Horizon 2020 programme
+\cite{h2020} had as their main goal to develop software solutions that provide a seamless and
+transparent access of researchers to distributed computing and data resources. 
 
 % Comment
 %%top of second column:  think about saying this more gently
@@ -89,23 +89,22 @@ Major developments were carried out throughout the years focused on providing ne
 functionalities, partially neglecting the adoption of software engineering methodologies, in the early days.
 The released software was less tested, resulting in a high rate of
 rollbacks and patches applied to production systems. Thereby, the stability and
-reliability of the e--Infrastructures was often compromised, affecting
-negatively their exploitation by the scientific communities.
-
-Soon it became apparent the need for a better balance between the addition of new features
-and the reliability of the released software. Consequently, a substantial part of the
-software lifecycle was devoted to the improvement of the quality of the software being
-delivered. At this point, evolving software engineering practices were
-considered and gradually adopted to define and implement quality procedures, the organization of cross--functional teams
-and deployment of pilot testbeds.
-
 % Comment
 %P1 C2 L18: Claiming that stability and reliability was regularly compromised is quite a bold statement -- it needs at least some citations, and preferably some explanation of what forms this compromise took for a few prominent cases.
+reliability of the e--Infrastructures was often compromised, affecting
+negatively their exploitation by the scientific communities.
+% Comments
+%P1 C2 L24: Was this realisation imposed "from above" e.g. by coordinated EC/ERC oversight, or was it "emergent" from the demands of the independent scientific communities?
+It became then apparent the need for a better balance between the addition of new features
+and the reliability of the released software. Consequently, incoming projects progressively
+devoted a substantial part of the software lifecycle to the improvement of the quality of the
+software being delivered. At this point, evolving software engineering practices were considered
+and gradually adopted to define and implement quality procedures, the organization of
+cross--functional teams and deployment of pilot testbeds.
+
 Analysing the EC--funded software projects over the last decade,
 one can observe a continuous increase in the prominence and robustness of software
 testing and validation procedures. The
-% Comments
-%P1 C2 L24: Was this realisation imposed "from above" e.g. by coordinated EC/ERC oversight, or was it "emergent" from the demands of the independent scientific communities?
 evolution of the software engineering methodologies (creation of the Agile
 Manifesto \cite{agile-manifesto}, and rise of DevOps practices \cite{zhu}) together
 with the parallel advancements in the information and communication technology
@@ -446,19 +445,19 @@ their popularity
 in the {\sl INDIGO--DataCloud} software stack.
 
 \item \textit{Unit and Functional testing}.
+%% Comment from reviewer       
+%% These percentages appear as vague approximations by eye, please add the precise numbers rounded.
 Changes involving the addition of new functionalities, are required to be tested. \textit{Regression
 testing} in this context is accomplished by enforcing the definition and periodic execution
-of the tests, covering past fixed issues, to ensure that they are not reintroduced during the development activities.
-
-%% Comment from reviewer
-%% These percentages appear as vague approximations by eye, please add the precise numbers rounded.
-
- \textit{Unit testing} completes the source code testing evaluation by
-focusing on the code's internal design. The SQA criteria set a recommended threshold of
-70\% coverage for unit testing. In Fig.~\ref{fig:fig_unittest}, unit testing coverage is compared
-for each software component between the two major {\sl INDIGO--DataCloud} releases, denoting an incremental
-trend over the course of the project. It can be seen that 50\% of the components were over the
-70\% threshold while slightly less than 80\% of the product stack had values over 50\% coverage.
+of the tests, covering past fixed issues, to ensure that they are not reintroduced during the development
+activities. \textit{Unit testing} completes the source code testing evaluation by focusing on the code's 
+internal design. The SQA criteria of {\sl INDIGO--DataCloud} set a recommended threshold of 70\% coverage 
+for unit testing. In Fig.~\ref{fig:fig_unittest}, unit testing coverage is compared for each software 
+component between the two major releases, denoting an incremental trend over the course of the project: 
+code coverage increased from an average value of 50.32\% to 63.34\%, outlined by the respective dates of
+the project's first (INDIGO-1) and second (INDIGO-2) releases. By INDIGO-2, 53\% of the software components
+(17 out of 32) were over the threshold of the aforementioned project's SQA code coverage recommendation 
+(70\%), while 75\% (24 out of 32) of the product stack exceeded 50\% coverage.
 
 \item \textit{Integration testing}. Software components usually interact with other services during
 operation. Integration testing deals with the interactions among coupled software components or
@@ -590,7 +589,9 @@ bug or design issue is likely to be detected and subsequently corrected in this 
 Fig.~\ref{fig:fig_jenkins_CI_builds} shows the evolution, throughout the
 {\sl INDIGO--DataCloud}'s first and second releases, of the required test types builds since the
 implementation of the CI infrastructure. Automated functional testing coverage were not
-available for all the software stack, thus the associated number of builds are fewer.
+available for all the software stack, thus the associated number of builds are fewer. Towards the
+end of the project, the software development activity slowed the pace but not completely ceased 
+as the CI infrastructure is still maintained after the project's end of life.
 
 \subsubsection{Continuous Delivery}
 % Comment from reviewer
