@@ -1,5 +1,3 @@
-% trial .tex file %
-
 \documentclass[journal]{IEEEtran}
 
 \usepackage{graphicx}
@@ -26,7 +24,7 @@
 \author{E. Ronchieri,
         P. Orviz Fernandez,
         M. David,
-	D. C. Duma,
+        D. C. Duma,
         J. Gomes,
         D. Salomoni
 \thanks{D. C. Duma, E. Ronchieri, and D. Salomoni are with INFN - CNAF, Bologna, Italy.}
@@ -289,8 +287,8 @@ the {\sl ETICS} \cite{etics} solution.
 
 \subsection{E--Infrastructure for Testing, Integration and Configuration of Software}
 
-The E--Infrastructure for Testing, Integration and Configuration of Software
-\cite{cordis:etics, cordis:etics2} ({\sl ETICS}, Jan 2006 -- Feb 2010) project aimed
+The E--Infrastructure for Testing, Integration and Configuration of Software~\cite{etics}
+({\sl ETICS}, Jan 2006 -- Feb 2010) project aimed
 at addressing the challenges in producing quality software in distributed,
 collaborative projects such as {\sl EGEE} and its {\sl gLite} middleware. The framework
 integrated different technologies and tools in order to provide automated configuration,
@@ -314,7 +312,7 @@ processes to be able to meet the {\sl EMI} quality requirements
 
 For each software characteristic, a set of associated
 metrics and Key Performance Indicators (KPIs) were identified and defined in
-detail in the {\sl EMI} Metrics Specification \cite{emi-metrics}. The project
+detail in the {\sl EMI} Metrics Specification \cite{emi-quality-model}. The project
 leveraged the {\sl ETICS} service for the development, continuous integration and release management,
 as well as for metric tracking, making queries on the collected data to display
 them through the chart generation framework.
@@ -483,7 +481,8 @@ The SQA criteria set the path for the adoption of the developed software by
 defining the documentation content, according to the target audience. This requirement also
 promotes the automation, both in terms of documentation creation and service deployment. The
 \textit{documentation is treated as code}, using a markup language, automatically rendered and
-uploaded to online repositories \cite{indigo-gitbook}. Thus documentation is portable and
+uploaded to online repositories\footnote{\url{https://www.gitbook.com/@indigo-dc}}.
+Thus documentation is portable and
 human--reviewed, using the same workflow as the code does, validating the changes before being
 updated into the production repository.
 
@@ -495,9 +494,10 @@ tackled using a configuration management tool. These tools allow the adoption of
 definitions. The definition files appear as additional source of documentation
 -- self--documenting code -- as they sequentially guide the component's deployment process in multiple
 platforms. {\sl INDIGO--DataCloud} project contributed to open--source IaC tools such
-as Ansible \cite{indigo-galaxy} and Puppet \cite{indigo-puppet}. A representative example of
+as Ansible
+and Puppet\footnote{\url{https://forge.puppet.com/indigodc}}. A representative example of
 such contribution are the \textit{50 roles} developed from scratch and currently hosted in
-the Ansible Galaxy portal \cite{indigo-galaxy}. Fig.~\ref{fig:fig_confman}
+the Ansible Galaxy portal\footnote{\url{https://galaxy.ansible.com/indigo-dc/}}. Fig.~\ref{fig:fig_confman}
 shows the number of products that offer an automated means for deployment.
 It shows an increase in the adoption of such tools leading to the {\sl INDIGO--1} release
 (dark blue points and trend line), as well as to the {\sl INDIGO--2} release
@@ -514,22 +514,25 @@ ISO/IEC 9126 standard. These metrics cover the development, release and
 maintenance phases of the software lifecycle.
 
 \textit{Development metrics} are obtained programmatically from several sources, namely GitHub
-API and Jenkins service, and graphically displayed as GitHub pages using GrimoireLab
-framework \cite{grimoirelab}. Per--component weekly reports, including the SQA requirement
+API\footnote{\url{https://developer.github.com/v3/}.}
+and Jenkins\footnote{\url{https://jenkins.io/}} service, and graphically displayed as GitHub
+pages using GrimoireLab framework\footnote{\url{http://grimoirelab.github.io/}}.
+Per--component weekly reports, including the SQA requirement
 fulfilment, are issued and individually discussed through the different communication channels
 with the development teams. Issue tracking metrics and KPIs are an essential piece of information
 of both feature addition and defect solving, useful to detect and fix misbehaviours while in the
 development phase.
 
 \textit{Release metric} sources are the online repository servers, namely the
-Linux package \cite{indigo-pkg-repo} and DockerHub \cite{indigo-dockerhub} repositories. Jenkins
+Linux package\footnote{\url{https://jenkins.indigo-datacloud.eu/}}
+and DockerHub\footnote{\url{https://hub.docker.com/u/indigodatacloud}} repositories. Jenkins
 server also contains valuable release data as it is the service where the packages
 and containers are being built before being uploaded to the online repositories. Release
 KPIs primarily focus on the frequency and efficiency -- mainly rollbacks -- statistics.
 
 \textit{Maintenance and user support metrics} are key for continuously improving the response
 to issues reported by external users. Feedback is collected from outside helpdesks, such as
-EGI's GGUS \cite{ggus}, and the GitHub Issues tracker.
+EGI's GGUS~\cite{ggus}, and the GitHub Issues tracker.
 
 \subsection{DevOps practices}
 \label{sec:devops}
@@ -571,11 +574,11 @@ the CI pipeline to have a per--change trend evolution of the common source code
 related metrics, such as SLOC or the cyclomatic complexity.
 
 The practical implementation of the CI scenario leveraged on tightly integrated open
-source tools such as GitHub \cite{github}, as the online source code repository,
+source tools such as GitHub\footnote{\url{https://github.com/}}, as the online source code repository,
 
 % Comment
 %%not a sentence, again
-Jenkins \cite{jenkins}, the event--response CI system, and Docker container
+Jenkins, the event--response CI system, and Docker container
 provisioning to provide instant computing power needed for executing the pipeline jobs.
 The project defined a source code contribution workflow, based on GitHub Pull Requests
 (PRs), where each change automatically triggers in Jenkins the associated quality and
@@ -756,189 +759,238 @@ criteria through each stage of the software lifecycle.
 \begin{thebibliography}{1}
 
 \bibitem{h2020}
-\emph{HORIZON 2020}, The EU Framework Programme for Research and Innovation [Online]. Available: https://ec.europa.eu/programmes/horizon2020/ .
+\emph{Horizon 2020} -- European Commission.
+[Online] Available: \url{https://ec.europa.eu/programmes/horizon2020/}
+[Accessed 4 Jun. 2018].
 
 \bibitem{agile-manifesto}
-\emph{Manifesto for Agile Software Development} [Online]. Available: http://agilemanifesto.org .
+Beck, K., Beedle, et al., (2001).
+Manifesto for Agile Software Development.
+[Online] Available: \url{http://www.agilemanifesto.org/}
+[Accessed 4 Jun. 2018].
 
 \bibitem{zhu}
-L. Zhu and L. Bass and G. Champlin--Scharff, \emph{DevOps and Its Practices},
-IEEE Software, vol. 33, no. 3, pp. 32--34, May--June 2016.
+L. Zhu and L. Bass and G. Champlin--Scharff,
+DevOps and Its Practices,
+\emph{IEEE Software},
+vol. 33, n. 3, pp. 32--34, 2016.
 
 \bibitem{cordis:datagrid}
-\emph{DataGrid project}, European Community Research and Development
-Information Service (CORDIS) [Online]. Available: http://cordis.europa.eu/project/rcn/53665\_en.html .
+P. Kunszt,
+European DataGrid project: status and plans,
+\emph{Nucl. Instr. Meth. Phys. Res. A},
+vol. 502, n. 2, pp. 376--381, 2003.
+%\emph{DataGrid project}, European Community Research and Development Information Service (CORDIS).
+%[Online] Available: \url{http://cordis.europa.eu/project/rcn/53665\_en.html}
+%[Accessed 4 Jun. 2018].
 
 \bibitem{gagliardi}
-Gagliardi F., Jones B., Reale M., Burke S., \emph{European DataGrid Project: Experiences of Deploying a Large Scale Testbed for E--science Applications},
-in Calzarossa M.C., Tucci S. (eds) Performance Evaluation of Complex Systems: Techniques and Tools, Lecture Notes in Computer Science, vol 2459. Springer, 2002.
+Gagliardi F., Jones B., Reale M., Burke S.,
+European DataGrid Project: Experiences of Deploying a Large Scale Testbed for E--science Applications,
+in \emph{Performance Evaluation of Complex Systems: Techniques and Tools, LNCS},
+vol. 2459, 2002.
 
 \bibitem{globus}
-I. Foster and C. Kesselman, \emph{Globus: a Metacomputing Infrastructure
-Toolkit}, International Journal of Supercomputer Applications, vol. 11, no. 2,
-pp. 115--128, 1997.
+I. Foster and C. Kesselman,
+Globus: a Metacomputing Infrastructure Toolkit,
+\emph{Int. J. Supercomput. Appl.},
+vol. 11, no. 2, pp. 115--128, 1997.
 
 \bibitem{datagrid}
-L. Momtahan and A. Martin, \emph{e--Science Experiences: Software Engineering
-Practice and the EU DataGrid}, in Proc. Asia--Pacific Software Engineering
-Conference, Gold Coast, Queensland, Australia, pp. 269-275, IEEE Press,
-4-6 Dec. 2002.
+L. Momtahan and A. Martin,
+e--Science Experiences: Software Engineering Practice and the EU DataGrid,
+in \emph{Ninth Asia--Pacific Software Engineering Conference},
+pp. 269-275, 2002.
 
 \bibitem{agile}
-T. Dingsoyr, \emph{A decade of agile methodologies: Towards explaining agile
-software development} in The Journal of Systems and Software, Elsevier Inc,
-2012.
+Torgeir Dingsoyr, Sridhar Nerur, VenuGopal Balijepally, Nils Brede Moe,
+A decade of agile methodologies: Towards explaining agile software development,
+\emph{J. Syst. Softw.},
+vol. 85, Issue 6, pp. 1213--1221, June 2012.
 
 \bibitem{cmm}
-Paulk et al., \emph{Capability maturity model for software}, Software
-Engineering Institute, report CMU/SEI-93-TR-24, ESC--TR-93-177, Feb. 1993.
+Paulk M., Curtis B., Chrissis M., and Weber V. C.,
+Capability maturity model for software,
+\emph{Software Engineering Institute},
+report CMU/SEI-93-TR-24, ESC--TR-93-177, 1993.
 
 \bibitem{cordis:egee}
-\emph{Enabling Grids for E--sciencE (EGEE)} project, European Community
-Research and Development Information Service (CORDIS) [Online]. Available:
-http://cordis.europa.eu/project/rcn/80149\_en.html .
+F. Gagliardi and M. E. B\'{e}gin,
+EGEE -- providing a production quality grid for e-science,
+in \emph{2005 IEEE Inter. Symp. on Mass Storage Systems and Technology},
+pp. 88-92, 2005.
+%\emph{Enabling Grids for E--sciencE (EGEE)} project, European Community Research and
+%Development Information Service (CORDIS). 
+%[Online] Available: \url{http://cordis.europa.eu/project/rcn/80149\_en.html}
+%[Accessed 4 Jun. 2018].
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TOBE checked if there are papers on these
 \bibitem{cordis:egee2}
-\emph{Enabling Grids for E--sciencE--II (EGEE--II)} project, European Community
-Research and Development Information Service (CORDIS) [Online]. Available:
-http://cordis.europa.eu/project/rcn/99189\_en.html .
+\emph{Enabling Grids for E--sciencE--II (EGEE--II)} project, European Community Research and
+Development Information Service (CORDIS).
+[Online] Available: \url{http://cordis.europa.eu/project/rcn/99189\_en.html}
+[Accessed 4 Jun. 2018].
 
 \bibitem{cordis:egee3}
 \emph{Enabling Grids for E--sciencE--III (EGEE--III)} project, European Community
-Research and Development Information Service (CORDIS) [Online]. Available:
-http://cordis.europa.eu/project/rcn/87264\_en.html .
+Research and Development Information Service (CORDIS).
+[Online] Available: \url{http://cordis.europa.eu/project/rcn/87264\_en.html}
+[Accessed 4 Jun. 2018].
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \bibitem{egee:acceptance-criteria}
 \emph{Definition and Documentation of the Revised Software Life--Cycle Process},
-Milestone MSA3.4.2, 2010, EGEE--III project [Online]. Available: https://edms.cern.ch/ui/file/1062487/2/EGEE--III--MSA3.4.2-1062487-v1\_4.pdf .
+Milestone MSA3.4.2, 2010, EGEE--III project.
+[Online] Available: \url{https://edms.cern.ch/ui/file/1062487/2/EGEE-III-MSA3.4.2-1062487-v1_4.pdf}
+[Accessed 4 Jun. 2018].
 
 \bibitem{glite}
-E. Laure et al, \emph{Programming the Grid with gLite}, in Jin, H., Reed, D.A.,
-Jiang, W. (eds.) Computational Methods in Science and Technology, vol. 12(1),
-pp. 33--45, Scientific Publishers OWN, 2006.
+E. Laure et al.,
+Programming the Grid with gLite,
+\emph{Computational Methods in Science and Technology},
+vol. 12(1), pp. 33--45, 2006.
 
 \bibitem{condor}
-D. Thain, T. Tannenbaum, M. Livny, \emph{Condor and the Grid}, in Grid
-Computing: Making the Global Infrastructure a Reality, Chapter 11, pp. 63--70,
-Eds. John Wiley \& Sons Inc., 2002.
+D. Thain, T. Tannenbaum, M. Livny,
+Condor and the Grid,
+in \emph{Grid Computing: Making the Global Infrastructure a Reality},
+Chapter 11, pp. 63--70, 2002.
 
-\bibitem{cordis:etics}
-\emph{E--Infrastructure for Testing, Integration and Configuration of Software
-(ETICS)} project, European Community Research and Development Information
-Service (CORDIS) [Online]. Available: http://cordis.europa.eu/project/rcn/80138\_en.html .
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TOBE checked if there are papers on these
+%\bibitem{cordis:etics}
+%\emph{E--Infrastructure for Testing, Integration and Configuration of Software (ETICS)}
+%project, European Community Research and Development Information Service (CORDIS).
+%[Online] Available: \url{http://cordis.europa.eu/project/rcn/80138\_en.html}
+%[Accessed 4 Jun. 2018].
 
-\bibitem{cordis:etics2}
-\emph{E--Infrastructure for Testing, Integration and Configuration of Software -
-Phase 2 (ETICS 2)} project, European Community Research and Development
-Information Service (CORDIS), [Online]. Available: http://cordis.europa.eu/project/rcn/86604\_en.html .
+%\bibitem{cordis:etics2}
+%\emph{E--Infrastructure for Testing, Integration and Configuration of Software -
+%Phase 2 (ETICS 2)} project, European Community Research and Development
+%Information Service (CORDIS).
+%[Online]. Available: \url{http://cordis.europa.eu/project/rcn/86604\_en.html}
+%[Accessed 4 Jun. 2018].
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \bibitem{etics}
-A. Di Meglio, M.-E.B??gin, P. Couvares, E. Ronchieri, E. Takacs, \emph{ETICS:
-the international software engineering service for the Grid}, in Journal of
-Physics: Conference Series, Vol. 119, N. 4, IOP Publishing Ltd, 2008.
+A. Di Meglio, et al.,
+ETICS: the international software engineering service for the grid,
+in \emph{J. Phys.: Conf. Ser.},
+vol. 119, n. 4, 042010, 2008.
 
 \bibitem{cordis:emi}
-\emph{European Middleware Initiative (EMI)} project, European Community
-Research and Development Information Service (CORDIS) [Online]. Available:
-http://cordis.europa.eu/project/rcn/95311\_en.html .
+C. Aiftimiei, et al.,
+Towards next generations of software for distributed infrastructures: The European Middleware Initiative,
+in \emph{2012 IEEE 8th Inter. Conf. on E-Science},
+pp. 1--10, 2012.
+%\emph{European Middleware Initiative (EMI)} project, European Community
+%Research and Development Information Service (CORDIS).
+%[Online] Available: \url{http://cordis.europa.eu/project/rcn/95311\_en.html}
+%[Accessed 4 Jun. 2018].
 
 \bibitem{iso-9126}
-\emph{ISO/IEC 9126 Software Engineering - Product Quality}, International
-Organization for Standardization [Online]. Available: https://www.iso.org/standard/22749.html .
-
-\bibitem{emi-metrics}
-\emph{EMI Metrics Specification} [Online]. Available: https://goo.gl/CCtY7x .
+\emph{ISO/IEC 9126 Software Engineering - Product Quality},
+International Organization for Standardization.
+[Online] Available: \url{https://www.iso.org/standard/22749.html}
+[Accessed 4 Jun. 2018].
 
 \bibitem{emi-quality-model}
-\emph{EMI Quality Model} [Online]. Available: https://goo.gl/LdS6fL .
+M Alandes, et al.,
+Experiences with Software Quality Metrics in the EMI middleware,
+in \emph{J. Phys.: Conf. Ser.}
+vol. 396, n. 5, 052003, 2012.
 
 \bibitem{cordis:egi-inspire}
-\emph{European Grid Initiative: Integrated Sustainable Pan--European
-Infrastructure for Researchers in Europe (EGI--InSPIRE)} project, European
-Community Research and Development Information Service (CORDIS) [Online]. Available:
-http://cordis.europa.eu/project/rcn/95923\_en.html .
+I. Campos Plasencia,
+EGI.eu the European grid initiative.
+in \emph{4 th Iberian Grid Infrastructure Conf. Proc.},
+pp. 5--15, 2010.
+%\emph{European Grid Initiative: Integrated Sustainable Pan--European
+%Infrastructure for Researchers in Europe (EGI--InSPIRE)} project, European
+%Community Research and Development Information Service (CORDIS).
+%[Online] Available: \url{http://cordis.europa.eu/project/rcn/95923\_en.html}
+%[Accessed 4 Jun. 2018].
 
 \bibitem{egi-ops}
-\emph{EGI Operations Portal} [Online]. Available:
-https://operations-portal.egi.eu/ .
+H. Cordier, et al.,
+From EGEE Operations Portal towards EGI Operations Portal,
+in \emph{Data Driven e-Science (ISGC2010)},
+pp. 129--140, 2011.
+%\emph{EGI Operations Portal}.
+%[Online] Available: \url{https://operations-portal.egi.eu/}
+%[Accessed 4 Jun. 2018].
 
 \bibitem{ggus}
-\emph{GGUS} EGI Helpdesk [Online]. Available:
-https://ggus.eu/ .
+T. Antoni, et al.,
+Global grid user support—building a worldwide distributed user support infrastructure,
+\emph{J. Phys.: Conf. Ser.},
+vol. 119, n. 5, 052002, 2008.
+%\emph{GGUS} EGI Helpdesk.
+%[Online] Available: \url{https://ggus.eu/}
+%[Accessed 4 Jun. 2018].
 
 \bibitem{gocdb}
-\emph{GOCDB} EGI Grid Configuration Repository [Online]. Available:
-https://goc.egi.eu/ .
+G. Mathieu and J. Casson,
+GOCDB4, a New Architecture for the European Grid Infrastructure,
+in \emph{Data Driven e-Science (ISGC2010)},
+pp. 163--174, 2011.
+%\emph{GOCDB} EGI Grid Configuration Repository.
+%[Online] Available: \url{https://goc.egi.eu/}
+%[Accessed 4 Jun. 2018].
 
 \bibitem{egi-qc}
-\emph{EGI Quality Criteria} [Online]. Available:
-https://egi-qc.github.io/ .
-
-\bibitem{github}
-\emph{GITHUB} [Online]. Available:
-https://github.com/ .
-
-\bibitem{jenkins}
-\emph{Jenkins} Continuous Integration System [Online]. Available:
-https://jenkins-ci.org/ .
+\emph{EGI Quality Criteria}.
+[Online] Available: \url{https://egi-qc.github.io/}
+[Accessed 4 Jun. 2018].
 
 \bibitem{mario}
-M. David et al, \emph{Validation of Grid Middleware for the European Grid
-Infrastructure}, in Journal of Grid Computing, vol. 12, issue 3, pp. 543--558,
-Springer, 2014.
+M. David et al.,
+Validation of Grid Middleware for the European Grid Infrastructure,
+\emph{Journal of Grid Computing},
+vol. 12, issue 3, pp. 543--558, 2014.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TOBE checked if there are papers on these
 \bibitem{cordis:egi-engage}
 \emph{Engaging the EGI Community towards an Open Science Commons (EGI--ENGAGE)}
-project, European Community Research and Development Information Service
-(CORDIS), [Online]. Available:  http://cordis.europa.eu/project/rcn/194937\_en.html .
+project, European Community Research and Development Information Service (CORDIS).
+[Online] Available: \url{http://cordis.europa.eu/project/rcn/194937\_en.html}
+[Accessed 4 Jun. 2018].
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \bibitem{cordis:indigo}
-\emph{INtegrating Distributed data Infrastructures for Global ExplOitation
-(INDIGO--DataCloud)} project, European Community Research and Development
-Information Service (CORDIS) [Online]. Available:
-http://cordis.europa.eu/project/rcn/194882\_en.html .
-
-\bibitem{indigo-dockerhub}
-\emph{INDIGO--DataCloud DockerHub repository} [Online]. Available:
-https://hub.docker.com/u/indigodatacloud .
+Davide Salomoni, et al.,
+INDIGO-DataCloud: {A} data and computing platform to facilitate seamless access to e-infrastructures,
+\emph{CoRR},
+vol. abs/1711.01981, 2018,
+[Online] Available: \url{http://arxiv.org/abs/1711.01981}.
+%\emph{INtegrating Distributed data Infrastructures for Global ExplOitation
+%(INDIGO--DataCloud)} project, European Community Research and Development
+%Information Service (CORDIS).
+%[Online] Available: \url{http://cordis.europa.eu/project/rcn/194882\_en.html}
+%[Accessed 4 Jun. 2018].
 
 \bibitem{indigo-d31}
-\emph{Initial Plan for WP3} INDIGO--DataCloud Deliverable 3.1 [Online]. Available:
-https://www.indigo-datacloud.eu/documents/initial-plan-wp3-d31 .
+J. Gomes, et al.,
+\emph{Initial Plan for WP3} INDIGO--DataCloud Deliverable 3.1.
+[Online] Available: \url{https://www.indigo-datacloud.eu/documents/initial-plan-wp3-d31}
+[Accessed 4 Jun. 2018].
 
-\bibitem{indigo-jenkins}
-\emph{INDIGO--DataCloud Jenkins CI service} [Online]. Available:
-https://jenkins.indigo-datacloud.eu:8080/ .
-
-\bibitem{indigo-github}
-\emph{INDIGO--DataCloud GitHub Source Code repository} [Online]. Available:
-https://www.github.com/indigo-dc .
-
-\bibitem{indigo-gitbook}
-\emph{INDIGO--DataCloud GitBook Documentation repository} [Online]. Available:
-https://www.gitbook.com/@indigo-dc .
-
-\bibitem{indigo-puppet}
-\emph{INDIGO--DataCloud PuppetForge repository} [Online]. Available:
-https://forge.puppet.com/indigodc .
-
-\bibitem{indigo-galaxy}
-\emph{INDIGO--DataCloud Ansible Galaxy repository} [Online]. Available:
-https://galaxy.ansible.com/indigo-dc/ .
-
-\bibitem{grimoirelab}
-\emph{GrimoireLab} [Online]. Available: http://grimoirelab.github.io/ .
-
-\bibitem{indigo-pkg-repo}
-\emph{INDIGO--DataCloud Linux Package repository} [Online]. Available: https://jenkins.indigo-datacloud.eu/ .
-
-\bibitem{disvis} G.C.P. Van Zundert, A.M.J.J. Bonvin,
+\bibitem{disvis}
+G.C.P. Van Zundert, A.M.J.J. Bonvin,
 DisVis: quantifying and visualizing the accessible interaction space of distance
-restrained biomolecular complexes, Bioinformatics 31 (2015) 3222--3224 .
+restrained biomolecular complexes,
+\emph{Bioinformatics}, vol. 31, n. 19, pp. 3222--3224, 2015.
 
-\bibitem{powerfit} G.C.P. Van Zundert, A.M.J.J. Bonvin,
+\bibitem{powerfit}
+G.C.P. Van Zundert, A.M.J.J. Bonvin,
 Fast and sensitive rigid--body fitting into cryo--EM density maps with PowerFit,
-AIMS Biophys. 2 (2015) 73--87.
+\emph{AIMS Biophys.}, vol. 2, n. 20150273, 73--87, 2015.
 
 \end{thebibliography}
 
