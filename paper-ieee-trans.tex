@@ -81,12 +81,10 @@ activities -- later discussed in Section \ref{sec:ev} -- from the European Commi
 \cite{h2020} had as their main goal to develop software solutions that provide a seamless and
 transparent access of researchers to distributed computing and data resources. 
 
-% Comment
-%%top of second column:  think about saying this more gently
-Major developments were carried out throughout the years focused on providing new
-functionalities, partially neglecting the adoption of software engineering methodologies, in the early days.
-The released software was less tested, resulting in a high rate of
-rollbacks and patches applied to production systems. Thereby, the stability and
+Major developments carried throughout the years where focused on providing new
+functionalities, while in the early days, the adoption of software engineering methodologies had a lower priority.
+The released software was less tested, resulting in a higher rate of
+rollbacks and patches applied to production systems, compared to the later projects. Thereby, the stability and
 % Comment
 %P1 C2 L18: Claiming that stability and reliability was regularly compromised is quite a bold statement -- it needs at least some citations, and preferably some explanation of what forms this compromise took for a few prominent cases.
 reliability of the e--Infrastructures was often compromised, affecting
@@ -108,7 +106,7 @@ Manifesto \cite{agile-manifesto}, and rise of DevOps practices \cite{zhu}) toget
 with the parallel advancements in the information and communication technology
 field (such as virtualization, the enabling technology for Cloud computing and
 operating--system--level virtualization known as containerization) motivated this trend. All of which
-complemented by the emergence of automation and event--response tools.
+are complemented by the emergence of automation and event--response tools.
 
 In this paper, we outline a set of EC--funded projects
 ranging from 2001 to nowadays, in which the authors were involved.
@@ -357,15 +355,13 @@ Cloud computing benefits.
 
 {\sl INDIGO--DataCloud} is the most recent project included in this paper, it
 leveraged the lessons learned from the previous experiences described in
-Section \ref{sec:ev}. The expertise gathered throughout these years was highly
-profitable in terms of the evaluation and application of innovative software engineering
+Section~\ref{sec:ev}. The expertise gathered throughout these years was highly
+profitable regarding the evaluation and application of innovative software engineering
 methodologies, management of new technologies to put those methodologies
 into practice, compilation and analysis of an appropriate set of metrics to measure the
-% Comment
-%%L26-29 Missing verb
-%%(not a sentence—no verb) 
-quality of the implemented solutions. All the above with the additional complexity of being framed into
-large collaborative projects with an extensive list of partners.
+quality of the implemented solutions.
+An additional level of complexity, comes from the fact that these large collaborative projects
+have an extensive list of partners.
 
 In the following sections, we describe the three main pillars that sustain the project's strategy to attain reliability throughout the
 % Comment
@@ -443,8 +439,6 @@ their popularity
 in the {\sl INDIGO--DataCloud} software stack.
 
 \item \textit{Unit and Functional testing}.
-%% Comment from reviewer       
-%% These percentages appear as vague approximations by eye, please add the precise numbers rounded.
 Changes involving the addition of new functionalities, are required to be tested. \textit{Regression
 testing} in this context is accomplished by enforcing the definition and periodic execution
 of the tests, covering past fixed issues, to ensure that they are not reintroduced during the development
@@ -465,9 +459,7 @@ guarantee the overall operation of the component with regard to the services it 
 whenever new functionalities are introduced.
 
 \item \textit{Code review}.
-% Comment
-%%Represents …   (not a sentence) 
-Represents the last step in the change management pipeline, once the candidate change has
+This phase is the last step in the change management pipeline, once the candidate change has
 successfully passed through the testing methods described previously. It implies the human--based
 revision of the proposed change to discuss its adequacy in terms of e.g. scope, objective fulfilment,
 and documentation completeness. On approval, the candidate change is definitely merged into
@@ -576,10 +568,8 @@ related metrics, such as SLOC or the cyclomatic complexity.
 The practical implementation of the CI scenario leveraged on tightly integrated open
 source tools such as GitHub\footnote{\url{https://github.com/}}, as the online source code repository,
 
-% Comment
-%%not a sentence, again
-Jenkins, the event--response CI system, and Docker container
-provisioning to provide instant computing power needed for executing the pipeline jobs.
+Jenkins is an event--response CI and Docker container
+provisioning system that provides instant computing power needed for executing the pipeline jobs.
 The project defined a source code contribution workflow, based on GitHub Pull Requests
 (PRs), where each change automatically triggers in Jenkins the associated quality and
 metric tracking checks on PR creation or update. The set of required checks contained
@@ -714,11 +704,9 @@ through the preview testbeds or resource centers early adoption -- handled by th
 Staged--rollout process -- alleviates the likelihood of discovering uncovered
 issues at production.
 
-% Comment
-%%L42-44 not clear, please rephrase
-Software lifecycle demands as well from a continuous measurement and analysis
-process that permits timely reactions to discover and fix defects throughout the
-development, release and post--release or maintenance stages. Conscientious metric
+The implementation of a Software lifecycle phases, implies a continuous measurement and analysis
+process that allows timely reactions to discover and fix defects throughout the
+development, release and maintenance stages. Conscientious metric
 tracking and response sits at the core of an appropriate software maturity, as
 ultimate reliability can only be achieved by enforcing and empowering the SQA
 criteria through each stage of the software lifecycle.
