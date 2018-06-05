@@ -7,9 +7,19 @@
 \usepackage{listings}
 \usepackage{url}
 \usepackage{cite}
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+
+%\hyphenation{op-tical net-works semi-conduc-tor}
 
 \begin{document}
 \title{Evolution of Methodologies in Delivering Reliable Software in the European Scientific Arena}
+%\title{Delivering Reliable Software in the European Scientific Arena: Evolution of Methodologies and New Trend Analysis}
+%\title{15 years of European scientific software development: evolution and methodologies}
 
 \author{E. Ronchieri,
         P. Orviz Fernandez,
@@ -22,15 +32,18 @@
 \thanks{M. David, and J. Gomes are with LIP, Lisbon, Portugal.}%
 }
 
+% The paper headers
+%\markboth{IEEEtran for IEEE Journals}
+
 \maketitle
 
 \begin{abstract}
-
 From the advent of Grid technology -- as the new paradigm of distributed
 computing -- to the current days of Cloud computing models, the continuous need
 of new tools and services to match the scientific community requirements has been
 addressed in Europe by various projects dedicated to software development
 and e--Infrastructure creation, operation and management.
+% the creation of software development and e-Infrastructure coordination dedicated projects.
 This work examines the evolution of the software engineering methodologies used in past and
 present European Commission--funded projects to illustrate how the research on software
 reliability has progressed in Europe over the last 15 years following the foundation of the
@@ -42,7 +55,6 @@ definitely conformed a significant breakthrough in the reliability of software d
 European research arena. Recent software development projects funded by the European
 Commission are good evidences of such insights, where the enforcement of Quality Assurance
 procedures is present since the very early stages of the software development process.
-
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -51,6 +63,7 @@ Techniques, DevOps
 \end{IEEEkeywords}
 
 \IEEEpeerreviewmaketitle
+
 \section{Introduction}
 
 \IEEEPARstart{D}{uring} the last 15 years the provision of an European e--Infrastructure,
@@ -60,8 +73,10 @@ pan--European research collaborations. One such example is the Worldwide
 Large Hadron Collider (LHC) Computing Grid infrastructure, driven
 by the particle physics scientific community, built to satisfy the computing needs
 of processing, storing and analysis of the very large amount of data produced by the
+% Comment from reviewer
+%(Update: I see this is discussed later... so it would be good just to signpost at the start that a) the focus is really on "grids", and b) that specific examples will be given.
 LHC particle accelerator. A significant number of innovation projects and technology transfer
-activities -- later discussed in Section~\ref{sec:ev} -- from the European Commission
+activities -- later discussed in Section \ref{sec:ev} -- from the European Commission
 (EC)-funded 5th, 6th and 7th Framework Programmes, and recently from the Horizon 2020 programme
 \cite{h2020} had as their main goal to develop software solutions that provide a seamless and
 transparent access of researchers to distributed computing and data resources. 
@@ -99,27 +114,30 @@ For each project, the challenges, the methodologies and
 the achievements towards software reliability are described.
 
 The reminder of this paper is
-organized as follows. Section~\ref{sec:ev} details the evolution of research on
-software reliability in EC--projects. Section~\ref{sec:ntsr} provides
+organized as follows. Section \ref{sec:ev} details the evolution of research on
+software reliability in EC--projects. Section \ref{sec:ntsr} provides
 information about new research trends in software reliability based upon the
-experiences from the recent {\sl INDIGO--DataCloud} project (INDIGO--DC). Conclusions are drawn in Section~\ref{sec:con}.
+experiences from the recent {\sl INDIGO--DataCloud} project (INDIGO--DC). Conclusions are drawn in Section \ref{sec:con}.
 
 \section{Evolution of research on software reliability in EC--projects}
 \label{sec:ev}
 
-The EC projects considered in this paper are listed chronologically in Table~\ref{tab:eup}.
-Each project paved the way for the following ones, according to a logic evolution in which
-the role of the quality and reliability of the software have
-consistently increased. As shown in Table~\ref{tab:feat}, the most recent projects are more
-committed to and aware of software reliability practices.
-Table~\ref{tab:feat} also shows the topics addressed in the following sections, highlighting
+The EC projects considered in this paper are listed chronologically in Table
+\ref{tab:eup}. Each project paved the way for the following ones, according to a logic evolution in which the role of the quality and reliability of the software have
+consistently increased. As shown in Table \ref{tab:feat}, the most recent projects are more committed to and aware of software reliability practices.
+Table \ref{tab:feat} also shows the topics addressed in the following sections, highlighting
 the commonalities and specific features on software reliability.
 
 \begin{table}[!h]
+%% increase table row spacing, adjust to taste
 \renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
 \caption{List of EC--projects}
 \label{tab:eup}
 \centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
 \begin{tabular}{p{1.6cm}p{1.5cm}p{3cm}l}
 \hline
 \hline
@@ -200,10 +218,16 @@ used by diverse collaborative open source software projects, such as Linux and A
 achieve a higher maturity level \cite{cmm}.
 
 \begin{table*}[!h]
+%% increase table row spacing, adjust to taste
 \renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
 \caption{Features on software reliability in EC--projects}
 \label{tab:feat}
 \centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{adjustbox}{max width=0.5\textwidth}
 \begin{tabular}{llllllll}
 \hline
 \hline
@@ -218,22 +242,25 @@ Source code inspection             &       &       &       &$\surd$&       &$\su
 Build/Testing Management Procedure &$\surd$&$\surd$&$\surd$&$\surd$&       &$\surd$\\
 Software Product Metrics           &$\surd$&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
 Quality Criteria Definition        &       &       &$\surd$&$\surd$&$\surd$&$\surd$\\
+%Manual Certification Procedure&$\surd$&$\surd$&&$\surd$&&\\
 Automatic Certification            &       &       &$\surd$&       &$\surd$&$\surd$\\
 Auto--generated Documentation      &       &$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
 DevOps practices adoption (CI, CD) &       &       &       &       &       &$\surd$\\
 \hline
 \hline
 \end{tabular}
+%\end{adjustbox}
 \end{table*}
 
 \subsection{Enabling Grids for E--sciencE}
-
+% Comment
+%%P2 C2 L24: Typographical: It would be good to merge the three citations into one bracket/\cite
 The three phases of Enabling Grids for E--sciencE ({\sl EGEE}, Apr 2004 -- Apr 2010)
 \cite{cordis:egee,cordis:egee2,cordis:egee3} projects brought together
 scientists and engineers from over 240 institutions in 45 countries aiming to
 provide a seamless Grid infrastructure for e--Science. {\sl EGEE--II} and {\sl EGEE--III}
 featured the internationalization (outside Europe) of the project, embracing worldwide research
-institutions and user communities~\cite{egee}. The software to sustain the increasing
+institutions and user communities. The software to sustain the increasing
 requirements coming from the diverse scientific communities needed developing a
 rich set of new services while maintaining a sustainable infrastructure for
 Grid computing, eventually used by more than 15 thousand researchers and deployed in
@@ -312,7 +339,8 @@ project {\sl EGI--Engage} (Engaging the EGI Community towards an Open Science
 Commons) \cite{cordis:egi-engage}. This distribution is currently complemented
 by a Cloud--specific one called {\sl CMD} (Cloud Middleware Distribution).
 
-\subsection{INtegrating Distributed data Infrastructures for Global explOitation}
+\subsection{INtegrating Distributed data Infrastructures for Global
+explOitation}
 
 The {\sl INDIGO--DataCloud} (INtegrating Distributed data Infrastructures for Global
 explOitation, Apr 2015 -- Sep 2017) \cite{cordis:indigo} is the last
@@ -347,6 +375,17 @@ the foregoing change--based development process and set up advanced delivery mec
 The last key pillar is the \textit{two--factor validation} carried out over the project's pilot testbeds and
 e--Infrastructure resource provider's early--adoption.
 
+
+%The {\sl INDIGO--DataCloud} project reflects the progress made in software
+%quality and reliability aspects throughout the past scientific European
+%experiences. Nevertheless (I would remove this), the project's Quality Assurance procedures are also
+%highly influenced by the insights of current big worldwide collaborations of
+%software development. These collaborations have continuously inspired the use of new
+%technologies and procedures to increase the robustness and quality of the
+%software being delivered. In this scenario, the implementation of the DevOps culture
+%is one of the major outcomes, as this paradigm has been progressively adopted by the
+%project.
+
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.5\textwidth]{images/codestyle.png}
@@ -375,8 +414,7 @@ leading to the first release (dark blue points and lines), and to the second rel
 
 The software quality policies were initially defined in the first deliverable document of the
 project \cite{indigo-d31}. The policies were reviewed periodically taking into account the requirements
-from the user communities, the feedback from the development teams and the insights of software
-engineering practices. These policies covered the 1) identification
+from the user communities, the feedback from the development teams and the insights of software engineering practices. These policies covered the 1) identification
 and description of the \emph{SQA requirements} that the produced software need
 to comply with, and the 2) \emph{quality metrics}, to monitor each software product's
 behaviour throughout the development, release and post--release stages.
@@ -393,8 +431,7 @@ solutions for software deployment.
 
 \begin{itemize}
 \item \textit{Code style}.
-The ultimate goal for code style assessment is to improve the readability and reusability of the
-source code produced under the scope of the
+The ultimate goal for code style assessment is to improve the readability and reusability of the source code produced under the scope of the
 project. Code style standards are enforced for every software component in the project stack. Community
 most--adopted or \textit{de--facto standards} are initially recommended, however the development teams eventually
 choose the set of guidelines to comply with. Fig.~\ref{fig:fig_codestyle} highlights the code style standards and
@@ -515,7 +552,6 @@ lifetime, being one of its major outcomes in terms of software reliability.
 
 \subsubsection{Continuous Integration (CI)}
 \label{subsec:ci}
-
 The {\sl INDIGO--DataCloud} project promoted the application of a CI scenario that enforced,
 for any piece of produced software, the testing requirements defined in the SQA criteria,
 as described in Section \ref{subsec:sqa}. Such environment requires an automation
@@ -596,6 +632,7 @@ set of deployed {\sl INDIGO--DataCloud} components or services.}
 	\end{subfigure}
 \end{figure*}
 
+
 \subsubsection{DevOps adoption from user communities}
 
 The experience gathered throughout the project regarding the adoption of
@@ -618,6 +655,7 @@ to the Dockerhub repository, it is instantiated in a new container to be validat
 The application is then executed and the results compared with a set of reference outputs.
 This pipeline implementation goes a step forward by testing the application
 execution for the latest available Docker image in the catalogue.
+
 
 \subsection{Integration, preview and early adoption}
 
@@ -675,36 +713,36 @@ criteria through each stage of the software lifecycle.
 
 \section*{Acknowledgment}
 
-{\sl DataGrid - Research and Technological Development for an International Data Grid}
-project has received funding from the European Union's Fifth Framework Programme under
-grant agreement IST--2000--25182E.
+%{\sl DataGrid - Research and Technological Development for an International Data Grid} project
+%has received funding from the European Commission - Community Research and Development Information System (CORDIS) under
+%FP5-IST - Programme for research, technological development and demonstration on a "User--friendly information society, 1998-2002" (IST--2000--25182E)
+%{\sl EGEE - Enabling grids For E--science} project
+%has received funding from the European Commission - Community Research and Development Information System (CORDIS) under
+% FP6-INFRASTRUCTURES - Research infrastructures: Specific programme for research, technological development and demonstration: "Structuring the European Research Area" under the Sixth Framework Programme 2002-2006, (INFSO--RI--508833)
+%{\sl EGEE - Enabling grids For E--science--II} project
+% has received funding from the European Commission - Community Research and Development Information System (CORDIS) under
+% FP6-2005-INFRASTRUCTURES-7 programme, Topic - "INFRASTR-3 - Communication network development in conjunction with thematic priority 2 (Information Society Technologies) to establish a high--capacity and high--speed communications network for all researchers in Europe (GEANT)", (INFSO--RI--031688)
+%{\sl EGEE - Enabling grids For E--science--III} project has received funding from the European Commission - Community Research and Development Information System (CORDIS) under
+%  FP7-INFRASTRUCTURES - Specific Programme "Capacities": Research infrastructures, Topic - "INFRA-2007-1.2-03 - e--Science Grid infrastructures", (INFSO--RI--222667)
 
-{\sl EGEE - Enabling grids For E--science} project has received funding from the European
-Union's Sixth Framework Programme under grant agreement INFSO--RI--508833.
+{\sl DataGrid - Research and Technological Development for an International Data Grid} project has received funding from the European Union's Fifth Framework Programme under grant agreement IST--2000--25182E.
 
-{\sl EGEE - Enabling grids For E--science--II} project has received funding from the
-European Union's Sixth Framework Programme under grant agreement INFSO--RI--031688.
+{\sl EGEE - Enabling grids For E--science} project has received funding from the European Union's Sixth Framework Programme under grant agreement INFSO--RI--508833.
 
-{\sl EGEE - Enabling grids For E--science--III} project has received funding from the
-European Union's Seventh Framework Programme under grant agreement INFSO--RI--222667.
+{\sl EGEE - Enabling grids For E--science--II} project has received funding from the European Union's Sixth Framework Programme under grant agreement INFSO--RI--031688.
 
-{\sl ETICS - E--Infrastructure for Testing, Integration and Configuration of Software}
-project has received funding from the European Union's Sixth Framework Programme under
-grant agreement INFSO--RI--026753.
+{\sl EGEE - Enabling grids For E--science--III} project has received funding from the European Union's Seventh Framework Programme under grant agreement INFSO--RI--222667.
 
-{\sl ETICS - E--Infrastructure for Testing, Integration and Configuration of Software - Phase 2}
-project has received funding from the European Union's Seventh Framework Programme under grant
-agreement INFSO--RI--223782.
+{\sl ETICS - E--Infrastructure for Testing, Integration and Configuration of Software} project has received funding from the European Union's Sixth Framework Programme under grant agreement INFSO--RI--026753.
 
-{\sl EGI--InSPIRE - European Grid Initiative: Integrated Sustainable Pan--European
-Infrastructure for Researchers in Europe} project has received funding from the European
-Union's Seventh Framework Programme under grant agreement INFSO--RI--261323.
+{\sl ETICS - E--Infrastructure for Testing, Integration and Configuration of Software - Phase 2} project has received funding from the European Union's Seventh Framework Programme under grant agreement INFSO--RI--223782.
 
-{\sl EGI--Engage} project has received funding from the European Union's Horizon 2020
-research and innovation programme under grant agreement RIA--654142.
+{\sl EGI--InSPIRE - European Grid Initiative: Integrated Sustainable Pan--European Infrastructure for Researchers in Europe} project has received funding from the European Union's Seventh Framework Programme under grant agreement INFSO--RI--261323.
 
-{\sl INDIGO--DataCloud} project has received funding from the European Union's Horizon
-2020 research and innovation programme under grant agreement RIA--653549.
+{\sl EGI--Engage} project has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement RIA--654142.
+
+{\sl INDIGO--DataCloud} project has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement RIA--653549.
+
 
 \begin{thebibliography}{1}
 
@@ -730,6 +768,9 @@ P. Kunszt,
 European DataGrid project: status and plans,
 \emph{Nucl. Instr. Meth. Phys. Res. A},
 vol. 502, n. 2, pp. 376--381, 2003.
+%\emph{DataGrid project}, European Community Research and Development Information Service (CORDIS).
+%[Online] Available: \url{http://cordis.europa.eu/project/rcn/53665\_en.html}
+%[Accessed 4 Jun. 2018].
 
 \bibitem{gagliardi}
 Gagliardi F., Jones B., Reale M., Burke S.,
@@ -762,11 +803,19 @@ Capability maturity model for software,
 report CMU/SEI-93-TR-24, ESC--TR-93-177, 1993.
 
 \bibitem{cordis:egee}
-\emph{Enabling Grids for E--sciencE (EGEE)} project, European Community Research and
-Development Information Service (CORDIS). 
-[Online] Available: \url{http://cordis.europa.eu/project/rcn/80149\_en.html}
-[Accessed 4 Jun. 2018].
+F. Gagliardi and M. E. B\'{e}gin,
+EGEE -- providing a production quality grid for e-science,
+in \emph{2005 IEEE Inter. Symp. on Mass Storage Systems and Technology},
+pp. 88-92, 2005.
+%\emph{Enabling Grids for E--sciencE (EGEE)} project, European Community Research and
+%Development Information Service (CORDIS). 
+%[Online] Available: \url{http://cordis.europa.eu/project/rcn/80149\_en.html}
+%[Accessed 4 Jun. 2018].
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TOBE checked if there are papers on these
 \bibitem{cordis:egee2}
 \emph{Enabling Grids for E--sciencE--II (EGEE--II)} project, European Community Research and
 Development Information Service (CORDIS).
@@ -778,12 +827,8 @@ Development Information Service (CORDIS).
 Research and Development Information Service (CORDIS).
 [Online] Available: \url{http://cordis.europa.eu/project/rcn/87264\_en.html}
 [Accessed 4 Jun. 2018].
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\bibitem{egee}
-F. Gagliardi and M. E. B\'{e}gin,
-EGEE -- providing a production quality grid for e-science,
-in \emph{2005 IEEE Inter. Symp. on Mass Storage Systems and Technology},
-pp. 88-92, 2005.
 
 \bibitem{egee:acceptance-criteria}
 \emph{Definition and Documentation of the Revised Software Life--Cycle Process},
@@ -803,6 +848,22 @@ Condor and the Grid,
 in \emph{Grid Computing: Making the Global Infrastructure a Reality},
 Chapter 11, pp. 63--70, 2002.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TOBE checked if there are papers on these
+%\bibitem{cordis:etics}
+%\emph{E--Infrastructure for Testing, Integration and Configuration of Software (ETICS)}
+%project, European Community Research and Development Information Service (CORDIS).
+%[Online] Available: \url{http://cordis.europa.eu/project/rcn/80138\_en.html}
+%[Accessed 4 Jun. 2018].
+
+%\bibitem{cordis:etics2}
+%\emph{E--Infrastructure for Testing, Integration and Configuration of Software -
+%Phase 2 (ETICS 2)} project, European Community Research and Development
+%Information Service (CORDIS).
+%[Online]. Available: \url{http://cordis.europa.eu/project/rcn/86604\_en.html}
+%[Accessed 4 Jun. 2018].
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \bibitem{etics}
 A. Di Meglio, et al.,
 ETICS: the international software engineering service for the grid,
@@ -814,6 +875,10 @@ C. Aiftimiei, et al.,
 Towards next generations of software for distributed infrastructures: The European Middleware Initiative,
 in \emph{2012 IEEE 8th Inter. Conf. on E-Science},
 pp. 1--10, 2012.
+%\emph{European Middleware Initiative (EMI)} project, European Community
+%Research and Development Information Service (CORDIS).
+%[Online] Available: \url{http://cordis.europa.eu/project/rcn/95311\_en.html}
+%[Accessed 4 Jun. 2018].
 
 \bibitem{iso-9126}
 \emph{ISO/IEC 9126 Software Engineering - Product Quality},
@@ -832,24 +897,38 @@ I. Campos Plasencia,
 EGI.eu the European grid initiative.
 in \emph{4 th Iberian Grid Infrastructure Conf. Proc.},
 pp. 5--15, 2010.
+%\emph{European Grid Initiative: Integrated Sustainable Pan--European
+%Infrastructure for Researchers in Europe (EGI--InSPIRE)} project, European
+%Community Research and Development Information Service (CORDIS).
+%[Online] Available: \url{http://cordis.europa.eu/project/rcn/95923\_en.html}
+%[Accessed 4 Jun. 2018].
 
 \bibitem{egi-ops}
 H. Cordier, et al.,
 From EGEE Operations Portal towards EGI Operations Portal,
 in \emph{Data Driven e-Science (ISGC2010)},
 pp. 129--140, 2011.
+%\emph{EGI Operations Portal}.
+%[Online] Available: \url{https://operations-portal.egi.eu/}
+%[Accessed 4 Jun. 2018].
 
 \bibitem{ggus}
 T. Antoni, et al.,
 Global grid user support—building a worldwide distributed user support infrastructure,
 \emph{J. Phys.: Conf. Ser.},
 vol. 119, n. 5, 052002, 2008.
+%\emph{GGUS} EGI Helpdesk.
+%[Online] Available: \url{https://ggus.eu/}
+%[Accessed 4 Jun. 2018].
 
 \bibitem{gocdb}
 G. Mathieu and J. Casson,
 GOCDB4, a New Architecture for the European Grid Infrastructure,
 in \emph{Data Driven e-Science (ISGC2010)},
 pp. 163--174, 2011.
+%\emph{GOCDB} EGI Grid Configuration Repository.
+%[Online] Available: \url{https://goc.egi.eu/}
+%[Accessed 4 Jun. 2018].
 
 \bibitem{egi-qc}
 \emph{EGI Quality Criteria}.
@@ -862,11 +941,15 @@ Validation of Grid Middleware for the European Grid Infrastructure,
 \emph{Journal of Grid Computing},
 vol. 12, issue 3, pp. 543--558, 2014.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TOBE checked if there are papers on these
 \bibitem{cordis:egi-engage}
 \emph{Engaging the EGI Community towards an Open Science Commons (EGI--ENGAGE)}
 project, European Community Research and Development Information Service (CORDIS).
 [Online] Available: \url{http://cordis.europa.eu/project/rcn/194937\_en.html}
 [Accessed 4 Jun. 2018].
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \bibitem{cordis:indigo}
 Davide Salomoni, et al.,
@@ -874,6 +957,11 @@ INDIGO-DataCloud: {A} data and computing platform to facilitate seamless access 
 \emph{CoRR},
 vol. abs/1711.01981, 2018,
 [Online] Available: \url{http://arxiv.org/abs/1711.01981}.
+%\emph{INtegrating Distributed data Infrastructures for Global ExplOitation
+%(INDIGO--DataCloud)} project, European Community Research and Development
+%Information Service (CORDIS).
+%[Online] Available: \url{http://cordis.europa.eu/project/rcn/194882\_en.html}
+%[Accessed 4 Jun. 2018].
 
 \bibitem{indigo-d31}
 J. Gomes, et al.,
