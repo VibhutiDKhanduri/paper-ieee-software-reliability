@@ -48,44 +48,45 @@ Techniques, DevOps
 \IEEEpeerreviewmaketitle
 \section{Introduction}
 
-\IEEEPARstart{D}{uring} the last 15 years the provision of an European e--Infrastructure,
-supporting unified access to large--scale computing and intense data analysis
-applications, has been driven by the needs of scientific communities as part of their
-pan--European research collaborations. One such example is the Worldwide
-Large Hadron Collider (LHC) Computing Grid infrastructure, driven
+\IEEEPARstart{D}{uring} the last 15 years scientific communities have worked together to provide an European e--Infrastructure
+able to support unified access to large--scale computing and intense data analysis
+applications.
+One such example is the Worldwide
+Large Hadron Collider (LHC) Computing Grid infrastructure, which is driven
 by the particle physics scientific community, built to satisfy the computing needs
 of processing, storing and analysis of the very large amount of data produced by the
-LHC particle accelerator. A significant number of innovation projects and technology transfer
-activities -- later discussed in Section~\ref{sec:ev} -- from the European Commission
-(EC)-funded 5th, 6th and 7th Framework Programmes, and recently from the Horizon 2020 programme
-\cite{h2020} had as their main goal to develop software solutions that provide a seamless and
+LHC particle accelerator. 
+In the European Commission
+(EC)-funded 5th, 6th and 7th Framework Programmes and recently in the Horizon 2020 programme
+\cite{h2020}, a significant number of innovation projects and technology transfer
+activities have to develop software solutions that provide a seamless and
 transparent access of researchers to distributed computing and data resources.
 
-Major developments carried throughout the years where focused on providing new
-functionalities, while in the early days, the adoption of software engineering methodologies had a lower priority.
-The released software was less tested, resulting in a higher rate of
-rollbacks and patches applied to production systems, compared to the later projects. Thereby, the stability and
+Throughout the years, major developments have been focused on providing new
+functionalities, while in the early days the adoption of software engineering procedures have had a higher priority.
+The released software was less tested, causing a higher rate of
+rollbacks and patches applied to production systems, compared to the software developed and maintained in the current projects. Thereby, the stability and
 % Comment
 %P1 C2 L18: Claiming that stability and reliability was regularly compromised is quite a bold statement -- it needs at least some citations, and preferably some explanation of what forms this compromise took for a few prominent cases.
 reliability of the e--Infrastructures was often compromised, affecting
 negatively their exploitation by the scientific communities.
 % Comments
 %P1 C2 L24: Was this realisation imposed "from above" e.g. by coordinated EC/ERC oversight, or was it "emergent" from the demands of the independent scientific communities?
-It became then apparent the need for a better balance between the addition of new features
+Therefore, it has become clear the need for a better balance between the addition of new features
 and the reliability of the released software. Consequently, incoming projects progressively
 devoted a substantial part of the software lifecycle to the improvement of the quality of the
-software being delivered. At this point, evolving software engineering practices were considered
-and gradually adopted to define and implement quality procedures, the organization of
+software being delivered. At this point, evolving software engineering practices have been considered
+so far and gradually adopted to define and implement quality procedures, the organization of
 cross--functional teams and deployment of pilot testbeds.
 
 Analysing the EC--funded software projects over the last decade,
 one can observe a continuous increase in the prominence and robustness of software
-testing and validation procedures. The
-evolution of the software engineering methodologies (creation of the Agile
-Manifesto \cite{agile-manifesto}, and rise of DevOps practices \cite{zhu}) together
+testing and validation procedures \cite{aiftimiei}. The
+evolution of the software engineering methodologies (e.g., the creation of the Agile
+Manifesto \cite{agile-manifesto} and the rise of DevOps practices \cite{zhu}) together
 with the parallel advancements in the information and communication technology
-field (such as virtualization, the enabling technology for Cloud computing and
-operating--system--level virtualization known as containerization) motivated this trend. All of which
+field (e.g, the enabling technology for Cloud computing and the
+operating--system--level virtualization through containerization \cite{soltesz}) motivated this trend. All of which
 are complemented by the emergence of automation and event--response tools.
 
 In this paper, we outline a set of EC--funded projects
@@ -107,6 +108,8 @@ experiences from the recent {\sl INDIGO--DataCloud} project (INDIGO--DC). Conclu
 
 \section{Research methodology}
 \label{sec:rm}
+
+
 
 
 \section{Evolution of research on software reliability in EC--projects}
@@ -718,6 +721,13 @@ research and innovation programme under grant agreement RIA--654142.
 [Online] Available: \url{https://ec.europa.eu/programmes/horizon2020/}
 [Accessed 4 Jun. 2018].
 
+\bibitem{aiftimiei}
+Aiftimiei, A., Dongiovanni, D., et al.,  
+Improving the quality of EMI Releases by leveraging the
+EMI Testing Infrastructure.
+\emph{Journal of Physics: Conference Series},
+vol. 396, 2012.
+
 \bibitem{agile-manifesto}
 Beck, K., Beedle, et al., (2001).
 Manifesto for Agile Software Development.
@@ -729,6 +739,12 @@ L. Zhu and L. Bass and G. Champlin--Scharff,
 DevOps and Its Practices,
 \emph{IEEE Software},
 vol. 33, n. 3, pp. 32--34, 2016.
+
+\bibitem{soltesz}
+Soltesz, S., P\"{o}tzl, H., et. al.,
+Container-based Operating System Virtualization: A Scalable, High-performance Alternative to Hypervisors,
+\emph{SIGOPS Oper. Syst. Rev.},
+vol. 41, n. 3, pp. 275--287, 2007.
 
 \bibitem{cordis:datagrid}
 P. Kunszt,
