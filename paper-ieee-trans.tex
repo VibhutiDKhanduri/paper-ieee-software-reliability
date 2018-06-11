@@ -26,21 +26,16 @@
 
 \begin{abstract}
 
-From the advent of Grid technology -- as the new paradigm of distributed
-computing -- to the current days of Cloud computing models, the continuous need
-of new tools and services to match the scientific community requirements has been
-addressed in Europe by various projects dedicated to software development
-and e--Infrastructure creation, operation and management.
+In the recent decades the development of new technologies in the distributed computing field (i.e. Grid and Cloud computing) have contributed to
+providing new tools and services able to match the scientific community requirements. In Europe various projects have been designed in order to develop and maintain software able to support and manage computing infrastructure. In this context, activities have been performed to deliver reliable software in the European research arena by using innovative software engineering solutions.
+
 This work examines the evolution of the software engineering methodologies used in past and
-present European Commission--funded projects to illustrate how the research on software
-reliability has progressed in Europe over the last 15 years following the foundation of the
-first project in 2001. In particular, we will summarize the techniques and procedures
+current European Commission--funded projects to illustrate how the research on software
+reliability has progressed over the last 15 years since the
+first project in 2001. We summarize the techniques and procedures
 applied to deliver quality software, highlighting the main challenges and barriers confronted
-at the time, and how they were partially or totally overcome. The knowledge base established
-throughout the years, sustained by the advances in the area of software engineering,
-definitely conformed a significant breakthrough in the reliability of software delivered in the
-European research arena. Recent software development projects funded by the European
-Commission are good evidences of such insights, where the enforcement of Quality Assurance
+at the time, and how they were partially or totally overcome. 
+Recent software development projects show good evidences of such insights, where the enforcement of quality assurance
 procedures is present since the very early stages of the software development process.
 
 \end{abstract}
@@ -64,7 +59,7 @@ LHC particle accelerator. A significant number of innovation projects and techno
 activities -- later discussed in Section~\ref{sec:ev} -- from the European Commission
 (EC)-funded 5th, 6th and 7th Framework Programmes, and recently from the Horizon 2020 programme
 \cite{h2020} had as their main goal to develop software solutions that provide a seamless and
-transparent access of researchers to distributed computing and data resources. 
+transparent access of researchers to distributed computing and data resources.
 
 Major developments carried throughout the years where focused on providing new
 functionalities, while in the early days, the adoption of software engineering methodologies had a lower priority.
@@ -103,6 +98,16 @@ organized as follows. Section~\ref{sec:ev} details the evolution of research on
 software reliability in EC--projects. Section~\ref{sec:ntsr} provides
 information about new research trends in software reliability based upon the
 experiences from the recent {\sl INDIGO--DataCloud} project (INDIGO--DC). Conclusions are drawn in Section~\ref{sec:con}.
+
+\section{Background}
+\label{sec:b}
+
+
+
+
+\section{Research methodology}
+\label{sec:rm}
+
 
 \section{Evolution of research on software reliability in EC--projects}
 \label{sec:ev}
@@ -405,13 +410,13 @@ in the {\sl INDIGO--DataCloud} software stack.
 Changes involving the addition of new functionalities, are required to be tested. \textit{Regression
 testing} in this context is accomplished by enforcing the definition and periodic execution
 of the tests, covering past fixed issues, to ensure that they are not reintroduced during the development
-activities. \textit{Unit testing} completes the source code testing evaluation by focusing on the code's 
-internal design. The SQA criteria of {\sl INDIGO--DataCloud} set a recommended threshold of 70\% coverage 
-for unit testing. In Fig.~\ref{fig:fig_unittest}, unit testing coverage is compared for each software 
-component between the two major releases, denoting an incremental trend over the course of the project: 
+activities. \textit{Unit testing} completes the source code testing evaluation by focusing on the code's
+internal design. The SQA criteria of {\sl INDIGO--DataCloud} set a recommended threshold of 70\% coverage
+for unit testing. In Fig.~\ref{fig:fig_unittest}, unit testing coverage is compared for each software
+component between the two major releases, denoting an incremental trend over the course of the project:
 code coverage increased from an average value of 50.32\% to 63.34\%, outlined by the respective dates of
 the project's first (INDIGO-1) and second (INDIGO-2) releases. By INDIGO-2, 53\% of the software components
-(17 out of 32) were over the threshold of the aforementioned project's SQA code coverage recommendation 
+(17 out of 32) were over the threshold of the aforementioned project's SQA code coverage recommendation
 (70\%), while 75\% (24 out of 32) of the product stack exceeded 50\% coverage.
 
 \item \textit{Integration testing}. Software components usually interact with other services during
@@ -547,7 +552,7 @@ Fig.~\ref{fig:fig_jenkins_CI_builds} shows the evolution, throughout the
 {\sl INDIGO--DataCloud}'s first and second releases, of the required test types builds since the
 implementation of the CI infrastructure. Automated functional testing coverage were not
 available for all the software stack, thus the associated number of builds are fewer. Towards the
-end of the project, the software development activity slowed the pace but not completely ceased 
+end of the project, the software development activity slowed the pace but not completely ceased
 as the CI infrastructure is still maintained after the project's end of life.
 
 \subsubsection{Continuous Delivery}
@@ -763,7 +768,7 @@ report CMU/SEI-93-TR-24, ESC--TR-93-177, 1993.
 
 \bibitem{cordis:egee}
 \emph{Enabling Grids for E--sciencE (EGEE)} project, European Community Research and
-Development Information Service (CORDIS). 
+Development Information Service (CORDIS).
 [Online] Available: \url{http://cordis.europa.eu/project/rcn/80149\_en.html}
 [Accessed 4 Jun. 2018].
 
