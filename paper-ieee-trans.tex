@@ -339,16 +339,15 @@ In the following sections, we describe the three main pillars that sustain the p
 % Comment
 %%P3 C2 L29: This introductory paragraph goes into a bit too much jargony detail, I think, especially given that it is followed by in-depth coverage of each "pillar". I suggest a clearer identification of each pillar, maybe via bullets or definition paragraphs, avoiding or with general-audience definition of jargon like DevOps, delivery mechanisms, two-factor validation, pilot testbeds, and early adoption. I appreciate this may all be highly meaningful to someone steeped in this operational area, but to an interested outsider it reads much like management jargon -- particuarly the final sentence: is this a long-winded way of saying "used during the commissioning period"?
 software lifecycle:
-\begin{itemize}
-    \item A solid \textit{Software Quality Assurance (SQA) criteria and metrics gathering definition} provides guidelines to develop quality
-    software, validating each change in the code, and facilitating its adoption. The software lifecycle is continuously monitored
-    by a set of metrics, allowing prompt reactions to detected malfunctions throughout the
-    process. 
-    \item The \textit{promotion of automation} to enable the foregoing change--based validation approach 
-    and to accelerate the delivery process of new software versions.
-    \item A post-release validation carried out over the project's \textit{preview testbeds}, where the new product versions
+\begin{enumerate}
+    \item The definition of a \textit{Software Quality Assurance (SQA) criteria and a metrics gathering procedure} to provide guidelines
+    aiming at developing quality software, validating each change in the code, to facilitate its adoption. The software lifecycle is
+    continuously monitored by a set of metrics, allowing prompt reactions to detected malfunctions that may occur throughout the process. 
+    \item The \textit{promotion of automation} to enable the foregoing change--based validation approach and to accelerate the delivery
+    process of new software versions.
+    \item A post-release validation to be carried out over the project's \textit{preview testbeds}, where the new product versions
     are deployed as part of the integration validation, and the \textit{testing in production environments} by external resource providers.
-\end{itemize}
+\end{enumerate}
 
 \begin{figure}[ht]
 \centering
@@ -492,14 +491,24 @@ KPIs primarily focus on the frequency and efficiency -- mainly rollbacks -- stat
 to issues reported by external users. Feedback is collected from outside helpdesks, such as
 EGI's GGUS~\cite{ggus}, and the GitHub Issues tracker.
 
-\subsection{DevOps practices}
+\subsection{Software quality validation and delivery automation}
 \label{sec:devops}
 % Comment
 %P5 C2 L21: Define DevOps!
-The DevOps methods emphasize the SQA techniques to avoid infrastructure
-disruption whenever new developments are deployed into production systems. The
-following DevOps approaches have been progressively adopted throughout the project's
-lifetime, being one of its major outcomes in terms of software reliability.
+Tackling the granularity of the former SQA requirements -- most of which accounted in a per--change basis --
+is hardly achieved without the aid of automation. The introduction of automation to validate the quality
+requirements increases the overall reliability of the produced software: automated testing is more 
+time-efficient, leading to higher coverages and increased defect detection, when compared with a manual
+approach \cite{rafi2012}. 
+
+As any new change, involving a new feature or fix, passes through the automated
+SQA machinery, the software is always ready to be released. As a result, the often compromised harmonization
+between the continouous release of new features -- pushed by the development teams -- and the maintenance of
+stable production systems -- demanded by users and resource providers -- can be guaranteed. The DevOps culture
+theorizes and provides practical solutions that aim at unifying both software development (dev) and software
+operations (ops) teams, by emphasizing the SQA techniques to avoid infrastructure disruption whenever new
+developments are deployed into production systems. The following DevOps approaches have been progressively
+adopted throughout the project's lifetime, being one of its major outcomes in terms of software reliability.
 
 \begin{figure}[ht]
 \centering
@@ -872,6 +881,12 @@ pp. 163--174, 2011.
 \emph{EGI Quality Criteria}.
 [Online] Available: \url{https://egi-qc.github.io/}
 [Accessed 4 Jun. 2018].
+
+\bibitem{rafi2012}
+D. M. Rafi el al.,
+Benefits and limitations of automated software testing: Systematic literature review and practitioner survey,
+\emph{Proceedings of the 7th International Workshop on Automation of Software Test},
+36--42, 2012.
 
 \bibitem{chen2015}
 L. Chen,
