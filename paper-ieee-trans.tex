@@ -9,7 +9,7 @@
 \usepackage{cite}
 
 \begin{document}
-\title{Evolution of Methodologies in Delivering Reliable Software in the European Scientific Arena}
+\title{Evolution of Processes in Delivering Reliable Software in the European Scientific Arena}
 
 \author{E. Ronchieri,
         P. Orviz Fernandez,
@@ -64,7 +64,7 @@ LHC particle accelerator. A significant number of innovation projects and techno
 activities -- later discussed in Section~\ref{sec:ev} -- from the European Commission
 (EC)-funded 5th, 6th and 7th Framework Programmes, and recently from the Horizon 2020 programme
 \cite{h2020} had as their main goal to develop software solutions that provide a seamless and
-transparent access of researchers to distributed computing and data resources. 
+transparent access of researchers to distributed computing and data resources.
 
 Major developments carried throughout the years where focused on providing new
 functionalities, while in the early days, the adoption of software engineering methodologies had a lower priority.
@@ -73,7 +73,7 @@ rollbacks and patches applied to production systems, compared to the later proje
 % Comment
 %P1 C2 L18: Claiming that stability and reliability was regularly compromised is quite a bold statement -- it needs at least some citations, and preferably some explanation of what forms this compromise took for a few prominent cases.
 reliability of the e--Infrastructures was often compromised, affecting
-negatively their exploitation by the scientific communities.
+negatively their exploitation by the scientific communities \cite{aiftimiei}.
 % Comments
 %P1 C2 L24: Was this realisation imposed "from above" e.g. by coordinated EC/ERC oversight, or was it "emergent" from the demands of the independent scientific communities?
 It became then apparent the need for a better balance between the addition of new features
@@ -85,12 +85,12 @@ cross--functional teams and deployment of pilot testbeds.
 
 Analysing the EC--funded software projects over the last decade,
 one can observe a continuous increase in the prominence and robustness of software
-testing and validation procedures. The
+testing and validation procedures \cite{aiftimiei}. The
 evolution of the software engineering methodologies (creation of the Agile
 Manifesto \cite{agile-manifesto}, and rise of DevOps practices \cite{zhu}) together
 with the parallel advancements in the information and communication technology
 field (such as virtualization, the enabling technology for Cloud computing and
-operating--system--level virtualization known as containerization) motivated this trend. All of which
+operating--system--level virtualization known as containerization \cite{soltesz}) motivated this trend. All of which
 are complemented by the emergence of automation and event--response tools.
 
 In this paper, we outline a set of EC--funded projects
@@ -405,13 +405,13 @@ in the {\sl INDIGO--DataCloud} software stack.
 Changes involving the addition of new functionalities, are required to be tested. \textit{Regression
 testing} in this context is accomplished by enforcing the definition and periodic execution
 of the tests, covering past fixed issues, to ensure that they are not reintroduced during the development
-activities. \textit{Unit testing} completes the source code testing evaluation by focusing on the code's 
-internal design. The SQA criteria of {\sl INDIGO--DataCloud} set a recommended threshold of 70\% coverage 
-for unit testing. In Fig.~\ref{fig:fig_unittest}, unit testing coverage is compared for each software 
-component between the two major releases, denoting an incremental trend over the course of the project: 
+activities. \textit{Unit testing} completes the source code testing evaluation by focusing on the code's
+internal design. The SQA criteria of {\sl INDIGO--DataCloud} set a recommended threshold of 70\% coverage
+for unit testing. In Fig.~\ref{fig:fig_unittest}, unit testing coverage is compared for each software
+component between the two major releases, denoting an incremental trend over the course of the project:
 code coverage increased from an average value of 50.32\% to 63.34\%, outlined by the respective dates of
 the project's first (INDIGO-1) and second (INDIGO-2) releases. By INDIGO-2, 53\% of the software components
-(17 out of 32) were over the threshold of the aforementioned project's SQA code coverage recommendation 
+(17 out of 32) were over the threshold of the aforementioned project's SQA code coverage recommendation
 (70\%), while 75\% (24 out of 32) of the product stack exceeded 50\% coverage.
 
 \item \textit{Integration testing}. Software components usually interact with other services during
@@ -547,7 +547,7 @@ Fig.~\ref{fig:fig_jenkins_CI_builds} shows the evolution, throughout the
 {\sl INDIGO--DataCloud}'s first and second releases, of the required test types builds since the
 implementation of the CI infrastructure. Automated functional testing coverage were not
 available for all the software stack, thus the associated number of builds are fewer. Towards the
-end of the project, the software development activity slowed the pace but not completely ceased 
+end of the project, the software development activity slowed the pace but not completely ceased
 as the CI infrastructure is still maintained after the project's end of life.
 
 \subsubsection{Continuous Delivery}
@@ -713,6 +713,13 @@ research and innovation programme under grant agreement RIA--654142.
 [Online] Available: \url{https://ec.europa.eu/programmes/horizon2020/}
 [Accessed 4 Jun. 2018].
 
+\bibitem{aiftimiei}
+A. Aiftimiei, and D. Dongiovanni, et al.,
+Improving the quality of EMI Releases by leveraging the
+EMI Testing Infrastructure.
+\emph{Journal of Physics: Conference Series},
+vol. 396, 2012.
+
 \bibitem{agile-manifesto}
 Beck, K., Beedle, et al., (2001).
 Manifesto for Agile Software Development.
@@ -724,6 +731,12 @@ L. Zhu and L. Bass and G. Champlin--Scharff,
 DevOps and Its Practices,
 \emph{IEEE Software},
 vol. 33, n. 3, pp. 32--34, 2016.
+
+\bibitem{soltesz}
+S. Soltesz, and H. P\"{o}tzl, et. al.,
+Container-based Operating System Virtualization: A Scalable, High-performance Alternative to Hypervisors,
+\emph{SIGOPS Oper. Syst. Rev.},
+vol. 41, n. 3, pp. 275--287, 2007.
 
 \bibitem{cordis:datagrid}
 P. Kunszt,
@@ -763,7 +776,7 @@ report CMU/SEI-93-TR-24, ESC--TR-93-177, 1993.
 
 \bibitem{cordis:egee}
 \emph{Enabling Grids for E--sciencE (EGEE)} project, European Community Research and
-Development Information Service (CORDIS). 
+Development Information Service (CORDIS).
 [Online] Available: \url{http://cordis.europa.eu/project/rcn/80149\_en.html}
 [Accessed 4 Jun. 2018].
 
