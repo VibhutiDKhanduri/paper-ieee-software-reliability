@@ -99,10 +99,25 @@ For each project, the challenges, the methodologies and
 the achievements towards software reliability are described.
 
 The reminder of this paper is
-organized as follows. Section~\ref{sec:ev} details the evolution of research on
+organized as follows. Section~\ref{sec:b} summaries the essential context of the research problem. Section~\ref{sec:ev} details the evolution of research on
 software reliability in EC--projects. Section~\ref{sec:ntsr} provides
 information about new research trends in software reliability based upon the
 experiences from the recent {\sl INDIGO--DataCloud} project (INDIGO--DC). Conclusions are drawn in Section~\ref{sec:con}.
+
+
+\section{Background}
+\label{sec:b}
+
+In this section, we detail the level of knowledge in delivering reliable software before and after the EC-founded projects.
+We divide literature into four different domains that intersect this work. Firstly, we describe the software development process showing how the various phases reflect on software quality attributes. Next, we describe the impact of software requirements on software quality. In the last, we introduce metrics and measurements. In the last, we talk about software testing and code coverage.
+
+\emph{Metrics and measurements.} Metrics and measurements have an important role in the software development process \cite{fenton, capers}.
+Metrics are used to improve the ability to control, identify and measure the essential parameters of software  during  its  development.
+leading to improve the results of the software product \cite{goodman}.
+With a correct usage of  software  metrics,  it  is possible to determine which parts of software require to be changed or modified. In literature different types of metrics exist able to provide information on various software aspects, such as complexity \cite{mccabe} and object orientation \cite{chidamber, lorenz}. Often they have similar definitions, as a consequence they can be implemented in different ways according to the interpretation of their definition. This is the reason why it has been always a challenge to select a proper software metrics tool.
+
+\emph{Testing.} Testing is an important factor for software quality and reliability improvement. In literature there are many types of software testing \cite{myers} that aim at finding errors, bugs and faults during the software development process, possibly in the early stages. Test criteria focus on measuring the coverage of the test suite 
+
 
 \section{Evolution of research on software reliability in EC--projects}
 \label{sec:ev}
@@ -752,6 +767,46 @@ S. Soltesz, and H. P\"{o}tzl, et. al.,
 Container-based Operating System Virtualization: A Scalable, High-performance Alternative to Hypervisors,
 \emph{SIGOPS Oper. Syst. Rev.},
 vol. 41, n. 3, pp. 275--287, 2007.
+
+\bibitem{fenton}
+N.  Fenton,  and  S.  L.  Pfleeger.
+Software  Metrics:  A  Rigorous  and  Practical Approach,
+\emph{International Thomson Computer
+Press}, London, UK, second edition, 1997. 
+
+\bibitem{capers}
+J. T. Capers.
+Applied Software Measurement
+\emph{McGrawHill}, 1991. 
+
+\bibitem{goodman}
+P. Goodman.
+Practical Implementation of Software Metrics, 
+\emph{McGraw Hill}, London, 1993.
+
+
+\bibitem{mccabe}
+T. J. McCabe.
+A   Complexity   Measure,
+\emph{IEEE   Transactions   on   Software Engineering},
+Vol. 2, No. 4, pp. 308-320, 1976.
+
+\bibitem{chidamber}
+S.  R.  Chidamber  and  C.  E  Kemerer.
+A  metrics  suite  for  Object--oriented  design,
+\emph{IEEE Trans. Software Engineering}, 
+June 1994.
+
+\bibitem{lorenz}
+M. Lorenz and J. Kidd.
+Object-Oriented Software Metrics: A Practical Approach,
+\emph{IEEE publications}.
+
+\bibitem{myers}
+G. J. Myers and C. Sandler and T. Badgett.
+The art of software testing.
+\emph{John Wiley \& Sons}, 2011.
+
 
 \bibitem{cordis:datagrid}
 P. Kunszt,
