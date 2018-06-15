@@ -108,22 +108,50 @@ experiences from the recent {\sl INDIGO--DataCloud} project (INDIGO--DC). Conclu
 \section{Background}
 \label{sec:b}
 
-In this section, we detail the level of knowledge requested in delivering reliable software in order to understand the effort employed in the EC-funded software projects over time.
-We divide literature into four different domains that intersect this work: 1. software requirements, 2. software coding 3. metrics and measurements, 4. testing.
+In this section, we detail the level of knowledge requested in delivering reliable software in order 
+to understand the effort employed in the EC-funded software projects over time. We divide literature 
+into four different domains that intersect this work: 1) software requirements, 2) software coding,
+3) metrics and measurements, 4) testing.
 
-\emph{Software requirements.} They are defined at various stages of a software development process as a specification of what should be implemented. According to IEEE \cite{radatz}, requirement analysis is a process for studying user needs to arrive at a definition of system, hardware or software requirements. Characteristics of requirements that can assess software reliability are consistency and correctness \cite{sommerville}: the former aims at providing predictable, maintainable and reliable results, and the latter usually refers to the satisfaction of certain goals.
+\emph{Software requirements.} They are defined at various stages of a software development process
+as a specification of what should be implemented. According to IEEE \cite{radatz}, requirement
+analysis is a process for studying user needs to arrive at a definition of system, hardware or software
+requirements. Characteristics of requirements that can assess software reliability are consistency and
+correctness \cite{sommerville}: the former aims at providing predictable, maintainable and reliable
+results, and the latter usually refers to the satisfaction of certain goals.
 
-\emph{Software coding.} According to IEEE \cite{radatz}, coding is the process of expressing a computer program in a programming language. To meet specific requirements, a program can be developed by using high-level or low-level programming languages that envelope different characteristics and may affect result and quality of software. Furthermore, software is generally written by geographically distributed teams whose developers can change over time, therefore it is extremely important for source code to be understandable \cite{tashtoush}. There are various instruments that can be adopted during the software development process to easily adapt software \cite{buse, baggen}: programming features that influence the code readability and maintainability and standardized code that promotes the comparability of results. 
+\emph{Software coding.} According to IEEE \cite{radatz}, coding is the process of expressing a computer
+program in a programming language. To meet specific requirements, a program can be developed by using
+high-level or low-level programming languages that envelope different characteristics and may affect the
+result and quality of software. Furthermore, software is generally written by geographically distributed
+teams whose developers can change over time, therefore it is extremely important for source code to be
+understandable \cite{tashtoush}. There are various instruments that can be adopted during the software
+development process to easily adapt software \cite{buse, baggen}: programming features that influence the
+code readability and maintainability and standardized code that promotes the comparability of results. 
 
-\emph{Metrics and measurements.} According to IEEE \cite{radatz}, metrics   is   a
-function,  with  input  as  the  software  data,  and  output  is  a
-value  which  could  decide  on  how  the  given  attribute  affect
-the software. Metrics and measurements have an important role in the development process \cite{fenton, capers}.
-Metrics are used to improve the ability to control, identify and measure the essential parameters of software  during  its  development.
-leading to improve the results of the software product \cite{goodman}.
-With a correct usage of  software  metrics,  it  is possible to determine which parts of software require to be changed or modified. In literature different types of metrics exist able to provide information on various software aspects, such as complexity \cite{mccabe} and object orientation \cite{chidamber, lorenz}. Often they have similar definitions, as a consequence they can be implemented in different ways according to the interpretation of their definition. This is the reason why it has been always a challenge to select a proper software metrics tool.
+\emph{Metrics and measurements.} According to IEEE \cite{radatz}, metrics is a function, with input as 
+the software data, and output is a value which could decide on how the given attribute affects the software.
+Metrics and measurements have an important role in the development process \cite{fenton, capers}. Metrics
+are used to improve the ability to control, identify and measure the essential parameters of software 
+during its development, leading to improve the results of the software product \cite{goodman}. With a correct
+usage of metrics, it is possible to determine which parts of the software require to be changed or modified.
+In the literature, different types of metrics exist to be able to provide information on various software
+aspects, such as complexity \cite{mccabe} and object orientation \cite{chidamber, lorenz}. Often they have 
+similar definitions, so as a consequence they can be implemented in different ways according to the
+interpretation of their definition. This is the reason why it has been always a challenge to select the
+proper software metric tools.
 
-\emph{Testing.} According to IEEE \cite{radatz}, testing is a process of operating a system or component under specified conditions, observing or recording the results, and making an evaluation of some aspect of system or component. Testing is an important factor for software quality and reliability improvement. This activity is quite complicated due to the variety of programming languages, operating systems and hardware platforms that evolve over time \cite{myers}. In literature there are many types of software testing \cite{myers} that aim at finding errors, bugs and faults during the software development process, possibly in the early stages. Over time testing metrics have been defined to assess software quality \cite{athanasiou}: code coverage is the most frequently used metric for test software reliability and there exist many tools for dynamic code coverage estimation according to the programming language \cite{horgan}. A dedicated effort have to be taken into account in order to integrate testing solutions during the software development process.
+\emph{Testing.} According to IEEE \cite{radatz}, testing is a process of operating a system or component
+under specified conditions, observing or recording the results, and making an evaluation of some aspect of
+system or component. Testing is an important factor for software quality and reliability improvement. This
+activity is quite complicated due to the variety of programming languages, operating systems and hardware
+platforms that evolve over time. In the current literature, there are many types of software
+testing methods \cite{myers} that aim at finding errors, bugs and faults during the software development
+process, possibly in the early stages. Over time, testing metrics have been defined to assess software
+quality \cite{athanasiou}: code coverage is the most frequently used metric for test software reliability
+and there exist many tools for dynamic code coverage estimation according to the programming language
+\cite{horgan}. A dedicated effort have to be taken into account in order to integrate testing solutions
+during the software development process.
 
 
 \section{Evolution of research on software reliability in EC--projects}
