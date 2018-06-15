@@ -108,15 +108,22 @@ experiences from the recent {\sl INDIGO--DataCloud} project (INDIGO--DC). Conclu
 \section{Background}
 \label{sec:b}
 
-In this section, we detail the level of knowledge in delivering reliable software before and after the EC-founded projects.
-We divide literature into four different domains that intersect this work. Firstly, we describe the software development process showing how the various phases reflect on software quality attributes. Next, we describe the impact of software requirements on software quality. In the last, we introduce metrics and measurements. In the last, we talk about software testing and code coverage.
+In this section, we detail the level of knowledge requested in delivering reliable software in order to understand the effort employed in the EC-funded software projects over time.
+We divide literature into four different domains that intersect this work: 1. software requirements, 2. software coding 3. metrics and measurements, 4. testing.
 
-\emph{Metrics and measurements.} Metrics and measurements have an important role in the software development process \cite{fenton, capers}.
+\emph{Software requirements.} They are defined at various stages of a software development process as a specification of what should be implemented. According to IEEE \cite{radatz}, requirement analysis is a process for studying user needs to arrive at a definition of system, hardware or software requirements. Characteristics of requirements that can assess software reliability are consistency and correctness \cite{sommerville}: the former aims at providing predictable, maintainable and reliable results, and the latter usually refers to the satisfaction of certain goals.
+
+\emph{Software coding.} According to IEEE \cite{radatz}, coding is the process of expressing a computer program in a programming language. To meet specific requirements, a program can be developed by using high-level or low-level programming languages that envelope different characteristics and may affect result and quality of software. Furthermore, software is generally written by geographically distributed teams whose developers can change over time, therefore it is extremely important for source code to be understandable \cite{tashtoush}. There are various instruments that can be adopted during the software development process to easily adapt software \cite{buse, baggen}: programming features that influence the code readability and maintainability and standardized code that promotes the comparability of results. 
+
+\emph{Metrics and measurements.} According to IEEE \cite{radatz}, metrics   is   a
+function,  with  input  as  the  software  data,  and  output  is  a
+value  which  could  decide  on  how  the  given  attribute  affect
+the software. Metrics and measurements have an important role in the development process \cite{fenton, capers}.
 Metrics are used to improve the ability to control, identify and measure the essential parameters of software  during  its  development.
 leading to improve the results of the software product \cite{goodman}.
 With a correct usage of  software  metrics,  it  is possible to determine which parts of software require to be changed or modified. In literature different types of metrics exist able to provide information on various software aspects, such as complexity \cite{mccabe} and object orientation \cite{chidamber, lorenz}. Often they have similar definitions, as a consequence they can be implemented in different ways according to the interpretation of their definition. This is the reason why it has been always a challenge to select a proper software metrics tool.
 
-\emph{Testing.} Testing is an important factor for software quality and reliability improvement. In literature there are many types of software testing \cite{myers} that aim at finding errors, bugs and faults during the software development process, possibly in the early stages. Test criteria focus on measuring the coverage of the test suite 
+\emph{Testing.} According to IEEE \cite{radatz}, testing is a process of operating a system or component under specified conditions, observing or recording the results, and making an evaluation of some aspect of system or component. Testing is an important factor for software quality and reliability improvement. This activity is quite complicated due to the variety of programming languages, operating systems and hardware platforms that evolve over time \cite{myers}. In literature there are many types of software testing \cite{myers} that aim at finding errors, bugs and faults during the software development process, possibly in the early stages. Over time testing metrics have been defined to assess software quality \cite{athanasiou}: code coverage is the most frequently used metric for test software reliability and there exist many tools for dynamic code coverage estimation according to the programming language \cite{horgan}. A dedicated effort have to be taken into account in order to integrate testing solutions during the software development process.
 
 
 \section{Evolution of research on software reliability in EC--projects}
@@ -768,6 +775,44 @@ Container-based Operating System Virtualization: A Scalable, High-performance Al
 \emph{SIGOPS Oper. Syst. Rev.},
 vol. 41, n. 3, pp. 275--287, 2007.
 
+\bibitem{radatz}
+J. Radatz and A. Geraci and F. Katki.
+IEEE Standard glossary of softare engineering terminology.
+\emph{IEEE Std. 610.12-1990}, 1990.
+
+\bibitem{sommerville}
+I. Sommerville.
+Integrated requiremetns envineering: A tutorial.
+\emph{IEEE Software},
+vol. 14, issue 1, pp. 16--23, 2005.
+
+
+
+\bibitem{tashtoush}
+Y. Tashtoush and Z. Odat, et al.
+Impact of programming features on code readability.
+\emph{International Journal of Software Engineering and its Applications}, 
+vol. 7, issue 6, pp. 441--458, 2013.
+
+
+\bibitem{buse}
+R. P. Buse and W. R. Weimer.
+Learning a metric for code readability.
+\emph{IEEE Transactions on Software Engineering},
+vol. 36, issue 4, pp. 546--558, 2010.
+
+\bibitem{baggen}
+R. Baggen and J. P. Correia, et al.
+Standardized code quality benchmarking for improving software maintainability.
+\emph{Software Quality Journal},
+vol. 20, issue 2, pp. 287--307, 2012.
+
+
+
+
+
+
+
 \bibitem{fenton}
 N.  Fenton,  and  S.  L.  Pfleeger.
 Software  Metrics:  A  Rigorous  and  Practical Approach,
@@ -806,6 +851,23 @@ Object-Oriented Software Metrics: A Practical Approach,
 G. J. Myers and C. Sandler and T. Badgett.
 The art of software testing.
 \emph{John Wiley \& Sons}, 2011.
+
+
+
+\bibitem{athanasiou}
+D. Athanasiou and A. Nugroho and J. Visser and A. Zaidman.
+Test code quality and its relation to issue handling performance.
+\emph{IEEE Transactions on Software Engineering}, 
+vol. 40, issue 7, pp. 1100--1125, 2014.
+
+
+
+\bibitem{horgan}
+J. R. Horgan and S. London and M. R. Lyu.
+Achieving software quality with testing coverage measuring.
+\emph{IEEE Computer},
+vol. 27, issue 9, pp. 60--69, 1994.
+
 
 
 \bibitem{cordis:datagrid}
