@@ -38,9 +38,9 @@ first project in 2001. In particular, we will summarize the techniques and proce
 applied to deliver quality software, highlighting the main challenges and barriers confronted
 at the time, and how they were partially or totally overcome. The knowledge base established
 throughout the years, sustained by the advances in the area of software engineering,
-definitely conformed a significant breakthrough in the reliability of software delivered in the
+definitely constituted a significant breakthrough in the reliability of software delivered in the
 European research arena. Recent software development projects funded by the European
-Commission are good evidences of such insights, where the enforcement of Quality Assurance
+Commission are good evidence of such insights, where the enforcement of Quality Assurance
 procedures is present since the very early stages of the software development process.
 
 \end{abstract}
@@ -64,7 +64,7 @@ LHC particle accelerator. A significant number of innovation projects and techno
 activities -- later discussed in Section~\ref{sec:ev} -- from the European Commission
 (EC)-funded 5th, 6th and 7th Framework Programmes, and recently from the Horizon 2020 programme
 \cite{h2020} had as their main goal to develop software solutions that provide a seamless and
-transparent access of researchers to distributed computing and data resources.
+transparent access by researchers to distributed computing and data resources.
 
 Major developments carried throughout the years were focused on providing new
 functionalities, whereas in the early days the adoption of software engineering methodologies had a lower priority.
@@ -90,20 +90,21 @@ evolution of the software engineering methodologies (creation of the Agile
 Manifesto \cite{agile-manifesto}, and rise of DevOps practices \cite{zhu}) together
 with the parallel advancements in the information and communication technology
 field (such as virtualization, the enabling technology for Cloud computing and
-operating--system--level virtualization known as containerization \cite{soltesz}) motivated this trend. All of which
-are complemented by the emergence of automation and event--response tools.
+operating--system--level virtualization known as containerization \cite{soltesz}) motivated this trend.
+This evolution was complemented by the emergence of automation and event--response tools.
 
 In this paper, we outline a set of EC--funded projects
 ranging from 2001 to nowadays, in which the authors were involved.
 For each project, the challenges, the methodologies and
 the achievements towards software reliability are described.
 
-The reminder of this paper is
-organized as follows. Section~\ref{sec:b} summaries the essential context of the research problem. Section~\ref{sec:ev} details the evolution of research on
+The remainder of this paper is
+organized as follows. Section~\ref{sec:b} summarizes the essential context of the research problem.
+Section~\ref{sec:ev} details the evolution of research on
 software reliability in EC--projects. Section~\ref{sec:ntsr} provides
 information about new research trends in software reliability based upon the
-experiences from the recent {\sl INDIGO--DataCloud} project (INDIGO--DC). Conclusions are drawn in Section~\ref{sec:con}.
-
+experiences from the recent {\sl INDIGO--DataCloud} project (INDIGO--DC).
+Conclusions are drawn in Section~\ref{sec:con}.
 
 \section{Background}
 \label{sec:b}
@@ -159,7 +160,7 @@ during the software development process.
 
 The EC projects considered in this paper are listed chronologically in Table~\ref{tab:eup}.
 Each project paved the way for the following ones, according to a logic evolution in which
-the role of the quality and reliability of the software have
+the role of the quality and reliability of the software has
 consistently increased. As shown in Table~\ref{tab:feat}, the most recent projects are more
 committed to and aware of software reliability practices.
 Table~\ref{tab:feat} also shows the topics addressed in the following sections, highlighting
@@ -235,7 +236,7 @@ of the developments.
 
 Without previous experience in such widely
 collaborative projects, a big effort was spent in devising solutions for several
-challenges \cite{datagrid}, namely the 1) communication overhead, as a
+challenges \cite{datagrid}, namely 1) the communication overhead, as a
 result of the large geographical separation of the involved parties in the
 development tasks, 2) the fast evolution of the requirements from the user
 communities (50 use cases from the three scientific area), and 3) the lack of a body
@@ -426,9 +427,9 @@ leading to the first release (dark blue points and lines), and to the second rel
 The software quality policies were initially defined in the first deliverable document of the
 project \cite{indigo-d31}. The policies were reviewed periodically taking into account the requirements
 from the user communities, the feedback from the development teams and the insights of software
-engineering practices. These policies covered the 1) identification
-and description of the \emph{SQA requirements} that the produced software need
-to comply with, and the 2) \emph{quality metrics}, to monitor each software product's
+engineering practices. These policies covered 1) the identification
+and description of the \emph{SQA requirements} that the produced software needs
+to comply with, and 2) the \emph{quality metrics}, to monitor each software product's
 behaviour throughout the development, release and post--release stages.
 
 \subsubsection{SQA criteria}
@@ -509,12 +510,12 @@ To lower the barriers of software adoption, the SQA criteria require the automat
 deployment of the products delivered as part of the catalogue. Automation in this context is
 tackled using a configuration management tool. These tools allow the adoption of
 \textit{Infrastructure as Code} (IaC), managing the component's deployment through declarative
-definitions. The definition files appear as additional source of documentation
--- self--documenting code -- as they sequentially guide the component's deployment process in multiple
+definitions. The definition files appear as an additional source of documentation
+-- self--documenting code -- as they sequentially guide the component's deployment process on multiple
 platforms. {\sl INDIGO--DataCloud} project contributed to open--source IaC tools such
 as Ansible
 and Puppet\footnote{\url{https://forge.puppet.com/indigodc}}. A representative example of
-such contribution are the \textit{50 roles} developed from scratch and currently hosted in
+such contributions are the \textit{50 roles} developed from scratch and currently hosted in
 the Ansible Galaxy portal\footnote{\url{https://galaxy.ansible.com/indigo-dc/}}. Fig.~\ref{fig:fig_confman}
 shows the number of products that offer an automated means for deployment.
 It shows an increase in the adoption of such tools leading to the {\sl INDIGO--1} release
@@ -534,7 +535,7 @@ maintenance phases of the software lifecycle.
 \textit{Development metrics} are obtained programmatically from several sources, namely GitHub
 API\footnote{\url{https://developer.github.com/v3/}.}
 and Jenkins\footnote{\url{https://jenkins.io/}} service, and graphically displayed as GitHub
-pages using GrimoireLab framework\footnote{\url{http://grimoirelab.github.io/}}.
+pages using the GrimoireLab framework\footnote{\url{http://grimoirelab.github.io/}}.
 Per--component weekly reports, including the SQA requirement
 fulfilment, are issued and individually discussed through the different communication channels
 with the development teams. Issue tracking metrics and KPIs are an essential piece of information
@@ -591,18 +592,18 @@ was eventually validated and distributed using CD pipelines.
 
 The {\sl INDIGO--DataCloud} project promoted the application of a CI scenario that enforced,
 for any piece of produced software, the testing requirements defined in the SQA criteria,
-as described in Section \ref{subsec:sqa}. Such environment requires an automation
+as described in Section \ref{subsec:sqa}. Such an environment requires an automation
 ready--to--go infrastructure where the different services and technologies involved interact with each
 other to trigger the source code validation pipeline for each candidate change. The
 pipeline is mainly comprised by the code style validation, unit and functional testing
 coverage. The CI pipeline is complemented with additional quality checks, such as
 integration tests for the software components where automation of this type of testing
-is applicable, or security linters for the code static analysis of suspicious
-constructs that could lead to security risks. Metrics gathering also takes part of
+is applicable, or security linters for the static code analysis of suspicious
+constructs that could lead to security risks. Metrics gathering is also a part of
 the CI pipeline to have a per--change trend evolution of the common source code
 related metrics, such as SLOC or the cyclomatic complexity.
 
-The practical implementation of the CI scenario leveraged on tightly integrated open
+The practical implementation of the CI scenario leverage from a tightly integrated open
 source tools such as GitHub\footnote{\url{https://github.com/}}, as the online source code repository,
 
 Jenkins is an event--response CI and Docker container
@@ -633,10 +634,10 @@ development teams to act promptly based on the regular feedback \cite{chen2015}.
 {\sl INDIGO--DataCloud} products, that have been taking place since the second major release, are passing through
 a Continuous Delivery (CD) pipeline that adds the packaging of the software right after the
 successful execution of the CI pipeline previously described. Consequently, CI--validated
-software components are automatically delivered in online repositories without the need of
-any human interaction but ultimately requiring expert supervision to validate the results.
+software components are automatically delivered in online repositories. Nonetheless,
+expert supervision to validate the results, is required.
 
-{\sl INDIGO--DataCloud} software stack is delivered in form of Linux software packages (rpms, debs)
+{\sl INDIGO--DataCloud} software stack is delivered in the form of Linux software packages (rpms, debs)
 and Docker containers. The CD approach is different for each type of software packaging. \textit{Linux
 package pipeline} intentionally delivers the packages produced in a pre--production -- preview --
 branch. Before that, once the software packages have been created, they are uploaded to a
@@ -703,8 +704,8 @@ level of integration between the components involved in the {\sl INDIGO--DataClo
 solutions and use cases validation, by deploying and executing the applications
 with the last stable version of the software in environments as similar as
 possible to production ones. A map of the Pilot Preview
-infrastructure is depicted in Fig.~\ref{fig:fig_pilotpreview}, it shows the
-resources providers and the components or services they deployed and supported.
+infrastructure is depicted in Fig.~\ref{fig:fig_pilotpreview}. It shows the
+resource providers and the components or services they deployed and supported.
 
 The released software is tested in production environments through the
 Staged--Rollout process, before its inclusion in the EGI's Cloud Middleware Distribution (CMD).
@@ -738,12 +739,12 @@ the SQA criteria compliance. The application of more advanced DevOps practices
 resulted in the implementation of CD pipelines to extend automation to the
 delivery of packages. Thereby, safe and frequent software releases are possible, reducing
 the impact on production systems. In this regard, a pre--production validation,
-through the preview testbeds or resource centers early adoption -- handled by the
+through the preview testbeds or resource center’s early adoption -- handled by the
 Staged--rollout process -- alleviates the likelihood of discovering uncovered
 issues at production.
 
-The implementation of a Software lifecycle phases, implies a continuous measurement and analysis
-process that allows timely reactions to discover and fix defects throughout the
+The software lifecycle demands as well a continuous measurement and analysis
+process, that allows timely reactions to discover and fix defects throughout the
 development, release and maintenance stages. Conscientious metric
 tracking and response sits at the core of an appropriate software maturity, as
 ultimate reliability can only be achieved by enforcing and empowering the SQA
