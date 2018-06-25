@@ -436,12 +436,13 @@ behaviour throughout the development, release and post--release stages.
 \subsubsection{SQA criteria}
 
 The SQA criteria are a set of conventions and recommendations that pave the way for
-the adequate development, timely deliver and reliable operation of the produced software components.
+the adequate development, timely delivery and reliable operation of the produced software components.
 It emphasizes the quality requirements and best practices to be applied at the
 development phase, such as style and testing compliance or human code reviews, to protect the
 production source code versions. Furthermore, the criteria promote the adoption of the software
 by providing minimum requirements of documentation content and stressing the usage of automated
-solutions for software deployment.
+solutions for software deployment. The SQA criteria are continuously evolving \cite{sqa-baseline}, aiming at serving
+as a reference for future software development projects within the European research ecosystem.
 
 \begin{itemize}
 \item \textit{Code style}.
@@ -462,9 +463,21 @@ internal design. The SQA criteria of {\sl INDIGO--DataCloud} set a recommended t
 for unit testing. In Fig.~\ref{fig:fig_unittest}, unit testing coverage is compared for each software
 component between the two major releases, denoting an incremental trend over the course of the project:
 code coverage increased from an average value of 50.32\% to 63.34\%, outlined by the respective dates of
-the project's first (INDIGO-1) and second (INDIGO-2) releases. By INDIGO-2, 53\% of the software components
+the project's first (INDIGO--1) and second (INDIGO--2) releases. By INDIGO--2, 53\% of the software components
 (17 out of 32) were over the threshold of the aforementioned project's SQA code coverage recommendation
-(70\%), while 75\% (24 out of 32) of the product stack exceeded 50\% coverage.
+(70\%), while 75\% (24 out of 32) of the product stack exceeded 50\% coverage. 
+The indiviual records followed also a growing trend (only 6 out of 32 components had lower values in 
+INDIGO--2). It is worth noting that Fig.~\ref{fig:fig_unittest} not only includes new software developments 
+implemented from scratch within the project. Software tools and libraries from 
+external open--source projects -- such as {\sl tosca-parser} or {\sl heat-translator} --, contributed upstream
+by the project, and well--established products, involved in {\sl INDIGO--DataCloud}
+but not contributing with the 100\% of their codebases -- such as {\sl dCache} --, are also considered in the
+analysis. However the values given apply to the entire codebase, even for the latter case of products. These 
+products challenged the application of the SQA policies described in this section, by two means:
+\begin{itemize}
+    \item Previously developed code was not refactored since it was not \textit{owned} by the project.
+    \item An agreement on prevailing SQA policies for such cases where quality practices were already in place.
+\end{itemize}
 
 \item \textit{Integration testing}. Software components usually interact with other services during
 operation. Integration testing deals with the interactions among coupled software components or
@@ -737,6 +750,18 @@ development, release and maintenance stages. Conscientious metric
 tracking and response sits at the core of an appropriate software maturity, as
 ultimate reliability can only be achieved by enforcing and empowering the SQA
 criteria through each stage of the software lifecycle.
+
+Lessons learned show that sustainability is a key pursuit. The achievements, in terms of
+processes, knowledge, software and infrastructures, shall be profited from former successful 
+completed projects. In this regard, the more recent project described in this paper, {\sl INDIGO-DataCloud},
+may have set the path for future reference in the European software development research ecosystem.
+The SQA criteria, describing the quality requirements that might be considered during the entire
+software lifecycle, have been published as open access and periodically reviewed to incorporate
+new recommendations and best practices. Successful software products created during the lifetime of the 
+project are maintained leveraging the same source code repositories and CI infrastructure. A seamless 
+knowledge transfer among subsequent software development initiatives is key for the good progress of
+delivering reliable software.
+
 
 \section*{Acknowledgment}
 
@@ -1065,6 +1090,12 @@ J. Gomes, et al.,
 \emph{Initial Plan for WP3} INDIGO--DataCloud Deliverable 3.1.
 [Online] Available: \url{https://www.indigo-datacloud.eu/documents/initial-plan-wp3-d31}
 [Accessed 4 Jun. 2018].
+
+\bibitem{sqa-baseline}
+Pablo Orviz et al.,
+A set of common software quality assurance baseline criteria for research projects,
+2017.
+[Online] Available: \url{http://digital.csic.es/bitstream/10261/160086/4/CommonSQA-v2.pdf}
 
 \bibitem{disvis}
 G.C.P. Van Zundert, A.M.J.J. Bonvin,
