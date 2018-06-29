@@ -31,7 +31,7 @@ computing -- to the current days of Cloud computing models, the continuous need
 of new tools and services to match the scientific community requirements has been
 addressed in Europe by various projects dedicated to software development
 and e--Infrastructure creation, operation and management.
-This work examines the evolution of the software engineering methodologies used in past and
+This work examines the evolution of the software engineering processes used in past and
 present European Commission--funded projects to illustrate how the research on software
 reliability has progressed in Europe over the last 15 years following the foundation of the
 first project in 2001. In particular, we will summarize the techniques and procedures
@@ -63,10 +63,11 @@ of processing, storing and analysis of the very large amount of data produced by
 LHC particle accelerator.
 
 A significant number of innovation projects and technology transfer
-activities -- later discussed in Section~\ref{sec:ev} -- from the European Commission
-(EC)-funded 5th, 6th and 7th Framework Programmes, and recently from the Horizon 2020 programme
-\cite{h2020} had as their main goal to develop software solutions that provide a seamless and
-transparent access by researchers to distributed computing and data resources.
+activities -- later discussed in Section~\ref{sec:ev} -- 
+were funded by the 5th, 6th and 7th Framework Programmes of the European Commission (EC) 
+and recently by the Horizon 2020 programme \cite{h2020}. Their main goal is to develop 
+software solutions that provide a seamless and transparent access by researchers to 
+distributed computing and data resources.
 
 Major developments carried throughout the years were focused on providing new
 functionalities, whereas in the early days the adoption of software engineering methodologies had a lower priority. 
@@ -116,10 +117,11 @@ Conclusions are drawn in Section~\ref{sec:con}.
 
 In this section, we detail the level of knowledge requested in delivering reliable software in order 
 to understand the effort employed in the EC-funded software projects over time. We divide literature 
-into four different domains that intersect this work: 1) software requirements, 2) software coding,
+into four different domains that intersect this work: 1) software requirements analysis, 2) software
+coding,
 3) metrics and measurements, 4) testing.
 
-\emph{Software requirements.} They are defined at various stages of a software development process
+\emph{Software requirements analysis.} They are defined at various stages of a software development process
 as a specification of what should be implemented. According to IEEE \cite{radatz}, requirement
 analysis is a process for studying user needs to arrive at a definition of system, hardware or software
 requirements. Characteristics of requirements that can assess software reliability are consistency and
@@ -132,8 +134,8 @@ high-level or low-level programming languages that envelope different characteri
 result and quality of software. Furthermore, software is generally written by geographically distributed
 teams whose developers can change over time, therefore it is extremely important for source code to be
 understandable \cite{tashtoush}. There are various instruments that can be adopted during the software
-development process to easily adapt software \cite{buse, baggen}: programming features that influence the
-code readability and maintainability and standardized code that promotes the comparability of results. 
+development process to easily adapt software: programming features that influence the
+code readability and maintainability \cite{buse} and standardized code that promotes the comparability of results \cite{baggen}.
 
 \emph{Metrics and measurements.} According to IEEE \cite{radatz}, metrics is a function, with input as 
 the software data, and output is a value which could decide on how the given attribute affects the software.
@@ -149,14 +151,14 @@ proper software metric tools.
 
 \emph{Testing.} According to IEEE \cite{radatz}, testing is a process of operating a system or component
 under specified conditions, observing or recording the results, and making an evaluation of some aspect of
-system or component. Testing is an important factor for software quality and reliability improvement. This
+the system or component. Testing is an important factor for software quality and reliability improvement. This
 activity is quite complicated due to the variety of programming languages, operating systems and hardware
 platforms that evolve over time. In the current literature, there are many types of software
 testing methods \cite{myers} that aim at finding errors, bugs and faults during the software development
 process, possibly in the early stages. Over time, testing metrics have been defined to assess software
-quality \cite{athanasiou}: code coverage is the most frequently used metric for test software reliability
+quality \cite{athanasiou}: code coverage is the most frequently used metric for testing software reliability
 and there exist many tools for dynamic code coverage estimation according to the programming language
-\cite{horgan}. A dedicated effort have to be taken into account in order to integrate testing solutions
+\cite{horgan}. A dedicated effort has to be taken into account in order to integrate testing solutions
 during the software development process.
 
 
@@ -276,7 +278,7 @@ communities (50 use cases from the three scientific area), and 3) the lack of a 
 of knowledge for academic software engineering.
 
 The Agile manifesto \cite{agile-manifesto} was by then an emerging methodology, not yet
-considered by the project, and as such the project's
+considered by the project. As such, the project's
 development design suffered from the lack of the methods, tools, techniques and best
 practices emerging from this new discipline of software engineering
 \cite{agile}. Nevertheless, the project focused on the experiences and procedures
@@ -292,9 +294,9 @@ provide a seamless Grid infrastructure for e--Science. {\sl EGEE--II} and {\sl E
 featured the internationalization (outside Europe) of the project, embracing worldwide research
 institutions and user communities~\cite{egee}. The software to sustain the increasing
 requirements coming from the diverse scientific communities needed developing a
-rich set of new services while maintaining a sustainable infrastructure for
-Grid computing, eventually used by more than 15 thousand researchers and deployed in
-over 250 institutions.
+rich set of new services, while maintaining a sustainable infrastructure for
+Grid computing. This e-Infrastructure was eventually used by more than 15 thousand researchers
+and deployed in over 250 institutions.
 
 The {\sl gLite} middleware \cite{glite} was the
 official software distribution of {\sl EGEE} as of 2006, after two years of prototyping and
@@ -321,8 +323,8 @@ at addressing the challenges in producing quality software in distributed,
 collaborative projects such as {\sl EGEE} and its {\sl gLite} middleware. The framework
 integrated different technologies and tools in order to provide automated configuration,
 build and testing capabilities, as well as auto--generated documentation and
-software metrics gathering such as Source Lines Of Code (SLOC), complexity and
-number of defects/bugs \cite{etics}. The {\sl ETICS} framework was the first automated
+software metrics gathering -- such as Source Lines Of Code (SLOC), complexity and
+number of defects/bugs \cite{etics} --. The {\sl ETICS} framework was the first automated
 service for delivering quality software products in distributed environments like
 the Grids.
 
@@ -343,7 +345,7 @@ metrics and Key Performance Indicators (KPIs) were identified and defined in
 detail in the {\sl EMI} Metrics Specification \cite{emi-quality-model}. The project
 leveraged the {\sl ETICS} service for the development, continuous integration and release management,
 as well as for metric tracking, making queries on the collected data to display
-them through the chart generation framework.
+them through a chart generation framework.
 
 \subsection{EGI--Integrated Sustainable Pan--European Infrastructure}
 
@@ -353,8 +355,8 @@ was the continuation of the {\sl EGEE--III} project, with the objective of estab
 maintaining a sustainable European Grid Infrastructure, composed by a federation of National
 Grid Initiatives and interoperable with other Grids worldwide.
 This goal would be accomplished through the
-development and maintenance of various operational tools, such as the Operations Portal \cite{egi-ops},
-the {\sl EGI} Helpdesk \cite{ggus}, or the Grid configuration database (GOCDB) \cite{gocdb}, and the
+development and maintenance of various operational tools -- such as the Operations Portal \cite{egi-ops},
+the {\sl EGI} Helpdesk \cite{ggus}, or the Grid configuration database (GOCDB) \cite{gocdb} -- and the
 management of the software provisioning process \cite{mario}, dealing with the validation and distribution of the software to
 the production infrastructures. As a result, this process led to a production--ready
 Grid computing middleware distribution named {\sl UMD} (Unified Middleware Distribution). At that time the {\sl UMD}
@@ -442,7 +444,7 @@ behaviour throughout the development, release and post--release stages.
 
 The SQA criteria are a set of conventions and recommendations that pave the way for
 the adequate development, timely delivery and reliable operation of the produced software components.
-It emphasizes the quality requirements and best practices to be applied at the
+They emphasize the quality requirements and best practices to be applied at the
 development phase, such as style and testing compliance or human code reviews, to protect the
 production source code versions. Furthermore, the criteria promote the adoption of the software
 by providing minimum requirements of documentation content and stressing the usage of automated
@@ -460,7 +462,7 @@ their popularity
 in the {\sl INDIGO--DataCloud} software stack.
 
 \item \textit{Unit and Functional testing}.
-Changes involving the addition of new functionalities, are required to be tested. \textit{Regression
+Changes involving the addition of new functionalities are required to be tested. \textit{Regression
 testing} in this context is accomplished by enforcing the definition and periodic execution
 of the tests, covering past fixed issues, to ensure that they are not reintroduced during the development
 activities. \textit{Unit testing} completes the source code testing evaluation by focusing on the code's
@@ -471,7 +473,7 @@ code coverage increased from an average value of 50.32\% to 63.34\%, outlined by
 the project's first (INDIGO--1) and second (INDIGO--2) releases. By INDIGO--2, 53\% of the software components
 (17 out of 32) were over the threshold of the aforementioned project's SQA code coverage recommendation
 (70\%), while 75\% (24 out of 32) of the product stack exceeded 50\% coverage. 
-The indiviual records followed also a growing trend (only 6 out of 32 components had lower values in 
+The individual records followed also a growing trend (only 6 out of 32 components had lower values in 
 INDIGO--2). It is worth noting that Fig.~\ref{fig:fig_unittest} not only includes new software developments 
 implemented from scratch within the project. Software tools and libraries from 
 external open--source projects -- such as {\sl tosca-parser} or {\sl heat-translator} --, contributed upstream
@@ -514,8 +516,8 @@ updated into the production repository.
 \item \textit{Automated Deployment}.
 To lower the barriers of software adoption, the SQA criteria require the automated
 deployment of the products delivered as part of the catalogue. Automation in this context is
-tackled using a configuration management tool. These tools allow the adoption of
-\textit{Infrastructure as Code} (IaC), managing the component's deployment through declarative
+tackled using configuration management tools. These tools allow the adoption of
+\textit{Infrastructure as Code} (IaC) practice, managing the component's deployment through declarative
 definitions. The definition files appear as an additional source of documentation
 -- self--documenting code -- as they sequentially guide the component's deployment process on multiple
 platforms. {\sl INDIGO--DataCloud} project contributed to open--source IaC tools such
@@ -525,8 +527,8 @@ such contributions are the \textit{50 roles} developed from scratch and currentl
 the Ansible Galaxy portal\footnote{\url{https://galaxy.ansible.com/indigo-dc/}}. Fig.~\ref{fig:fig_confman}
 shows the number of products that offer an automated means for deployment.
 It shows an increase in the adoption of such tools leading to the {\sl INDIGO--1} release
-(dark blue points and trend line), as well as to the {\sl INDIGO--2} release
-(light cream points and trend line). The rate of adoption is lower during the weeks
+(light cream points and trend line), as well as to the {\sl INDIGO--2} release
+(dark blue points and trend line). The rate of adoption is lower during the weeks
 before the second release because a significant fraction of the products had already adopted it
 previously to the first release.
 \end{itemize}
@@ -540,7 +542,7 @@ maintenance phases of the software lifecycle.
 
 \textit{Development metrics} are obtained programmatically from several sources, namely GitHub
 API\footnote{\url{https://developer.github.com/v3/}.}
-and Jenkins\footnote{\url{https://jenkins.io/}} service, and graphically displayed as GitHub
+and the Jenkins\footnote{\url{https://jenkins.io/}} service, and graphically displayed as GitHub
 pages using the GrimoireLab framework\footnote{\url{http://grimoirelab.github.io/}}.
 Per--component weekly reports, including the SQA requirement
 fulfilment, are issued and individually discussed through the different communication channels
@@ -569,14 +571,14 @@ approach \cite{rafi2012}.
 
 As any new change, involving a new feature or fix, passes through the automated
 SQA machinery, the software is always ready to be released. As a result, the often compromised harmonization
-between the continouous release of new features -- pushed by the development teams -- and the maintenance of
+between the continuous release of new features -- pushed by the development teams -- and the maintenance of
 stable production systems -- demanded by users and resource providers -- can be guaranteed. The DevOps culture
 theorizes and provides practical solutions that aim at unifying both software development (dev) and software
 operations (ops) teams, by emphasizing the SQA techniques to avoid infrastructure disruption whenever new
 developments are deployed into production systems. 
 The incremental adoption of DevOps approaches throughout the project's lifetime was a key player towards
-software reliability. Starting with a CI scenario at the first stages of the project, the software delivered
-was eventually validated and distributed using CD pipelines. 
+software reliability. Starting with a Continuous Integration (CI) scenario at the first stages of the project, the software delivered
+was eventually validated and distributed using Continuous Delivery (CD) pipelines. 
 
 \begin{figure}[ht]
 \centering
@@ -629,15 +631,17 @@ bug or design issue is likely to be detected and subsequently corrected in this 
 Fig.~\ref{fig:fig_jenkins_CI_builds} shows the evolution, throughout the
 {\sl INDIGO--DataCloud}'s first and second releases, of the required test types builds since the
 implementation of the CI infrastructure. Automated functional testing coverage were not
-available for all the software stack, thus the associated number of builds are fewer. Towards the
-end of the project, the software development activity slowed the pace but not completely ceased
-as the CI infrastructure is still maintained and used after the project's end of life.
+available for all the software stack, thus the associated number of builds are fewer. 
+Towards the end of the project, the software development activity slowed the pace but not completely 
+ceased. The support of the CI infrastructure, once reached the project's end of life, allowed the 
+continued maintenance and development of the prevailing software. Some development teams deployed 
+parallel CI systems, taking advantage of the experience gained during the project.
 
 \subsubsection{Continuous Delivery}
 As DevOps suggests, frequent releases positively affect the reliability of the software as
 they reduce the time in which a given defect is exposed or has an impact, allowing the 
 development teams to act promptly based on the regular feedback \cite{chen2015}. The software updates of
-{\sl INDIGO--DataCloud} products, that have been taking place since the second major release, are passing through
+{\sl INDIGO--DataCloud} products, which have been taking place since the second major release, are passing through
 a Continuous Delivery (CD) pipeline that adds the packaging of the software right after the
 successful execution of the CI pipeline previously described. Consequently, CI--validated
 software components are automatically delivered in online repositories. Nonetheless,
@@ -686,10 +690,10 @@ different DevOps practices is not only useful and suitable for the software rela
 to the core services in the {\sl INDIGO--DataCloud} solution, but also applicable to the
 development and distribution of the applications coming from the user communities.
 
-Two applications from "Definition of Support to Research Communities" work package,
+Two applications coming from the supported research communities,
 DisVis \cite{disvis} and PowerFit \cite{powerfit}, were
 integrated into a similar CI/CD pipeline described in section \ref{sec:devops}.
-Fig.~\ref{fig:fig_disvis} shows the pipeline for the Disvis application.
+Fig.~\ref{fig:fig_disvis} shows the pipeline for the DisVis application.
 
 User application developers were provided with both a means to validate the
 source code before merging and the creation of a new versioned Docker image,
@@ -697,7 +701,7 @@ automatically available in the {\sl INDIGO--DataCloud}'s application repository.
 
 The novelty introduced in the pipeline above is the validation of the application.
 Once the application is packaged as a Docker image, and subsequently uploaded
-to the Dockerhub repository, it is instantiated in a new container to be validated.
+to the DockerHub repository, it is instantiated in a new container to be validated.
 The application is then executed and the results compared with a set of reference outputs.
 This pipeline implementation goes a step forward by testing the application
 execution for the latest available Docker image in the catalogue.
@@ -707,7 +711,8 @@ execution for the latest available Docker image in the catalogue.
 Two pilot infrastructures are at the disposal of developers and scientific
 communities involved in the project. The aim of these testbeds is to test the
 level of integration between the components involved in the {\sl INDIGO--DataCloud}
-solutions and use cases validation, by deploying and executing the applications
+solutions and use cases validation. Within these testbeds, the applications are deployed
+and executed
 with the last stable version of the software in environments as similar as
 possible to production ones. A map of the Pilot Preview
 infrastructure is depicted in Fig.~\ref{fig:fig_pilotpreview}. It shows the
@@ -745,12 +750,12 @@ the SQA criteria compliance. The application of more advanced DevOps practices
 resulted in the implementation of CD pipelines to extend automation to the
 delivery of packages. Thereby, safe and frequent software releases are possible, reducing
 the impact on production systems. In this regard, a pre--production validation,
-through the preview testbeds or resource center’s early adoption -- handled by the
+through the preview testbeds or resource center's early adoption -- handled by the
 Staged--rollout process -- alleviates the likelihood of discovering uncovered
 issues at production.
 
 The software lifecycle demands as well a continuous measurement and analysis
-process, that allows timely reactions to discover and fix defects throughout the
+process, which allows timely reactions to discover and fix defects throughout the
 development, release and maintenance stages. Conscientious metric
 tracking and response sits at the core of an appropriate software maturity, as
 ultimate reliability can only be achieved by enforcing and empowering the SQA
@@ -954,7 +959,7 @@ vol. 11, no. 2, pp. 115--128, Jun. 1997.
 \bibitem{datagrid}
 L. Momtahan and A. Martin,
 ``e--Science Experiences: Software Engineering Practice and the EU DataGrid,''
-in \emph{9th Asia--Pacific Softw. Eng. Conf.},
+in \emph{Proc. 9th Asia--Pacific Softw. Eng. Conf.},
 pp. 269--275, Dec. 2002.
 
 \bibitem{agile}
@@ -1040,7 +1045,7 @@ vol. 396, no. 5, 052003, 2012.
 \bibitem{cordis:egi-inspire}
 I. C. Plasencia,
 ``EGI.eu the European grid initiative,''
-in \emph{4th Iberian Grid Infra. Conf. Proc.},
+in \emph{Proc. 4th Iberian Grid Infra. Conf.},
 pp. 5--15, 2010.
 
 \bibitem{egi-ops}
@@ -1069,7 +1074,7 @@ pp. 163--174, 2011.
 \bibitem{rafi2012}
 D. M. Rafi \emph{el al.},
 ``Benefits and limitations of automated software testing: Systematic literature review and practitioner survey,''
-in \emph{Proc, 7th Int. Workshop Automation Softw. Test},
+in \emph{Proc. 7th Int. Workshop Automation Softw. Test},
 36--42, 2012.
 
 \bibitem{chen2015}
