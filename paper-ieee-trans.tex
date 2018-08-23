@@ -472,12 +472,18 @@ internal design. The SQA criteria of {\sl INDIGO--DataCloud} set a recommended t
 for unit testing. In Fig.~\ref{fig:fig_unittest}, unit testing coverage is compared for each software
 component between the two major releases, denoting an incremental trend over the course of the project:
 code coverage increased from an average value of 50.32\% to 63.34\%, outlined by the respective dates of
-the project's first (INDIGO--1) and second (INDIGO--2) releases. By INDIGO--2, 53\% of the software components
-(17 out of 32) were over the threshold of the aforementioned project's SQA code coverage recommendation
-(70\%), while 75\% (24 out of 32) of the product stack exceeded 50\% coverage.
-The individual records followed also a growing trend (only 6 out of 32 components had lower values in
-INDIGO--2). It is worth noting that Fig.~\ref{fig:fig_unittest} not only includes new software developments
-implemented from scratch within the project. Software tools and libraries from
+the project's first (INDIGO--1) and second (INDIGO--2) releases. Nevertheless, Fig.~\ref{fig:fig_unittest}
+shows a decrease in the unit testing coverage values for several products. As unit tests cover low-level
+code elements, they are best considered while the new code is being written \cite{unit-test-frameworks}.
+We have observed that this decrease was aligned with high-demanding periods of software development, as
+seen in the previous months of the INDIGO-2 major release. Regardless of the potentially higher defect
+density that this fact brought along, the overall performance kept progressing as the rest of the software
+stack substantially improved their own unit testing coverage statistics. By INDIGO--2, 53\% of the software
+components (17 out of 32) were over the threshold of the aforementioned project's SQA code coverage
+recommendation (70\%), while 75\% (24 out of 32) of the product stack exceeded 50\% coverage. 
+The individual records followed also a growing trend (only 6 out of 32 components had lower values in 
+INDIGO--2). It is worth noting that Fig.~\ref{fig:fig_unittest} not only includes new software developments 
+implemented from scratch within the project. Software tools and libraries from 
 external open--source projects -- such as {\sl tosca-parser} or {\sl heat-translator} --, contributed upstream
 by the project, and well--established products, involved in {\sl INDIGO--DataCloud}
 but not contributing with the 100\% of their codebases -- such as {\sl dCache} --, are also considered in the
@@ -1170,6 +1176,12 @@ GitHub, ``Learn Git and GitHub without any code!,''
 2018.
 [Online]. Available: \url{https://github.com/}
 [Accessed 30 Aug. 2018].
+
+\bibitem{unit-test-frameworks}
+Paul Hamill,
+``Unit test frameworks: tools for high-quality software development,''
+\emph{O'Reilly Media, Inc.},
+2004.
 
 \bibitem{disvis}
 G.C.P. Van Zundert and A.M.J.J. Bonvin,
