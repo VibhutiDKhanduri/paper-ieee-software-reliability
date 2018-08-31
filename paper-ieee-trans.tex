@@ -246,7 +246,7 @@ Agile Methodologies                &       &$\surd$&$\surd$&$\surd$&$\surd$&$\su
 Source code inspection             &       &       &       &$\surd$&       &$\surd$\\
 Build/Testing Management Procedure &$\surd$&$\surd$&$\surd$&$\surd$&       &$\surd$\\
 Software Product Metrics           &$\surd$&$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
-Quality Criteria Definition        &       &       &$\surd$&$\surd$&$\surd$&$\surd$\\
+Quality Criteria Definition        &$\surd$&       &$\surd$&$\surd$&$\surd$&$\surd$\\
 Automatic Certification            &       &       &$\surd$&       &$\surd$&$\surd$\\
 Auto--generated Documentation      &       &$\surd$&$\surd$&$\surd$&$\surd$&$\surd$\\
 DevOps practices adoption (CI, CD) &       &       &       &       &       &$\surd$\\
@@ -254,7 +254,6 @@ DevOps practices adoption (CI, CD) &       &       &       &       &       &$\su
 \hline
 \end{tabular}
 \end{table*}
-
 
 \subsection{DataGrid}
 
@@ -301,9 +300,6 @@ The specification of quality indicators \cite{datagridindicators} allowed projec
 \label{fig:bugzilla}
 \end{figure}
 
-
-
-
 \subsection{Enabling Grids for E--sciencE}
 
 The three phases of Enabling Grids for E--sciencE ({\sl EGEE}, Apr 2004 -- Apr 2010)
@@ -339,7 +335,7 @@ the {\sl ETICS} \cite{etics} solution.
 The E--Infrastructure for Testing, Integration and Configuration of Software~\cite{etics}
 ({\sl ETICS}, Jan 2006 -- Feb 2010) project aimed
 at addressing the challenges in producing quality software in distributed,
-collaborative projects such as {\sl EGEE} and its {\sl gLite} middleware. The framework
+collaborative projects such as {\sl EGEE} and its {\sl gLite} middleware. The ETICS framework
 integrated different technologies and tools in order to provide automated configuration,
 build and testing capabilities, as well as auto--generated documentation and
 software metrics gathering -- such as Source Lines Of Code (SLOC), complexity and
@@ -352,8 +348,8 @@ the Grids.
 The European Middleware Initiative ({\sl EMI}, May 2010 -- Apr 2013)
 \cite{cordis:emi} project joined the 4 major Grid middleware providers in
 Europe at the time -- {\sl gLite}, {\sl UNICORE}, {\sl ARC} and {\sl dCache} --
-with the goal to maintain and evolve the middleware focusing on extending their
-interoperability and improving the reliability of the services. The
+with the goal of maintaining and evolving the different Grid middleware solutions, 
+focusing on extending their interoperability and improving the reliability of the services. The
 ISO/IEC 9126 \cite{iso-9126} standard was used in order to identify a set of
 characteristics that needed to be present in the {\sl EMI} software products and
 processes to be able to meet the {\sl EMI} quality requirements
@@ -363,9 +359,11 @@ For each software characteristic, a set of associated
 metrics and Key Performance Indicators (KPIs) were identified and defined in
 detail in the {\sl EMI} Metrics Specification \cite{emi-quality-model}. The project
 leveraged the {\sl ETICS} service for the development, continuous integration and release management,
-as well as for metric tracking, making queries on the collected data to display
+as well as for metric tracking, making queries on the collected data in order to display
 them through a chart generation framework.
 
+
+ 
 \subsection{EGI--Integrated Sustainable Pan--European Infrastructure}
 
 The {\sl EGI--InSPIRE} (Integrated Sustainable Pan--European Infrastructure for
@@ -384,11 +382,38 @@ as {\sl EMI} and {\sl Globus}. In order to be distributed through UMD
 repositories, the software had to be compliant with EGI's Quality Criteria (QC) \cite{egi-qc}. The
 QC defined a set of requirements in different areas: documentation, deployment, security, information
 model and operations.
+
+
+The impact of the quality assurance activities was observed in the software provided by EMI to the EGI--InSPIRE project. Data reported in Table \ref{tab:emi} (see page 13 in \cite{emi-quality-model}) summarizes the EMI software quality evolution per project quarters (PQ) as evaluated by the EGI project with the help of the UMD QC. It is possible to observe the improvement of EMI releases over time that met the required quality criteria by considering the products that have passed the UMD QC, the products that have passed the EGI Stage Rollout (SR) phase (i.e. it consisted of testing the certified updates of the middleware by a subset of sites before made them available to all sites), and the products rejected because they did not meet the UMD QC.
+\begin{table}[!h]
+\renewcommand{\arraystretch}{1.3}
+\caption{EMI software quality evolution}
+\label{tab:emi}
+\centering
+\begin{tabular}{lp{1cm}p{1cm}p{1cm}p{1cm}}
+\hline
+\hline
+PQ & Release Products (RP) & N. RP Passed UMD QC & N. RP Passed SR & N. RP Failed UMD QC\\
+\hline
+\hline
+5 & 30 & 27 & 27 & 0\\
+6 & 30 & 28 & 26 & 2 \\
+7 & 27 & 26& 24& 2\\
+8 & 18 & 18 & 18 & 0\\
+\hline
+\hline
+\end{tabular}
+\end{table}
+
+
 {\sl UMD} is still being used and
 deployed in the European scientific e--Infrastructures under the follow--up
 project {\sl EGI--Engage} (Engaging the EGI Community towards an Open Science
 Commons) \cite{cordis:egi-engage}. This distribution is currently complemented
 by a Cloud--specific one called {\sl CMD} (Cloud Middleware Distribution).
+
+
+
 
 \subsection{INtegrating Distributed data Infrastructures for Global explOitation}
 
@@ -747,7 +772,7 @@ infrastructure is depicted in Fig.~\ref{fig:fig_pilotpreview}. It shows the
 resource providers and the components or services they deployed and supported.
 
 The released software is tested in production environments through the
-Staged--Rollout process, before its inclusion in the EGI's Cloud Middleware Distribution (CMD).
+SR process, before its inclusion in the EGI's Cloud Middleware Distribution (CMD).
 Selected resource providers are requested to install
 the most updated stable versions of the software, and to give access to them to their users. The
 Staged--Rollout process is key to detect and mitigate issues that could only
