@@ -259,8 +259,8 @@ DevOps practices adoption (CI, CD) &       &       &       &       &       &$\su
 \subsection{DataGrid}
 
 The {\sl DataGrid} \cite{cordis:datagrid} project (Jan 2001 -- Dec 2003)
-main goal was to provide scientific communities, including physics, biology and
-earth sciences, with intensive computing and large--scale dataset analysis capabilities.
+main goal was to provide scientific communities (including physics, biology and
+earth sciences) with intensive computing and large--scale dataset analysis capabilities.
 The project brought together 21 academic and industry partners, from 15 different countries \cite{gagliardi}.
 Grid was the emerging technology to be used in order to address their requirements,
 thus the project delivered its own software distribution, named EDG (EU {\sl DataGrid}), strongly
@@ -271,9 +271,9 @@ of the developments.
 
 Without previous experience in such widely
 collaborative projects, a big effort was spent in devising solutions for several
-challenges \cite{datagrid}, namely 1) the communication overhead, as a
+challenges \cite{datagrid}, namely 1) the communication overhead (as a
 result of the large geographical separation of the involved parties in the
-development tasks, 2) the fast evolution of the requirements from the user
+development tasks), 2) the fast evolution of the requirements from the user
 communities (50 use cases from the three scientific area), and 3) the lack of a body
 of knowledge for academic software engineering.
 
@@ -284,6 +284,25 @@ practices emerging from this new discipline of software engineering
 \cite{agile}. Nevertheless, the project focused on the experiences and procedures
 used by diverse collaborative open source software projects, such as Linux and Apache, trying to
 achieve a higher maturity level \cite{cmm}.
+
+On behalf of the quality assurance group, specific measures for the software development process and quality assurance were defined and introduced in the project. Through project monitoring and reporting mechanisms there was a successful control of the risks, efforts and document produced. The definition of a project developer's guide \cite{datagridguide} was able to provide developers with guidelines for the various software development phases (such as packaging, test and validation process, and style and naming convention) and to allow quality group to control software release via a procedure checklist.
+The specification of quality indicators \cite{datagridindicators} allowed project managers to have an update view of the quality of the services over months. Figure \ref{fig:efficiency} shows the efficiency performance indicator measured as the number of jobs successfully completed divided the total number of jobs submitted: generally the project managers observed a positive trend of efficiency over months with only one exception for the LCG1 experiment due to some errors on the dedicated resources. Figure \ref{fig:bugzilla} shows the Bugzilla anomalies follow up in the second release.
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.5\textwidth, height=50mm]{images/dgeff.png}
+\caption{Efficiency \% = Number of jobs successfully completed / Total Number of jobs submitted): results are provided for five experiments involved in the projects.}
+\label{fig:efficiency}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.5\textwidth, height=50mm]{images/dgbug.png}
+\caption{Bugzilla anomalies follow up: new and pending anomalies are reported.}
+\label{fig:bugzilla}
+\end{figure}
+
+
+
 
 \subsection{Enabling Grids for E--sciencE}
 
@@ -976,6 +995,21 @@ T. Dingsoyr, S. Nerur, V. Balijepally and N. B. Moe,
 ``A decade of agile methodologies: Towards explaining agile software development,''
 \emph{J. Syst. Softw.},
 vol. 85, no. 6, pp. 1213--1221, Jun. 2012.
+
+\bibitem{datagridguide}
+Quality Assurance Group, ``DataGrid - European DataGrid Developers' Guide,''
+2003.
+[Online] Available: \url{https://edms.cern.ch/ui/file/358824/1.1/EDG-DevGuide-v1-2.pdf}
+[Accessed 30 Aug. 2018].
+
+\bibitem{datagridindicators}
+DataGrid, ``DataGrid Internal Document - Quality and Performance Indicators for DataGrid,''
+2003.
+[Online] Available: \url{https://edms.cern.ch/ui/file/386039/2/QIv0-3.pdf}
+[Accessed 30 Aug. 2018].
+
+
+
 
 \bibitem{cmm}
 M. Paulk, B. Curtis, M. Chrissis and V. C. Weber,
