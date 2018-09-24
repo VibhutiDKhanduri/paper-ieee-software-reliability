@@ -617,11 +617,14 @@ constructs that could lead to security risks. Metrics gathering is also a part o
 the CI pipeline to have a per--change trend evolution of the common source code
 related metrics, such as SLOC or the cyclomatic complexity.
 
-The practical implementation of the CI scenario leverage from a tightly integrated open
-source tools such as GitHub \cite{foot9}, as the online source code repository,
-
-Jenkins is an event--response CI and Docker container
-provisioning system that provides instant computing power needed for executing the pipeline jobs.
+The practical implementation of the CI scenario leverage from tightly integrated open
+source tools such as:
+\begin{itemize}
+    \item GitHub \cite{foot9} as the online source code repository hosting service,
+    \item Jenkins as the event--response CI,
+    \item Docker container provisioning system, to provide instant computing power needed
+          for executing the pipeline jobs.
+\end{itemize}
 The project defined a source code contribution workflow, based on GitHub Pull Requests
 (PRs), where each change automatically triggers in Jenkins the associated quality and
 metric tracking checks on PR creation or update.
