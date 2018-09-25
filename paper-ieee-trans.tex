@@ -284,20 +284,18 @@ practices emerging from this new discipline of software engineering
 used by diverse collaborative open source software projects, such as Linux and Apache, trying to
 achieve a higher maturity level \cite{cmm}.
 
-On behalf of the quality assurance group, specific measures for the software development process and quality assurance were defined and introduced in the project. Through project monitoring and reporting mechanisms there was a successful control of the risks, efforts and document produced. The definition of a project developer's guide \cite{datagridguide} was able to provide developers with guidelines for the various software development phases (such as packaging, test and validation process, and style and naming convention) and to allow quality group to control software release via a procedure checklist.
-The specification of quality indicators \cite{datagridindicators} allowed project managers to have an update view of the quality of the services over months. Figure \ref{fig:efficiency} shows the efficiency performance indicator measured as the number of jobs successfully completed divided the total number of jobs submitted: generally the project managers observed a positive trend of efficiency over months with only one exception for the LCG1 experiment due to some errors on the dedicated resources. Figure \ref{fig:bugzilla} shows the Bugzilla anomalies follow up in the second release.
+Project monitoring and reporting mechanisms allowed to assess the risks, efforts and documentation
+produced. Development guidelines \cite{datagridguide} were produced, covering the various phases, including
+1) packaging, 2) test and validation, and 3) style and naming convention. The specification of quality indicators
+\cite{datagridindicators} facilitated the detection of deviations in the collected metric data. Figure 
+\ref{fig:efficiency} shows the efficiency performance indicator, measured in production environments as the
+number of jobs successfully completed divided by the total number of jobs submitted. As it can be observed,
+there is a positive trend of efficiency over the months, with the unique exception of the LCG1 experiment.
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.5\textwidth, height=50mm]{images/dgeff.png}
-\caption{Efficiency \% = Number of jobs successfully completed / Total Number of jobs submitted: results are provided for five experiments involved in the projects.}
+\caption{Efficiency \% = Number of jobs successfully completed / Total Number of jobs submitted: results are provided for five experiments involved in the project.}
 \label{fig:efficiency}
-\end{figure}
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=0.5\textwidth, height=50mm]{images/dgbug.png}
-\caption{Bugzilla anomalies follow up: new and pending anomalies are reported.}
-\label{fig:bugzilla}
 \end{figure}
 
 \subsection{Enabling Grids for E--sciencE}
@@ -348,8 +346,7 @@ the Grids.
 The European Middleware Initiative ({\sl EMI}, May 2010 -- Apr 2013)
 \cite{cordis:emi} project joined the 4 major Grid middleware providers in
 Europe at the time -- {\sl gLite}, {\sl UNICORE}, {\sl ARC} and {\sl dCache} --
-with the goal of maintaining and evolving the different Grid middleware solutions, 
-focusing on extending their interoperability and improving the reliability of the services. The
+with the goal to maintain and evolve the middleware focusing on extending their interoperability and improving the reliability of the services. The
 ISO/IEC 9126 \cite{iso-9126} standard was used in order to identify a set of
 characteristics that needed to be present in the {\sl EMI} software products and
 processes to be able to meet the {\sl EMI} quality requirements
@@ -359,7 +356,7 @@ For each software characteristic, a set of associated
 metrics and Key Performance Indicators (KPIs) were identified and defined in
 detail in the {\sl EMI} Metrics Specification \cite{emi-quality-model}. The project
 leveraged the {\sl ETICS} service for the development, continuous integration and release management,
-as well as for metric tracking, making queries on the collected data in order to display
+as well as for metric tracking, making queries on the collected data to display
 them through a chart generation framework.
 
 
@@ -384,7 +381,14 @@ QC defined a set of requirements in different areas: documentation, deployment, 
 model and operations.
 
 
-The impact of the quality assurance activities was observed in the software provided by EMI to the EGI--InSPIRE project. Data reported in Table \ref{tab:emi} (see page 13 in \cite{emi-quality-model}) summarizes the EMI software quality evolution per project quarters (PQ) as evaluated by the EGI project with the help of the UMD QC. It is possible to observe the improvement of EMI releases over time that met the required quality criteria by considering the products that have passed the UMD QC, the products that have passed the EGI Stage Rollout (SR) phase (i.e. it consisted of testing the certified updates of the middleware by a subset of sites before made them available to all sites), and the products rejected because they did not meet the UMD QC.
+The impact of the quality assurance activities was observed once the EMI software contributed to the 
+EGI--InSPIRE project. The data reported in Table \ref{tab:emi} (see page 13 in \cite{emi-quality-model})
+summarizes the EMI software quality evolution per project quarters (PQ) as evaluated by the EGI project
+with the help of the UMD QC. We can observe the improvement in quality of the EMI releases over time, 
+measured by the number of products that both met the software distribution criteria, by means of the UMD QC
+definition, and the EGI Stage Rollout (SR) phase. This latter phase completed the criteria validation by 
+deploying the UMD QC--certified software in a set of candidate production sites.
+
 \begin{table}[!h]
 \renewcommand{\arraystretch}{1.3}
 \caption{EMI software quality evolution}
@@ -772,7 +776,7 @@ infrastructure is depicted in Fig.~\ref{fig:fig_pilotpreview}. It shows the
 resource providers and the components or services they deployed and supported.
 
 The released software is tested in production environments through the
-SR process, before its inclusion in the EGI's Cloud Middleware Distribution (CMD).
+Staged--Rollout process, before its inclusion in the EGI's Cloud Middleware Distribution (CMD).
 Selected resource providers are requested to install
 the most updated stable versions of the software, and to give access to them to their users. The
 Staged--Rollout process is key to detect and mitigate issues that could only
