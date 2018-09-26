@@ -287,13 +287,13 @@ achieve a higher maturity level \cite{cmm}.
 Project monitoring and reporting mechanisms allowed to assess the risks, efforts and documentation
 produced. Development guidelines \cite{datagridguide} were produced, covering the various phases, including
 1) packaging, 2) test and validation, and 3) style and naming convention. The specification of quality indicators
-\cite{datagridindicators} facilitated the detection of deviations in the collected metric data. Figure 
+\cite{datagridindicators} facilitated the detection of deviations in the collected metric data. Figure
 \ref{fig:efficiency} shows the efficiency performance indicator, measured in production environments as the
 number of jobs successfully completed divided by the total number of jobs submitted. As it can be observed,
 there is a positive trend of efficiency over the months, with the unique exception of the LCG1 experiment.
-\begin{figure}[ht]
+\begin{figure}[h]
 \centering
-\includegraphics[width=0.5\textwidth, height=50mm]{images/dgeff.png}
+\includegraphics[width=0.5\textwidth, height=50mm]{images/datagridEff.png}
 \caption{Efficiency \% = Number of jobs successfully completed / Total Number of jobs submitted: results are provided for five experiments involved in the project.}
 \label{fig:efficiency}
 \end{figure}
@@ -360,7 +360,7 @@ as well as for metric tracking, making queries on the collected data to display
 them through a chart generation framework.
 
 
- 
+
 \subsection{EGI--Integrated Sustainable Pan--European Infrastructure}
 
 The {\sl EGI--InSPIRE} (Integrated Sustainable Pan--European Infrastructure for
@@ -381,12 +381,12 @@ QC defined a set of requirements in different areas: documentation, deployment, 
 model and operations.
 
 
-The impact of the quality assurance activities was observed once the EMI software contributed to the 
+The impact of the quality assurance activities was observed once the EMI software contributed to the
 EGI--InSPIRE project. The data reported in Table \ref{tab:emi} (see page 13 in \cite{emi-quality-model})
 summarizes the EMI software quality evolution per project quarters (PQ) as evaluated by the EGI project
-with the help of the UMD QC. We can observe the improvement in quality of the EMI releases over time, 
+with the help of the UMD QC. We can observe the improvement in quality of the EMI releases over time,
 measured by the number of products that both met the software distribution criteria, by means of the UMD QC
-definition, and the EGI Stage Rollout (SR) phase. This latter phase completed the criteria validation by 
+definition, and the EGI Stage Rollout (SR) phase. This latter phase completed the criteria validation by
 deploying the UMD QC--certified software in a set of candidate production sites.
 
 \begin{table}[!h]
@@ -394,7 +394,7 @@ deploying the UMD QC--certified software in a set of candidate production sites.
 \caption{EMI software quality evolution}
 \label{tab:emi}
 \centering
-\begin{tabular}{lp{1cm}p{1cm}p{1cm}p{1cm}}
+\begin{tabular}{lp{1.6cm}p{1.6cm}p{1.3cm}p{1.5cm}}
 \hline
 \hline
 PQ & Release Products (RP) & N. RP Passed UMD QC & N. RP Passed SR & N. RP Failed UMD QC\\
@@ -1025,6 +1025,15 @@ T. Dingsoyr, S. Nerur, V. Balijepally and N. B. Moe,
 \emph{J. Syst. Softw.},
 vol. 85, no. 6, pp. 1213--1221, Jun. 2012.
 
+
+\bibitem{cmm}
+M. Paulk, B. Curtis, M. Chrissis and V. C. Weber,
+``Capability maturity model for software,''
+Softw. Eng. Inst.,
+Technical Report CMU/SEI-93-TR-024, ESC-TR-93-177, Feb. 1993.
+[Online]. Available: \url{https://resources.sei.cmu.edu/asset_files/TechnicalReport/1993_005_001_16211.pdf}.
+[Accessed 4 Jun. 2018].
+
 \bibitem{datagridguide}
 Quality Assurance Group, ``DataGrid - European DataGrid Developers' Guide,''
 2003.
@@ -1040,13 +1049,6 @@ DataGrid, ``DataGrid Internal Document - Quality and Performance Indicators for 
 
 
 
-\bibitem{cmm}
-M. Paulk, B. Curtis, M. Chrissis and V. C. Weber,
-``Capability maturity model for software,''
-Softw. Eng. Inst.,
-Technical Report CMU/SEI-93-TR-024, ESC-TR-93-177, Feb. 1993.
-[Online]. Available: \url{https://resources.sei.cmu.edu/asset_files/TechnicalReport/1993_005_001_16211.pdf}.
-[Accessed 4 Jun. 2018].
 
 \bibitem{cordis:egee}
 \emph{Enabling Grids for E--sciencE (EGEE)} project, European Community Research and
