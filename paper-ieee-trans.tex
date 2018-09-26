@@ -809,7 +809,10 @@ delivery of packages. Thereby, safe and frequent software releases are possible,
 the impact on production systems. In this regard, a pre--production validation,
 through the preview testbeds or resource center's early adoption -- handled by the
 Staged--rollout process -- alleviates the likelihood of discovering uncovered
-issues at production.
+issues at production. To put it in numbers, as Fig.~\ref{fig:ingigobugs} showcases, the 
+total number of defects detected in the pre--production stages surpassed by a factor of 30
+the ones reported by external users, over the lifetime of the {\sl INDIGO-DataCloud} 
+project.
 
 The software lifecycle demands as well a continuous measurement and analysis
 process, which allows timely reactions to discover and fix defects throughout the
@@ -829,11 +832,15 @@ project are maintained leveraging the same source code repositories and CI infra
 knowledge transfer among subsequent software development initiatives is key for the good progress of
 delivering reliable software.
 
-Figure \ref{fig:ingigobugs}
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.5\textwidth, height=50mm]{images/indigoBugs.png}
-\caption{Number of INDIGO bugs detected during the development and production phases.}
+\caption{Number of defects detected in development and production stages over the lifetime of the
+{\sl INDIGO-DataCloud} project. The defects started to arise in the second year of the project, 
+in parallel with the release of {\sl INDIGO--1} software, while the major activity was concentrated in the
+months that preceded the second major release of {\sl INDIGO--2}, in April 2017. The practical implementation
+of the SQA definition described throughout this paper was the key actor in uncovering defects while in pre--production
+stages, thus not affecting the software released.}
 \label{fig:indigobugs}
 \end{figure}
 
