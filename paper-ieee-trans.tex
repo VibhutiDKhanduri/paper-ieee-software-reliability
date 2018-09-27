@@ -694,6 +694,24 @@ ceased. The support of the CI infrastructure, once reached the project's end of 
 continued maintenance and development of the prevailing software. Some development teams deployed
 parallel CI systems, taking advantage of the experience gained during the project.
 
+\begin{figure*}[ht]
+	\centering
+	\begin{subfigure}
+		\centering
+\includegraphics[width=0.85\textwidth]{images/disvis-flow.png}
+\caption{DevOps pipeline to distribute Docker images for Disvis application.}
+\label{fig:fig_disvis}
+	\end{subfigure}
+	\quad
+	\begin{subfigure}
+		\centering
+\includegraphics[width=\textwidth]{images/pilotpreview.png}
+\caption{Resource centers supporting the Pilot Preview testbed and corresponding
+set of deployed {\sl INDIGO--DataCloud} components or services.}
+\label{fig:fig_pilotpreview}
+	\end{subfigure}
+\end{figure*}
+
 \subsubsection{Continuous Delivery}
 As DevOps suggests, frequent releases positively affect the reliability of the software as
 they reduce the time in which a given defect is exposed or has an impact, allowing the
@@ -722,23 +740,6 @@ with the label corresponding to the current {\sl INDIGO--DataCloud} release.
 Fig.~\ref{fig:fig_CD} shows the complete workflow of the Docker container CD implementation,
 automatically triggered by a change in the source code.
 
-\begin{figure*}
-	\centering
-	\begin{subfigure}
-		\centering
-\includegraphics[width=0.85\textwidth]{images/disvis-flow.png}
-\caption{DevOps pipeline to distribute Docker images for Disvis application.}
-\label{fig:fig_disvis}
-	\end{subfigure}
-	\quad
-	\begin{subfigure}
-		\centering
-\includegraphics[width=\textwidth]{images/pilotpreview.png}
-\caption{Resource centers supporting the Pilot Preview testbed and corresponding
-set of deployed {\sl INDIGO--DataCloud} components or services.}
-\label{fig:fig_pilotpreview}
-	\end{subfigure}
-\end{figure*}
 
 \subsubsection{DevOps adoption from user communities}
 
@@ -809,10 +810,21 @@ delivery of packages. Thereby, safe and frequent software releases are possible,
 the impact on production systems. In this regard, a pre--production validation,
 through the preview testbeds or resource center's early adoption -- handled by the
 Staged--rollout process -- alleviates the likelihood of discovering uncovered
-issues at production. To put it in numbers, as Fig.~\ref{fig:ingigobugs} showcases, the 
+issues at production. To put it in numbers, as Fig.~\ref{fig:indigobugs} showcases, the
 total number of defects detected in the pre--production stages surpassed by a factor of 30
-the ones reported by external users, over the lifetime of the {\sl INDIGO-DataCloud} 
+the ones reported by external users, over the lifetime of the {\sl INDIGO-DataCloud}
 project.
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth, height=50mm]{images/indigoBugs.png}
+\caption{Number of defects detected in development and production stages over the lifetime of the
+{\sl INDIGO-DataCloud} project. The defects started to arise in the second year of the project,
+in parallel with the release of {\sl INDIGO--1} software, while the major activity was concentrated in the
+months that preceded the second major release of {\sl INDIGO--2}, in April 2017. The practical implementation
+of the SQA definition described throughout this paper was the key actor in uncovering defects while in pre--production
+stages, thus not affecting the software released.}
+\label{fig:indigobugs}
+\end{figure}
 
 The software lifecycle demands as well a continuous measurement and analysis
 process, which allows timely reactions to discover and fix defects throughout the
@@ -832,17 +844,6 @@ project are maintained leveraging the same source code repositories and CI infra
 knowledge transfer among subsequent software development initiatives is key for the good progress of
 delivering reliable software.
 
-\begin{figure}[ht]
-\centering
-\includegraphics[width=0.5\textwidth, height=50mm]{images/indigoBugs.png}
-\caption{Number of defects detected in development and production stages over the lifetime of the
-{\sl INDIGO-DataCloud} project. The defects started to arise in the second year of the project, 
-in parallel with the release of {\sl INDIGO--1} software, while the major activity was concentrated in the
-months that preceded the second major release of {\sl INDIGO--2}, in April 2017. The practical implementation
-of the SQA definition described throughout this paper was the key actor in uncovering defects while in pre--production
-stages, thus not affecting the software released.}
-\label{fig:indigobugs}
-\end{figure}
 
 
 
