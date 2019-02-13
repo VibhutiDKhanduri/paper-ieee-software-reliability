@@ -718,7 +718,22 @@ Tackling the granularity of the former SQA requirements -- most of which account
 is hardly achieved without the aid of automation. The introduction of automation to validate the quality
 requirements increases the overall reliability of the produced software: automated testing is more
 time-efficient, leading to higher code coverages and increased defect detection, when compared with a manual
-approach \cite{rafi2012}.
+approach \cite{rafi2012}. To put it in numbers, as Fig.~\ref{fig:indigobugs} showcases, the
+total number of defects detected in the pre--production stages surpassed by a factor of 30
+the ones reported by external users, over the lifetime of the {\sl INDIGO-DataCloud}
+project.
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth, height=50mm]{images/indigoBugs.png}
+\caption{Number of defects detected in development and production stages over the lifetime of the
+{\sl INDIGO-DataCloud} project. The defects started to arise in the second year of the project,
+in parallel with the release of {\sl INDIGO--1} software, while the major activity was concentrated in the
+months that preceded the second major release of {\sl INDIGO--2}, in April 2017. The practical implementation
+of the SQA definition described throughout this paper was the key actor in uncovering defects while in pre--production
+stages, thus not affecting the software released.}
+\label{fig:indigobugs}
+\end{figure}
+
 
 As any new change, involving a new feature or fix, passes through the automated
 SQA machinery, the software is always ready to be released. As a result, the often compromised harmonization
@@ -907,21 +922,7 @@ delivery of packages. Thereby, safe and frequent software releases are possible,
 the impact on production systems. In this regard, a pre--production validation,
 through the preview testbeds or resource center's early adoption -- handled by the
 Staged--rollout process -- alleviates the likelihood of discovering uncovered
-issues at production. To put it in numbers, as Fig.~\ref{fig:indigobugs} showcases, the
-total number of defects detected in the pre--production stages surpassed by a factor of 30
-the ones reported by external users, over the lifetime of the {\sl INDIGO-DataCloud}
-project.
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.8\textwidth, height=50mm]{images/indigoBugs.png}
-\caption{Number of defects detected in development and production stages over the lifetime of the
-{\sl INDIGO-DataCloud} project. The defects started to arise in the second year of the project,
-in parallel with the release of {\sl INDIGO--1} software, while the major activity was concentrated in the
-months that preceded the second major release of {\sl INDIGO--2}, in April 2017. The practical implementation
-of the SQA definition described throughout this paper was the key actor in uncovering defects while in pre--production
-stages, thus not affecting the software released.}
-\label{fig:indigobugs}
-\end{figure}
+issues at production.
 
 The software lifecycle demands as well a continuous measurement and analysis
 process, which allows timely reactions to discover and fix defects throughout the
