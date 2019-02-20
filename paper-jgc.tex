@@ -79,9 +79,9 @@
 
 %\titlerunning{Short form of title}        % if too long for running head
 
-\author{M. David \and
+\author{P. Orviz Fernandez \and
+        M. David \and
         D. C. Duma \and
-        P. Orviz Fernandez \and
         E. Ronchieri \and
         J. Gomes \and
         D. Salomoni
@@ -92,7 +92,12 @@
 
 %\authorrunning{Short form of author list} % if too long for running head
 
-\institute{M. David \at
+\institute{
+P. Orviz Fernandez \at
+CSIC, Santander, Spain \\
+\email{orviz@ifca.unican.es}
+\and
+M. David \at
 LIP, Lisbon, Portugal \\
 %Tel.: +123-45-678910\\
 %Fax: +123-45-678910\\
@@ -102,10 +107,6 @@ LIP, Lisbon, Portugal \\
 D. C. Duma \at
 INFN - CNAF, Bologna, Italy\\
 \email{cristina.aiftimiei@cnaf.infn.it}
-\and
-P. Orviz Fernandez \at
-CSIC, Santander, Spain \\
-\email{orviz@ifca.unican.es}
 \and
 J. Gomes \at
 LIP, Lisbon, Portugal \\
@@ -467,7 +468,7 @@ Grid Initiatives and interoperable with other Grids worldwide.
 This goal would be accomplished through the
 development and maintenance of various operational tools -- such as the Operations Portal \cite{egi-ops},
 the {\sl EGI} Helpdesk \cite{ggus}, or the Grid configuration database (GOCDB) \cite{gocdb} -- and the
-management of the software provisioning process \cite{mario}, dealing with the validation and distribution of the software to
+management of the software provisioning process (SWPP) \cite{mario}, dealing with the validation and distribution of the software to
 the production infrastructures. As a result, this process led to a production--ready
 Grid computing middleware distribution named {\sl UMD} (Unified Middleware Distribution). At that time the {\sl UMD}
 was a stack of about 250 software components from several technology providers, such
@@ -510,18 +511,19 @@ PQ & Release Products (RP) & N. RP Passed UMD QC & N. RP Passed SR & N. RP Faile
 deployed in the European scientific e--Infrastructures under the follow--up
 project {\sl EGI--Engage} (Engaging the EGI Community towards an Open Science
 Commons) \cite{cordis:egi-engage}. This distribution is currently complemented
-by a Cloud--specific one called {\sl CMD} (Cloud Middleware Distribution).
-
-
-
+by a Cloud--specific one called {\sl CMD} (Cloud Middleware Distribution). The
+increase in the number of products that the new CMD distribution brought in,
+compromised the effectiveness of the SWPP realization, in particular the
+software validation phase. The modernization of the EGI QC validation was
+accomplished through the adoption of automation, by means of the programmatic
+evaluation of its fundamental quality requirements \cite{orviz2018umd}.
 
 \subsection{INtegrating Distributed data Infrastructures for Global explOitation}
 
 The {\sl INDIGO--DataCloud} (INtegrating Distributed data Infrastructures for Global
-explOitation, Apr 2015 -- Sep 2017) \cite{cordis:indigo} is the last
-project of software development considered in this paper. At the time of writing,
-the project is succeeding in providing solutions to address the existing gaps in
-Cloud Platform--as--a--Service (PaaS) and Software--as--a--Service (SaaS) levels,
+explOitation, Apr 2015 -- Sep 2017) \cite{salomoni2018indigo} is the last
+project of software development considered in this paper. The project addressed
+the existing gaps at the Cloud Platform--as--a--Service (PaaS) and Software--as--a--Service (SaaS) levels,
 helping developers, e--Infrastructure administrators and scientific communities to exploit
 Cloud computing benefits.
 
@@ -529,8 +531,8 @@ Cloud computing benefits.
 \label{sec:ntsr}
 
 {\sl INDIGO--DataCloud} is the most recent project included in this paper, it
-leveraged the lessons learned from the previous experiences described in
-Section~\ref{sec:ev}. The expertise gathered throughout these years was highly
+leverages the lessons learned from the previous experiences described in
+Section~\ref{sec:ev} and, consequently, it will be thoroughly analyzed. The expertise gathered throughout these years was highly
 profitable regarding evaluation and application of innovative software engineering
 methodologies, management of new technologies to put those methodologies
 into practice, compilation and analysis of an appropriate set of metrics to measure the
@@ -594,8 +596,9 @@ They emphasize the quality requirements and best practices to be applied at the
 development phase, such as style and testing compliance or human code reviews, to protect the
 production source code versions. Furthermore, the criteria promote the adoption of the software
 by providing minimum requirements of documentation content and stressing the usage of automated
-solutions for software deployment. The SQA criteria are continuously evolving \cite{sqa-baseline}, aiming at serving
-as a reference for future software development projects within the European research ecosystem.
+solutions for software deployment. The SQA criteria are publicly available \cite{sqa-baseline} and
+it is continuously evolving by means of an open collaboration procedure \cite{sqa-baseline-repo}
+that aims at serving as a reference for quality assurance realization in research software.
 
 \begin{itemize}
 \item \textit{Code style}.
@@ -717,7 +720,22 @@ Tackling the granularity of the former SQA requirements -- most of which account
 is hardly achieved without the aid of automation. The introduction of automation to validate the quality
 requirements increases the overall reliability of the produced software: automated testing is more
 time-efficient, leading to higher code coverages and increased defect detection, when compared with a manual
-approach \cite{rafi2012}.
+approach \cite{rafi2012}. To put it in numbers, as Fig.~\ref{fig:indigobugs} showcases, the
+total number of defects detected in the pre--production stages surpassed by a factor of 30
+the ones reported by external users, over the lifetime of the {\sl INDIGO-DataCloud}
+project.
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth, height=50mm]{images/indigoBugs.png}
+\caption{Number of defects detected in development and production stages over the lifetime of the
+{\sl INDIGO-DataCloud} project. The defects started to arise in the second year of the project,
+in parallel with the release of {\sl INDIGO--1} software, while the major activity was concentrated in the
+months that preceded the second major release of {\sl INDIGO--2}, in April 2017. The practical implementation
+of the SQA definition described throughout this paper was the key actor in uncovering defects while in pre--production
+stages, thus not affecting the software released.}
+\label{fig:indigobugs}
+\end{figure}
+
 
 As any new change, involving a new feature or fix, passes through the automated
 SQA machinery, the software is always ready to be released. As a result, the often compromised harmonization
@@ -906,21 +924,7 @@ delivery of packages. Thereby, safe and frequent software releases are possible,
 the impact on production systems. In this regard, a pre--production validation,
 through the preview testbeds or resource center's early adoption -- handled by the
 Staged--rollout process -- alleviates the likelihood of discovering uncovered
-issues at production. To put it in numbers, as Fig.~\ref{fig:indigobugs} showcases, the
-total number of defects detected in the pre--production stages surpassed by a factor of 30
-the ones reported by external users, over the lifetime of the {\sl INDIGO-DataCloud}
-project.
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.8\textwidth, height=50mm]{images/indigoBugs.png}
-\caption{Number of defects detected in development and production stages over the lifetime of the
-{\sl INDIGO-DataCloud} project. The defects started to arise in the second year of the project,
-in parallel with the release of {\sl INDIGO--1} software, while the major activity was concentrated in the
-months that preceded the second major release of {\sl INDIGO--2}, in April 2017. The practical implementation
-of the SQA definition described throughout this paper was the key actor in uncovering defects while in pre--production
-stages, thus not affecting the software released.}
-\label{fig:indigobugs}
-\end{figure}
+issues at production.
 
 The software lifecycle demands as well a continuous measurement and analysis
 process, which allows timely reactions to discover and fix defects throughout the
@@ -981,7 +985,7 @@ research and innovation programme under grant agreement RIA--654142.
 \bibitem{h2020}
 \emph{Horizon 2020} -- European Commission.
 [Online]. Available: \url{https://ec.europa.eu/programmes/horizon2020/}.
-[Accessed 4 Jun. 2018].
+[Accessed 14 Feb. 2019].
 
 \bibitem{lingrand-egee}
 D. Lingrand, J. Montagnat, J. Martyniak and D. Colling,
@@ -1017,7 +1021,7 @@ vol. 396, no. 5, 2012.
 K. Beck \emph{et al.},
 ``Manifesto for Agile Software Development,'' 2012.
 [Online]. Available: \url{http://www.agilemanifesto.org/}.
-[Accessed 4 Jun. 2018].
+[Accessed 14 Feb. 2019].
 
 \bibitem{zhu}
 L. Zhu, L. Bass and G. Champlin--Scharff,
@@ -1145,41 +1149,37 @@ M. Paulk, B. Curtis, M. Chrissis and V. C. Weber,
 Softw. Eng. Inst.,
 Technical Report CMU/SEI-93-TR-024, ESC-TR-93-177, Feb. 1993.
 [Online]. Available: \url{https://resources.sei.cmu.edu/asset_files/TechnicalReport/1993_005_001_16211.pdf}.
-[Accessed 4 Jun. 2018].
+[Accessed 14 Feb. 2019].
 
 \bibitem{datagridguide}
 Quality Assurance Group, ``DataGrid - European DataGrid Developers' Guide,''
 2003.
 [Online] Available: \url{https://edms.cern.ch/ui/file/358824/1.1/EDG-DevGuide-v1-2.pdf}
-[Accessed 30 Aug. 2018].
+[Accessed 14 Feb. 2019].
 
 \bibitem{datagridindicators}
 DataGrid, ``DataGrid Internal Document - Quality and Performance Indicators for DataGrid,''
 2003.
 [Online] Available: \url{https://edms.cern.ch/ui/file/386039/2/QIv0-3.pdf}
-[Accessed 30 Aug. 2018].
-
-
-
-
+[Accessed 14 Feb. 2019].
 
 \bibitem{cordis:egee}
 \emph{Enabling Grids for E--sciencE (EGEE)} project, European Community Research and
 Development Information Service (CORDIS).
 [Online] Available: \url{http://cordis.europa.eu/project/rcn/80149_en.html}
-[Accessed 4 Jun. 2018].
+[Accessed 14 Feb. 2019].
 
 \bibitem{cordis:egee2}
 \emph{Enabling Grids for E--sciencE--II (EGEE--II)} project, European Community Research and
 Development Information Service (CORDIS).
 [Online] Available: \url{http://cordis.europa.eu/project/rcn/99189_en.html}
-[Accessed 4 Jun. 2018].
+[Accessed 14 Feb. 2019].
 
 \bibitem{cordis:egee3}
 \emph{Enabling Grids for E--sciencE--III (EGEE--III)} project, European Community
 Research and Development Information Service (CORDIS).
 [Online] Available: \url{http://cordis.europa.eu/project/rcn/87264_en.html}
-[Accessed 4 Jun. 2018].
+[Accessed 14 Feb. 2019].
 
 \bibitem{egee}
 F. Gagliardi and M. E. Begin,
@@ -1205,7 +1205,7 @@ ch. 11, pp. 63--70, 2003.
 \emph{Definition and Documentation of the Revised Software Life--Cycle Process},
 Milestone MSA3.4.2, 2010, EGEE--III project.
 [Online]. Available: \url{https://edms.cern.ch/ui/file/1062487/2/EGEE-III-MSA3.4.2-1062487-v1_4.pdf}.
-[Accessed 4 Jun. 2018].
+[Accessed 14 Feb. 2019].
 
 \bibitem{etics}
 A D Meglio, M-E Begin, P Couvares, E Ronchieri and E Takacs,
@@ -1225,7 +1225,7 @@ Chicago, IL, pp. 1--10, 2012.
 \emph{ISO/IEC 9126 Software Engineering - Product Quality},
 International Organization for Standardization.
 [Online]. Available: \url{https://www.iso.org/standard/22749.html}.
-[Accessed 4 Jun. 2018].
+[Accessed 14 Feb. 2019].
 
 \bibitem{emi-quality-model}
 M. Alandes \emph{et al.},
@@ -1266,40 +1266,46 @@ vol. 12, no. 3, pp. 543--558, 2014.
 \bibitem{egi-qc}
 \emph{EGI Quality Criteria}.
 [Online]. Available: \url{https://egi-qc.github.io/}.
-[Accessed 4 Jun. 2018].
+[Accessed 14 Feb. 2019].
 
 \bibitem{cordis:egi-engage}
 \emph{Engaging the EGI Community towards an Open Science Commons (EGI--ENGAGE)}
 project, European Community Research and Development Information Service (CORDIS).
 [Online] Available: \url{http://cordis.europa.eu/project/rcn/194937_en.html}
-[Accessed 4 Jun. 2018].
+[Accessed 14 Feb. 2019].
 
-\bibitem{cordis:indigo}
+\bibitem{orviz2018umd}
+P. Orviz \emph{et al.},
+``umd-verification: Automation of Software Validation for the EGI Federated e-Infrastructure,''
+\emph{J. Grid Comp.},
+vol. 16, no. 4, pp. 683--696, 2018.
+
+\bibitem{salomoni2018indigo}
 D. Salomoni \emph{et al.},
-``INDIGO-DataCloud: A data and computing platform to facilitate seamless access to e-infrastructures,''
-\emph{CoRR},
-vol. abs/1711.01981, 2018.
-[Online]. Available: \url{http://arxiv.org/abs/1711.01981}.
-[Accessed 4 Jun. 2018].
-
-
-
-
-
+``Indigo-datacloud: a platform to facilitate seamless access to e-infrastructures,''
+\emph{J. Grid Comp.},
+vol. 16, no. 3, pp. 381--408, 2018.
 
 \bibitem{indigo-d31}
 J. Gomes \emph{et al.},
 ``Initial Plan for WP3,''
 \emph{INDIGO--DataCloud Deliverable 3.1}.
 [Online]. Available: \url{https://www.indigo-datacloud.eu/documents/initial-plan-wp3-d31}.
-[Accessed 4 Jun. 2018].
+[Accessed 14 Feb. 2019].
 
 \bibitem{sqa-baseline}
 Pablo Orviz \emph{et al.},
 ``A set of common software quality assurance baseline criteria for research projects,''
 2017.
-[Online]. Available: \url{http://digital.csic.es/bitstream/10261/160086/4/CommonSQA-v2.pdf}.
-[Accessed 4 Jun. 2018].
+[Online]. Available: \url{http://hdl.handle.net/10261/160086}.
+[Accessed 14 Feb. 2019].
+
+\bibitem{sqa-baseline-repo}
+Members of the INDIGO-DataCloud, DEEP Hybrid-DataCloud and eXtreme DataCloud collaborations, 2015-2020,
+``A set of Common Software Quality Assurance Baseline Criteria for Research Projects,''
+2018.
+[Online]. Available: \url{https://github.com/indigo-dc/sqa-baseline}
+[Accessed 14 Feb. 2019].
 
 \bibitem{unit-test-frameworks}
 Paul Hamill,
@@ -1309,53 +1315,53 @@ Paul Hamill,
 
 
 \bibitem{foot1}
-indigo-dc, ``Sign in to GitBook - GitBook,''
+indigo-dc, ``indigo-dc Spaces - GitBook,''
 2018.
 [Online]. Available: \url{https://www.gitbook.com/@indigo-dc}.
-[Accessed 30 Aug. 2018].
+[Accessed 14 Feb. 2019].
 
 \bibitem{foot2}
 puppetforge, ``Modules by INDIGO Datacloud - Puppet Forge,''
 2018.
 [Online]. Available: \url{https://forge.puppet.com/indigodc}.
-[Accessed 30 Aug. 2018].
+[Accessed 14 Feb. 2019].
 
 \bibitem{foot3}
 GALAXY, ``Ansible Galaxy,''
 2018.
 [Online]. Available: \url{https://galaxy.ansible.com/indigo-dc/}
-[Accessed 30 Aug. 2018].
+[Accessed 14 Feb. 2019].
 
 \bibitem{foot4}
 GitHub Developer, ``GitHub API v3 | GitHub Developer Guide,''
 2018.
 [Online]. Available: \url{https://developer.github.com/v3/}
-[Accessed 30 Aug. 2018].
+[Accessed 14 Feb. 2019].
 
 
 \bibitem{foot5}
 Jenkins, ``Jenkins,''
 2018.
 [Online]. Available: \url{https://jenkins.io/}
-[Accessed 30 Aug. 2018].
+[Accessed 14 Feb. 2019].
 
 \bibitem{foot6}
 GRIMOIRELAB, ``GrimoireLab - Software Development and Community Analytics Platform,''
 2017.
 [Online]. Available: \url{http://grimoirelab.github.io/}
-[Accessed 30 Aug. 2018].
+[Accessed 14 Feb. 2019].
 
 \bibitem{foot7}
 Jenkins Indigo-dc, ``Jenkins - Indigo-DataCloud,''
 2018.
-[Online]. Available: \url{https://jenkins.indigo-datacloud.eu/}
-[Accessed 30 Aug. 2018].
+[Online]. Available: \url{https://jenkins.indigo-datacloud.eu:8080/}
+[Accessed 14 Feb. 2019].
 
 \bibitem{foot8}
 Indigo-dc, ``indigodatacloud - Docker Hub,''
 2018.
 [Online]. Available: \url{https://hub.docker.com/u/indigodatacloud}
-[Accessed 30 Aug. 2018].
+[Accessed 14 Feb. 2019].
 
 \bibitem{rafi2012}
 D. M. Rafi \emph{el al.},
@@ -1368,7 +1374,7 @@ in \emph{Proc. 7th Int. Workshop Automation Softw. Test},
 GitHub, ``Learn Git and GitHub without any code!,''
 2018.
 [Online]. Available: \url{https://github.com/}
-[Accessed 30 Aug. 2018].
+[Accessed 14 Feb. 2019].
 
 \bibitem{chen2015}
 L. Chen,
