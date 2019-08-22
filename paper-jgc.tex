@@ -71,10 +71,11 @@
 %
 \begin{document}
 
-\title{Evolution of Processes in Delivering Reliable Software within the European Scientific Arena%\thanks{Grants or other notes
-%about the article that should go on the front page should be
-%placed here. General acknowledgments should be placed at the end of the article.}
-}
+%\title{Evolution of Processes in Delivering Reliable Software within the Distributed European Research Infrastructures%\thanks{Grants or other notes
+%%about the article that should go on the front page should be
+%%placed here. General acknowledgments should be placed at the end of the article.}
+%}
+\title{Delivering more Reliable Software within the INDIGO-DataCloud project: a converging evolution of software engineering practices to support European Research e-Infrastructures}
 %\subtitle{}
 
 %\titlerunning{Short form of title}        % if too long for running head
@@ -133,19 +134,21 @@ INFN - CNAF, Bologna, Italy\\
 From the advent of Grid technology -- as the new paradigm of distributed
 computing -- to the current days of Cloud computing models, the continuous need
 of new tools and services to match the scientific community requirements has been
-addressed in Europe by various projects dedicated to software development
-and e--Infrastructure creation, operation and management.
-This work examines the evolution of the software engineering processes used in past and
-present European Commission--funded projects to illustrate how the research on software
-reliability has progressed in Europe over the last 15 years following the foundation of the
-first project in 2001. In particular, we will summarize the techniques and procedures
-applied to deliver quality software, highlighting the main challenges and barriers confronted
-at the time, and how they were partially or totally overcome. The knowledge base established
-throughout the years, sustained by the advances in the area of software engineering,
-definitely constituted a significant breakthrough in the reliability of software delivered in the
-European research arena. Recent software development projects funded by the European
-Commission are good evidence of such insights, where the enforcement of Quality Assurance
-procedures is present since the very early stages of the software development process.
+addressed in Europe through dedicated software development projects for
+e--Infrastructure creation, operation and management.
+This work presents the most significant software quality breakthroughs obtained in
+one of such projects, {\sl INDIGO--DataCloud}, the main challenges and barriers 
+confronted throughout the lifespan of the project, and how they were partially or 
+totally overcome.
+The knowledge base established throughout the last 15 years 
+of diverse software development initiatives in Europe for sustaining distributed research 
+e-Infrastructures, supported by the advances in the area of software engineering, definitely
+%constituted a significant breakthrough in the reliability of the software delivered in the 
+contributed to improve the reliability of the software delivered, and consequently, the 
+operational stability of the European e--Infrastructures. {\sl INDIGO--DataCloud} project is 
+a good evidence of such insights, where, unlike the preceding trend found in past projects,
+the enforcement of Software Quality Assurance practices has been present since the very early 
+stages of the software lifecycle.
 \keywords{Software Reliability \and Quality Assurance \and Software Metrics \and Software Testing
 Techniques \and DevOps}
 % \PACS{PACS code1 \and PACS code2 \and more}
@@ -154,59 +157,114 @@ Techniques \and DevOps}
 
 \section{Introduction}
 \label{intro}
-During the last 15 years the provision of an European e--Infrastructure,
-supporting unified access to large--scale computing and intense data analysis
-applications, has been driven by the needs of scientific communities as part of their
-pan--European research collaborations. One such example is the Worldwide
-Large Hadron Collider (LHC) Computing Grid infrastructure, driven
-by the particle physics scientific community, built to satisfy the computing needs
-of processing, storing and analysis of the very large amount of data produced by the
-LHC particle accelerator.
 
-A significant number of innovation projects and technology transfer
-activities -- later discussed in Section~\ref{sec:ev} --
-were funded by the 5$^{th}$, 6$^{th}$ and 7$^{th}$ Framework Programmes of the European Commission (EC)
-and recently by the Horizon 2020 programme \cite{h2020}. Their main goal was to develop
-software solutions that provide a seamless and transparent access by researchers to
-distributed computing and data resources.
+Throughout the last 15 years, Europe has have continuously invested on software development initiatives to provide
+research e--Infrastructures with the capability of supporting unified access to large--scale computing and intense 
+data analysis facilities. The developed tools have enabled the federation of geographically distributed resource 
+providers, with the ultimate aim of supporting the growing needs of the scientific comumunities. According to their
+requirements, those research e--Infrastructures have been evolving, exploiting diverse distributed computing 
+technologies namely Grid, in the first place, and, eventually, Cloud.
 
-Major developments carried throughout the years were focused on providing new
-functionalities, whereas in the early days the adoption of software engineering methodologies had a lower priority.
-The released software was less tested, resulting in a higher rate of
-rollbacks and patches applied to production systems, compared to the later projects. Thereby, the stability and
-reliability of the e--Infrastructures was often compromised \cite{lingrand-egee}, leading to outages
-in the participant resource centers. Back in the days when Grid middleware was actively developed, researchers
-reported the need of improvements both in terms of reliability and performance \cite{campana-atlas}, eventually
-developing their own custom solutions \cite{kindermann}\cite{mendez-lorenzo} on top of the existing services.
+The urging needs of providing stable e--Infrastructures, which were based on novel distributed computing technologies, 
+initially drove the efforts spent in software development towards the provision of new functionalities, relegating the 
+adoption of software engineering methodologies to a second place. The released software was less tested, resulting in 
+a high rate of rollbacks and patches applied to production systems, when compared to the subsequent projects. 
+Thereby, the stability and reliability of the e--Infrastructures were often compromised \cite{lingrand-egee}, leading 
+to outages in the participant resource centers. Back in the days when Grid middleware was actively developed, 
+researchers reported the need of improvements both in terms of reliability and performance \cite{campana-atlas}, 
+eventually developing their own custom solutions \cite{kindermann}\cite{mendez-lorenzo} on top of the existing services.
 
-In an effort to improve the research community's experience, it became apparent the need for a better
-balance between the addition of new features and the reliability of the released software. Consequently,
-incoming European funding programmes and open calls stressed the fact of devoting a substantial part of the software lifecycle to the improvement of the quality of the software being delivered. At this point, evolving software engineering practices were considered
-and gradually adopted to define and implement quality procedures, the organization of
-cross--functional teams and deployment of pilot testbeds.
+In an effort to improve the operational experience of research communities, it soon became apparent the need for a better 
+balance between the addition of new features and the reliability of the released software. Consequently, incoming European 
+funding programmes and open calls progressivelly stressed the fact of devoting a more substantial part of the software 
+lifecycle to the improvement of the quality and sustainability of the products being delivered. At this point,
+evolving software engineering practices were considered and gradually adopted in order to define and implement the quality
+procedures, the organization of cross--functional teams and the deployment of pilot testbeds.
 
-Analysing the EC--funded software projects over the last decade,
-one can observe a continuous increase in the prominence and robustness of software
-testing and validation procedures \cite{aiftimiei}. The
-evolution of the software engineering methodologies (creation of the Agile
-Manifesto \cite{agile-manifesto}, and rise of DevOps practices \cite{zhu}) together
-with the parallel advancements in the information and communication technology
-field (such as virtualization, the enabling technology for Cloud computing and
-operating--system--level virtualization known as containerization \cite{soltesz}) motivated this trend.
-This evolution was complemented by the emergence of automation and event--response tools.
+The increasing prominence of software quality procedures observed in the analysis of the last decade of EU--funded
+projects related to the development of distributed computing solutions --as described in Section~\ref{sec:ev}--, is 
+pictured in the software project herein introduced: {\sl INDIGO--DataCloud}. As we will thoroughly describe in the next
+sections, the ground base laid by these preceding projects and the adoption of practices taken from the prevailing 
+software engineering methodologies --in particular the Agile Software Development \cite{agile-manifesto} and the DevOps
+culture \cite{zhu}--, were the catalyst to establish a set of Software Quality Assurance (SQA) criteria 
+-- as explained in Section~\ref{software-quality-procedures} -- that guided the software lifecycle of the software 
+produced.
 
-In this paper, we outline a set of EC--funded projects
-ranging from 2001 to nowadays, in which the authors were involved.
-For each project, the challenges, the methodologies and
-the achievements towards software reliability are described.
+Following the DevOps principles, the SQA criteria requires the verification of the source code on each change in the 
+production version, defining the essential requirements to be processed. Such scenario is hardly accomplished without
+the aid of automation, and as a consequence -- as described in Section~\ref{software-automation} -- the testing and 
+validation solution adopted by {\sl INDIGO--DataCloud} relied on the great advancements that continuous integration 
+(CI) tools have undergone in the last years. Accordingly, both the validation and delivery of {\sl INDIGO--DataCloud} 
+software was tackled by automation means.
 
-The remainder of this paper is
-organized as follows. Section~\ref{sec:b} summarizes the essential context of the research problem.
-Section~\ref{sec:ev} details the evolution of research on
-software reliability in EC--projects. Section~\ref{sec:ntsr} provides
-information about new research trends in software reliability based upon the
-experiences from the recent {\sl INDIGO--DataCloud} project (INDIGO--DC).
-Conclusions are drawn in Section~\ref{sec:con}.
+The fundamental shift brought by the INDIGO--DC SQA procedures was 
+to act at the early stages of the software development lifecycle. Thus, instead of validating the software product once 
+it was packaged within a pre-release stage, the source code itself is verified for each minor change. This strategy 
+allows to improve the sustainability of the software, by checking the compliance with code style standards, and its 
+reliability, through the execution of functional and integration tests, ensuring the total absence of regressions. The results
+presented in this paper show a divergence between the high rate of bug fixes resolved at development time and the 
+significantly lower number of bugs detected by the end users. Consequently, bugs are more effortessly fixed since they 
+are early captured and end users interface with more reliable and stable software.
+
+The paper is organized as follows. Section~\ref{sec:b} summarizes the essential context of the research problem.
+Section~\ref{sec:ev} details the evolution of research on software reliability in the selected EC--projects. 
+Section~\ref{sec:ntsr} provides information about new research trends in software reliability based upon the
+experiences from the recent {\sl INDIGO--DataCloud} project (INDIGO--DC). Conclusions are drawn in Section~\ref{sec:con}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%In this paper, we outline the set of EC--funded projects, ranging from 2001 to nowadays,
+%that have raised the awareness and, at the same time, laid the ground work for the establishment of 
+%thorough SQA practices to guide the software development lifecycle within the {\sl INDIGO--DataCloud}
+%project. 
+%%
+%%For each project, the challenges, the methodologies and the achievements towards software 
+%%reliability are described.
+%%During the last 15 years the provision of European e--Infrastructures,
+%%supporting unified access to large--scale computing and intense data analysis
+%%applications have been driven by the needs of scientific communities as part of their
+%%pan--European research collaborations. 
+%%One such example is the Worldwide
+%%Large Hadron Collider (LHC) Computing Grid infrastructure, driven
+%%by the particle physics scientific community, built to satisfy the computing needs
+%%of processing, storing and analysis of the very large amount of data produced by the
+%%LHC particle accelerator.
+%
+%A significant number of the innovation projects and technology transfer
+%activities presented in Section~\ref{sec:ev}
+%were funded by the 5$^{th}$, 6$^{th}$ and 7$^{th}$ Framework Programmes of the European Commission (EC)
+%and recently by the Horizon 2020 programme \cite{h2020}. Their main goal was to develop
+%software solutions that provide a seamless and transparent access by researchers to
+%distributed computing and data resources.
+%
+%Major developments carried throughout the years were focused on providing new
+%functionalities, whereas in the early days the adoption of software engineering methodologies had a lower priority.
+%The released software was less tested, resulting in a higher rate of
+%rollbacks and patches applied to production systems, compared to the later projects. Thereby, the stability and
+%reliability of the e--Infrastructures was often compromised \cite{lingrand-egee}, leading to outages
+%in the participant resource centers. Back in the days when Grid middleware was actively developed, researchers
+%reported the need of improvements both in terms of reliability and performance \cite{campana-atlas}, eventually
+%developing their own custom solutions \cite{kindermann}\cite{mendez-lorenzo} on top of the existing services.
+%
+%In an effort to improve the research community's experience, it became apparent the need for a better
+%balance between the addition of new features and the reliability of the released software. Consequently,
+%incoming European funding programmes and open calls stressed the fact of devoting a substantial part of the software lifecycle to the improvement of the quality of the software being delivered. At this point, evolving software engineering practices were considered
+%and gradually adopted to define and implement quality procedures, the organization of
+%cross--functional teams and deployment of pilot testbeds.
+%
+%As a result of the analysis the aforementioned projects, 
+%one can observe a continuous increase in the prominence and robustness of software
+%testing and validation procedures \cite{aiftimiei}. The
+%evolution of the software engineering methodologies (creation of the Agile
+%Manifesto \cite{agile-manifesto}, and rise of DevOps practices \cite{zhu}) together
+%with the parallel advancements in the information and communication technology
+%field (such as virtualization, the enabling technology for Cloud computing and
+%operating--system--level virtualization known as containerization \cite{soltesz}) motivated this trend.
+%This evolution was complemented by the emergence of automation and event--response tools.
+%
+%The former know-how combined with the continuous advancements in sofware engineering 
+%have been the catalysts for drawing attention to the relevance of SQA ..
+
 
 \section{Background}
 \label{sec:b}
@@ -577,7 +635,7 @@ leading to the first (light cream points and line) and second release (dark blue
 \label{fig:fig_confman}
 \end{figure}
 
-\subsection{Software Quality Procedures}
+\subsection{Software Quality Procedures}\label{software-quality-procedures}
 \label{subsec:sqa}
 
 The software quality policies were initially defined in the first deliverable document of the
@@ -714,7 +772,7 @@ KPIs primarily focus on the frequency and efficiency -- mainly rollbacks -- stat
 to issues reported by external users. Feedback is collected from outside helpdesks, such as
 EGI's GGUS~\cite{ggus}, and the GitHub Issues tracker.
 
-\subsection{Software quality validation and delivery automation}
+\subsection{Software quality validation and delivery automation}\label{software-automation}
 \label{sec:devops}
 Tackling the granularity of the former SQA requirements -- most of which accounted in a per--change basis --
 is hardly achieved without the aid of automation. The introduction of automation to validate the quality
@@ -727,12 +785,18 @@ project.
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.8\textwidth, height=50mm]{images/indigoBugs.png}
-\caption{Number of defects detected in development and production stages over the lifetime of the
-{\sl INDIGO-DataCloud} project. The defects started to arise in the second year of the project,
-in parallel with the release of {\sl INDIGO--1} software, while the major activity was concentrated in the
-months that preceded the second major release of {\sl INDIGO--2}, in April 2017. The practical implementation
-of the SQA definition described throughout this paper was the key actor in uncovering defects while in pre--production
-stages, thus not affecting the software released.}
+\caption{Number of software bugs -- documentation typos are excluded -- detected in development 
+and production stages over the lifetime of the {\sl INDIGO-DataCloud} project. Production 
+defects correspond to software bugs filed by users of the EGI e--Infrastructure throughout 
+the next 2 years after the {\sl INDIGO--1} major release, in August 2016 (source: EGI's GGUS
+helpdesk). The development defects stem only from the pre--release testing phase, filed 
+exclusively as part of the SQA team work (source: GitHub Issues tracker). As a consequence, the 
+development defects started to arise in the previous months prior to the {\sl INDIGO--1} release, 
+while the major activity was concentrated in the months that preceded the second major release 
+of {\sl INDIGO--2}, in April 2017. As it can be observed, the offset between the advent of defects
+in development and production corresponds to nearly half a year, with the first production defect
+reported 3 months after the {\sl INDIGO--1} release.}
+
 \label{fig:indigobugs}
 \end{figure}
 
@@ -900,28 +964,74 @@ appear in production environments.
 \section{Conclusion}
 \label{sec:con}
 
-After more than a decade of experiences collected throughout the reviewed
-EU--funded software development and e--Infrastructure management projects, it
-becomes apparent that the European software produced for scientific purposes is
-evolving to a more sustainable model where the quality and reliability of
-software is being prioritized. The gradual adoption of software engineering insights, such as
-DevOps practices or Agile methodologies, are leading the change. In this regard, the continuous evolution of the open--source
-collaborative tools, extending their capabilities to bring along tight
-integrations amongst other services, matched the requirements of such practices
-and procedures, facilitating in a great manner their implementation in real scenarios.
+%After more than a decade of experiences collected throughout the reviewed
+%EU--funded software development and e--Infrastructure management projects, it
+%becomes apparent that the European software produced for scientific purposes is
+%evolving to a more sustainable model where the quality and reliability of
+%software is being prioritized. The gradual adoption of software engineering insights, such as
+%DevOps practices or Agile methodologies, are leading the change. In this regard, the continuous evolution of the open--source
+%collaborative tools, extending their capabilities to bring along tight
+%integrations amongst other services, matched the requirements of such practices
+%and procedures, facilitating in a great manner their implementation in real scenarios.
 
 % Comment
 %%P8 C1 L26: What is the demonstration that reliability has been improved significantly with the addition of stricter methologies? Is there some quantitative evidence of uptime, or bug reports per user, or similar? Or some evidence of speed of defect detection & fixing, which you cite as greatly improved? I am very sympathetic to the idea that systematic development techniques can help improve software quality (without getting into circular definitions, where "quality" means that methodologies or standards have been applied!) but there will also be a point at which the methodology gets too heavy and compromises the "agility" of the development team: how can you identify which processes are helping and which are not?
-Reliability of the software has been substantially improved by applying the SQA
-criteria in the development stage. Consequently, each change in the source code
-that is meant to be integrated in the production version, is validated according
-to the SQA testing requirements. Thus, defects are detected and corrected early in the
-software lifecycle, reducing the cost of fixing errors at later stages. Automation is
-key in this process, allowing the implementation of a CI scenario that enforces
-the SQA criteria compliance. The application of more advanced DevOps practices
-resulted in the implementation of CD pipelines to extend automation to the
-delivery of packages. Thereby, safe and frequent software releases are possible, reducing
-the impact on production systems. In this regard, a pre--production validation,
+Both reliability and sustainability of the {\sl INDIGO--DataCloud} software products 
+have been primarily improved by acting at the source code level. According to the 
+size of the project, which comprised more than 30 products and 200 GitHub repositories, 
+this strategy required a remarkable preliminary ground work. On the one hand, the 
+definition of a set of SQA requirements -- compiled in the described SQA criteria 
+-- that shall be fulfilled prior to release by the {\sl INDIGO--DataCloud} core 
+products. On the other hand, the need of setting up the testing infrastructure and
+the associated CI/CD pipelines to check that the changes in the source code matched 
+those requirements in an automated fashion. As a complement to the above strategy, a 
+final validation step combined the deployment of the pre--released software versions 
+in the project's preview testbed, and subsequently, most of the products were tested
+in selected production environments through the aid of EGI's staged--rollout process.
+
+The most noticeable metric that demonstrates a reliability improvement comes from the 
+fact that the number of software defects uncovered throughout the pre--release phase 
+surpassed by a factor of 30 the ones reported by end users in the EGI e-Infrastructure
+during the next two years after the first major release (INDIGO-1). Accordingly, the
+sustainability of the software was ...
+
+Nevertheless, the individual products of {\sl INDIGO--DataCloud} did not undergo 
+a progressive quality improvement throughout the lifespan of the project. Indeed,
+unit testing coverage dropped for about 18\% of the total products halfway through
+the project. This behavior was aligned with the high-demanding periods of software
+development, in particular, the previous months before the second major release 
+(INDIGO--2). This fact demonstrates that, even considered as best practice, test 
+cases are not commonly written right after, or even before, introducing a new unit
+or functionality in the code. High coverage values are generally advisable but they
+entail time--consuming work that is often neglected by the code owners. The effort 
+spent in testing should be oriented to those sections of the code that are more 
+likely to cause negative effects to end users. Consequently, a high coverage value 
+does not generally provide a linear benefit with respect to the effort spent -- the
+SQA criteria recommends 70\% of coverage as a good compromise -- and, in addition,
+it does not indicate whether the key sections of the code are covered. However, unit
+testing is a valuable tool to detect defects at coding time, so whenever the test 
+cases accompany the changes done in the code, a high unit testing coverage value is 
+a good indicator of reliability in the software.
+%(related defect increase?, resulting from the INDIGO-2 release?)
+
+% products not developed from scratch challenged the application of SQA policies??
+
+% 
+
+applying the SQA criteria in the development stage. As each change in 
+the source code is validated to match the SQA requirements, defects in the software 
+are more likely to be detected and fixed at the earliest stage. Consequently, costs
+are reduced, since solving bugs at later stages require greater efforts, and the end
+user obtains a much more reliable piece of software, as demonstrated by the low rate
+of defects found once it is in production. Automation is of paramount importance to 
+guarantee the {\sl INDIGO--DataCloud}'s SQA criteria compliance. Thus, through the
+application of DevOps practices, a CI/CD scenario was put in place to cover both the
+validation and delivery of the {\sl INDIGO--DataCloud} software products. The CI/CD 
+pipelines provide the agility to produce releases frequently enough to reduce the 
+impact on production systems, since the software gets progressively updated. 
+
+
+In this regard, a pre--production validation,
 through the preview testbeds or resource center's early adoption -- handled by the
 Staged--rollout process -- alleviates the likelihood of discovering uncovered
 issues at production.
