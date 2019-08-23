@@ -75,7 +75,8 @@
 %%about the article that should go on the front page should be
 %%placed here. General acknowledgments should be placed at the end of the article.}
 %}
-\title{Delivering more Reliable Software within the INDIGO-DataCloud project: a converging evolution of software engineering practices to support European Research e-Infrastructures}
+%\title{Delivering more Reliable Software within the INDIGO-DataCloud project: a converging evolution of software engineering practices to support European Research e-Infrastructures}
+\title{INDIGO-DataCloud: a converging evolution of software engineering practices to support European Research e-Infrastructures}
 %\subtitle{}
 
 %\titlerunning{Short form of title}        % if too long for running head
@@ -197,7 +198,7 @@ validation solution adopted by {\sl INDIGO--DataCloud} relied on the great advan
 (CI) tools have undergone in the last years. Accordingly, both the validation and delivery of {\sl INDIGO--DataCloud} 
 software was tackled by automation means.
 
-The fundamental shift brought by the INDIGO--DC SQA procedures was 
+The fundamental shift brought by the {\sl INDIGO--DataCloud} SQA procedures was 
 to act at the early stages of the software development lifecycle. Thus, instead of validating the software product once 
 it was packaged within a pre-release stage, the source code itself is verified for each minor change. This strategy 
 allows to improve the sustainability of the software, by checking the compliance with code style standards, and its 
@@ -989,11 +990,22 @@ final validation step combined the deployment of the pre--released software vers
 in the project's preview testbed, and subsequently, most of the products were tested
 in selected production environments through the aid of EGI's staged--rollout process.
 
-The most noticeable metric that demonstrates a reliability improvement comes from the 
-fact that the number of software defects uncovered throughout the pre--release phase 
-surpassed by a factor of 30 the ones reported by end users in the EGI e-Infrastructure
-during the next two years after the first major release (INDIGO-1). Accordingly, the
-sustainability of the software was ...
+The most noticeable metric that demonstrates a reliability improvement is represented 
+by the ratio between the number of software defects uncovered throughout the pre--release
+phase of each of the major releases, {\sl INDIGO--1} and {\sl INDIGO--2}, and the ones 
+reported by end users within the EGI e--Infrastructure, where core products were 
+deployed. The number of bugs detected in the pre--release phase, filed by the SQA
+responsibles of the project, surpassed by a factor of 30 the ones reported by those end 
+users, which in absolute terms, this value reached no more than 200 bugs over the
+observed timeframe. Considering that these low rate of bugs were uncovered throughout 
+the testing phase in the project's preview testbed -- where the new releases were 
+deployed in order to validate their integration with other component's production 
+versions --, one can infer that the previous phase of code analysis -- running unit and
+functional test cases for each minor change -- considerably helped in preventing the 
+emergence of a greater quantity of software defects. As it was described, this latter
+phase of code analysis included as well the compliance with de--facto style standards, 
+improving the readability of the code and, consequently, building on the sustainability
+path of the software.
 
 Nevertheless, the individual products of {\sl INDIGO--DataCloud} did not undergo 
 a progressive quality improvement throughout the lifespan of the project. Indeed,
@@ -1012,49 +1024,98 @@ it does not indicate whether the key sections of the code are covered. However, 
 testing is a valuable tool to detect defects at coding time, so whenever the test 
 cases accompany the changes done in the code, a high unit testing coverage value is 
 a good indicator of reliability in the software.
-%(related defect increase?, resulting from the INDIGO-2 release?)
+% ?? (related defect increase?, resulting from the INDIGO-2 release?)
 
-% products not developed from scratch challenged the application of SQA policies??
+All along the project we have observed that source code review is the cornerstone to
+improve the completeness of the unit test cases, as a commitment to strenghten the 
+structural quality of the software. Therefore, we move forward in avoiding the 
+aforementioned risks of having high coverage values obtained from meaningless test 
+cases, which execute a great amount of statements and lines of the code, but using
+incomplete test cases. Code reviewers analyse the content of each change in the 
+source code and the suitability -- in the above terms -- of the associated tests, 
+being the last checkpoint before the change is added in the production branch. Hence 
+the vital importance, as mentioned earlier, of providing the tests alongside the code
+for every given change. As we have seen, the production branches of 
+{\sl INDIGO--DataCloud} source code repositories were protected against direct pushes,
+requiring a manual assessment step before approval through peer code review.
+% ?? figure with code reviews or sth about PRs, external participation
+
+Functional quality, on the other hand, was assessed within the {\sl INDIGO--DataCloud} 
+software lifecycle through the per--change execution of the functional tests provided 
+by the developers and the ultimate stage of integration testing in the aforementioned 
+preview testbed. As we have seen, the latter testing strategy was entirely performed 
+in a manual way, and appeared as a helpful tool to spot defects after exposing the 
+deployed software to interactions with external components. Additionally, the functional 
+tests, were primarily useful to check that the software met the design specifications, 
+and most importantly, that previously working functionalities are preserved when new 
+features are added. As mentioned, these type of testing is meant to be continuously 
+executed in an automated manner using the CI infrastructure. However, by the time of
+{\sl INDIGO--1} only 30\% of the total of products provided automated functional tests,
+reaching almost 60\% in {\sl INDIGO--2}. Although test reports were asked for those 
+products that did not provide automated functional tests, tracking the fulfillment of 
+their fundamental functional requirements was tougher a change--based approach, 
+especially when assessing the regressions. The major issues observed that hindered the
+implementation of automated functional tests were releated to the unavailability, at
+the time, of libraries and frameworks for performing specific actions -- such as 
+testing graphical interfaces -- or due to the code owners' neglect -- insufficient
+knowledge of the tools -- or rejection -- time--consuming task --. As a result of this,
+those products eventually -- even before {\sl INDIGO--1} -- provided functional test
+reports prior to the release, thus being moved away from the CI scenario. We infer
+from this experience that automated functional tests should be a goal for modern
+software since they complement the structural quality checks by adding the validation
+of the software's identified functionalities to improve the effectiveness of the 
+DevOps approach.
+% figure with % of products with functional tests
+
+As a final remark, we want to highlight the practical experience resulted from the
+application of the formerly described software engineering practices to improve the 
+validation of a specific application, selected from the existing use cases in the 
+{\sl INDIGO--DataCloud} project, thus expanding the scope beyond the core products. 
+The outcome was a prototype CI/CD pipeline that analysed the code, packaged and 
+tested the application based on a pre--defined set of inputs and reference outputs. 
+The pipeline delivered then the new version only if all the stages were successful
+completed. Research communities are not usually experts in programming or in related 
+software engineering practices, so this fact was a real accomplishment in terms of 
+the quality and sustainability of their software.
+
+% ?? products not developed from scratch challenged the application of SQA policies??
 
 % 
 
-applying the SQA criteria in the development stage. As each change in 
-the source code is validated to match the SQA requirements, defects in the software 
-are more likely to be detected and fixed at the earliest stage. Consequently, costs
-are reduced, since solving bugs at later stages require greater efforts, and the end
-user obtains a much more reliable piece of software, as demonstrated by the low rate
-of defects found once it is in production. Automation is of paramount importance to 
-guarantee the {\sl INDIGO--DataCloud}'s SQA criteria compliance. Thus, through the
-application of DevOps practices, a CI/CD scenario was put in place to cover both the
-validation and delivery of the {\sl INDIGO--DataCloud} software products. The CI/CD 
-pipelines provide the agility to produce releases frequently enough to reduce the 
-impact on production systems, since the software gets progressively updated. 
+%applying the SQA criteria in the development stage. As each change in 
+%the source code is validated to match the SQA requirements, defects in the software 
+%are more likely to be detected and fixed at the earliest stage. Consequently, costs
+%are reduced, since solving bugs at later stages require greater efforts, and the end
+%user obtains a much more reliable piece of software, as demonstrated by the low rate
+%of defects found once it is in production. Automation is of paramount importance to 
+%guarantee the {\sl INDIGO--DataCloud}'s SQA criteria compliance. Thus, through the
+%application of DevOps practices, a CI/CD scenario was put in place to cover both the
+%validation and delivery of the {\sl INDIGO--DataCloud} software products. The CI/CD 
+%pipelines provide the agility to produce releases frequently enough to reduce the 
+%impact on production systems, since the software gets progressively updated. 
+%
+%
+%In this regard, a pre--production validation,
+%through the preview testbeds or resource center's early adoption -- handled by the
+%Staged--rollout process -- alleviates the likelihood of discovering uncovered
+%issues at production.
 
-
-In this regard, a pre--production validation,
-through the preview testbeds or resource center's early adoption -- handled by the
-Staged--rollout process -- alleviates the likelihood of discovering uncovered
-issues at production.
-
-The software lifecycle demands as well a continuous measurement and analysis
-process, which allows timely reactions to discover and fix defects throughout the
-development, release and maintenance stages. Conscientious metric
-tracking and response sits at the core of an appropriate software maturity, as
-ultimate reliability can only be achieved by enforcing and empowering the SQA
-criteria through each stage of the software lifecycle.
-
-Lessons learned show that sustainability is a key pursuit. The achievements, in terms of
-processes, knowledge, software and infrastructures, shall be profited from former successful
-completed projects. In this regard, the more recent project described in this paper, {\sl INDIGO-DataCloud},
-may have set the path for future reference in the European software development research ecosystem.
-The SQA criteria, describing the quality requirements that might be considered during the entire
-software lifecycle, have been published as open access and periodically reviewed to incorporate
-new recommendations and best practices. Successful software products created during the lifetime of the
-project are maintained leveraging the same source code repositories and CI infrastructure. A seamless
-knowledge transfer among subsequent software development initiatives is key for the good progress of
-delivering reliable software.
-
-
+The software lifecycle demands from a continuous measurement and analysis process, 
+which allows timely reactions in order to discover and fix defects throughout the
+development, release and maintenance stages. Conscientious metric tracking and 
+response sits at the core of an appropriate software maturity, as ultimate reliability
+can only be achieved by enforcing and empowering the SQA criteria through each stage
+of the software lifecycle. Lessons learned show that sustainability is a key pursuit.
+The achievements, in terms of processes, knowledge, software and infrastructures, shall
+be profited from former successful completed projects. In this regard, 
+{\sl INDIGO-DataCloud} may have set a path for future reference in software development
+practices for the European research e--Infrastructures. The SQA criteria, describing 
+the quality requirements that might be considered during the entire software lifecycle,
+have been published as open access and periodically reviewed to incorporate new 
+recommendations and best practices. Successful software products created during the
+lifetime of the project are maintained leveraging the same source code repositories and
+CI infrastructure. A seamless knowledge transfer among subsequent software development
+initiatives is key for the good progress of delivering reliable software.
 
 
 \section*{Acknowledgment}
