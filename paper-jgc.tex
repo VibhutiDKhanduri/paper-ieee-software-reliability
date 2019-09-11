@@ -982,62 +982,68 @@ have been primarily improved by acting at the source code level. According to th
 size of the project, which comprised more than 30 products and 200 GitHub repositories, 
 this strategy required a remarkable preliminary ground work. On the one hand, the 
 definition of a set of SQA requirements -- compiled in the described SQA criteria 
--- that shall be fulfilled prior to release by the {\sl INDIGO--DataCloud} core 
-products. On the other hand, the need of setting up the testing infrastructure and
-the associated CI/CD pipelines to check that the changes in the source code matched 
-those requirements in an automated fashion. As a complement to the above strategy, a 
-final validation step combined the deployment of the pre--released software versions 
-in the project's preview testbed, and subsequently, most of the products were tested
-in selected production environments through the aid of EGI's staged--rollout process.
+-- ought to be fulfilled by the set of core products before being
+released. On the other hand, the setup of a testing infrastructure and
+the associated CI/CD pipelines that guarantee that the changes done at the source code
+level match
+those requirements in an automated fashion. As a final step, the validation of the 
+resultant pre--released software versions firstly through integration testing in the
+project's preview testbed, and subsequently complemented by the EGI's staged--rollout
+process, where the brand new versions are adopted in the first place by candidate
+resource providers within the e-Infrastructure -- accessible for user evaluation --, 
+before being tagged as production--ready software, and consequently, distributed 
+through the EGI channels.
 
 The most noticeable metric that demonstrates a reliability improvement is represented 
 by the ratio between the number of software defects uncovered throughout the pre--release
 phase of each of the major releases, {\sl INDIGO--1} and {\sl INDIGO--2}, and the ones 
-reported by end users within the EGI e--Infrastructure, where core products were 
-deployed. The number of bugs detected in the pre--release phase, filed by the SQA
-responsibles of the project, surpassed by a factor of 30 the ones reported by those end 
-users, which in absolute terms, this value reached no more than 200 bugs over the
-observed timeframe. Considering that these low rate of bugs were uncovered throughout 
-the testing phase in the project's preview testbed -- where the new releases were 
-deployed in order to validate their integration with other component's production 
-versions --, one can infer that the previous phase of code analysis -- running unit and
-functional test cases for each minor change -- considerably helped in preventing the 
-emergence of a greater quantity of software defects. As it was described, this latter
-phase of code analysis included as well the compliance with de--facto style standards, 
-improving the readability of the code and, consequently, building on the sustainability
-path of the software.
+reported by the end users within the EGI e--Infrastructure, where the core products were 
+deployed. The number of bugs detected throughout the SQA process here described 
+surpassed by a factor of 30 the number of bugs reported by those end users, over a total
+of almost 200 bugs in the observed timeframe. Considering that this low rate of bugs -- 
+taking into account the amount of software products existing in {\sl INDIGO--DataCloud} -- 
+correspond to the outcomes of the integration 
+testing phase, it can be inferred that the preceding phase of code analysis -- enforcing 
+compliance with a style standard, and running
+unit and functional test cases for each minor change -- substantially contributed 
+to the robustness of the {\sl INDIGO--DataCloud} software, uncovering defects at earlier 
+stages, thus leaving the pre--released software with a low amount of errors.
+% graph with GitHub defects/issues in development
+% graph showing types of defects detected in the integration phase
 
 Nevertheless, the individual products of {\sl INDIGO--DataCloud} did not undergo 
-a progressive quality improvement throughout the lifespan of the project. Indeed,
+a progressive quality improvement throughout its lifespan. Indeed,
 unit testing coverage dropped for about 18\% of the total products halfway through
 the project. This behavior was aligned with the high-demanding periods of software
 development, in particular, the previous months before the second major release 
 (INDIGO--2). This fact demonstrates that, even considered as best practice, test 
 cases are not commonly written right after, or even before, introducing a new unit
 or functionality in the code. High coverage values are generally advisable but they
-entail time--consuming work that is often neglected by the code owners. The effort 
-spent in testing should be oriented to those sections of the code that are more 
-likely to cause negative effects to end users. Consequently, a high coverage value 
-does not generally provide a linear benefit with respect to the effort spent -- the
-SQA criteria recommends 70\% of coverage as a good compromise -- and, in addition,
-it does not indicate whether the key sections of the code are covered. However, unit
-testing is a valuable tool to detect defects at coding time, so whenever the test 
-cases accompany the changes done in the code, a high unit testing coverage value is 
-a good indicator of reliability in the software.
+entail time--consuming work that is often neglected by the code owners. Rather than
+requiring a high coverage value, our experience showed that increasing the coverage
+of those sections in the code that are more likely to cause negative effects to end
+users is not only a more effective approach to improve software reliability but it 
+also keeps developers motivated in the task of test coding, as it brings more 
+noticeable benefits in the software operation by end users.
 % ?? (related defect increase?, resulting from the INDIGO-2 release?)
 
+%The effort 
+%spent in testing should be oriented to those sections of the code that are more 
+%likely to cause negative effects to end users. Consequently, a high coverage value 
+%does not generally provide a linear benefit with respect to the effort spent -- the
+%SQA criteria recommends 70\% of coverage as a good compromise -- and, in addition,
+%it does not indicate whether the key sections of the code are covered. However, unit
+%testing is a valuable tool to detect defects at coding time, so whenever the test 
+%cases accompany the changes done in the code, a high unit testing coverage value is 
+%a good indicator of reliability in the software.
+
 All along the project we have observed that source code review is the cornerstone to
-improve the completeness of the unit test cases, as a commitment to strenghten the 
-structural quality of the software. Therefore, we move forward in avoiding the 
-aforementioned risks of having high coverage values obtained from meaningless test 
-cases, which execute a great amount of statements and lines of the code, but using
-incomplete test cases. Code reviewers analyse the content of each change in the 
-source code and the suitability -- in the above terms -- of the associated tests, 
-being the last checkpoint before the change is added in the production branch. Hence 
-the vital importance, as mentioned earlier, of providing the tests alongside the code
-for every given change. As we have seen, the production branches of 
-{\sl INDIGO--DataCloud} source code repositories were protected against direct pushes,
-requiring a manual assessment step before approval through peer code review.
+improve the effectiveness of the unit test cases. {\sl INDIGO--DataCloud} source code 
+repositories are protected against direct pushes so that the code review stage always
+takes place. Code reviewers analyse the content of each change in the source code and
+the suitability -- in the above terms -- of the associated tests, being the last
+checkpoint before the change is added into the production branch. Hence the vital
+importance of providing the tests alongside the code for every given change.
 % ?? figure with code reviews or sth about PRs, external participation
 
 Functional quality, on the other hand, was assessed within the {\sl INDIGO--DataCloud} 
