@@ -76,7 +76,7 @@
 %%placed here. General acknowledgments should be placed at the end of the article.}
 %}
 %\title{Delivering more Reliable Software within the INDIGO-DataCloud project: a converging evolution of software engineering practices to support European Research e-Infrastructures}
-\title{INDIGO-DataCloud: a converging evolution of software engineering practices to support European Research e-Infrastructures}
+\title{Software Quality Assurance in INDIGO-DataCloud project: a converging evolution of software engineering practices to support European Research e-Infrastructures}
 %\subtitle{}
 
 %\titlerunning{Short form of title}        % if too long for running head
@@ -159,7 +159,7 @@ Techniques \and DevOps}
 \section{Introduction}
 \label{intro}
 
-Throughout the last 15 years, Europe has have continuously invested on software development initiatives to provide
+Throughout the last 15 years, the European Commission (EC) has continuously invested on software development initiatives to provide
 research e--Infrastructures with the capability of supporting unified access to large--scale computing and intense 
 data analysis facilities. The developed tools have enabled the federation of geographically distributed resource 
 providers, with the ultimate aim of supporting the growing needs of the scientific comumunities. According to their
@@ -167,8 +167,8 @@ requirements, those research e--Infrastructures have been evolving, exploiting d
 technologies namely Grid, in the first place, and, eventually, Cloud.
 
 The urging needs of providing stable e--Infrastructures, which were based on novel distributed computing technologies, 
-initially drove the efforts spent in software development towards the provision of new functionalities, relegating the 
-adoption of software engineering methodologies to a second place. The released software was less tested, resulting in 
+initially drove the efforts spent in software development towards the provision of new functionalities, reducing the 
+adoption of software engineering methodologies to a marginal player. The released software was less tested, resulting in 
 a high rate of rollbacks and patches applied to production systems, when compared to the subsequent projects. 
 Thereby, the stability and reliability of the e--Infrastructures were often compromised \cite{lingrand-egee}, leading 
 to outages in the participant resource centers. Back in the days when Grid middleware was actively developed, 
@@ -184,7 +184,7 @@ procedures, the organization of cross--functional teams and the deployment of pi
 
 The increasing prominence of software quality procedures observed in the analysis of the last decade of EU--funded
 projects related to the development of distributed computing solutions --as described in Section~\ref{sec:ev}--, is 
-pictured in the software project herein introduced: {\sl INDIGO--DataCloud}. As we will thoroughly describe in the next
+pictured in the software project herein described: {\sl INDIGO--DataCloud}. As we will thoroughly describe in the next
 sections, the ground base laid by these preceding projects and the adoption of practices taken from the prevailing 
 software engineering methodologies --in particular the Agile Software Development \cite{agile-manifesto} and the DevOps
 culture \cite{zhu}--, were the catalyst to establish a set of Software Quality Assurance (SQA) criteria 
@@ -207,123 +207,78 @@ presented in this paper show a divergence between the high rate of bug fixes res
 significantly lower number of bugs detected by the end users. Consequently, bugs are more effortessly fixed since they 
 are early captured and end users interface with more reliable and stable software.
 
-The paper is organized as follows. Section~\ref{sec:b} summarizes the essential context of the research problem.
+The paper is organized as follows. %Section~\ref{sec:b} summarizes the essential context of the research problem.
 Section~\ref{sec:ev} details the evolution of research on software reliability in the selected EC--projects. 
 Section~\ref{sec:ntsr} provides information about new research trends in software reliability based upon the
 experiences from the recent {\sl INDIGO--DataCloud} project (INDIGO--DC). Conclusions are drawn in Section~\ref{sec:con}.
 
-%%%%%%%%%%%%%%%%%%%%%%%%
 
-%In this paper, we outline the set of EC--funded projects, ranging from 2001 to nowadays,
-%that have raised the awareness and, at the same time, laid the ground work for the establishment of 
-%thorough SQA practices to guide the software development lifecycle within the {\sl INDIGO--DataCloud}
-%project. 
-%%
-%%For each project, the challenges, the methodologies and the achievements towards software 
-%%reliability are described.
-%%During the last 15 years the provision of European e--Infrastructures,
-%%supporting unified access to large--scale computing and intense data analysis
-%%applications have been driven by the needs of scientific communities as part of their
-%%pan--European research collaborations. 
-%%One such example is the Worldwide
-%%Large Hadron Collider (LHC) Computing Grid infrastructure, driven
-%%by the particle physics scientific community, built to satisfy the computing needs
-%%of processing, storing and analysis of the very large amount of data produced by the
-%%LHC particle accelerator.
+%\section{Background}
+%\label{sec:b}
 %
-%A significant number of the innovation projects and technology transfer
-%activities presented in Section~\ref{sec:ev}
-%were funded by the 5$^{th}$, 6$^{th}$ and 7$^{th}$ Framework Programmes of the European Commission (EC)
-%and recently by the Horizon 2020 programme \cite{h2020}. Their main goal was to develop
-%software solutions that provide a seamless and transparent access by researchers to
-%distributed computing and data resources.
+%In this section, we detail the level of knowledge requested in delivering reliable software in order
+%to understand the effort employed in the EC-funded software projects over time. We divide the literature
+%into four different domains that intersect this work: 1) software requirements analysis, 2) software
+%coding,
+%3) metrics and measurements, 4) testing.
 %
-%Major developments carried throughout the years were focused on providing new
-%functionalities, whereas in the early days the adoption of software engineering methodologies had a lower priority.
-%The released software was less tested, resulting in a higher rate of
-%rollbacks and patches applied to production systems, compared to the later projects. Thereby, the stability and
-%reliability of the e--Infrastructures was often compromised \cite{lingrand-egee}, leading to outages
-%in the participant resource centers. Back in the days when Grid middleware was actively developed, researchers
-%reported the need of improvements both in terms of reliability and performance \cite{campana-atlas}, eventually
-%developing their own custom solutions \cite{kindermann}\cite{mendez-lorenzo} on top of the existing services.
+%\emph{Software requirements analysis.} They are defined at various stages of a software development process
+%as a specification of what should be implemented. According to IEEE \cite{radatz}, requirement
+%analysis is a process for studying user needs to arrive at a definition of system, hardware or software
+%requirements. Characteristics of requirements that can assess software reliability are consistency and
+%correctness \cite{sommerville}: the former aims at providing predictable, maintainable and reliable
+%results, and the latter usually refers to the satisfaction of certain goals.
 %
-%In an effort to improve the research community's experience, it became apparent the need for a better
-%balance between the addition of new features and the reliability of the released software. Consequently,
-%incoming European funding programmes and open calls stressed the fact of devoting a substantial part of the software lifecycle to the improvement of the quality of the software being delivered. At this point, evolving software engineering practices were considered
-%and gradually adopted to define and implement quality procedures, the organization of
-%cross--functional teams and deployment of pilot testbeds.
+%\emph{Software coding.} According to IEEE \cite{radatz}, coding is the process of expressing a computer
+%program in a programming language. To meet specific requirements, a program can be developed by using
+%high-level or low-level programming languages that envelope different characteristics and may affect the
+%result and quality of software. Furthermore, software is generally written by geographically distributed
+%teams whose developers can change over time, therefore it is extremely important for source code to be
+%understandable \cite{tashtoush}. There are various instruments that can be adopted during the software
+%development process to easily adapt software: programming features that influence the
+%code readability and maintainability \cite{buse} and standardized code that promotes the comparability of results \cite{baggen}.
 %
-%As a result of the analysis the aforementioned projects, 
-%one can observe a continuous increase in the prominence and robustness of software
-%testing and validation procedures \cite{aiftimiei}. The
-%evolution of the software engineering methodologies (creation of the Agile
-%Manifesto \cite{agile-manifesto}, and rise of DevOps practices \cite{zhu}) together
-%with the parallel advancements in the information and communication technology
-%field (such as virtualization, the enabling technology for Cloud computing and
-%operating--system--level virtualization known as containerization \cite{soltesz}) motivated this trend.
-%This evolution was complemented by the emergence of automation and event--response tools.
+%\emph{Metrics and measurements.} According to IEEE \cite{radatz}, metrics is a function, with input as
+%the software data, and output is a value which could decide on how the given attribute affects the software.
+%Metrics and measurements have an important role in the development process \cite{fenton, capers}. Metrics
+%are used to improve the ability to control, identify and measure the essential parameters of software
+%during its development, leading to improve the results of the software product \cite{goodman}. With a correct
+%usage of metrics, it is possible to determine which parts of the software require to be changed or modified.
+%In the literature, different types of metrics exist to be able to provide information on various software
+%aspects, such as complexity \cite{mccabe} and object orientation \cite{chidamber, lorenz}. Often they have
+%similar definitions, so as a consequence they can be implemented in different ways according to the
+%interpretation of their definition. This is the reason why it has been always a challenge to select the
+%proper software metric tools.
 %
-%The former know-how combined with the continuous advancements in sofware engineering 
-%have been the catalysts for drawing attention to the relevance of SQA ..
-
-
-\section{Background}
-\label{sec:b}
-
-In this section, we detail the level of knowledge requested in delivering reliable software in order
-to understand the effort employed in the EC-funded software projects over time. We divide the literature
-into four different domains that intersect this work: 1) software requirements analysis, 2) software
-coding,
-3) metrics and measurements, 4) testing.
-
-\emph{Software requirements analysis.} They are defined at various stages of a software development process
-as a specification of what should be implemented. According to IEEE \cite{radatz}, requirement
-analysis is a process for studying user needs to arrive at a definition of system, hardware or software
-requirements. Characteristics of requirements that can assess software reliability are consistency and
-correctness \cite{sommerville}: the former aims at providing predictable, maintainable and reliable
-results, and the latter usually refers to the satisfaction of certain goals.
-
-\emph{Software coding.} According to IEEE \cite{radatz}, coding is the process of expressing a computer
-program in a programming language. To meet specific requirements, a program can be developed by using
-high-level or low-level programming languages that envelope different characteristics and may affect the
-result and quality of software. Furthermore, software is generally written by geographically distributed
-teams whose developers can change over time, therefore it is extremely important for source code to be
-understandable \cite{tashtoush}. There are various instruments that can be adopted during the software
-development process to easily adapt software: programming features that influence the
-code readability and maintainability \cite{buse} and standardized code that promotes the comparability of results \cite{baggen}.
-
-\emph{Metrics and measurements.} According to IEEE \cite{radatz}, metrics is a function, with input as
-the software data, and output is a value which could decide on how the given attribute affects the software.
-Metrics and measurements have an important role in the development process \cite{fenton, capers}. Metrics
-are used to improve the ability to control, identify and measure the essential parameters of software
-during its development, leading to improve the results of the software product \cite{goodman}. With a correct
-usage of metrics, it is possible to determine which parts of the software require to be changed or modified.
-In the literature, different types of metrics exist to be able to provide information on various software
-aspects, such as complexity \cite{mccabe} and object orientation \cite{chidamber, lorenz}. Often they have
-similar definitions, so as a consequence they can be implemented in different ways according to the
-interpretation of their definition. This is the reason why it has been always a challenge to select the
-proper software metric tools.
-
-\emph{Testing.} According to IEEE \cite{radatz}, testing is a process of operating a system or component
-under specified conditions, observing or recording the results, and making an evaluation of some aspect of
-the system or component. Testing is an important factor for software quality and reliability improvement. This
-activity is quite complicated due to the variety of programming languages, operating systems and hardware
-platforms that evolve over time. In the current literature, there are many types of software
-testing methods \cite{myers} that aim at finding errors, bugs and faults during the software development
-process, possibly in the early stages. Over time, testing metrics have been defined to assess software
-quality \cite{athanasiou}: code coverage is the most frequently used metric for testing software reliability
-and there exist many tools for dynamic code coverage estimation according to the programming language
-\cite{horgan}. A dedicated effort has to be taken into account in order to integrate testing solutions
-during the software development process.
-
-
-\section{Evolution of research on software reliability in EC--projects}
+%\emph{Testing.} According to IEEE \cite{radatz}, testing is a process of operating a system or component
+%under specified conditions, observing or recording the results, and making an evaluation of some aspect of
+%the system or component. Testing is an important factor for software quality and reliability improvement. This
+%activity is quite complicated due to the variety of programming languages, operating systems and hardware
+%platforms that evolve over time. In the current literature, there are many types of software
+%testing methods \cite{myers} that aim at finding errors, bugs and faults during the software development
+%process, possibly in the early stages. Over time, testing metrics have been defined to assess software
+%quality \cite{athanasiou}: code coverage is the most frequently used metric for testing software reliability
+%and there exist many tools for dynamic code coverage estimation according to the programming language
+%\cite{horgan}. A dedicated effort has to be taken into account in order to integrate testing solutions
+%during the software development process.
+%
+%
+%\section{Evolution of research on software reliability in EC--projects}
+\section{Background work on European e--Infrastructure projects}
 \label{sec:ev}
+
+One of the fundamental pillars of the {\sl INDIGO--DataCloud}'s SQA process has been established
+by the outcomes resulted from similar EC--funded e--Infrastructure--related projects over
+the last 15 years. In particular, in this section we are primarily interested in those projects that consisted in
+the collaborative development of software solutions, intended for improving the accessibility and exploitation 
+of distributed computing technologies by research communities within the European research
+landscape. We will highlight the most representative software engineering
+practices adopted within each of these projects to understand how they inspired the SQA process 
+definition and implementation of {\sl INDIGO--DataCloud}. 
 
 The EC projects considered in this paper are listed chronologically in Table~\ref{tab:eup}.
 Each project paved the way for the following ones, according to a logic evolution in which
-the role of the quality and reliability of the software has
-consistently increased. As shown in Table~\ref{tab:feat}, the most recent projects are more
+the quality and reliability of the software solutions have progressively increased. As shown in Table~\ref{tab:feat}, the most recent projects are more
 committed to, and aware of, software reliability practices.
 Table~\ref{tab:feat} also shows the topics addressed in the following sections, highlighting
 the commonalities and specific features on software reliability.
@@ -982,17 +937,17 @@ have been primarily improved by acting at the source code level. According to th
 size of the project, which comprised more than 30 products and 200 GitHub repositories, 
 this strategy required a remarkable preliminary ground work. On the one hand, the 
 definition of a set of SQA requirements -- compiled in the described SQA criteria 
--- ought to be fulfilled by the set of core products before being
+-- that ought to be fulfilled by the set of core products before being
 released. On the other hand, the setup of a testing infrastructure and
-the associated CI/CD pipelines that guarantee that the changes done at the source code
+the associated CI/CD pipelines to guarantee that the changes done at the source code
 level match
 those requirements in an automated fashion. As a final step, the validation of the 
-resultant pre--released software versions firstly through integration testing in the
-project's preview testbed, and subsequently complemented by the EGI's staged--rollout
-process, where the brand new versions are adopted in the first place by candidate
-resource providers within the e-Infrastructure -- accessible for user evaluation --, 
-before being tagged as production--ready software, and consequently, distributed 
-through the EGI channels.
+resultant pre--released software versions, firstly tackled through integration testing in
+the project's preview testbed, and subsequently complemented by the EGI's 
+staged--rollout process, where the brand new versions are adopted by candidate resource
+providers within the e-Infrastructure -- accessible for user evaluation --, before being
+tagged as production--ready software, and consequently, distributed through the official
+EGI channels.
 
 The most noticeable metric that demonstrates a reliability improvement is represented 
 by the ratio between the number of software defects uncovered throughout the pre--release
@@ -1001,13 +956,11 @@ reported by the end users within the EGI e--Infrastructure, where the core produ
 deployed. The number of bugs detected throughout the SQA process here described 
 surpassed by a factor of 30 the number of bugs reported by those end users, over a total
 of almost 200 bugs in the observed timeframe. Considering that this low rate of bugs -- 
-taking into account the amount of software products existing in {\sl INDIGO--DataCloud} -- 
-correspond to the outcomes of the integration 
-testing phase, it can be inferred that the preceding phase of code analysis -- enforcing 
-compliance with a style standard, and running
-unit and functional test cases for each minor change -- substantially contributed 
-to the robustness of the {\sl INDIGO--DataCloud} software, uncovering defects at earlier 
-stages, thus leaving the pre--released software with a low amount of errors.
+taking into account the amount of software products existing in the project -- 
+correspond to the outcomes of the integration testing phase, we infer that the preceding
+phase of code analysis -- comprised by the style standard compliance, as well as the unit and
+functional test cases execution for each minor change -- had a substantial impact on the robustness
+of the resultant software.
 % graph with GitHub defects/issues in development
 % graph showing types of defects detected in the integration phase
 
@@ -1022,9 +975,9 @@ or functionality in the code. High coverage values are generally advisable but t
 entail time--consuming work that is often neglected by the code owners. Rather than
 requiring a high coverage value, our experience showed that increasing the coverage
 of those sections in the code that are more likely to cause negative effects to end
-users is not only a more effective approach to improve software reliability but it 
-also keeps developers motivated in the task of test coding, as it brings more 
-noticeable benefits in the software operation by end users.
+users is not only a more effective approach to improve software reliability, but it 
+also keeps developers motivated in the tedious task of test coding, as it brings more 
+noticeable benefits for the end user.
 % ?? (related defect increase?, resulting from the INDIGO-2 release?)
 
 %The effort 
@@ -1038,90 +991,65 @@ noticeable benefits in the software operation by end users.
 %a good indicator of reliability in the software.
 
 All along the project we have observed that source code review is the cornerstone to
-improve the effectiveness of the unit test cases. {\sl INDIGO--DataCloud} source code 
-repositories are protected against direct pushes so that the code review stage always
-takes place. Code reviewers analyse the content of each change in the source code and
-the suitability -- in the above terms -- of the associated tests, being the last
-checkpoint before the change is added into the production branch. Hence the vital
-importance of providing the tests alongside the code for every given change.
+improve the effectiveness of the unit and functional -- when applicable -- test cases. 
+{\sl INDIGO--DataCloud} source code repositories are protected against direct pushes 
+so that the code review stage always takes place. Code reviewers analyse the content
+of each change in the source code and the suitability -- according to the SQA criteria -- of the
+associated tests, being the last checkpoint before the change is added into the
+production branch. Hence the vital importance of providing the tests alongside the
+code for every given change.
 % ?? figure with code reviews or sth about PRs, external participation
-
-Functional quality, on the other hand, was assessed within the {\sl INDIGO--DataCloud} 
-software lifecycle through the per--change execution of the functional tests provided 
-by the developers and the ultimate stage of integration testing in the aforementioned 
-preview testbed. As we have seen, the latter testing strategy was entirely performed 
-in a manual way, and appeared as a helpful tool to spot defects after exposing the 
-deployed software to interactions with external components. Additionally, the functional 
-tests, were primarily useful to check that the software met the design specifications, 
-and most importantly, that previously working functionalities are preserved when new 
-features are added. As mentioned, these type of testing is meant to be continuously 
-executed in an automated manner using the CI infrastructure. However, by the time of
+%Functional quality, on the other hand, was assessed within the {\sl INDIGO--DataCloud} 
+%software lifecycle through the per--change execution of the functional tests provided 
+%by the developers and the ultimate stage of integration testing in the aforementioned 
+%preview testbed. As we have seen, the latter testing strategy was entirely performed 
+%in a manual way, and appeared as a helpful tool to spot defects after exposing the 
+%deployed software to interactions with external components. Additionally, the functional 
+%tests, were primarily useful to check that the software met the design specifications, 
+%and most importantly, that previously working functionalities are preserved when new 
+%features are added. As mentioned, these type of testing is meant to be continuously 
+%executed in an automated manner using the CI infrastructure. 
+However, by the time of
 {\sl INDIGO--1} only 30\% of the total of products provided automated functional tests,
-reaching almost 60\% in {\sl INDIGO--2}. Although test reports were asked for those 
-products that did not provide automated functional tests, tracking the fulfillment of 
-their fundamental functional requirements was tougher a change--based approach, 
-especially when assessing the regressions. The major issues observed that hindered the
-implementation of automated functional tests were releated to the unavailability, at
-the time, of libraries and frameworks for performing specific actions -- such as 
-testing graphical interfaces -- or due to the code owners' neglect -- insufficient
-knowledge of the tools -- or rejection -- time--consuming task --. As a result of this,
-those products eventually -- even before {\sl INDIGO--1} -- provided functional test
-reports prior to the release, thus being moved away from the CI scenario. We infer
-from this experience that automated functional tests should be a goal for modern
-software since they complement the structural quality checks by adding the validation
-of the software's identified functionalities to improve the effectiveness of the 
-DevOps approach.
+reaching almost 60\% in {\sl INDIGO--2}. Although test reports were asked in those cases
+where automated functional tests were not provided, the fulfillment of 
+their fundamental functional requirements was tougher to track, resulting in a non--viable
+solution for assessing minor changes, especially when analysing the regressions. The major issues observed that hindered developers from the 
+implementation of automated functional tests were releated to the unavailability
+-- at the time -- of libraries and frameworks for tackling specific tests -- such as 
+testing graphical interfaces --, or in some cases, the unawareness about their existence.
+We infer from this experience that automated functional tests should be a goal in modern
+software development as they complement the structural quality checks by adding the
+validation of the software's identified functionalities, key in the operational impact 
+and user acceptance. 
 % figure with % of products with functional tests
-
-As a final remark, we want to highlight the practical experience resulted from the
-application of the formerly described software engineering practices to improve the 
-validation of a specific application, selected from the existing use cases in the 
-{\sl INDIGO--DataCloud} project, thus expanding the scope beyond the core products. 
-The outcome was a prototype CI/CD pipeline that analysed the code, packaged and 
-tested the application based on a pre--defined set of inputs and reference outputs. 
-The pipeline delivered then the new version only if all the stages were successful
-completed. Research communities are not usually experts in programming or in related 
-software engineering practices, so this fact was a real accomplishment in terms of 
-the quality and sustainability of their software.
-
 % ?? products not developed from scratch challenged the application of SQA policies??
 
-% 
+The application of the formerly described SQA process was not only beneficial for the
+core products' quality and reliability, but it has proven to be equally effective for
+those applications uniquely supported by research communities with little background 
+on software engineering. This fact was demonstrated by the elaboration of an ad--hoc validation pipeline for one
+of the use cases supported in the project. The CI/CD pipeline extended the source code testing and delivery
+-- already existing in the pipelines for the core products -- with a basic system--like testing. 
+For the latter, the
+pre--packaged application was tested with a pre--defined set of inputs and expected
+outputs. Only if successfully validated, the source code could be merged into production 
+and the resultant pre--packaged application would be delivered. When this pipeline was
+integrated in the usual workflow of the application development, it was reported to have constituted a real 
+breakthrough, allowing a faster development and more reliable software, as it was programmatically tested
+before being distributed. Consequently, the 
+benefits of a continuous SQA improvement process are not only suitable for experienced
+software developers, but also to any type of software practitioner, such as the numerous ones
+commonly found within the research communities.
 
-%applying the SQA criteria in the development stage. As each change in 
-%the source code is validated to match the SQA requirements, defects in the software 
-%are more likely to be detected and fixed at the earliest stage. Consequently, costs
-%are reduced, since solving bugs at later stages require greater efforts, and the end
-%user obtains a much more reliable piece of software, as demonstrated by the low rate
-%of defects found once it is in production. Automation is of paramount importance to 
-%guarantee the {\sl INDIGO--DataCloud}'s SQA criteria compliance. Thus, through the
-%application of DevOps practices, a CI/CD scenario was put in place to cover both the
-%validation and delivery of the {\sl INDIGO--DataCloud} software products. The CI/CD 
-%pipelines provide the agility to produce releases frequently enough to reduce the 
-%impact on production systems, since the software gets progressively updated. 
-%
-%
-%In this regard, a pre--production validation,
-%through the preview testbeds or resource center's early adoption -- handled by the
-%Staged--rollout process -- alleviates the likelihood of discovering uncovered
-%issues at production.
-
-The software lifecycle demands from a continuous measurement and analysis process, 
-which allows timely reactions in order to discover and fix defects throughout the
-development, release and maintenance stages. Conscientious metric tracking and 
-response sits at the core of an appropriate software maturity, as ultimate reliability
-can only be achieved by enforcing and empowering the SQA criteria through each stage
-of the software lifecycle. Lessons learned show that sustainability is a key pursuit.
-The achievements, in terms of processes, knowledge, software and infrastructures, shall
-be profited from former successful completed projects. In this regard, 
-{\sl INDIGO-DataCloud} may have set a path for future reference in software development
-practices for the European research e--Infrastructures. The SQA criteria, describing 
-the quality requirements that might be considered during the entire software lifecycle,
-have been published as open access and periodically reviewed to incorporate new 
-recommendations and best practices. Successful software products created during the
-lifetime of the project are maintained leveraging the same source code repositories and
-CI infrastructure. A seamless knowledge transfer among subsequent software development
-initiatives is key for the good progress of delivering reliable software.
+The {\sl INDIGO--DataCloud}'s SQA process has persisted once the project concluded, being 
+extensively used by the supported software products. The SQA criteria is actively
+maintained to include new recommendations and best practices, not only targeted for
+experts but for any enthusiast on research software. Hence, they have established the foundations for 
+knowledge transfer capabilities, which we foresee it will be convenient for the rapid adoption of 
+SQA practices in the subsequent software development initiatives and projects for e--Infrastructure 
+building and management, taking a step forward in the overarching goal
+of delivering reliable software in research.
 
 
 \section*{Acknowledgment}
