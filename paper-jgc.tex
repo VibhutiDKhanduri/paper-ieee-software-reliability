@@ -210,7 +210,7 @@ are early captured and end users interface with more reliable and stable softwar
 The paper is organized as follows. %Section~\ref{sec:b} summarizes the essential context of the research problem.
 Section~\ref{sec:ev} details the evolution of research on software reliability in the selected EC--projects. 
 Section~\ref{sec:ntsr} provides information about new research trends in software reliability based upon the
-experiences from the recent {\sl INDIGO--DataCloud} project (INDIGO--DC). Conclusions are drawn in Section~\ref{sec:con}.
+experiences from the recent {\sl INDIGO--DataCloud} project. Conclusions are drawn in Section~\ref{sec:con}.
 
 
 %\section{Background}
@@ -269,19 +269,20 @@ experiences from the recent {\sl INDIGO--DataCloud} project (INDIGO--DC). Conclu
 
 One of the fundamental pillars of the {\sl INDIGO--DataCloud}'s SQA process has been established
 by the outcomes resulted from similar EC--funded e--Infrastructure--related projects over
-the last 15 years. In particular, in this section we are primarily interested in those projects that consisted in
-the collaborative development of software solutions, intended for improving the accessibility and exploitation 
-of distributed computing technologies by research communities within the European research
-landscape. We will highlight the most representative software engineering
-practices adopted within each of these projects to understand how they inspired the SQA process 
-definition and implementation of {\sl INDIGO--DataCloud}. 
+the last 15 years. In particular, in this section we are primarily interested in hightlighting the 
+collaborative
+software development efforts within the category of projects that improved the accessibility and
+exploitation of distributed computing technologies in the European research landscape. As such, 
+we will present the most representative software engineering practices adopted by those projects
+to understand how they ultimately inspired the SQA process definition and implementation in 
+{\sl INDIGO--DataCloud}, further discussed in Section~\ref{sec:ntsr}. 
 
 The EC projects considered in this paper are listed chronologically in Table~\ref{tab:eup}.
 Each project paved the way for the following ones, according to a logic evolution in which
-the quality and reliability of the software solutions have progressively increased. As shown in Table~\ref{tab:feat}, the most recent projects are more
-committed to, and aware of, software reliability practices.
-Table~\ref{tab:feat} also shows the topics addressed in the following sections, highlighting
-the commonalities and specific features on software reliability.
+an increasing awareness in software quality and reliability has been showcased. As shown in 
+Table~\ref{tab:feat}, the most recent projects are more committed to, and aware of, software
+engineering practices. Here we include {\sl INDIGO--DataCloud} (INDIGO--DC) -- see 
+Section~\ref{sec:ntsr} -- as the reference project where all the listed features have been achieved.
 
 \begin{table}[!h]
 \renewcommand{\arraystretch}{1.3}
@@ -400,7 +401,7 @@ produced. Development guidelines \cite{datagridguide} were produced, covering th
 \cite{datagridindicators} facilitated the detection of deviations in the collected metric data. Figure
 \ref{fig:efficiency} shows the efficiency performance indicator, measured in production environments as the
 number of jobs successfully completed divided by the total number of jobs submitted. As it can be observed,
-there is a positive trend of efficiency over the months, with the unique exception of the LCG1 experiment.
+there is a positive trend of efficiency over the months, with the unique exception of the LCG--1 prototype.
 \begin{figure}[h]
 \centering
 %\includegraphics[width=0.8\textwidth, height=50mm]{images/datagridEff.png}
@@ -532,29 +533,36 @@ software validation phase. The modernization of the EGI QC validation was
 accomplished through the adoption of automation, by means of the programmatic
 evaluation of its fundamental quality requirements \cite{orviz2018umd}.
 
-\subsection{INtegrating Distributed data Infrastructures for Global explOitation}
+%\subsection{INtegrating Distributed data Infrastructures for Global explOitation}
+%
+%The {\sl INDIGO--DataCloud} (INtegrating Distributed data Infrastructures for Global
+%explOitation, Apr 2015 -- Sep 2017) \cite{salomoni2018indigo} is the last
+%project of software development considered in this paper. The project addressed
+%the existing gaps at the Cloud Platform--as--a--Service (PaaS) and Software--as--a--Service (SaaS) levels,
+%helping developers, e--Infrastructure administrators and scientific communities to exploit
+%Cloud computing benefits.
 
-The {\sl INDIGO--DataCloud} (INtegrating Distributed data Infrastructures for Global
-explOitation, Apr 2015 -- Sep 2017) \cite{salomoni2018indigo} is the last
-project of software development considered in this paper. The project addressed
-the existing gaps at the Cloud Platform--as--a--Service (PaaS) and Software--as--a--Service (SaaS) levels,
-helping developers, e--Infrastructure administrators and scientific communities to exploit
-Cloud computing benefits.
-
-\section{New trends in software reliability}
+\section{INDIGO--DataCloud Software Quality Assurance Process}
 \label{sec:ntsr}
 
-{\sl INDIGO--DataCloud} is the most recent project included in this paper, it
+{\sl INDIGO--DataCloud} project \cite{salomoni2018indigo} %is the most recent project included in this paper, it
 leverages the lessons learned from the previous experiences described in
-Section~\ref{sec:ev} and, consequently, it will be thoroughly analyzed. The expertise gathered throughout these years was highly
-profitable regarding evaluation and application of innovative software engineering
-methodologies, management of new technologies to put those methodologies
-into practice, compilation and analysis of an appropriate set of metrics to measure the
-quality of the implemented solutions.
-An additional level of complexity, comes from the fact that these large collaborative projects
-have an extensive list of partners.
+Section~\ref{sec:ev}. The expertise gathered throughout these years was highly
+profitable regarding the adoption of state--of--the--art software engineering
+methodologies, the management of new technologies to put those methodologies
+into practice and the analysis of an appropriate set of metrics to measure the
+quality of the implemented solutions. All of which with the additional complexity of
+being framed under collaborative environments with an extensive list of partners.
 
-In the following sections, we describe the three main pillars that sustain the project's strategy to attain reliability throughout the software lifecycle:
+However, new challenges appear in the course of a software development project, which in some
+cases are tackled using novel software engineering approaches. In this regard, 
+{\sl INDIGO--DataCloud} faced analogous challenges as the ones reported by parallel EC--funded 
+software development initiatives \cite{casale2016current} that were addressed using similar 
+solutions, such as relying on DevOps practices for tackling the software lifecycle management. 
+The SQA process followed by {\sl INDIGO--DataCloud}
+combines these solutions with pragmatic approaches built upon external and first--hand 
+experiences. In the following sections, we describe the three main pillars that sustain the
+project's strategy for attaining quality in the software produced:
 
 \begin{enumerate}
     \item The definition of a \textit{Software Quality Assurance (SQA) criteria and a metrics gathering procedure} to provide guidelines
@@ -565,6 +573,12 @@ In the following sections, we describe the three main pillars that sustain the p
     \item A post-release validation to be carried out over the project's \textit{preview testbeds}, where the new product versions
     are deployed as part of the integration validation, and the \textit{testing in production environments} by external resource providers.
 \end{enumerate}
+
+As we will describe hereafter, the {\sl INDIGO--DataCloud} SQA process is not restricted to software targeted to distributed
+computing environments, but instead oriented to the management of any form of collaboration driven software development, composed
+by multiple software projects that collaborate jointly. However, there are particularities, such
+as the stage--rollout phase, that are attached to an e--Infrastructure's operation, thus might not
+be applicable to all cases. 
 
 \begin{figure}[ht]
 \centering
@@ -1390,6 +1404,12 @@ D. Salomoni \emph{et al.},
 ``Indigo-datacloud: a platform to facilitate seamless access to e-infrastructures,''
 \emph{J. Grid Comp.},
 vol. 16, no. 3, pp. 381--408, 2018.
+
+\bibitem{casale2016current}
+G. Casale \emph{et al.},
+``Current and future challenges of software engineering for services and applications,''
+\emph{Procedia Computer Science},
+vol. 97, no. 3, pp. 34--42, 2016.
 
 \bibitem{indigo-d31}
 J. Gomes \emph{et al.},
