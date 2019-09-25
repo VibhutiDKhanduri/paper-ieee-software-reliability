@@ -145,7 +145,7 @@ The knowledge base established throughout the last 15 years
 of diverse software development initiatives in Europe for sustaining distributed research 
 e-Infrastructures, supported by the advances in the area of software engineering, definitely
 %constituted a significant breakthrough in the reliability of the software delivered in the 
-contributed to improve the reliability of the software delivered, and consequently, the 
+contributed to improve the quality and reliability of the software delivered, and consequently, the 
 operational stability of the European e--Infrastructures. {\sl INDIGO--DataCloud} project is 
 a good evidence of such insights, where, unlike the preceding trend found in past projects,
 the enforcement of Software Quality Assurance practices has been present since the very early 
@@ -162,7 +162,7 @@ Techniques \and DevOps}
 Throughout the last 15 years, the European Commission (EC) has continuously invested on software development initiatives to provide
 research e--Infrastructures with the capability of supporting unified access to large--scale computing and intense 
 data analysis facilities. The developed tools have enabled the federation of geographically distributed resource 
-providers, with the ultimate aim of supporting the growing needs of the scientific comumunities. According to their
+providers, with the ultimate aim of supporting the growing needs of the scientific communities. According to their
 requirements, those research e--Infrastructures have been evolving, exploiting diverse distributed computing 
 technologies namely Grid, in the first place, and, eventually, Cloud.
 
@@ -170,14 +170,14 @@ The urging needs of providing stable e--Infrastructures, which were based on nov
 initially drove the efforts spent in software development towards the provision of new functionalities, reducing the 
 adoption of software engineering methodologies to a marginal player. The released software was less tested, resulting in 
 a high rate of rollbacks and patches applied to production systems, when compared to the subsequent projects. 
-Thereby, the stability and reliability of the e--Infrastructures were often compromised \cite{lingrand-egee}, leading 
+Thereby, the stability of the e--Infrastructures were often compromised \cite{lingrand-egee}, leading 
 to outages in the participant resource centers. Back in the days when Grid middleware was actively developed, 
 researchers reported the need of improvements both in terms of reliability and performance \cite{campana-atlas}, 
 eventually developing their own custom solutions \cite{kindermann}\cite{mendez-lorenzo} on top of the existing services.
 
 In an effort to improve the operational experience of research communities, it soon became apparent the need for a better 
-balance between the addition of new features and the reliability of the released software. Consequently, incoming European 
-funding programmes and open calls progressivelly stressed the fact of devoting a more substantial part of the software 
+balance between the addition of new features and the quality of the released software. Consequently, incoming European 
+funding programmes and open calls progressively stressed the fact of devoting a more substantial part of the software 
 lifecycle to the improvement of the quality and sustainability of the products being delivered. At this point,
 evolving software engineering practices were considered and gradually adopted in order to define and implement the quality
 procedures, the organization of cross--functional teams and the deployment of pilot testbeds.
@@ -191,26 +191,27 @@ culture \cite{zhu}--, were the catalyst to establish a set of Software Quality A
 -- as explained in Section~\ref{software-quality-procedures} -- that guided the software lifecycle of the software 
 produced.
 
-Following the DevOps principles, the SQA criteria requires the verification of the source code on each change in the 
-production version, defining the essential requirements to be processed. Such scenario is hardly accomplished without
-the aid of automation, and as a consequence -- as described in Section~\ref{software-automation} -- the testing and 
-validation solution adopted by {\sl INDIGO--DataCloud} relied on the great advancements that continuous integration 
-(CI) tools have undergone in the last years. Accordingly, both the validation and delivery of {\sl INDIGO--DataCloud} 
-software was tackled by automation means.
+Following the DevOps principles, the SQA criteria encourages a thorough verification of the source code, inspecting
+and testing each minor change meant to be included in the production version. Considering that 
+{\sl INDIGO--DataCloud} solution comprises more than 30 software products and 200 source code repositories, such 
+scenario is hardly accomplished without the aid of automation. Consequently, the SQA process builds on the great 
+advancements that the continuous integration (CI) tools have undergone over the last years, as described in 
+Section~\ref{software-automation}. Hence, acting at the early stages of the software development lifecycle brought
+a fundamental shift when compared with the reviewed {\sl INDIGO--DataCloud}'s preceding projects that dealt with
+the task of developing software solutions for Grid and Cloud--based e--Infrastructures.
 
-The fundamental shift brought by the {\sl INDIGO--DataCloud} SQA procedures was 
-to act at the early stages of the software development lifecycle. Thus, instead of validating the software product once 
-it was packaged within a pre-release stage, the source code itself is verified for each minor change. This strategy 
-allows to improve the sustainability of the software, by checking the compliance with code style standards, and its 
+This strategy 
+allows to improve the overall quality of the software, both in terms of sustainability, by checking the compliance with code style standards, and 
 reliability, through the execution of functional and integration tests, ensuring the total absence of regressions. The results
 presented in this paper show a divergence between the high rate of bug fixes resolved at development time and the 
-significantly lower number of bugs detected by the end users. Consequently, bugs are more effortessly fixed since they 
+significantly lower number of bugs detected by the end users. Consequently, bugs are more effortlessly fixed since they 
 are early captured and end users interface with more reliable and stable software.
 
 The paper is organized as follows. %Section~\ref{sec:b} summarizes the essential context of the research problem.
-Section~\ref{sec:ev} details the evolution of research on software reliability in the selected EC--projects. 
-Section~\ref{sec:ntsr} provides information about new research trends in software reliability based upon the
-experiences from the recent {\sl INDIGO--DataCloud} project. Conclusions are drawn in Section~\ref{sec:con}.
+Section~\ref{sec:ev} details the evolution of SQA processes in the preceding EC--funded projects that developed 
+software solutions for Grid and Cloud--based e--Infrastructures. 
+Section~\ref{sec:ntsr} thoroughly describes the new trends in software engineering conducted during the course of the recently finished
+{\sl INDIGO--DataCloud} project. Conclusions are drawn in Section~\ref{sec:con}.
 
 
 %\section{Background}
@@ -269,7 +270,7 @@ experiences from the recent {\sl INDIGO--DataCloud} project. Conclusions are dra
 
 One of the fundamental pillars of the {\sl INDIGO--DataCloud}'s SQA process has been established
 by the outcomes resulted from similar EC--funded e--Infrastructure--related projects over
-the last 15 years. In particular, in this section we are primarily interested in hightlighting the 
+the last 15 years. In particular, in this section we are primarily interested in emphasizing the 
 collaborative
 software development efforts within the category of projects that improved the accessibility and
 exploitation of distributed computing technologies in the European research landscape. As such, 
@@ -397,16 +398,24 @@ achieve a higher maturity level \cite{cmm}.
 
 Project monitoring and reporting mechanisms allowed to assess the risks, efforts and documentation
 produced. Development guidelines \cite{datagridguide} were produced, covering the various phases, including
-1) packaging, 2) test and validation, and 3) style and naming convention. The specification of quality indicators
-\cite{datagridindicators} facilitated the detection of deviations in the collected metric data. Figure
-\ref{fig:efficiency} shows the efficiency performance indicator, measured in production environments as the
-number of jobs successfully completed divided by the total number of jobs submitted. As it can be observed,
-there is a positive trend of efficiency over the months, with the unique exception of the LCG--1 prototype.
+1) packaging, 2) test and validation, and 3) style and naming convention. A set of quality indicators
+\cite{datagridindicators} were defined to measure the efficiency of the system from the user perspective. 
+Due to the developmental nature of DataGrid project, they solely consider the \textit{crude efficiency} 
+metric as the relevant indicator to track the quality and performance of the core software, also known as
+\emph{middleware}
+in Grid terminology. This metric considered the success rate of all the jobs submitted by users using the 
+production testbed, so that all the failures of the middleware were included in the statistic \cite{avellino2004datagrid}. However, it
+also accounted for the failures in the remaining pieces in the job submission chain, such as the user application 
+software or the targeted datacenter deployment. Even so, as it can be observed in Fig.~\ref{fig:efficiency}, 
+the crude efficiency showed a positive trend over the months that followed, with the unique exception of the 
+LCG--1 middleware distribution.
 \begin{figure}[h]
 \centering
 %\includegraphics[width=0.8\textwidth, height=50mm]{images/datagridEff.png}
 \includegraphics[width=1\textwidth]{images/datagridEff.png}
-\caption{Efficiency \% = Number of jobs successfully completed / Total Number of jobs submitted: results are provided for five experiments involved in the project.}
+\caption{Efficiency \% = Number of jobs successfully completed / Total Number of jobs submitted: results are 
+provided for the different DataGrid's EDG middleware distributions released throughout the project. Note that the figure
+includes metrics of the same release (EDGv1.4) for three Large Hadron Collider (LHC) experiments.}
 \label{fig:efficiency}
 \end{figure}
 
@@ -421,7 +430,7 @@ institutions and user communities~\cite{egee}. The software to sustain the incre
 requirements coming from the diverse scientific communities needed developing a
 rich set of new services, while maintaining a sustainable infrastructure for
 Grid computing. This e-Infrastructure was eventually used by more than 15 thousand researchers
-and deployed in over 250 institutions.
+and deployed in over 250 institutions \cite{ferrari2011resources}.
 
 The {\sl gLite} middleware \cite{glite} was the
 official software distribution of {\sl EGEE} as of 2006, after two years of prototyping and
@@ -593,7 +602,8 @@ be applicable to all cases.
 \caption{Comparison of the unit testing coverage values for the {\sl INDIGO--DataCloud}
 software stack over the {\sl INDIGO--1} and {\sl INDIGO--2} major releases. Products that
 were exclusively released during {\sl INDIGO--2} do not show data for the first period of
-{\sl INDIGO--1}.}
+{\sl INDIGO--1}. Source code for all the {\sl INDIGO--DataCloud} components can be found
+in the GitHub's \emph{indigo--dc} organization \cite{foot9}}
 \label{fig:fig_unittest}
 \end{figure*}
 
@@ -644,7 +654,7 @@ testing} in this context is accomplished by enforcing the definition and periodi
 of the tests, covering past fixed issues, to ensure that they are not reintroduced during the development
 activities. \textit{Unit testing} completes the source code testing evaluation by focusing on the code's
 internal design. The SQA criteria of {\sl INDIGO--DataCloud} set a recommended threshold of 70\% coverage
-for unit testing. In Fig.~\ref{fig:fig_unittest}, unit testing coverage is compared for each software
+for unit testing. In Figure.~\ref{fig:fig_unittest}, unit testing coverage is compared for each software
 component between the two major releases, denoting an incremental trend over the course of the project:
 code coverage increased from an average value of 50.32\% to 63.34\%, outlined by the respective dates of
 the project's first (INDIGO--1) and second (INDIGO--2) releases. Nevertheless, Fig.~\ref{fig:fig_unittest}
@@ -749,9 +759,13 @@ is hardly achieved without the aid of automation. The introduction of automation
 requirements increases the overall reliability of the produced software: automated testing is more
 time-efficient, leading to higher code coverages and increased defect detection, when compared with a manual
 approach \cite{rafi2012}. To put it in numbers, as Fig.~\ref{fig:indigobugs} showcases, the
-total number of defects detected in the pre--production stages surpassed by a factor of 30
+total number of defects detected in the pre--production stage, i.e. throughout the integration testing phase, surpassed by a factor of 30
 the ones reported by external users, over the lifetime of the {\sl INDIGO-DataCloud}
-project.
+project. An accurate estimation of the software bugs detected -- and fixed -- with the aid of 
+the CI/CD infrastructure, previously conducted at the source code analysis stage, cannot be
+given as those bugs are usually fixed on the fly without being tracked. Nevertheless, we can
+safely state that they exceed by far the total amount of 200 bugs that the Fig.~\ref{fig:indigobugs}
+shows.
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.8\textwidth, height=50mm]{images/indigoBugs.png}
@@ -777,9 +791,7 @@ between the continuous release of new features -- pushed by the development team
 stable production systems -- demanded by users and resource providers -- can be guaranteed. The DevOps culture
 theorizes and provides practical solutions that aim at unifying both software development (dev) and software
 operations (ops) teams, by emphasizing the SQA techniques to avoid infrastructure disruption whenever new
-developments are deployed into production systems.
-The incremental adoption of DevOps approaches throughout the project's lifetime was a key player towards
-software reliability. Starting with a Continuous Integration (CI) scenario at the first stages of the project, the software delivered
+developments are deployed into production systems. Starting with a Continuous Integration (CI) scenario at the first stages of the project, the software delivered
 was eventually validated and distributed using Continuous Delivery (CD) pipelines.
 
 \begin{figure}[ht]
@@ -914,22 +926,47 @@ execution for the latest available Docker image in the catalogue.
 
 \subsection{Integration, preview and early adoption}
 
-Two pilot infrastructures are at the disposal of developers and scientific
-communities involved in the project. The aim of these testbeds is to test the
-level of integration between the components involved in the {\sl INDIGO--DataCloud}
-solutions and use cases validation. Within these testbeds, the applications are deployed
-and executed
-with the last stable version of the software in environments as similar as
-possible to production ones. A map of the Pilot Preview
-infrastructure is depicted in Fig.~\ref{fig:fig_pilotpreview}. It shows the
-resource providers and the components or services they deployed and supported.
+Two pilot infrastructures, integration and preview, were at the disposal of developers and use cases, 
+respectively, involved in the project. The aim of these testbeds is to test the level of integration 
+between the core {\sl INDIGO--DataCloud}'s components and the user applications.
 
-The released software is tested in production environments through the
-Staged--Rollout process, before its inclusion in the EGI's Cloud Middleware Distribution (CMD).
-Selected resource providers are requested to install
-the most updated stable versions of the software, and to give access to them to their users. The
-Staged--Rollout process is key to detect and mitigate issues that could only
-appear in production environments.
+The integration testbed was primarily targeted and used by the software developers. 
+There, unstable
+software releases were tested by the maintainers themselves in order to validate the interactions
+with coupled services. Computing and storage resources were occasionaly needed, meaning that no real
+testbed -- with all
+the {\sl INDIGO--DataCloud}'s components -- was needed. 
+
+Conversely, the preview testbed was actively maintained, where the last stable version of
+the software was deployed by the SQA team. On top of that, the user applications were 
+deployed in order to test the integration with the {\sl INDIGO--DataCloud} solution. The
+preview testbed proved to be an effective tool to uncover bugs by means of testing the 
+basic functionalities of the core components. The bugs tagged as \emph{Dev} in
+Fig.~\ref{fig:indigobugs} were spotted this stage. A map of the Pilot Preview
+infrastructure is depicted in Fig.~\ref{fig:fig_pilotpreview}. It shows the
+resource providers and the services deployed. The number of resources
+steadily increased as the project progressed, due mainly to the progressive increase of 
+supported services and the occasional need for deploying more than one stable version of
+the same software component in different providers. 
+
+Computing and storage resource consumption, required by the pilot testbeds and SQA services
+(metrics, CI/CD infrastructure), was never an issue for the project's resource providers.
+In the case of computing resources, the massive use of container--based virtualization 
+alleviated the need of resources as it allowed CPU and memory over--subscription, when no
+performance test was carried out. Most of the providers were already members of the EGI 
+FedCloud, providing medium--sized Infrastructure--as--a--Service Cloud frameworks with 
+enough computing and storage capacity to meet the deployment requirements of more than 30 
+products that comprised the {\sl INDIGO--DataCloud} solution and the related SQA services.
+Nevertheless, the pilot infrastructure coordination task distributed the deployments
+according each provider's capacity and effort received within the project. Consequently,
+Fig.~\ref{fig:fig_pilotpreview} shows an unbalanced distribution of services.
+
+As the final validation step, the released software was tested in production environments
+through the \emph{staged--rollout} process, before its inclusion in the EGI's Cloud 
+Middleware Distribution (CMD). This process selected resource providers from the EGI FedCloud
+infrastructure in order to install the last stable versions of the {\sl INDIGO--DataCloud}
+software, giving user access to them. The staged--rollout process is key to detect and 
+mitigate issues that could only appear in production environments.
 
 \section{Conclusion}
 \label{sec:con}
@@ -1029,7 +1066,7 @@ reaching almost 60\% in {\sl INDIGO--2}. Although test reports were asked in tho
 where automated functional tests were not provided, the fulfillment of 
 their fundamental functional requirements was tougher to track, resulting in a non--viable
 solution for assessing minor changes, especially when analysing the regressions. The major issues observed that hindered developers from the 
-implementation of automated functional tests were releated to the unavailability
+implementation of automated functional tests were related to the unavailability
 -- at the time -- of libraries and frameworks for tackling specific tests -- such as 
 testing graphical interfaces --, or in some cases, the unawareness about their existence.
 We infer from this experience that automated functional tests should be a goal in modern
@@ -1237,6 +1274,13 @@ P. Kunszt,
 \emph{Nucl. Instr. Meth. Phys. Res. A},
 vol. 502, no. 2, pp. 376--381, Apr. 2003.
 
+\bibitem{avellino2004datagrid}
+G. Avellino \emph{et al.},
+``The DataGrid workload management system: Challenges and results,''
+\emph{J. Grid Comp.},
+vol. 2, no. 4, pp. 353--367, 2004.
+
+
 \bibitem{gagliardi}
 F. Gagliardi, B. Jones, M. Reale and S. Burke,
 ``European DataGrid Project: Experiences of Deploying a Large Scale Testbed for E--science Applications,''
@@ -1306,6 +1350,11 @@ F. Gagliardi and M. E. Begin,
 in \emph{2005 IEEE Inter. Symp. Mass Storage Syst. Technol.},
 pp. 88--92, Jun. 2005.
 
+\bibitem{ferrari2011resources}
+T. Ferrari \emph{et al.},
+``Resources and services of the EGEE production infrastructure,''
+\emph{J. Grid Comp.},
+vol. 9, no. 2, pp. 119--133, 2011.
 
 \bibitem{glite}
 E. Laure \emph{et al.},
@@ -1486,6 +1535,12 @@ Jenkins Indigo-dc, ``Jenkins - Indigo-DataCloud,''
 Indigo-dc, ``indigodatacloud - Docker Hub,''
 2018.
 [Online]. Available: \url{https://hub.docker.com/u/indigodatacloud}
+[Accessed 14 Feb. 2019].
+
+\bibitem{foot9}
+GitHub's indigo-dc organization, ``indigo-dc,''
+2018.
+[Online]. Available: \url{https://github.com/indigo-dc}
 [Accessed 14 Feb. 2019].
 
 \bibitem{rafi2012}
