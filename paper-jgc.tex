@@ -375,10 +375,7 @@ earth sciences) with intensive computing and large--scale dataset analysis capab
 The project brought together 21 academic and industry partners, from 15 different countries \cite{gagliardi}.
 Grid was the emerging technology to be used in order to address their requirements,
 thus the project delivered its own software distribution, named EDG (EU {\sl DataGrid}), strongly
-based on Globus middleware components and services \cite{globus}. The project was organized in 12 work packages, from
-which 5 were devoted to software development and coordinated by an
-Architecture Task Force, supervising the overall design and technical consistency
-of the developments.
+based on Globus middleware components and services \cite{globus}. 
 
 Without previous experience in such widely
 collaborative projects, a big effort was spent in devising solutions for several
@@ -875,8 +872,8 @@ set of deployed {\sl INDIGO--DataCloud} components or services.}
 \subsubsection{Continuous Delivery}
 As DevOps suggests, frequent releases positively affect the reliability of the software as
 they reduce the time in which a given defect is exposed or has an impact, allowing the
-development teams to act promptly based on the regular feedback \cite{chen2015}. The software updates of
-{\sl INDIGO--DataCloud} products, which have been taking place since the second major release, are passing through
+development teams to act promptly based on the regular feedback \cite{chen2015}. A total of 12 software
+updates --including 91 product releases \cite{indigo-d33}--, which have been taking place since {\sl INDIGO--1}, are passing through
 a Continuous Delivery (CD) pipeline that adds the packaging of the software right after the
 successful execution of the CI pipeline previously described. Consequently, CI--validated
 software components are automatically delivered in online repositories. Nonetheless,
@@ -1062,8 +1059,9 @@ code for every given change.
 %executed in an automated manner using the CI infrastructure. 
 However, by the time of
 {\sl INDIGO--1} only 30\% of the total of products provided automated functional tests,
-reaching almost 60\% in {\sl INDIGO--2}. Although test reports were asked in those cases
-where automated functional tests were not provided, the fulfillment of 
+reaching almost 60\% in {\sl INDIGO--2}. This fact was undoubtedly the main cause that challenged the full implementation of 
+the described DevOps approach. 
+Although testing reports were asked for those components that did not provide automated functional tests, the fulfillment of 
 their fundamental functional requirements was tougher to track, resulting in a non--viable
 solution for assessing minor changes, especially when analysing the regressions. The major issues observed that hindered developers from the 
 implementation of automated functional tests were related to the unavailability
@@ -1305,7 +1303,6 @@ T. Dingsoyr, S. Nerur, V. Balijepally and N. B. Moe,
 \emph{J. Syst. Softw.},
 vol. 85, no. 6, pp. 1213--1221, Jun. 2012.
 
-
 \bibitem{cmm}
 M. Paulk, B. Curtis, M. Chrissis and V. C. Weber,
 ``Capability maturity model for software,''
@@ -1465,6 +1462,12 @@ J. Gomes \emph{et al.},
 ``Initial Plan for WP3,''
 \emph{INDIGO--DataCloud Deliverable 3.1}.
 [Online]. Available: \url{https://www.indigo-datacloud.eu/documents/initial-plan-wp3-d31}.
+[Accessed 14 Feb. 2019].
+\bibitem{indigo-d33}
+J. Gomes \emph{et al.},
+``WP3 Final Report,''
+\emph{INDIGO--DataCloud Deliverable 3.3}.
+[Online]. Available: \url{https://www.indigo-datacloud.eu/documents/wp3-final-report-d33}.
 [Accessed 14 Feb. 2019].
 
 \bibitem{sqa-baseline}
